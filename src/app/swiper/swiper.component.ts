@@ -8,9 +8,11 @@ import Swiper from 'swiper'
 })
 export class SwiperComponent implements AfterViewInit {
   mySwiper: Swiper
+  mySwiper1: Swiper
 
   ngAfterViewInit() {
-    this.mySwiper = new Swiper('.swiper-container', {
+    // demo
+    this.mySwiper = new Swiper('#swiper', {
       pagination: {
         el: '.swiper-pagination',
         clickable: true,
@@ -21,6 +23,16 @@ export class SwiperComponent implements AfterViewInit {
       },
       spaceBetween: 50,
       slidesPerView: 3,
+    })
+
+    // demo1
+    this.mySwiper1 = new Swiper('#swiper1', {
+      direction: 'vertical',
+      slidesPerView: 3,
+      spaceBetween: 20,
+      loop: true,
+      autoplay: true,
+      delay: 2000,
     })
   }
 }
