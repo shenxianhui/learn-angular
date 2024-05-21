@@ -31,8 +31,10 @@ export class SwiperComponent implements AfterViewInit {
       slidesPerView: 3,
       spaceBetween: 20,
       loop: true,
-      autoplay: true,
-      delay: 2000,
+      autoplay: {
+        delay: 2000,
+        disableOnInteraction: false,
+      },
     })
   }
 }
