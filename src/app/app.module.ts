@@ -11,6 +11,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { registerLocaleData } from '@angular/common';
 import zh from '@angular/common/locales/zh';
+import { NoticeBarComponent } from './notice-bar/notice-bar.component';
 
 registerLocaleData(zh);
 
@@ -19,7 +20,8 @@ registerLocaleData(zh);
     AppComponent,
     ChildComponent,
     SwiperComponent,
-    ProCustomComponent
+    ProCustomComponent,
+    NoticeBarComponent
   ],
   imports: [
     BrowserModule,
