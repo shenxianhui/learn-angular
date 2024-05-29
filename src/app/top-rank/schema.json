@@ -1,0 +1,128 @@
+{
+  "name": "TOP排行图",
+  "id": "305",
+  "unique": "top-rank",
+  "type_cn": "排行图",
+  "type_en": "rank",
+  "preview": "assets/top-rank/image/top-rank.png",
+  "com_type": "angular",
+  "sampleCode": "",
+  "config": {
+    "list": [],
+    "comments": []
+  },
+  "data": {
+    "list": [
+      {
+        "attribute": "titleImg",
+        "declare": "封面图",
+        "type": "String",
+        "desc": "必传。只做展示，不做校验"
+      },
+      {
+        "attribute": "title",
+        "declare": "主标题内容",
+        "type": "String",
+        "desc": "必传。只做展示，不做校验"
+      },
+      {
+        "attribute": "titleLabel",
+        "declare": "主标签",
+        "type": "String",
+        "desc": "必传。只做展示，不做校验"
+      },
+      {
+        "attribute": "titleValue",
+        "declare": "主标签数值",
+        "type": "Number",
+        "desc": "必传。只做展示，不做校验"
+      },
+      {
+        "attribute": "title1",
+        "declare": "标题内容",
+        "type": "String",
+        "desc": "必传。只做展示，不做校验"
+      },
+      {
+        "attribute": "title1Label",
+        "declare": "标题内容",
+        "type": "String",
+        "desc": "必传。只做展示，不做校验"
+      },
+      {
+        "attribute": "title1Value",
+        "declare": "标题内容",
+        "type": "Number",
+        "desc": "必传。只做展示，不做校验"
+      },
+      {
+        "attribute": "title2",
+        "declare": "标题内容",
+        "type": "String",
+        "desc": "必传。只做展示，不做校验"
+      },
+      {
+        "attribute": "title2Label",
+        "declare": "标题内容",
+        "type": "String",
+        "desc": "必传。只做展示，不做校验"
+      },
+      {
+        "attribute": "title2Value",
+        "declare": "标题内容",
+        "type": "Number",
+        "desc": "必传。只做展示，不做校验"
+      },
+      {
+        "attribute": "list.title",
+        "declare": "标题内容",
+        "type": "String",
+        "desc": "必传。只做展示，不做校验"
+      },
+      {
+        "attribute": "list.num",
+        "declare": "标题内容",
+        "type": "Number",
+        "desc": "必传。只做展示，不做校验"
+      },
+      {
+        "attribute": "list.progress",
+        "declare": "标题内容",
+        "type": "Number",
+        "desc": "必传。只做展示，不做校验"
+      }
+    ],
+    "comments": [],
+    "format": {
+      "data": {
+        "titleImg": "assets/top-rank/image/top_rank_header_bg.png",
+        "title": "TOP 01",
+        "titleLabel": "字段名称超出滚动",
+        "titleValue": 3780,
+        "title1": "TOP 02",
+        "title1Label": "字段名称超出滚动",
+        "title1Value": 800,
+        "title2": "TOP 03",
+        "title2Label": "字段名称超出滚动",
+        "title2Value": 800,
+        "list": [
+          {
+            "title": "字段名称",
+            "num": 800,
+            "progress": 20
+          },
+          {
+            "title": "字段名称",
+            "num": 800,
+            "progress": 50
+          },
+          {
+            "title": "字段名称",
+            "num": 800,
+            "progress": 100
+          }
+        ]
+      }
+    }
+  }
+}
