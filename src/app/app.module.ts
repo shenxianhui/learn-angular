@@ -13,7 +13,8 @@ import { registerLocaleData } from '@angular/common'
 import zh from '@angular/common/locales/zh'
 import { TopRankComponent } from './top-rank/top-rank.component'
 import { StatusRankComponent } from './status-rank/status-rank.component'
-import { NoticeBarComponent } from './notice-bar/notice-bar.component'
+import { NoticeBarComponent } from './notice-bar/notice-bar.component';
+import { InfoStatisticsComponent } from './info-statistics/info-statistics.component'
 
 registerLocaleData(zh)
 
@@ -26,6 +27,7 @@ registerLocaleData(zh)
     TopRankComponent,
     StatusRankComponent,
     NoticeBarComponent,
+    InfoStatisticsComponent,
   ],
   imports: [
     BrowserModule,

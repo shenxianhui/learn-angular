@@ -1,0 +1,60 @@
+{
+  "id": 304,
+  "name": "info-statistics",
+  "module_type": "survey",
+  "width": 90,
+  "height": 80,
+  "json_data": {
+    "data_json": {
+      "data": {
+        "title1Label": "标题名称内容",
+        "title1Value": 999,
+        "title1Arrow": "down",
+        "title2Label": "标题名称内容",
+        "title2Value": 999,
+        "title2Arrow": "down",
+        "contentLabel": "当前工单总数",
+        "contentValue": 1234,
+        "contentIcon": "assets/info-statistics/image/order_icon.png",
+        "list": [
+          {
+            "title": "进度名称",
+            "num": 198,
+            "progress": 20
+          },
+          {
+            "title": "进度名称",
+            "num": 198,
+            "progress": 60
+          },
+          {
+            "title": "进度名称",
+            "num": 198,
+            "progress": 100
+          }
+        ]
+      }
+    },
+    "color_json": {
+      "titleLabelSize": "14px",
+      "titleLabelColor": "#ffffff",
+      "titleValueSize": "24px",
+      "titleValueColor": "#52d2ff",
+      "titleArrowColor": ["#52d2ff", "#52d2ff"],
+      "contentLabelSize": "14px",
+      "contentLabelColor": "#ffffff",
+      "contentValueSize": "24px",
+      "contentValueColor": "#52d2ff",
+      "listTitleSize": "14px",
+      "listTitleColor": "#ffffff",
+      "listNumSize": "14px",
+      "listNumColor": "#ffffff",
+      "listProgrolor": [
+        "linear-gradient(essC90deg, rgba(82, 210, 255, 0.4), rgba(109, 217, 255, 0.9) 99%)",
+        "rgba(255, 255, 255, 0.2)"
+      ]
+    },
+    "link_json": {},
+    "params_json": {}
+  }
+}

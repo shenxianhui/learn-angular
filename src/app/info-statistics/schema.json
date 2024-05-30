@@ -1,0 +1,121 @@
+{
+  "name": "信息统计",
+  "id": "304",
+  "unique": "info-statistics",
+  "type_cn": "概览图",
+  "type_en": "survey",
+  "preview": "assets/info-statistics/image/info-statistics.png",
+  "com_type": "angular",
+  "sampleCode": "",
+  "config": {
+    "list": [],
+    "comments": []
+  },
+  "data": {
+    "list": [
+      {
+        "attribute": "title1Label",
+        "declare": "标题名称",
+        "type": "String",
+        "desc": "必传。只做展示，不做校验"
+      },
+      {
+        "attribute": "title1Value",
+        "declare": "标题内容",
+        "type": "Number",
+        "desc": "必传。只做展示，不做校验"
+      },
+      {
+        "attribute": "title1Arrow",
+        "declare": "箭头方向",
+        "type": "String",
+        "desc": "必传。只做展示，不做校验 up down"
+      },
+      {
+        "attribute": "title2Label",
+        "declare": "标题名称",
+        "type": "String",
+        "desc": "必传。只做展示，不做校验"
+      },
+      {
+        "attribute": "title2Value",
+        "declare": "标题内容",
+        "type": "Number",
+        "desc": "必传。只做展示，不做校验"
+      },
+      {
+        "attribute": "title2Arrow",
+        "declare": "箭头方向",
+        "type": "String",
+        "desc": "必传。只做展示，不做校验 up down"
+      },
+      {
+        "attribute": "contentLabel",
+        "declare": "内容标签",
+        "type": "Array",
+        "desc": "必传。只做展示，不做校验"
+      },
+      {
+        "attribute": "contentValue",
+        "declare": "内容标签数值",
+        "type": "Number",
+        "desc": "必传。只做展示，不做校验"
+      },
+      {
+        "attribute": "contentIcon",
+        "declare": "内容标签Icon",
+        "type": "String",
+        "desc": "必传。只做展示，不做校验"
+      },
+      {
+        "attribute": "list.title",
+        "declare": "列表项标题",
+        "type": "String",
+        "desc": "必传。只做展示，不做校验"
+      },
+      {
+        "attribute": "list.num",
+        "declare": "列表项数值",
+        "type": "Number",
+        "desc": "必传。只做展示，不做校验"
+      },
+      {
+        "attribute": "list.progress",
+        "declare": "列表项进度",
+        "type": "Number",
+        "desc": "必传。只做展示，不做校验 0-100"
+      }
+    ],
+    "comments": [],
+    "format": {
+      "data": {
+        "title1Label": "标题名称内容",
+        "title1Value": 999,
+        "title1Arrow": "down",
+        "title2Label": "标题名称内容",
+        "title2Value": 999,
+        "title2Arrow": "down",
+        "contentLabel": "当前工单总数",
+        "contentValue": 1234,
+        "contentIcon": "assets/info-statistics/image/order_icon.png",
+        "list": [
+          {
+            "title": "进度名称",
+            "num": 198,
+            "progress": 20
+          },
+          {
+            "title": "进度名称",
+            "num": 198,
+            "progress": 60
+          },
+          {
+            "title": "进度名称",
+            "num": 198,
+            "progress": 100
+          }
+        ]
+      }
+    }
+  }
+}
