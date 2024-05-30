@@ -1,12 +1,12 @@
-<div class="status-rank" #tbody>
+<div class="status-rank" #tbody [style.height]="getBodyHeight()">
   <div class="wrap" *ngFor="let item of data.list">
     <div class="left">
       <div class="text-wrap">
         <div class="text text-ellipsis">{{ item.title }}</div>
       </div>
       <div class="nub-wrap">
-        <!-- <div class="nub">{{ item.value }}</div> -->
-        <img [src]="item.icon" alt="" />
+        <div class="nub">{{ item.value }}</div>
+        <!-- <img [src]="item.icon" alt="" /> -->
       </div>
     </div>
     <div class="right">
@@ -28,7 +28,7 @@
                   (color.column || [])[index]?.progressColor &&
                   (color.column || [])[index]?.progressColor.length
                     ? (color.column || [])[index]?.progressColor[1]
-                    : 'rgba(82,210,255,1)'
+                    : null
                 "
               >
                 <div
@@ -37,7 +37,7 @@
                     (color.column || [])[index]?.progressColor &&
                     (color.column || [])[index]?.progressColor.length
                       ? (color.column || [])[index]?.progressColor[0]
-                      : 'rgba(82,210,255,1)'
+                      : null
                   "
                   [style.width]="getPercentage(item1.value, item.column)"
                 ></div>

@@ -21,8 +21,14 @@ export class StatusRankComponent implements OnInit {
   }
 
   ngOnInit() {
+    const { list = [] } = this.data
+    const { viewNum = 3 } = this.color
+
+    if (list.length <= viewNum) return
+
     setInterval(() => {
-      let trList = this.tbodyDiv.nativeElement.querySelectorAll('.wrap')
+      const trList = this.tbodyDiv.nativeElement.querySelectorAll('.wrap')
+
       trList.forEach(element => {
         element.animate([{ transform: 'translateY(0)' }, { transform: 'translateY(-72px)' }], {
           duration: 600,
@@ -44,5 +50,13 @@ export class StatusRankComponent implements OnInit {
     })
 
     return (value / total) * 100 + '%'
+  }
+
+  getBodyHeight() {
+    const dataLength = this.data.list.length
+    const viewNum = this.color.viewNum
+    const num = dataLength > viewNum ? viewNum : dataLength
+
+    return num * 72 + (num - 1) * 20 + 'px'
   }
 }
