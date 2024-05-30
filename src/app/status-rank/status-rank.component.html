@@ -1,0 +1,81 @@
+<div class="status-rank" #tbody>
+  <div class="wrap" *ngFor="let item of data.list">
+    <div class="left">
+      <div class="text-wrap">
+        <div class="text text-ellipsis">{{ item.title }}</div>
+      </div>
+      <div class="nub-wrap">
+        <!-- <div class="nub">{{ item.value }}</div> -->
+        <img [src]="item.icon" alt="" />
+      </div>
+    </div>
+    <div class="right">
+      <div class="line"></div>
+      <div class="state-wrap">
+        <div class="state" *ngFor="let item1 of item.column; let index = index">
+          <div
+            class="state-text"
+            [style.fontSize]="(color.column || [])[index]?.LabelSize"
+            [style.color]="(color.column || [])[index]?.LabelColor"
+          >
+            {{ item1.label }}
+          </div>
+          <div class="state-nub-wrap">
+            <div class="progressbar">
+              <div
+                class="external"
+                [style.backgroundColor]="
+                  (color.column || [])[index]?.progressColor &&
+                  (color.column || [])[index]?.progressColor.length
+                    ? (color.column || [])[index]?.progressColor[1]
+                    : 'rgba(82,210,255,1)'
+                "
+              >
+                <div
+                  class="internal"
+                  [style.backgroundColor]="
+                    (color.column || [])[index]?.progressColor &&
+                    (color.column || [])[index]?.progressColor.length
+                      ? (color.column || [])[index]?.progressColor[0]
+                      : 'rgba(82,210,255,1)'
+                  "
+                  [style.width]="getPercentage(item1.value, item.column)"
+                ></div>
+              </div>
+            </div>
+            <div
+              class="number-wrap"
+              [style.backgroundColor]="(color.column || [])[index]?.ValueBgColor"
+            >
+              <div
+                class="number"
+                [style.fontSize]="(color.column || [])[index]?.ValueSize"
+                [style.color]="(color.column || [])[index]?.ValueColor"
+              >
+                {{ item1.value }}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- 需要用定位的 -->
+    <div class="background-wrap">
+      <div class="pic-wrap">
+        <img class="pic-left" src="assets/status-rank/image/status_rank_draw1.png" alt="" />
+        <img class="pic-mid" src="assets/status-rank/image/status_rank_draw2.png" alt="" />
+      </div>
+      <div class="middle-wrap">
+        <div class="middle-line"></div>
+      </div>
+      <div class="pic-wrap">
+        <img
+          class="pic-mid rotate180"
+          src="assets/status-rank/image/status_rank_draw2.png"
+          alt=""
+        />
+        <img class="pic-left" src="assets/status-rank/image/status_rank_draw1.png" alt="" />
+      </div>
+    </div>
+  </div>
+</div>

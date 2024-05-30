@@ -1,0 +1,101 @@
+{
+  "id": 306,
+  "name": "status-rank",
+  "module_type": "rank",
+  "width": 90,
+  "height": 80,
+  "json_data": {
+    "data_json": {
+      "data": {
+        "list": [
+          {
+            "title": "超出滚动播",
+            "icon": "https://e-assets.gitee.com/gitee-community-web/_next/static/media/icon-heart.f9614680.svg",
+            "column": [
+              {
+                "label": "列1",
+                "value": 320
+              },
+              {
+                "label": "列2",
+                "value": 260
+              },
+              {
+                "label": "列3",
+                "value": 182
+              }
+            ]
+          },
+          {
+            "title": "超出滚动播",
+            "icon": "https://e-assets.gitee.com/gitee-community-web/_next/static/media/icon-heart.f9614680.svg",
+            "column": [
+              {
+                "label": "列1",
+                "value": 320
+              },
+              {
+                "label": "列2",
+                "value": 260
+              },
+              {
+                "label": "列3",
+                "value": 182
+              }
+            ]
+          },
+          {
+            "title": "超出滚动播",
+            "icon": "https://e-assets.gitee.com/gitee-community-web/_next/static/media/icon-heart.f9614680.svg",
+            "column": [
+              {
+                "label": "列1",
+                "value": 320
+              },
+              {
+                "label": "列2",
+                "value": 260
+              },
+              {
+                "label": "列3",
+                "value": 182
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "color_json": {
+      "titleSize": "14px",
+      "titleColor": "#ffffff",
+      "column": [
+        {
+          "LabelSize": "14px",
+          "LabelColor": "#ffffff",
+          "ValueSize": "16px",
+          "ValueColor": "rgba(82,210,255,1)",
+          "ValueBgColor": "rgba(82,210,255,0.12)",
+          "progressColor": ["rgba(82,210,255,1)", "rgba(82,210,255,0.2)"]
+        },
+        {
+          "LabelSize": "14px",
+          "LabelColor": "#ffffff",
+          "ValueSize": "16px",
+          "ValueColor": "rgba(255,191,89,1)",
+          "ValueBgColor": "rgba(255,191,89,0.12)",
+          "progressColor": ["rgba(255,191,89,1)", "rgba(255,191,89,0.2)"]
+        },
+        {
+          "LabelSize": "14px",
+          "LabelColor": "#ffffff",
+          "ValueSize": "16px",
+          "ValueColor": "rgba(255,67,91,1)",
+          "ValueBgColor": "rgba(255,67,91,0.12)",
+          "progressColor": ["rgba(255,67,91,1)", "rgba(255,67,91,0.2)"]
+        }
+      ]
+    },
+    "link_json": {},
+    "params_json": {}
+  }
+}

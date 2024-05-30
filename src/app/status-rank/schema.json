@@ -1,0 +1,103 @@
+{
+  "name": "状态排行图",
+  "id": "306",
+  "unique": "status-rank",
+  "type_cn": "排行图",
+  "type_en": "rank",
+  "preview": "assets/status-rank/image/status-rank.png",
+  "com_type": "angular",
+  "sampleCode": "",
+  "config": {
+    "list": [],
+    "comments": []
+  },
+  "data": {
+    "list": [
+      {
+        "attribute": "list.title",
+        "declare": "标题内容",
+        "type": "String",
+        "desc": "必传。只做展示，不做校验"
+      },
+      {
+        "attribute": "list.value",
+        "declare": "行-数值",
+        "type": "Number",
+        "desc": "必传。只做展示，不做校验"
+      },
+      {
+        "attribute": "list.column.label",
+        "declare": "列-标签",
+        "type": "String",
+        "desc": "必传。只做展示，不做校验"
+      },
+      {
+        "attribute": "list.column.value",
+        "declare": "列-数值",
+        "type": "Number",
+        "desc": "必传。只做展示，不做校验"
+      }
+    ],
+    "comments": [],
+    "format": {
+      "data": {
+        "list": [
+          {
+            "title": "超出滚动播",
+            "icon": "assets/status-rank/image/icon-heart.svg",
+            "column": [
+              {
+                "label": "列1",
+                "value": 320
+              },
+              {
+                "label": "列2",
+                "value": 260
+              },
+              {
+                "label": "列3",
+                "value": 182
+              }
+            ]
+          },
+          {
+            "title": "超出滚动播",
+            "icon": "assets/status-rank/image/icon-heart.svg",
+            "column": [
+              {
+                "label": "列1",
+                "value": 320
+              },
+              {
+                "label": "列2",
+                "value": 260
+              },
+              {
+                "label": "列3",
+                "value": 182
+              }
+            ]
+          },
+          {
+            "title": "超出滚动播",
+            "icon": "assets/status-rank/image/icon-heart.svg",
+            "column": [
+              {
+                "label": "列1",
+                "value": 320
+              },
+              {
+                "label": "列2",
+                "value": 260
+              },
+              {
+                "label": "列3",
+                "value": 182
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

@@ -12,6 +12,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { registerLocaleData } from '@angular/common';
 import zh from '@angular/common/locales/zh';
 import { TopRankComponent } from './top-rank/top-rank.component';
+import { StatusRankComponent } from './status-rank/status-rank.component';
 
 registerLocaleData(zh);
 
@@ -21,7 +22,8 @@ registerLocaleData(zh);
     ChildComponent,
     SwiperComponent,
     ProCustomComponent,
-    TopRankComponent
+    TopRankComponent,
+    StatusRankComponent
   ],
   imports: [
     BrowserModule,
