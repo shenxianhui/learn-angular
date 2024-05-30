@@ -1,99 +1,59 @@
 {
-  "id": 306,
-  "name": "status-rank",
+  "id": 305,
+  "name": "top-rank",
   "module_type": "rank",
   "width": 90,
   "height": 80,
   "json_data": {
     "data_json": {
       "data": {
+        "titleImg": "assets/top-rank/image/top_rank_header_bg.png",
+        "title": "TOP 01",
+        "titleLabel": "字段名称超出滚动",
+        "titleValue": 3780,
+        "title1": "TOP 02",
+        "title1Label": "字段名称超出滚动",
+        "title1Value": 800,
+        "title2": "TOP 03",
+        "title2Label": "字段名称超出滚动",
+        "title2Value": 800,
         "list": [
           {
-            "title": "超出滚动播",
-            "icon": "https://e-assets.gitee.com/gitee-community-web/_next/static/media/icon-heart.f9614680.svg",
-            "column": [
-              {
-                "label": "列1",
-                "value": 320
-              },
-              {
-                "label": "列2",
-                "value": 260
-              },
-              {
-                "label": "列3",
-                "value": 182
-              }
-            ]
+            "title": "字段名称",
+            "num": 800,
+            "progress": 20
           },
           {
-            "title": "超出滚动播",
-            "icon": "https://e-assets.gitee.com/gitee-community-web/_next/static/media/icon-heart.f9614680.svg",
-            "column": [
-              {
-                "label": "列1",
-                "value": 320
-              },
-              {
-                "label": "列2",
-                "value": 260
-              },
-              {
-                "label": "列3",
-                "value": 182
-              }
-            ]
+            "title": "字段名称",
+            "num": 800,
+            "progress": 50
           },
           {
-            "title": "超出滚动播",
-            "icon": "https://e-assets.gitee.com/gitee-community-web/_next/static/media/icon-heart.f9614680.svg",
-            "column": [
-              {
-                "label": "列1",
-                "value": 320
-              },
-              {
-                "label": "列2",
-                "value": 260
-              },
-              {
-                "label": "列3",
-                "value": 182
-              }
-            ]
+            "title": "字段名称",
+            "num": 800,
+            "progress": 100
           }
         ]
       }
     },
     "color_json": {
-      "titleSize": "14px",
-      "titleColor": "#ffffff",
-      "column": [
-        {
-          "LabelSize": "14px",
-          "LabelColor": "#ffffff",
-          "ValueSize": "16px",
-          "ValueColor": "rgba(82,210,255,1)",
-          "ValueBgColor": "rgba(82,210,255,0.12)",
-          "progressColor": ["rgba(82,210,255,1)", "rgba(82,210,255,0.2)"]
-        },
-        {
-          "LabelSize": "14px",
-          "LabelColor": "#ffffff",
-          "ValueSize": "16px",
-          "ValueColor": "rgba(255,191,89,1)",
-          "ValueBgColor": "rgba(255,191,89,0.12)",
-          "progressColor": ["rgba(255,191,89,1)", "rgba(255,191,89,0.2)"]
-        },
-        {
-          "LabelSize": "14px",
-          "LabelColor": "#ffffff",
-          "ValueSize": "16px",
-          "ValueColor": "rgba(255,67,91,1)",
-          "ValueBgColor": "rgba(255,67,91,0.12)",
-          "progressColor": ["rgba(255,67,91,1)", "rgba(255,67,91,0.2)"]
-        }
-      ]
+      "titleLabelSize": "14px",
+      "titleLabelColor": "#ffffff",
+      "titleValueSize": "14px",
+      "titleValueColor": "#ffffff",
+      "title1LabelSize": "14px",
+      "title1LabelColor": "#ffffff",
+      "title1ValueSize": "14px",
+      "title1ValueColor": "#ffffff",
+      "title2LabelSize": "14px",
+      "title2LabelColor": "#ffffff",
+      "title2ValueSize": "14px",
+      "title2ValueColor": "#ffffff",
+      "listTitleSize": "14px",
+      "listTitleColor": "#ffffff",
+      "listNumSize": "14px",
+      "listNumColor": "#ffffff",
+      "listProgressColor": ["#52d2ff", "gba(255, 255, 255, 0.2)"]
     },
     "link_json": {},
     "params_json": {}

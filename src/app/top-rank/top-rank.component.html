@@ -2,9 +2,7 @@
   <div
     class="first-wrap"
     [style.backgroundImage]="
-      'url(' +
-      (data.titleImg || 'assets/top-rank/image/top_rank_header_bg.png') +
-      ')'
+      'url(' + (data.titleImg || 'assets/top-rank/image/top_rank_header_bg.png') + ')'
     "
   >
     <div class="text1">{{ data.title }}</div>
@@ -72,8 +70,8 @@
             class="external"
             [style.background]="
               color.listProgressColor && color.listProgressColor.length
-                ? color.listProgressColor[1] || '#52d2ff'
-                : '#52d2ff'
+                ? color.listProgressColor[1]
+                : null
             "
           >
             <div
@@ -81,8 +79,8 @@
               [style.width]="item.progress + '%'"
               [style.background]="
                 color.listProgressColor && color.listProgressColor.length
-                  ? color.listProgressColor[0] || 'gba(255, 255, 255, 0.2)'
-                  : 'gba(255, 255, 255, 0.2)'
+                  ? color.listProgressColor[0]
+                  : null
               "
             ></div>
           </div>
