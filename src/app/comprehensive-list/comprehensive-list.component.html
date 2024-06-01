@@ -1,0 +1,44 @@
+<div class="main">
+  <table>
+    <thead>
+      <tr>
+        <th *ngFor="let item of data.th; let index = index">
+          <div [class.tar]="index === data.th.length - 1">{{ item }}</div>
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let trItm of data.td; let trIdx = index">
+        <td
+          *ngFor="
+            let colItm of color.colType || ['dot', 'icon', 'text', 'text'];
+            let colIdx = index
+          "
+          [class.tar]="colIdx === data.th.length - 1"
+        >
+          <div *ngIf="colItm === 'dot'" class="aic">
+            <div
+              class="tag"
+              [style.backgroundColor]="getTheme(trItm.data[colIdx].themeKey).color || '#ffffff'"
+            ></div>
+            {{ trItm.data[colIdx].value }}
+          </div>
+          <!-- <div *ngIf="colItm === 'icon'" class="mr10 ml-2"> -->
+          <div *ngIf="colItm === 'icon'" class="">
+            <div class="group">
+              <img class="flag" [src]="getCountryIcon(trItm.data[colIdx].iconName)" alt="" />
+              {{ trItm.data[colIdx].value || '名称' }}
+            </div>
+          </div>
+          <div
+            *ngIf="colItm === 'text'"
+            class=""
+            [style.color]="getTheme(trItm.data[colIdx].themeKey).color || '#ffffff'"
+          >
+            {{ trItm.data[colIdx].value }}
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

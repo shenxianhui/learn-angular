@@ -15,7 +15,8 @@ import { TopRankComponent } from './top-rank/top-rank.component'
 import { StatusRankComponent } from './status-rank/status-rank.component'
 import { NoticeBarComponent } from './notice-bar/notice-bar.component';
 import { InfoStatisticsComponent } from './info-statistics/info-statistics.component';
-import { HighlightLabelComponent } from './highlight-label/highlight-label.component'
+import { HighlightLabelComponent } from './highlight-label/highlight-label.component';
+import { ComprehensiveListComponent } from './comprehensive-list/comprehensive-list.component'
 
 registerLocaleData(zh)
 
@@ -30,6 +31,7 @@ registerLocaleData(zh)
     NoticeBarComponent,
     InfoStatisticsComponent,
     HighlightLabelComponent,
+    ComprehensiveListComponent,
   ],
   imports: [
     BrowserModule,

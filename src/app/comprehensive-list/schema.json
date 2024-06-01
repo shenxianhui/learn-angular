@@ -1,0 +1,117 @@
+{
+  "name": "综合列表",
+  "id": "307",
+  "unique": "comprehensive-list",
+  "type_cn": "表格",
+  "type_en": "table",
+  "preview": "assets/comprehensive-list/image/comprehensive-list.png",
+  "com_type": "angular",
+  "sampleCode": "",
+  "config": {
+    "list": [],
+    "comments": []
+  },
+  "data": {
+    "list": [
+      {
+        "attribute": "th.title",
+        "declare": "表头-标题",
+        "type": "String",
+        "desc": "必传。只做展示，不做校验"
+      },
+      {
+        "attribute": "th.type",
+        "declare": "表头-类型",
+        "type": "String",
+        "desc": "必传。只做展示，不做校验"
+      },
+      {
+        "attribute": "td.data.themeKey",
+        "declare": "表体-主题类型",
+        "type": "String",
+        "desc": "必传。只做展示，不做校验"
+      },
+      {
+        "attribute": "td.data.value",
+        "declare": "表体-值",
+        "type": "String",
+        "desc": "必传。只做展示，不做校验"
+      },
+      {
+        "attribute": "td.data.iconName",
+        "declare": "表体-国旗icon",
+        "type": "String",
+        "desc": "必传。只做展示，不做校验"
+      }
+    ],
+    "comments": [],
+    "format": {
+      "data": {
+        "th": ["表头1", "表头2", "表头3", "表头4"],
+        "td": [
+          {
+            "data": [
+              {
+                "themeKey": "red", //匹配themeMap中的color作为圆点的颜色
+                "value": "129.122.1.1"
+              },
+              {
+                "iconName": "CN", //用于拼接本地资源 `assets/comprehensive-list/image/${iconName}.png`
+                "value": "中国"
+              },
+              {
+                "themeKey": "状态1", //匹配themeMap中的color作为字体颜色
+                "value": "状态1"
+              },
+              {
+                "themeKey": "",
+                "value": "纯文字"
+              }
+            ]
+          },
+          {
+            "data": [
+              {
+                "themeKey": "blue",
+                "value": "129.122.1.2"
+              },
+              {
+                "iconName": "US",
+                "value": "美国"
+              },
+              {
+                "themeKey": "状态2",
+                "value": "状态2"
+              },
+              {
+                "themeKey": "",
+                "value": "纯文字"
+              }
+            ]
+          },
+          {
+            "data": [
+              {
+                "themeKey": "yellow",
+                "value": "129.122.1.3",
+                "colType": "dot"
+              },
+              {
+                "iconName": "JP",
+                "value": "日本"
+              },
+              {
+                "themeKey": "状态3",
+                "value": "状态3"
+              },
+              {
+                "themeKey": "",
+                "value": "纯文字"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
+}
