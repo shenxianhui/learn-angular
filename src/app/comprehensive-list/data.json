@@ -20,7 +20,7 @@
                 "value": "中国"
               },
               {
-                "themeKey": "状态1",
+                "themeKey": "red",
                 "value": "状态1"
               },
               {
@@ -40,7 +40,7 @@
                 "value": "美国"
               },
               {
-                "themeKey": "状态2",
+                "themeKey": "blue",
                 "value": "状态2"
               },
               {
@@ -61,7 +61,7 @@
                 "value": "日本"
               },
               {
-                "themeKey": "状态3",
+                "themeKey": "yellow",
                 "value": "状态3"
               },
               {
@@ -74,6 +74,7 @@
       }
     },
     "color_json": {
+      "viewNum": 5,
       "colType": ["dot", "icon", "text", "text"],
       "themeMap": {
         "red": {

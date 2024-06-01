@@ -1,11 +1,11 @@
-import { Component, OnInit } from '@angular/core'
+import { Component, OnInit, ViewChild, ElementRef } from '@angular/core'
 import { json_data } from './data.json'
 
 const { data_json = {}, color_json = {} } = json_data
 const { data = {} } = data_json
 
 interface ThemeData {
-  color?: string,
+  color?: string
   backgroundColor?: string
 }
 interface ColorData {
@@ -19,12 +19,50 @@ interface ColorData {
   styleUrls: ['./comprehensive-list.component.less'],
 })
 export class ComprehensiveListComponent implements OnInit {
+  @ViewChild('tbody')
+  tbodyDiv: ElementRef
   data: any = data
   color: any = color_json
 
   constructor() {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    let viewNum = this.color.viewNum || 5
+    if (this.data.td.length <= viewNum) {
+      return
+    }
+    setInterval(() => {
+      let trList = this.tbodyDiv.nativeElement.querySelectorAll('.second-wrap')
+
+      let firstElement = trList[0]
+      if (firstElement) {
+        firstElement.animate(
+          [
+            { transform: 'translate(0,0)', opacity: 1 },
+            { transform: 'translate(-50%,-43px)', opacity: 0.2 },
+          ],
+          {
+            duration: 500,
+            iterations: 1,
+          },
+        )
+      }
+
+      trList.forEach((element, index) => {
+        if (index == 0) {
+          return
+        }
+        element.animate([{ transform: 'translateY(0)' }, { transform: 'translateY(-43px)' }], {
+          duration: 500,
+          iterations: 1,
+        })
+      })
+
+      setTimeout(() => {
+        this.data.td.push(this.data.td.shift())
+      }, 500)
+    }, 3000)
+  }
 
   getTheme(name: string): ThemeData {
     const colorData: ColorData = this.color
@@ -43,5 +81,13 @@ export class ComprehensiveListComponent implements OnInit {
   }
   getCountryIcon(iconName) {
     return `assets/comprehensive-list/image/${iconName}.png`
+  }
+
+  getBodyHeight() {
+    const dataLength = this.data.td.length
+    const viewNum = this.color.viewNum
+    const num = dataLength > viewNum ? viewNum : dataLength
+
+    return num * 31 + (num - 1) * 10 + 'px'
   }
 }

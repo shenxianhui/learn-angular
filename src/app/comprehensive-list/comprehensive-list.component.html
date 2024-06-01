@@ -7,8 +7,8 @@
         </th>
       </tr>
     </thead>
-    <tbody>
-      <tr *ngFor="let trItm of data.td; let trIdx = index">
+    <tbody #tbody [style.height]="getBodyHeight()">
+      <tr class="second-wrap" *ngFor="let trItm of data.td; let trIdx = index">
         <td
           *ngFor="
             let colItm of color.colType || ['dot', 'icon', 'text', 'text'];
