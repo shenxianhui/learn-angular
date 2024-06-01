@@ -1,0 +1,22 @@
+{
+  "id": 308,
+  "name": "highlight-label",
+  "module_type": "others",
+  "width": 90,
+  "height": 80,
+  "json_data": {
+    "data_json": {
+      "data": {
+        "label": "1"
+      }
+    },
+    "color_json": {
+      "labelSize": "26px",
+      "labelColor": "#ffffff",
+      "labelBgImg": "assets/highlight-label/image/label_bg.png",
+      "shadowImg": "assets/highlight-label/image/card_bg.png"
+    },
+    "link_json": {},
+    "params_json": {}
+  }
+}

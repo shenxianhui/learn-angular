@@ -1,0 +1,35 @@
+<div
+  *ngIf="isActive"
+  class="highlight-label"
+  [style.backgroundImage]="
+    'url(' + (color.shadowImg || 'assets/highlight-label/image/card_bg.png') + ')'
+  "
+  (mouseenter)="onMouseEnter()"
+  (mouseleave)="onMouseLeave()"
+>
+  <div
+    class="label"
+    [style.fontSize]="color.labelSize"
+    [style.color]="color.labelColor"
+    [style.backgroundImage]="
+      'url(' + (color.labelBgImg || 'assets/highlight-label/image/label_bg.png') + ')'
+    "
+  >
+    {{ data.label }}
+  </div>
+</div>
+<div
+  *ngIf="!isActive"
+  class="highlight-label twinkle"
+  (mouseenter)="onMouseEnter()"
+  (mouseleave)="onMouseLeave()"
+>
+  <div
+    class="label"
+    [style.fontSize]="color.labelSize"
+    [style.color]="color.labelColor"
+    [style.backgroundImage]="'url(' + 'assets/highlight-label/image/label_bg_def.png' + ')'"
+  >
+    {{ data.label }}
+  </div>
+</div>
