@@ -1,0 +1,68 @@
+{
+  "id": 265,
+  "name": "rule-expression",
+  "module_type": "survey",
+  "width": 90,
+  "height": 80,
+  "json_data": {
+    "data_json": {
+      "data": {
+        "searchType": "AND",
+        "executeInfo": [
+          {
+            "label": "数据清空",
+            "value": "clear"
+          },
+          {
+            "label": "扩展新增",
+            "value": "add",
+            "type": "primary",
+            "icon": "plus"
+          }
+        ],
+        "internalApi": [
+          {
+            "label": "查询",
+            "value": "search",
+            "type": "primary"
+          }
+        ],
+        "option": [
+          {
+            "label": "选项1",
+            "value": "1"
+          },
+          {
+            "label": "选项2",
+            "value": "2"
+          }
+        ],
+
+        "validationRule": [
+          {
+            "name": "select1",
+            "message": "请选择"
+          },
+          {
+            "name": "select2",
+            "message": "请选择"
+          },
+          {
+            "name": "input",
+            "message": "请输入"
+          }
+        ]
+      }
+    },
+    "color_json": {
+      "nzDisabled": false,
+      "nzPlaceHolder": "选择框默认文字",
+      "nzMaxMultipleCount": 3,
+      "nzAllowClear": true,
+      "nzMode": "default",
+      "nzMaxTagCount": 2
+    },
+    "link_json": {},
+    "params_json": {}
+  }
+}

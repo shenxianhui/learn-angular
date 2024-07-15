@@ -1,0 +1,139 @@
+{
+  "name": "规则表达式",
+  "id": "265",
+  "unique": "rule-expression",
+  "type_cn": "数据录入",
+  "type_en": "data-entry",
+  "preview": "assets/rule-expression/image/rule-expression.png",
+  "com_type": "angular",
+  "sampleCode": "",
+  "config": {
+    "list": [],
+    "comments": []
+  },
+  "data": {
+    "list": [
+      {
+        "attribute": "searchType",
+        "declare": "搜索类型",
+        "type": "String",
+        "desc": "必传。只做展示，不做校验"
+      },
+      {
+        "attribute": "executeInfo.label",
+        "declare": "头部按钮组-标签",
+        "type": "String",
+        "desc": "必传。只做展示，不做校验"
+      },
+      {
+        "attribute": "executeInfo.value",
+        "declare": "头部按钮组-值",
+        "type": "String",
+        "desc": "必传。只做展示，不做校验"
+      },
+      {
+        "attribute": "executeInfo.type",
+        "declare": "头部按钮组-类型",
+        "type": "String",
+        "desc": "必传。只做展示，不做校验"
+      },
+      {
+        "attribute": "executeInfo.icon",
+        "declare": "头部按钮组-icon",
+        "type": "String",
+        "desc": "必传。只做展示，不做校验"
+      },
+      {
+        "attribute": "internalApi.label",
+        "declare": "尾部按钮组-标签",
+        "type": "String",
+        "desc": "必传。只做展示，不做校验"
+      },
+      {
+        "attribute": "internalApi.value",
+        "declare": "尾部按钮组-值",
+        "type": "String",
+        "desc": "必传。只做展示，不做校验"
+      },
+      {
+        "attribute": "internalApi.type",
+        "declare": "尾部按钮组-类型",
+        "type": "String",
+        "desc": "必传。只做展示，不做校验"
+      },
+      {
+        "attribute": "option.label",
+        "declare": "下拉数据-标签",
+        "type": "String",
+        "desc": "必传。只做展示，不做校验"
+      },
+      {
+        "attribute": "option.value",
+        "declare": "下拉数据-值",
+        "type": "String",
+        "desc": "必传。只做展示，不做校验"
+      },
+      {
+        "attribute": "validationRule.name",
+        "declare": "校验规则-名称",
+        "type": "String",
+        "desc": "select1 | select2 | input"
+      },
+      {
+        "attribute": "validationRule.message",
+        "declare": "校验规则-报错提示",
+        "type": "String",
+        "desc": ""
+      }
+    ],
+    "comments": [],
+    "format": {
+      "data": {
+        "searchType": "AND",
+        "executeInfo": [
+          {
+            "label": "数据清空",
+            "value": "clear"
+          },
+          {
+            "label": "扩展新增",
+            "value": "add",
+            "type": "primary",
+            "icon": "plus"
+          }
+        ],
+        "internalApi": [
+          {
+            "label": "查询",
+            "value": "search",
+            "type": "primary"
+          }
+        ],
+        "option": [
+          {
+            "label": "选项1",
+            "value": "1"
+          },
+          {
+            "label": "选项2",
+            "value": "2"
+          }
+        ],
+        "validationRule": [
+          {
+            "name": "select1",
+            "message": "请选择"
+          },
+          {
+            "name": "select2",
+            "message": "请选择"
+          },
+          {
+            "name": "input",
+            "message": "请输入"
+          }
+        ]
+      }
+    }
+  }
+}
