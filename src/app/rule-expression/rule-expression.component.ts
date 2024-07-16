@@ -44,6 +44,22 @@ export class RuleExpressionComponent implements OnInit {
 
   ngOnInit() {}
 
+  // 暴露提交方法
+  public onSubmitForm() {
+    return new Promise((resolve, reject) => {
+      this.checkedForm()
+        .then(res => {
+          resolve(this.ngModel)
+        })
+        .catch((err = {}) => {
+          const { row, name, message } = err
+
+          this.message.create('error', `[第${row + 1}行-${name}]: ${message}`)
+          reject(err)
+        })
+    })
+  }
+
   // 数值改变时回调
   ngModelChange(type, itm, idx) {
     console.log(type, itm, idx)
