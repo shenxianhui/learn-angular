@@ -1,0 +1,64 @@
+{
+  "name": "示例2",
+  "id": "306",
+  "unique": "status-rank",
+  "type_cn": "排行图",
+  "type_en": "rank",
+  "preview": "assets/status-rank/image/status-rank.png",
+  "com_type": "angular",
+  "sampleCode": "",
+  "config": {
+    "list": [],
+    "comments": []
+  },
+  "data": {
+    "list": [
+      {
+        "attribute": "activeIndex",
+        "declare": "当前索引",
+        "type": "Number",
+        "desc": "必传。只做展示，不做校验"
+      },
+      {
+        "attribute": "data.label",
+        "declare": "节点标签",
+        "type": "String",
+        "desc": "必传。只做展示，不做校验"
+      },
+      {
+        "attribute": "data.content",
+        "declare": "节点内容, 用 <br> 换行",
+        "type": "String",
+        "desc": "必传。只做展示，不做校验"
+      }
+    ],
+    "comments": [],
+    "format": {
+      "data": {
+        "activeIndex": 2,
+        "data": [
+          {
+            "label": "节点1",
+            "content": "2023/8/14-12:21:34<br>内容内容内容内容"
+          },
+          {
+            "label": "节点2",
+            "content": "2023/8/14-12:21:34<br>内容内容内容内容"
+          },
+          {
+            "label": "节点3",
+            "content": "2023/8/14-12:21:34<br>内容内容内容内容"
+          },
+          {
+            "label": "节点4",
+            "content": "2023/8/14-12:21:34<br>内容内容内容内容"
+          },
+          {
+            "label": "节点5",
+            "content": "2023/8/14-12:21:34<br>内容内容内容内容"
+          }
+        ]
+      }
+    }
+  }
+}
