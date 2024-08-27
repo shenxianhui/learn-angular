@@ -1,0 +1,64 @@
+{
+  "id": 307,
+  "name": "comprehensive-list",
+  "module_type": "table",
+  "width": 90,
+  "height": 80,
+  "json_data": {
+    "data_json": {
+      "data": {
+        "series": [
+          {
+            "type": "bar",
+            "key": "bar1",
+            "name": "柱1"
+          },
+          {
+            "type": "bar",
+            "name": "柱2",
+            "key": "bar2",
+          },
+          {
+            "type": "line",
+            "name": "线1",
+            "key": "line1",
+          },
+          {
+            "type": "line",
+            "name": "线2",
+            "key": "line2",
+          }
+        ]
+      }
+    },
+    "color_json": {
+      "legend": {
+        "left": "auto",
+        "top": "auto",
+        "right": "auto",
+        "bottom": "auto",
+        "textStyle": {
+          "color": "#333",
+          "fontSize": 12
+        }
+      },
+      "seriesMap": {
+        "bar1": {
+          "itemColor": ["rgba(255, 158, 68, 0.5)", "rgba(255, 158, 68, 0)"],
+          "borderColor": "rgba(255, 158, 68, 1)"
+        },
+        "bar2": {
+          "itemColor": "#5ef3ff"
+        },
+        "line1": {
+          "itemColor": "#b0d318"
+        },
+        "line2": {
+          "itemColor": "#ffdbe4"
+        },
+      }
+    },
+    "link_json": {},
+    "params_json": {}
+  }
+}

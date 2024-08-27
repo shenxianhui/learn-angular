@@ -14,50 +14,20 @@
   "data": {
     "list": [
       {
-        "attribute": "interval",
-        "declare": "自动切换的时间间隔，单位为毫秒",
-        "type": "Number",
-        "desc": "必传。只做展示，不做校验"
-      },
-      {
         "attribute": "list.header.icon",
         "declare": "卡片头部icon地址",
         "type": "String",
         "desc": "必传。只做展示，不做校验"
       },
       {
-        "attribute": "list.header.data.label.text",
-        "declare": "卡片头部标签内容",
+        "attribute": "list.header.data.label",
+        "declare": "卡片头部标签",
         "type": "String",
         "desc": "必传。只做展示，不做校验"
       },
       {
-        "attribute": "list.header.data.label.fontSize",
-        "declare": "卡片头部标签字体大小",
-        "type": "Number",
-        "desc": "必传。只做展示，不做校验"
-      },
-      {
-        "attribute": "list.header.data.label.color",
-        "declare": "卡片头部标签颜色",
-        "type": "String",
-        "desc": "必传。只做展示，不做校验"
-      },
-      {
-        "attribute": "list.header.data.value.text",
-        "declare": "卡片头部数值内容",
-        "type": "String",
-        "desc": "必传。只做展示，不做校验"
-      },
-      {
-        "attribute": "list.header.data.value.fontSize",
-        "declare": "卡片头部数值字体大小",
-        "type": "Number",
-        "desc": "必传。只做展示，不做校验"
-      },
-      {
-        "attribute": "list.header.data.value.color",
-        "declare": "卡片头部数值颜色",
+        "attribute": "list.header.data.value",
+        "declare": "卡片头部数值",
         "type": "String",
         "desc": "必传。只做展示，不做校验"
       },
@@ -68,20 +38,8 @@
         "desc": "必传。只做展示，不做校验"
       },
       {
-        "attribute": "list.content.row.value.text",
-        "declare": "卡片内容数值内容",
-        "type": "String",
-        "desc": "必传。只做展示，不做校验"
-      },
-      {
-        "attribute": "list.content.row.value.fontSize",
-        "declare": "卡片内容数值字体大小",
-        "type": "Number",
-        "desc": "必传。只做展示，不做校验"
-      },
-      {
-        "attribute": "list.content.row.value.color",
-        "declare": "卡片内容数值颜色",
+        "attribute": "list.content.row.value",
+        "declare": "卡片内容数值",
         "type": "String",
         "desc": "必传。只做展示，不做校验"
       }
@@ -89,31 +47,18 @@
     "comments": [],
     "format": {
       "data": {
-        "interval": 10000,
         "list": [
           {
             "header": {
               "icon": "xxx",
               "data": [
                 {
-                  "label": {
-                    "text": "姓名",
-                    "fontSize": 24,
-                    "color": "#fff"
-                  },
-                  "value": {
-                    "text": "张三",
-                    "fontSize": 24,
-                    "color": "#fff"
-                  }
+                  "label": "姓名",
+                  "value": "张三"
                 },
                 {
-                  "label": {
-                    "text": "时间"
-                  },
-                  "value": {
-                    "text": "1天12小时24分钟"
-                  }
+                  "label": "时间",
+                  "value": "1天12小时24分钟"
                 }
               ]
             },
@@ -121,25 +66,17 @@
               "row": [
                 {
                   "icon": "xxx",
-                  "value": {
-                    "text": "内容内容内容内容内容",
-                    "fontSize": 24,
-                    "color": "#fff"
-                  }
+                  "value": "内容内容内容内容内容"
                 },
                 {
                   "icon": "xxx",
-                  "value": {
-                    "text": "内容内容内容内容内容"
-                  }
+                  "value": "内容内容内容内容内容"
                 }
               ],
               "row": [
                 {
                   "icon": "xxx",
-                  "value": {
-                    "text": "内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容"
-                  }
+                  "value": "内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容"
                 }
               ]
             }

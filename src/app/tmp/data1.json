@@ -1,0 +1,101 @@
+{
+  "id": 307,
+  "name": "comprehensive-list",
+  "module_type": "table",
+  "width": 90,
+  "height": 80,
+  "json_data": {
+    "data_json": {
+      "data": {
+        "list": [
+          {
+            "header": {
+              "icon": "xxx",
+              "data": [
+                {
+                  "label": "姓名",
+                  "value": "张三"
+                },
+                {
+                  "label": "时间",
+                  "value": "1天12小时24分钟"
+                }
+              ]
+            },
+            "content": {
+              "row": [
+                {
+                  "icon": "xxx",
+                  "value": "内容内容内容内容内容"
+                },
+                {
+                  "icon": "xxx",
+                  "value": "内容内容内容内容内容"
+                }
+              ],
+              "row": [
+                {
+                  "icon": "xxx",
+                  "value": "内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容"
+                }
+              ]
+            }
+          }
+        ]
+      }
+    },
+    "color_json": {
+      "interval": 10000,
+      "header": {
+        "data": [
+          {
+            "label": {
+              "fontSize": 24,
+              "color": "#fff"
+            },
+            "value": {
+              "fontSize": 24,
+              "color": "#fff"
+            }
+          },
+          {
+            "label": {
+              "fontSize": 24,
+              "color": "#fff"
+            },
+            "value": {
+              "fontSize": 24,
+              "color": "#fff"
+            }
+          }
+        ]
+      },
+      "content": {
+        "row": [
+          {
+            "value": {
+              "fontSize": 24,
+              "color": "#fff"
+            }
+          },
+          {
+            "value": {
+              "fontSize": 24,
+              "color": "#fff"
+            }
+          },
+        ],
+        "row": [
+          {
+            "value": {
+              "fontSize": 24,
+              "color": "#fff"
+            }
+          },
+        ],
+      }
+    },
+    "link_json": {},
+    "params_json": {}
+  }
+}

@@ -14,44 +14,14 @@
   "data": {
     "list": [
       {
-        "attribute": "legend.left",
-        "declare": "图例组件离容器左侧的距离",
-        "type": "String",
-        "desc": "必传。只做展示，不做校验"
-      },
-      {
-        "attribute": "legend.top",
-        "declare": "图例组件离容器上侧的距离",
-        "type": "String",
-        "desc": "必传。只做展示，不做校验"
-      },
-      {
-        "attribute": "legend.right",
-        "declare": "图例组件离容器右侧的距离",
-        "type": "String",
-        "desc": "必传。只做展示，不做校验"
-      },
-      {
-        "attribute": "legend.bottom",
-        "declare": "图例组件离容器下侧的距离",
-        "type": "String",
-        "desc": "必传。只做展示，不做校验"
-      },
-      {
-        "attribute": "legend.textStyle.color",
-        "declare": "图例文字的颜色",
-        "type": "String",
-        "desc": "必传。只做展示，不做校验"
-      },
-      {
-        "attribute": "legend.textStyle.fontSize",
-        "declare": "图例文字的字体大小",
-        "type": "Number",
-        "desc": "必传。只做展示，不做校验"
-      },
-      {
         "attribute": "series.type",
         "declare": "系列类型",
+        "type": "String",
+        "desc": "必传。只做展示，不做校验"
+      },
+      {
+        "attribute": "series.key",
+        "declare": "系列 key 值, 用于匹配对应样式",
         "type": "String",
         "desc": "必传。只做展示，不做校验"
       },
@@ -61,69 +31,30 @@
         "type": "String",
         "desc": "必传。只做展示，不做校验"
       },
-      {
-        "attribute": "series.itemStyle.color",
-        "declare": "柱条的颜色 (渐变色用数组表示)",
-        "type": "String|Array",
-        "desc": "必传。只做展示，不做校验"
-      },
-      {
-        "attribute": "series.borderStyle.color",
-        "declare": "柱条边框的颜色",
-        "type": "String",
-        "desc": "必传。只做展示，不做校验"
-      },
-      {
-        "attribute": "series.lineStyle.color",
-        "declare": "线的颜色",
-        "type": "String",
-        "desc": "必传。只做展示，不做校验"
-      },
     ],
     "comments": [],
     "format": {
       "data": {
-        "legend": {
-          "left": "auto",
-          "top": "auto",
-          "right": "auto",
-          "bottom": "auto",
-          "textStyle": {
-            "color": "#333",
-            "fontSize": 12
-          }
-        },
         "series": [
           {
             "type": "bar",
-            "name": "柱1",
-            "itemStyle": {
-              "color": ["rgba(255, 158, 68, 0.5)", "rgba(255, 158, 68, 0)"]
-            },
-            "borderStyle": {
-              "color": "rgba(255, 158, 68, 1)"
-            }
+            "key": "bar1",
+            "name": "柱1"
           },
           {
             "type": "bar",
             "name": "柱2",
-            "itemStyle": {
-              "color": "#5ef3ff"
-            }
+            "key": "bar2"
           },
           {
             "type": "line",
             "name": "线1",
-            "lineStyle": {
-              "color": "#b0d318"
-            }
+            "key": "line1"
           },
           {
             "type": "line",
             "name": "线2",
-            "lineStyle": {
-              "color": "#ffdbe4"
-            }
+            "key": "line2"
           }
         ]
       }

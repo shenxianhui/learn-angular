@@ -1,33 +1,11 @@
 {
-  "name": "示例2",
-  "id": "306",
-  "unique": "status-rank",
-  "type_cn": "排行图",
-  "type_en": "rank",
-  "preview": "assets/status-rank/image/status-rank.png",
-  "com_type": "angular",
-  "sampleCode": "",
-  "config": {
-    "list": [],
-    "comments": []
-  },
-  "data": {
-    "list": [
-      {
-        "attribute": "list.label",
-        "declare": "节点标签",
-        "type": "String",
-        "desc": "必传。只做展示，不做校验"
-      },
-      {
-        "attribute": "list.content",
-        "declare": "节点内容, 用 <br> 换行",
-        "type": "String",
-        "desc": "必传。只做展示，不做校验"
-      }
-    ],
-    "comments": [],
-    "format": {
+  "id": 307,
+  "name": "comprehensive-list",
+  "module_type": "table",
+  "width": 90,
+  "height": 80,
+  "json_data": {
+    "data_json": {
       "data": {
         "list": [
           {
@@ -52,6 +30,20 @@
           }
         ]
       }
-    }
+    },
+    "color_json": {
+      "activeIndex": 2,
+      "label": {
+        "fontSize": 24,
+        "color": "#fff"
+      },
+      "content": {
+        "fontSize": 20,
+        "color": "#fff",
+        "lineHeight": 1.5
+      }
+    },
+    "link_json": {},
+    "params_json": {}
   }
 }
