@@ -1,7 +1,7 @@
 {
-  "id": 307,
-  "name": "comprehensive-list",
-  "module_type": "table",
+  "id": 318,
+  "name": "carousel-info",
+  "module_type": "survey",
   "width": 90,
   "height": 80,
   "json_data": {
@@ -22,8 +22,8 @@
                 }
               ]
             },
-            "content": {
-              "row": [
+            "content": [
+              [
                 {
                   "icon": "xxx",
                   "value": "内容内容内容内容内容"
@@ -33,13 +33,13 @@
                   "value": "内容内容内容内容内容"
                 }
               ],
-              "row": [
+              [
                 {
                   "icon": "xxx",
                   "value": "内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容"
                 }
               ]
-            }
+            ]
           }
         ]
       }
@@ -70,8 +70,8 @@
           }
         ]
       },
-      "content": {
-        "row": [
+      "content": [
+        [
           {
             "value": {
               "fontSize": 24,
@@ -83,17 +83,17 @@
               "fontSize": 24,
               "color": "#fff"
             }
-          },
+          }
         ],
-        "row": [
+        [
           {
             "value": {
               "fontSize": 24,
               "color": "#fff"
             }
-          },
-        ],
-      }
+          }
+        ]
+      ]
     },
     "link_json": {},
     "params_json": {}

@@ -1,12 +1,13 @@
 {
-  "id": 307,
-  "name": "comprehensive-list",
-  "module_type": "table",
+  "id": 317,
+  "name": "details-progress",
+  "module_type": "others",
   "width": 90,
   "height": 80,
   "json_data": {
     "data_json": {
       "data": {
+        "activeIndex": 2,
         "list": [
           {
             "label": "节点1",
@@ -32,7 +33,6 @@
       }
     },
     "color_json": {
-      "activeIndex": 2,
       "label": {
         "fontSize": 24,
         "color": "#fff"

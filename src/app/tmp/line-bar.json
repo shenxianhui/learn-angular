@@ -1,32 +1,39 @@
 {
-  "id": 307,
-  "name": "comprehensive-list",
+  "id": 319,
+  "name": "line-bar",
   "module_type": "table",
   "width": 90,
   "height": 80,
   "json_data": {
     "data_json": {
       "data": {
+        "xAxis": {
+          "data": ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"]
+        },
         "series": [
           {
             "type": "bar",
             "key": "bar1",
-            "name": "柱1"
+            "name": "柱1",
+            "data": [120, 132, 101, 134, 90, 230, 210]
           },
           {
             "type": "bar",
             "name": "柱2",
             "key": "bar2",
+            "data": [120, 132, 101, 134, 90, 230, 210]
           },
           {
             "type": "line",
             "name": "线1",
             "key": "line1",
+            "data": [120, 132, 101, 134, 90, 230, 210]
           },
           {
             "type": "line",
             "name": "线2",
             "key": "line2",
+            "data": [120, 132, 101, 134, 90, 230, 210]
           }
         ]
       }
@@ -55,7 +62,7 @@
         },
         "line2": {
           "itemColor": "#ffdbe4"
-        },
+        }
       }
     },
     "link_json": {},
