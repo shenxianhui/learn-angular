@@ -17,7 +17,8 @@ import { NoticeBarComponent } from './notice-bar/notice-bar.component'
 import { InfoStatisticsComponent } from './info-statistics/info-statistics.component'
 import { HighlightLabelComponent } from './highlight-label/highlight-label.component'
 import { ComprehensiveListComponent } from './comprehensive-list/comprehensive-list.component'
-import { RuleExpressionComponent } from './rule-expression/rule-expression.component'
+import { RuleExpressionComponent } from './rule-expression/rule-expression.component';
+import { LineBarComponent } from './line-bar/line-bar.component'
 
 registerLocaleData(zh)
 
@@ -34,6 +35,7 @@ registerLocaleData(zh)
     HighlightLabelComponent,
     ComprehensiveListComponent,
     RuleExpressionComponent,
+    LineBarComponent,
   ],
   imports: [
     BrowserModule,
