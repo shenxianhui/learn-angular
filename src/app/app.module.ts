@@ -6,6 +6,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 import { registerLocaleData } from '@angular/common'
 import { NgZorroAntdModule, NZ_I18N, zh_CN } from 'ng-zorro-antd'
 import zh from '@angular/common/locales/zh'
+import { NgxEchartsModule } from 'ngx-echarts'
 
 import { AppComponent } from './app.component'
 import { ChildComponent } from './child/child.component'
@@ -17,7 +18,7 @@ import { NoticeBarComponent } from './notice-bar/notice-bar.component'
 import { InfoStatisticsComponent } from './info-statistics/info-statistics.component'
 import { HighlightLabelComponent } from './highlight-label/highlight-label.component'
 import { ComprehensiveListComponent } from './comprehensive-list/comprehensive-list.component'
-import { RuleExpressionComponent } from './rule-expression/rule-expression.component';
+import { RuleExpressionComponent } from './rule-expression/rule-expression.component'
 import { LineBarComponent } from './line-bar/line-bar.component'
 
 registerLocaleData(zh)
@@ -44,6 +45,7 @@ registerLocaleData(zh)
     HttpClientModule,
     BrowserAnimationsModule,
     ReactiveFormsModule,
+    NgxEchartsModule,
   ],
   providers: [{ provide: NZ_I18N, useValue: zh_CN }],
   bootstrap: [AppComponent],
