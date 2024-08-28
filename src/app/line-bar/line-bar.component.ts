@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core'
+import * as echarts from 'echarts'
 
 @Component({
   selector: 'app-line-bar',
@@ -9,9 +10,15 @@ export class LineBarComponent implements OnInit {
   chartOptions = {
     tooltip: {
       trigger: 'axis',
+      axisPointer: {
+        type: 'shadow',
+      },
     },
     legend: {
-      data: ['Step Start', 'Step Middle', 'Step End'],
+      icon: 'rect',
+      itemWidth: 10,
+      itemHeight: 2,
+      itemGap: 18,
     },
     grid: {
       left: '3%',
@@ -21,29 +28,123 @@ export class LineBarComponent implements OnInit {
     },
     xAxis: {
       type: 'category',
+      axisLabel: {
+        color: '#BABBCA',
+        fontSize: 14,
+      },
+      axisLine: {
+        show: false,
+      },
+      splitLine: {
+        show: false,
+      },
+      axisTick: {
+        show: false,
+      },
+      // boundaryGap: false
       data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
     },
     yAxis: {
       type: 'value',
+      nameTextStyle: {
+        fontSize: 14,
+        color: '#BABBCA',
+      },
+      axisLabel: {
+        width: 20,
+        fontSize: 14,
+        color: '#BABBCA',
+      },
+      axisLine: {
+        show: false,
+      },
+      axisTick: {
+        show: false,
+      },
+      splitLine: {
+        lineStyle: {
+          // type: 'dashed',
+          color: 'rgba(198, 198, 198, 0.40)',
+        },
+      },
     },
     series: [
       {
-        name: 'Step Start',
+        name: 'Line1',
         type: 'line',
         step: 'start',
         data: [120, 132, 101, 134, 90, 230, 210],
       },
       {
-        name: 'Step Middle',
+        name: 'Line2',
         type: 'line',
         step: 'middle',
         data: [220, 282, 201, 234, 290, 430, 410],
       },
       {
-        name: 'Step End',
+        name: 'Line3',
         type: 'line',
         step: 'end',
         data: [450, 432, 401, 454, 590, 530, 510],
+      },
+      {
+        type: 'bar',
+        name: 'Bar1',
+        stack: 1,
+        barGap: '0',
+        borderWidth: 0,
+        itemStyle: {
+          normal: {
+            color: new echarts.graphic.LinearGradient(
+              0,
+              0,
+              0,
+              1,
+              [
+                {
+                  offset: 0,
+                  color: 'rgb(81, 203, 216, 0.5)',
+                },
+                {
+                  offset: 1,
+                  color: 'rgb(81, 203, 216, 0)',
+                },
+              ],
+              false,
+            ),
+          },
+        },
+        label: {
+          normal: {
+            show: false,
+          },
+        },
+        data: [100, 200, 300, 400, 300, 200, 100],
+      },
+      {
+        type: 'bar',
+        name: '',
+        stack: 1,
+        barGap: '0',
+        itemStyle: {
+          normal: {
+            color: 'rgb(121, 238, 255)',
+          },
+        },
+        label: {
+          normal: {
+            show: false,
+          },
+        },
+        data: [10, 10, 10, 10, 10, 10, 10],
+        tooltip: {
+          show: false,
+        },
+      },
+      {
+        type: 'bar',
+        name: 'Bar2',
+        data: [120, 200, 150, 80, 70, 110, 130],
       },
     ],
   }
