@@ -1,0 +1,82 @@
+{
+  "name": "折柱图",
+  "id": "319",
+  "unique": "line-bar",
+  "type_cn": "柱状图",
+  "type_en": "bar",
+  "preview": "assets/line-bar/image/line-bar.png",
+  "com_type": "angular",
+  "sampleCode": "",
+  "config": {
+    "list": [],
+    "comments": []
+  },
+  "data": {
+    "list": [
+      {
+        "attribute": "xAxis.data",
+        "declare": "X轴数据",
+        "type": "Array",
+        "desc": "必传。只做展示，不做校验"
+      },
+      {
+        "attribute": "series.type",
+        "declare": "系列类型",
+        "type": "String",
+        "desc": "必传。只做展示，不做校验"
+      },
+      {
+        "attribute": "series.key",
+        "declare": "系列 key 值, 用于匹配对应样式",
+        "type": "String",
+        "desc": "必传。只做展示，不做校验"
+      },
+      {
+        "attribute": "series.name",
+        "declare": "系列名称，用于tooltip的显示，legend 的图例筛选",
+        "type": "String",
+        "desc": "必传。只做展示，不做校验"
+      },
+      {
+        "attribute": "series.data",
+        "declare": "系列中的数据内容数组",
+        "type": "Array",
+        "desc": "必传。只做展示，不做校验"
+      }
+    ],
+    "comments": [],
+    "format": {
+      "data": {
+        "xAxis": {
+          "data": ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"]
+        },
+        "series": [
+          {
+            "type": "bar",
+            "key": "bar1",
+            "name": "柱1",
+            "data": [320, 332, 301, 334, 390, 330, 320]
+          },
+          {
+            "type": "bar",
+            "name": "柱2",
+            "key": "bar2",
+            "data": [150, 232, 201, 154, 190, 330, 410]
+          },
+          {
+            "type": "line",
+            "name": "线1",
+            "key": "line1",
+            "data": [220, 182, 191, 234, 290, 330, 310]
+          },
+          {
+            "type": "line",
+            "name": "线2",
+            "key": "line2",
+            "data": [120, 132, 101, 134, 90, 230, 210]
+          }
+        ]
+      }
+    }
+  }
+}
