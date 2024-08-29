@@ -79,7 +79,10 @@ series.forEach(item => {
         },
       )
     } else {
-      seriesData.push(item)
+      seriesData.unshift({
+        ...item,
+        stack: 1,
+      })
     }
   }
 })
@@ -154,7 +157,7 @@ export class LineBarComponent implements OnInit {
         },
         splitLine: {
           lineStyle: {
-            // type: 'dashed',
+            type: 'dashed',
             color: 'rgba(198, 198, 198, 0.40)',
           },
         },

@@ -46,7 +46,7 @@
         "right": "center",
         "bottom": "auto",
         "textStyle": {
-          "color": "#333",
+          "color": "#fff",
           "fontSize": 12
         }
       },
