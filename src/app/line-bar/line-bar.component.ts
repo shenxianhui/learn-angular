@@ -26,7 +26,7 @@ series.forEach(item => {
     })
   }
   if (item.type === 'bar') {
-    const styleObj = seriesMap[item.key]
+    const styleObj = seriesMap[item.key] || {}
 
     if (styleObj.borderColor) {
       seriesData.push(
