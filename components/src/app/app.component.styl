@@ -1,0 +1,77 @@
+.bg-bottom_box {
+  overflow-x: auto;
+
+  &::-webkit-scrollbar {
+    /* 滚动条整体样式 */
+    width: 1px; /* 高宽分别对应横竖滚动条的尺寸 */
+    height: 8px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    /* 滚动条里面小方块 */
+    border-radius: 6px;
+    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
+    background: #535353;
+  }
+
+  &::-webkit-scrollbar-track {
+    /* 滚动条里面轨道 */
+    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
+    border-radius: 6px;
+    background: #ededed;
+  }
+}
+.bg-bottom {
+  height: 100%;
+  position: relative;
+
+  .core-layout {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+  }
+}
+.screen-animation
+  animation-name run
+  animation-timing-function linear
+  animation-iteration-count 1
+  animation-delay 0s
+  animation-duration 0.3s
+  background-size cover
+.dash-container
+  // width 1920px
+  height 100%
+  position relative
+
+  .col
+    height 100%
+
+    app-card-l
+      display block
+
+    app-card-r
+      display block
+
+  .col-left
+    height 71%
+
+    app-card-l
+      display block
+
+    app-card-r
+      display block
+
+  .col-left-noneView
+    height 78%
+
+    app-card-l
+      display block
+
+    app-card-r
+      display block
+.example {
+  padding-top: 10px;
+}
+.moduleArea {
+  position: absolute;
+}

@@ -1,0 +1,48 @@
+{
+  "name": "播放器",
+  "id": "283",
+  "unique": "player",
+  "type_cn": "数据展示",
+  "type_en": "data-display",
+  "preview": "assets/theme-list/image/player.png",
+  "com_type": "angular",
+  "sampleCode": "{'borderRadius':'20px'}",
+  "config": {
+    "list": [
+      {
+        "attribute": "borderRadius",
+        "declare": "外边框圆角",
+        "default": "0px",
+        "desc": "不传或者为空时，启用默认值"
+      }
+    ],
+    "comments": [
+      "示例：{'borderRadius':'20px'}"
+    ]
+  },
+  "data": {
+    "list": [
+      {
+        "attribute": "type",
+        "declare": "图片image或视频video",
+        "type": "String",
+        "desc": "必传。只做展示，不做校验"
+      },
+      {
+        "attribute": "src",
+        "declare": "图片或视频资源URL地址",
+        "type": "String",
+        "desc": "必传。只做展示，不做校验"
+      }
+    ],
+    "comments": [],
+    "format": {
+      "data":{
+        "data": {
+          "type": "video",
+          "src": "http://127.0.0.1:8080/video/video.mp4"
+        }
+      }
+    }
+  }
+}

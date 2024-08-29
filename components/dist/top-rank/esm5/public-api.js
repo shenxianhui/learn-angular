@@ -1,0 +1,13 @@
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ */
+import { createPlugin } from "plugin-manager";
+import { TopRankComponent } from "./lib/top-rank.component";
+import { TopRankModule } from "./lib/top-rank.module";
+export default createPlugin({
+    name: "top-rank",
+    module: TopRankModule,
+    component: TopRankComponent,
+});
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoicHVibGljLWFwaS5qcyIsInNvdXJjZVJvb3QiOiJuZzovL3RvcC1yYW5rLyIsInNvdXJjZXMiOlsicHVibGljLWFwaS50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiOzs7O0FBQUEsT0FBTyxFQUFFLFlBQVksRUFBRSxNQUFNLGdCQUFnQixDQUFDO0FBQzlDLE9BQU8sRUFBRSxnQkFBZ0IsRUFBRSxNQUFNLDBCQUEwQixDQUFDO0FBQzVELE9BQU8sRUFBRSxhQUFhLEVBQUUsTUFBTSx1QkFBdUIsQ0FBQztBQUV0RCxlQUFlLFlBQVksQ0FBQztJQUMxQixJQUFJLEVBQUUsVUFBVTtJQUNoQixNQUFNLEVBQUUsYUFBYTtJQUNyQixTQUFTLEVBQUUsZ0JBQWdCO0NBQzVCLENBQUMsQ0FBQyIsInNvdXJjZXNDb250ZW50IjpbImltcG9ydCB7IGNyZWF0ZVBsdWdpbiB9IGZyb20gXCJwbHVnaW4tbWFuYWdlclwiO1xuaW1wb3J0IHsgVG9wUmFua0NvbXBvbmVudCB9IGZyb20gXCIuL2xpYi90b3AtcmFuay5jb21wb25lbnRcIjtcbmltcG9ydCB7IFRvcFJhbmtNb2R1bGUgfSBmcm9tIFwiLi9saWIvdG9wLXJhbmsubW9kdWxlXCI7XG5cbmV4cG9ydCBkZWZhdWx0IGNyZWF0ZVBsdWdpbih7XG4gIG5hbWU6IFwidG9wLXJhbmtcIixcbiAgbW9kdWxlOiBUb3BSYW5rTW9kdWxlLFxuICBjb21wb25lbnQ6IFRvcFJhbmtDb21wb25lbnQsXG59KTtcbiJdfQ==

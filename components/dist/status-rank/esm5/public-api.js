@@ -1,0 +1,13 @@
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ */
+import { createPlugin } from "plugin-manager";
+import { StatusRankComponent } from "./lib/status-rank.component";
+import { StatusRankModule } from "./lib/status-rank.module";
+export default createPlugin({
+    name: "status-rank",
+    module: StatusRankModule,
+    component: StatusRankComponent,
+});
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoicHVibGljLWFwaS5qcyIsInNvdXJjZVJvb3QiOiJuZzovL3N0YXR1cy1yYW5rLyIsInNvdXJjZXMiOlsicHVibGljLWFwaS50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiOzs7O0FBQUEsT0FBTyxFQUFFLFlBQVksRUFBRSxNQUFNLGdCQUFnQixDQUFDO0FBQzlDLE9BQU8sRUFBRSxtQkFBbUIsRUFBRSxNQUFNLDZCQUE2QixDQUFDO0FBQ2xFLE9BQU8sRUFBRSxnQkFBZ0IsRUFBRSxNQUFNLDBCQUEwQixDQUFDO0FBRTVELGVBQWUsWUFBWSxDQUFDO0lBQzFCLElBQUksRUFBRSxhQUFhO0lBQ25CLE1BQU0sRUFBRSxnQkFBZ0I7SUFDeEIsU0FBUyxFQUFFLG1CQUFtQjtDQUMvQixDQUFDLENBQUMiLCJzb3VyY2VzQ29udGVudCI6WyJpbXBvcnQgeyBjcmVhdGVQbHVnaW4gfSBmcm9tIFwicGx1Z2luLW1hbmFnZXJcIjtcbmltcG9ydCB7IFN0YXR1c1JhbmtDb21wb25lbnQgfSBmcm9tIFwiLi9saWIvc3RhdHVzLXJhbmsuY29tcG9uZW50XCI7XG5pbXBvcnQgeyBTdGF0dXNSYW5rTW9kdWxlIH0gZnJvbSBcIi4vbGliL3N0YXR1cy1yYW5rLm1vZHVsZVwiO1xuXG5leHBvcnQgZGVmYXVsdCBjcmVhdGVQbHVnaW4oe1xuICBuYW1lOiBcInN0YXR1cy1yYW5rXCIsXG4gIG1vZHVsZTogU3RhdHVzUmFua01vZHVsZSxcbiAgY29tcG9uZW50OiBTdGF0dXNSYW5rQ29tcG9uZW50LFxufSk7XG4iXX0=

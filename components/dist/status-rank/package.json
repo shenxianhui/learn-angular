@@ -1,0 +1,21 @@
+{
+  "name": "status-rank",
+  "version": "0.0.1",
+  "peerDependencies": {
+    "@angular/common": "^7.2.0",
+    "@angular/core": "^7.2.0"
+  },
+  "main": "bundles/status-rank.umd.js",
+  "module": "fesm5/status-rank.js",
+  "es2015": "fesm2015/status-rank.js",
+  "esm5": "esm5/status-rank.js",
+  "esm2015": "esm2015/status-rank.js",
+  "fesm5": "fesm5/status-rank.js",
+  "fesm2015": "fesm2015/status-rank.js",
+  "typings": "status-rank.d.ts",
+  "metadata": "status-rank.metadata.json",
+  "sideEffects": false,
+  "dependencies": {
+    "tslib": "^1.9.0"
+  }
+}

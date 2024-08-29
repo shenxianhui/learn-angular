@@ -1,0 +1,41 @@
+import { OnInit, ElementRef } from '@angular/core';
+import { PluginManagerService, componentData } from 'plugin-manager';
+export declare class DoughnutComponent implements OnInit {
+    private el;
+    private pluginManagerService;
+    moduleData: any;
+    $elem: any;
+    donutChartData: any;
+    doughnutData: any;
+    leftActive: boolean;
+    rightActive: boolean;
+    leftText: string;
+    rightText: string;
+    btnShowIndex: number;
+    switchAcitveIndex: number;
+    switchInfo: {
+        "switchText": string;
+        "rangeData": number[];
+    }[];
+    switchColor: any;
+    currentShowData: any;
+    doughnutColor: any;
+    legendWidth: any;
+    legendTop: any;
+    pageLoading: boolean;
+    switchLoading: boolean;
+    configData: any;
+    constructor(el: ElementRef, pluginManagerService: PluginManagerService, comData: componentData);
+    that: this;
+    chart: any;
+    backEmit(e: any): void;
+    onResize(): void;
+    ngOnInit(): void;
+    pageOperation(): void;
+    pageReset(): void;
+    pageBtn(btnStatus: any): void;
+    switchOperation(): void;
+    switchReset(): void;
+    switchBtn(i: any): void;
+    fetchData(loading: any): void;
+}

@@ -1,0 +1,627 @@
+{
+  "name": "轮播卡片",
+  "id": "282",
+  "unique": "carousel-card",
+  "type_cn": "数据展示",
+  "type_en": "ata-display",
+  "preview": "assets/carousel-card/image/carousel-card.png",
+  "com_type": "angular",
+  "sampleCode": "",
+  "config": {
+    "list": [],
+    "comments": []
+  },
+  "data": {
+    "list": [
+      {
+        "attribute": "list",
+        "declare": "卡片数组列表",
+        "type": "Array",
+        "desc": "必传。只做展示，不做校验"
+      },
+      {
+        "attribute": "autoplay",
+        "declare": "两种模式，true为一行，false为分页",
+        "type": "Boolean",
+        "desc": "必传。只做展示，不做校验"
+      },
+      {
+        "attribute": "playCardNum",
+        "declare": "当autoplay为tru，每次轮播卡片数量",
+        "type": "Number",
+        "desc": "非必传，默认为1"
+      },
+      {
+        "attribute": "columns",
+        "declare": "当autoplay为false时，每行展示的卡片数量",
+        "type": "String",
+        "desc": "非必传，默认为4"
+      },
+      {
+        "attribute": "list.size",
+        "declare": "卡片尺寸，分为small、medium两种",
+        "type": "String",
+        "desc": "必传。只做展示，不做校验"
+      },
+      {
+        "attribute": "list.title",
+        "declare": "卡片标题",
+        "type": "String",
+        "desc": "必传。只做展示，不做校验"
+      },
+      {
+        "attribute": "list.cover",
+        "declare": "卡片封面图",
+        "type": "String",
+        "desc": "必传。只做展示，不做校验"
+      },
+      {
+        "attribute": "list.coverWidth",
+        "declare": "卡片封面图宽度",
+        "type": "String",
+        "desc": "非必传，默认为100%"
+      },
+      {
+        "attribute": "list.coverHeight",
+        "declare": "卡片封面图高度",
+        "type": "String",
+        "desc": "非必传，默认为100%"
+      },
+      {
+        "attribute": "list.isLike",
+        "declare": "卡片右上角是否收藏",
+        "type": "Boolean",
+        "desc": "非必传，默认false"
+      },
+      {
+        "attribute": "list.tags",
+        "declare": "卡片标签数组",
+        "type": "Array",
+        "desc": "非必传，默认为[]空数组"
+      },
+      {
+        "attribute": "list.num",
+        "declare": "卡片右下角数量",
+        "type": "Number",
+        "desc": "非必传，默认0"
+      },
+      {
+        "attribute": "list.hoverBtn",
+        "declare": "鼠标悬浮到卡片上展示的按钮数组，属性为text",
+        "type": "Array",
+        "desc": "必传。只做展示，不做校验"
+      },
+      {
+        "attribute": "list.hoverBtnSize",
+        "declare": "鼠标悬浮到卡片上展示的按钮大小",
+        "type": "String",
+        "desc": "非必传，默认14px"
+      }
+    ],
+    "comments": [],
+    "format": {
+      "data": {
+        "autoplay": false,
+        "playCardNum": 3,
+        "columns": 4,
+        "list": [
+          {
+            "size": "small",
+            "title": "某某企业资产漏洞平台大屏",
+            "cover": "https://szxh.oss-cn-beijing.aliyuncs.com/9b896bf38fdbbe973ba8e86691635c47e498674bbfdabba011eef3229c7d6645.jpg",
+            "isLike": true,
+            "tags": [
+              "3D模型",
+              "拓扑"
+            ],
+            "num": 13,
+            "hoverBtn": [
+              {
+                "text": "查看"
+              },
+              {
+                "text": "取消"
+              }
+            ]
+          },
+          {
+            "size": "small",
+            "title": "漏洞平台态势大屏",
+            "cover": "https://szxh.oss-cn-beijing.aliyuncs.com/47088af4526c7cba8ae9a7791e3c15f1d6ce6172ea4a53f8b3bdce8caca0dcfd.png",
+            "coverWidth": "80%",
+            "coverHeight": "80%",
+            "isLike": false,
+            "tags": [
+              "中国",
+              "运营商"
+            ],
+            "num": 663,
+            "hoverBtnSize": "20px",
+            "hoverBtn": [
+              {
+                "text": "关闭"
+              },
+              {
+                "text": "登陆"
+              }
+            ]
+          },
+          {
+            "size": "medium",
+            "title": "ADBOS网络安全态势",
+            "cover": "https://szxh.oss-cn-beijing.aliyuncs.com/460580ff511d0a6549b00c27bad11d92ef6f3c19f6223d435da1b0656806ea20.jpg",
+            "isLike": false,
+            "tags": [
+              "日本",
+              "移动网"
+            ],
+            "num": 93,
+            "hoverBtn": [
+              {
+                "text": "按钮1"
+              },
+              {
+                "text": "按钮2"
+              },
+              {
+                "text": "按钮3"
+              }
+            ]
+          },
+          {
+            "size": "small",
+            "title": "苏州移动漏洞平台态势大屏",
+            "cover": "https://szxh.oss-cn-beijing.aliyuncs.com/8b72994629a739057149ebd734d4d0a0978b39c7c411e109de2cc73ad6a3bc7e.jpg",
+            "isLike": true,
+            "tags": [
+              "漏洞",
+              "大屏幕"
+            ],
+            "num": 37,
+            "hoverBtn": [
+              {
+                "text": "漏洞"
+              },
+              {
+                "text": "按钮"
+              }
+            ]
+          },
+          {
+            "size": "small",
+            "title": "某某企业资产漏洞平台大屏",
+            "cover": "https://szxh.oss-cn-beijing.aliyuncs.com/9b896bf38fdbbe973ba8e86691635c47e498674bbfdabba011eef3229c7d6645.jpg",
+            "isLike": true,
+            "tags": [
+              "3D模型",
+              "拓扑"
+            ],
+            "num": 13,
+            "hoverBtn": [
+              {
+                "text": "查看"
+              },
+              {
+                "text": "取消"
+              }
+            ]
+          },
+          {
+            "size": "medium",
+            "title": "漏洞平台态势大屏",
+            "cover": "https://szxh.oss-cn-beijing.aliyuncs.com/47088af4526c7cba8ae9a7791e3c15f1d6ce6172ea4a53f8b3bdce8caca0dcfd.png",
+            "isLike": false,
+            "tags": [
+              "中国",
+              "运营商"
+            ],
+            "num": 663,
+            "hoverBtn": [
+              {
+                "text": "关闭"
+              },
+              {
+                "text": "登陆"
+              }
+            ]
+          },
+          {
+            "size": "medium",
+            "title": "ADBOS网络安全态势",
+            "cover": "https://szxh.oss-cn-beijing.aliyuncs.com/460580ff511d0a6549b00c27bad11d92ef6f3c19f6223d435da1b0656806ea20.jpg",
+            "isLike": false,
+            "tags": [
+              "日本",
+              "移动网"
+            ],
+            "num": 93,
+            "hoverBtn": [
+              {
+                "text": "按钮1"
+              },
+              {
+                "text": "按钮2"
+              },
+              {
+                "text": "按钮3"
+              }
+            ]
+          },
+          {
+            "size": "small",
+            "title": "苏州移动漏洞平台态势大屏",
+            "cover": "https://szxh.oss-cn-beijing.aliyuncs.com/8b72994629a739057149ebd734d4d0a0978b39c7c411e109de2cc73ad6a3bc7e.jpg",
+            "isLike": true,
+            "tags": [
+              "漏洞",
+              "大屏幕"
+            ],
+            "num": 37,
+            "hoverBtn": [
+              {
+                "text": "漏洞"
+              },
+              {
+                "text": "按钮"
+              }
+            ]
+          },
+          {
+            "size": "small",
+            "title": "某某企业资产漏洞平台大屏",
+            "cover": "https://szxh.oss-cn-beijing.aliyuncs.com/9b896bf38fdbbe973ba8e86691635c47e498674bbfdabba011eef3229c7d6645.jpg",
+            "isLike": true,
+            "tags": [
+              "3D模型",
+              "拓扑"
+            ],
+            "num": 13,
+            "hoverBtn": [
+              {
+                "text": "查看"
+              },
+              {
+                "text": "取消"
+              }
+            ]
+          },
+          {
+            "size": "small",
+            "title": "漏洞平台态势大屏",
+            "cover": "https://szxh.oss-cn-beijing.aliyuncs.com/47088af4526c7cba8ae9a7791e3c15f1d6ce6172ea4a53f8b3bdce8caca0dcfd.png",
+            "isLike": false,
+            "tags": [
+              "中国",
+              "运营商"
+            ],
+            "num": 663,
+            "hoverBtn": [
+              {
+                "text": "关闭"
+              },
+              {
+                "text": "登陆"
+              }
+            ]
+          },
+          {
+            "size": "medium",
+            "title": "ADBOS网络安全态势",
+            "cover": "https://szxh.oss-cn-beijing.aliyuncs.com/460580ff511d0a6549b00c27bad11d92ef6f3c19f6223d435da1b0656806ea20.jpg",
+            "isLike": false,
+            "tags": [
+              "日本",
+              "移动网"
+            ],
+            "num": 93,
+            "hoverBtn": [
+              {
+                "text": "按钮1"
+              },
+              {
+                "text": "按钮2"
+              },
+              {
+                "text": "按钮3"
+              }
+            ]
+          },
+          {
+            "size": "small",
+            "title": "苏州移动漏洞平台态势大屏",
+            "cover": "https://szxh.oss-cn-beijing.aliyuncs.com/8b72994629a739057149ebd734d4d0a0978b39c7c411e109de2cc73ad6a3bc7e.jpg",
+            "isLike": true,
+            "tags": [
+              "漏洞",
+              "大屏幕"
+            ],
+            "num": 37,
+            "hoverBtn": [
+              {
+                "text": "漏洞"
+              },
+              {
+                "text": "按钮"
+              }
+            ]
+          },
+          {
+            "size": "small",
+            "title": "某某企业资产漏洞平台大屏",
+            "cover": "https://szxh.oss-cn-beijing.aliyuncs.com/9b896bf38fdbbe973ba8e86691635c47e498674bbfdabba011eef3229c7d6645.jpg",
+            "isLike": true,
+            "tags": [
+              "3D模型",
+              "拓扑"
+            ],
+            "num": 13,
+            "hoverBtn": [
+              {
+                "text": "查看"
+              },
+              {
+                "text": "取消"
+              }
+            ]
+          },
+          {
+            "size": "small",
+            "title": "漏洞平台态势大屏",
+            "cover": "https://szxh.oss-cn-beijing.aliyuncs.com/47088af4526c7cba8ae9a7791e3c15f1d6ce6172ea4a53f8b3bdce8caca0dcfd.png",
+            "isLike": false,
+            "tags": [
+              "中国",
+              "运营商"
+            ],
+            "num": 663,
+            "hoverBtn": [
+              {
+                "text": "关闭"
+              },
+              {
+                "text": "登陆"
+              }
+            ]
+          },
+          {
+            "size": "medium",
+            "title": "ADBOS网络安全态势",
+            "cover": "https://szxh.oss-cn-beijing.aliyuncs.com/460580ff511d0a6549b00c27bad11d92ef6f3c19f6223d435da1b0656806ea20.jpg",
+            "isLike": false,
+            "tags": [
+              "日本",
+              "移动网"
+            ],
+            "num": 93,
+            "hoverBtn": [
+              {
+                "text": "按钮1"
+              },
+              {
+                "text": "按钮2"
+              },
+              {
+                "text": "按钮3"
+              }
+            ]
+          },
+          {
+            "size": "small",
+            "title": "苏州移动漏洞平台态势大屏",
+            "cover": "https://szxh.oss-cn-beijing.aliyuncs.com/8b72994629a739057149ebd734d4d0a0978b39c7c411e109de2cc73ad6a3bc7e.jpg",
+            "isLike": true,
+            "tags": [
+              "漏洞",
+              "大屏幕"
+            ],
+            "num": 37,
+            "hoverBtn": [
+              {
+                "text": "漏洞"
+              },
+              {
+                "text": "按钮"
+              }
+            ]
+          },
+          {
+            "size": "small",
+            "title": "某某企业资产漏洞平台大屏",
+            "cover": "https://szxh.oss-cn-beijing.aliyuncs.com/9b896bf38fdbbe973ba8e86691635c47e498674bbfdabba011eef3229c7d6645.jpg",
+            "isLike": true,
+            "tags": [
+              "3D模型",
+              "拓扑"
+            ],
+            "num": 13,
+            "hoverBtn": [
+              {
+                "text": "查看"
+              },
+              {
+                "text": "取消"
+              }
+            ]
+          },
+          {
+            "size": "small",
+            "title": "漏洞平台态势大屏",
+            "cover": "https://szxh.oss-cn-beijing.aliyuncs.com/47088af4526c7cba8ae9a7791e3c15f1d6ce6172ea4a53f8b3bdce8caca0dcfd.png",
+            "isLike": false,
+            "tags": [
+              "中国",
+              "运营商"
+            ],
+            "num": 663,
+            "hoverBtn": [
+              {
+                "text": "关闭"
+              },
+              {
+                "text": "登陆"
+              }
+            ]
+          },
+          {
+            "size": "small",
+            "title": "ADBOS网络安全态势",
+            "cover": "https://szxh.oss-cn-beijing.aliyuncs.com/460580ff511d0a6549b00c27bad11d92ef6f3c19f6223d435da1b0656806ea20.jpg",
+            "isLike": false,
+            "tags": [
+              "日本",
+              "移动网"
+            ],
+            "num": 93,
+            "hoverBtn": [
+              {
+                "text": "按钮1"
+              },
+              {
+                "text": "按钮2"
+              },
+              {
+                "text": "按钮3"
+              }
+            ]
+          },
+          {
+            "size": "small",
+            "title": "苏州移动漏洞平台态势大屏",
+            "cover": "https://szxh.oss-cn-beijing.aliyuncs.com/8b72994629a739057149ebd734d4d0a0978b39c7c411e109de2cc73ad6a3bc7e.jpg",
+            "isLike": true,
+            "tags": [
+              "漏洞",
+              "大屏幕"
+            ],
+            "num": 37,
+            "hoverBtn": [
+              {
+                "text": "漏洞"
+              },
+              {
+                "text": "按钮"
+              }
+            ]
+          },
+          {
+            "size": "small",
+            "title": "某某企业资产漏洞平台大屏",
+            "cover": "https://szxh.oss-cn-beijing.aliyuncs.com/9b896bf38fdbbe973ba8e86691635c47e498674bbfdabba011eef3229c7d6645.jpg",
+            "isLike": true,
+            "tags": [
+              "3D模型",
+              "拓扑"
+            ],
+            "num": 13,
+            "hoverBtn": [
+              {
+                "text": "查看"
+              },
+              {
+                "text": "取消"
+              }
+            ]
+          },
+          {
+            "size": "small",
+            "title": "漏洞平台态势大屏",
+            "cover": "https://szxh.oss-cn-beijing.aliyuncs.com/47088af4526c7cba8ae9a7791e3c15f1d6ce6172ea4a53f8b3bdce8caca0dcfd.png",
+            "isLike": false,
+            "tags": [
+              "中国",
+              "运营商"
+            ],
+            "num": 663,
+            "hoverBtn": [
+              {
+                "text": "关闭"
+              },
+              {
+                "text": "登陆"
+              }
+            ]
+          },
+          {
+            "size": "small",
+            "title": "苏州移动漏洞平台态势大屏",
+            "cover": "https://szxh.oss-cn-beijing.aliyuncs.com/8b72994629a739057149ebd734d4d0a0978b39c7c411e109de2cc73ad6a3bc7e.jpg",
+            "isLike": true,
+            "tags": [
+              "漏洞",
+              "大屏幕"
+            ],
+            "num": 37,
+            "hoverBtn": [
+              {
+                "text": "漏洞"
+              },
+              {
+                "text": "按钮"
+              }
+            ]
+          },
+          {
+            "size": "medium",
+            "title": "ADBOS网络安全态势",
+            "cover": "https://szxh.oss-cn-beijing.aliyuncs.com/460580ff511d0a6549b00c27bad11d92ef6f3c19f6223d435da1b0656806ea20.jpg",
+            "isLike": false,
+            "tags": [
+              "日本",
+              "移动网"
+            ],
+            "num": 93,
+            "hoverBtn": [
+              {
+                "text": "按钮1"
+              },
+              {
+                "text": "按钮2"
+              },
+              {
+                "text": "按钮3"
+              }
+            ]
+          },
+          {
+            "size": "small",
+            "title": "苏州移动漏洞平台态势大屏",
+            "cover": "https://szxh.oss-cn-beijing.aliyuncs.com/8b72994629a739057149ebd734d4d0a0978b39c7c411e109de2cc73ad6a3bc7e.jpg",
+            "isLike": true,
+            "tags": [
+              "漏洞",
+              "大屏幕"
+            ],
+            "num": 37,
+            "hoverBtn": [
+              {
+                "text": "漏洞"
+              },
+              {
+                "text": "按钮"
+              }
+            ]
+          },
+          {
+            "size": "small",
+            "title": "苏州移动漏洞平台态势大屏",
+            "cover": "https://szxh.oss-cn-beijing.aliyuncs.com/8b72994629a739057149ebd734d4d0a0978b39c7c411e109de2cc73ad6a3bc7e.jpg",
+            "isLike": true,
+            "tags": [
+              "漏洞",
+              "大屏幕"
+            ],
+            "num": 37,
+            "hoverBtn": [
+              {
+                "text": "漏洞"
+              },
+              {
+                "text": "按钮"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

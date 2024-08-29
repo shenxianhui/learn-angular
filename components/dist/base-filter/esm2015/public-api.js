@@ -1,0 +1,13 @@
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ */
+import { createPlugin } from 'plugin-manager';
+import { BaseFilterComponent } from './lib/base-filter.component';
+import { BaseFilterModule } from './lib/base-filter.module';
+export default createPlugin({
+    name: 'base-filter',
+    module: BaseFilterModule,
+    component: BaseFilterComponent
+});
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoicHVibGljLWFwaS5qcyIsInNvdXJjZVJvb3QiOiJuZzovL2Jhc2UtZmlsdGVyLyIsInNvdXJjZXMiOlsicHVibGljLWFwaS50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiOzs7O0FBQUEsT0FBTyxFQUFFLFlBQVksRUFBRSxNQUFNLGdCQUFnQixDQUFDO0FBQzlDLE9BQU8sRUFBRSxtQkFBbUIsRUFBRSxNQUFNLDZCQUE2QixDQUFDO0FBQ2xFLE9BQU8sRUFBRSxnQkFBZ0IsRUFBRSxNQUFNLDBCQUEwQixDQUFDO0FBRTVELGVBQWUsWUFBWSxDQUFDO0lBQzFCLElBQUksRUFBRSxhQUFhO0lBQ25CLE1BQU0sRUFBRSxnQkFBZ0I7SUFDeEIsU0FBUyxFQUFFLG1CQUFtQjtDQUMvQixDQUFDLENBQUMiLCJzb3VyY2VzQ29udGVudCI6WyJpbXBvcnQgeyBjcmVhdGVQbHVnaW4gfSBmcm9tICdwbHVnaW4tbWFuYWdlcic7XG5pbXBvcnQgeyBCYXNlRmlsdGVyQ29tcG9uZW50IH0gZnJvbSAnLi9saWIvYmFzZS1maWx0ZXIuY29tcG9uZW50JztcbmltcG9ydCB7IEJhc2VGaWx0ZXJNb2R1bGUgfSBmcm9tICcuL2xpYi9iYXNlLWZpbHRlci5tb2R1bGUnO1xuXG5leHBvcnQgZGVmYXVsdCBjcmVhdGVQbHVnaW4oe1xuICBuYW1lOiAnYmFzZS1maWx0ZXInLFxuICBtb2R1bGU6IEJhc2VGaWx0ZXJNb2R1bGUsXG4gIGNvbXBvbmVudDogQmFzZUZpbHRlckNvbXBvbmVudFxufSk7XG4iXX0=

@@ -1,0 +1,21 @@
+{
+  "name": "top-rank",
+  "version": "0.0.1",
+  "peerDependencies": {
+    "@angular/common": "^7.2.0",
+    "@angular/core": "^7.2.0"
+  },
+  "main": "bundles/top-rank.umd.js",
+  "module": "fesm5/top-rank.js",
+  "es2015": "fesm2015/top-rank.js",
+  "esm5": "esm5/top-rank.js",
+  "esm2015": "esm2015/top-rank.js",
+  "fesm5": "fesm5/top-rank.js",
+  "fesm2015": "fesm2015/top-rank.js",
+  "typings": "top-rank.d.ts",
+  "metadata": "top-rank.metadata.json",
+  "sideEffects": false,
+  "dependencies": {
+    "tslib": "^1.9.0"
+  }
+}

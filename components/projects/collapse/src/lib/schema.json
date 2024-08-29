@@ -1,0 +1,196 @@
+{
+  "name": "折叠面板",
+  "id": "284",
+  "unique": "collapse",
+  "type_cn": "数据展示",
+  "type_en": "data-display",
+  "preview": "assets/collapse/image/collapse.png",
+  "com_type": "angular",
+  "sampleCode": "{'secondActiveColor':'yellow','firstActiveColor':'yellow',secondBackground:'pink','secondActiveBackground':'green'}",
+  "config": {
+    "list": [
+      {
+        "attribute": "firstBackground",
+        "declare": "父级面板背景",
+        "default": "linear-gradient(180deg, rgba(24, 73, 110, 1) 0%, rgba(16, 42, 66, 1) 100%)",
+        "desc": "不传或者为空时，启用默认值"
+      },
+      {
+        "attribute": "firstColor",
+        "declare": "父级文字颜色",
+        "default": "#FFF",
+        "desc": "不传或者为空时，启用默认值"
+      },
+      {
+        "attribute": "firstFontSize",
+        "declare": "父级文字大小",
+        "default": "14px",
+        "desc": "不传或者为空时，启用默认值"
+      },
+      {
+        "attribute": "firstPadding",
+        "declare": "父级内边距",
+        "default": "10px 16px",
+        "desc": "不传或者为空时，启用默认值"
+      },
+      {
+        "attribute": "firstMargin",
+        "declare": "父级外边距",
+        "default": "8px",
+        "desc": "不传或者为空时，启用默认值"
+      },
+      {
+        "attribute": "firstActiveBackground",
+        "declare": "父级面板选中背景",
+        "default": "linear-gradient(180deg, rgba(40, 123, 179, 1) 0%, rgba(16, 46, 73, 1) 100%)",
+        "desc": "不传或者为空时，启用默认值"
+      },
+      {
+        "attribute": "firstActiveColor",
+        "declare": "父级面板选中文字颜色",
+        "default": "#FFF",
+        "desc": "不传或者为空时，启用默认值"
+      },
+      {
+        "attribute": "firstActiveFonteSize",
+        "declare": "父级面板选中文字大小",
+        "default": "14px",
+        "desc": "不传或者为空时，启用默认值"
+      },
+      {
+        "attribute": "secondBackground",
+        "declare": "子级面板背景",
+        "default": "linear-gradient(180deg, rgba(18, 49, 79, 1) 0%, rgba(12, 30, 51, 1) 100%)",
+        "desc": "不传或者为空时，启用默认值"
+      },
+      {
+        "attribute": "secondColor",
+        "declare": "子级面板文字颜色",
+        "default": "#FFF",
+        "desc": "不传或者为空时，启用默认值"
+      },
+      {
+        "attribute": "secondFontSize",
+        "declare": "子级面板字体大小",
+        "default": "14px",
+        "desc": "不传或者为空时，启用默认值"
+      },
+      {
+        "attribute": "secondPadding",
+        "declare": "子级面板内边距",
+        "default": "10px 0 10px 28px",
+        "desc": "不传或者为空时，启用默认值"
+      },
+      {
+        "attribute": "secondMargin",
+        "declare": "子级面板外边距",
+        "default": "0px",
+        "desc": "不传或者为空时，启用默认值"
+      },
+      {
+        "attribute": "secondActiveBackground",
+        "declare": "子级面板选中背景",
+        "default": "linear-gradient(180deg, rgba(25, 74, 112, 1) 0%, rgba(15, 42, 68, 1) 100%)",
+        "desc": "不传或者为空时，启用默认值"
+      },
+      {
+        "attribute": "secondActiveColor",
+        "declare": "子级面板选中文字颜色",
+        "default": "#FFF",
+        "desc": "不传或者为空时，启用默认值"
+      },
+      {
+        "attribute": "secondActiveFonteSize",
+        "declare": "子级面板选中文字大小",
+        "default": "14px",
+        "desc": "不传或者为空时，启用默认值"
+      }
+    ],
+    "comments": [
+      "示例：{'secondActiveColor':'yellow','firstActiveColor':'yellow',secondBackground:'pink','secondActiveBackground':'green'}"
+    ]
+  },
+  "data": {
+    "list": [
+      {
+        "attribute": "title",
+        "declare": "父级标题",
+        "type": "String",
+        "desc": "必传。只做展示，不做校验"
+      },
+      {
+        "attribute": "isCollapse",
+        "declare": "是否折叠展开，true展开，false折叠",
+        "type": "Boolean",
+        "desc": "必传。只做展示，不做校验"
+      },
+      {
+        "attribute": "children",
+        "declare": "二级标题数组",
+        "type": "Array",
+        "desc": "必传。只做展示，不做校验"
+      },
+      {
+        "attribute": "children.title",
+        "declare": "二级标题",
+        "type": "String",
+        "desc": "必传。只做展示，不做校验"
+      },
+      {
+        "attribute": "children.isActive",
+        "declare": "二级标题是否选中",
+        "type": "Boolean",
+        "desc": "非必传，默认false"
+      }
+    ],
+    "comments": [],
+    "format": {
+      "data": {
+        "list": [
+          {
+            "title": "父级标题",
+            "isCollapse": false,
+            "children": [
+              {
+                "title": "子级标题1",
+                "isActive": true
+              },
+              {
+                "title": "子级标题2",
+                "isActive": false
+              }
+            ]
+          },
+          {
+            "title": "父级标题",
+            "isCollapse": true,
+            "children": [
+              {
+                "title": "子级标题1",
+                "isActive": false
+              },
+              {
+                "title": "子级标题2",
+                "isActive": true
+              }
+            ]
+          },
+          {
+            "title": "父级标题",
+            "isCollapse": false,
+            "children": [
+              {
+                "title": "子级标题1",
+                "isActive": false
+              },
+              {
+                "title": "子级标题2",
+                "isActive": false
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

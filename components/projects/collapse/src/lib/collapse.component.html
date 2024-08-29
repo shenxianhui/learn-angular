@@ -1,0 +1,25 @@
+<div class="collapse-box">
+  <ul>
+    <li class="sub-menu" *ngFor="let item of data.list" [ngStyle]="{'marginBottom':color.firstMargin}">
+      <div class="sub-menu-title" (click)="clickFirst(item)" [ngClass]="{'sub-menu-check': item.isCollapse}"
+        [ngStyle]="{'background':item.isCollapse ? color.firstActiveBackground : color.firstBackground,
+                    'color': item.isCollapse ? color.firstActiveColor : color.firstColor,
+                    'fontSize': item.isCollapse ? color.firstActiveFonteSize : color.firstFontSize,
+                    'padding':color.firstPadding
+                  }">
+        <span>{{item.title}}</span>
+        <img src="assets/collapse/image/icon-down.png" alt="" [ngClass]="{'rotate-x180':item.isCollapse}">
+      </div>
+      <ul class="menu-item" [ngClass]="{'max-height-0':!item.isCollapse}" [ngStyle]="{'background':color.secondBackground,'margin':color.secondMargin}">
+        <li *ngFor="let mItem of item.children">
+          <div class="menu-item-title" [ngClass]="{'menu-item-check':mItem.isActive}"
+            [ngStyle]="{'background':mItem.isActive ? color.secondActiveBackground : '',
+                        'color': mItem.isActive ? color.secondActiveColor : color.secondColor,
+                        'fontSize': mItem.isActive ? color.secondActiveFonteSize : color.secondFontSize,
+                        'padding':color.secondPadding
+                      }">{{mItem.title}}</div>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>

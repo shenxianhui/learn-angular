@@ -1,0 +1,15 @@
+<div class="table-box">
+  <table>
+    <thead>
+      <tr>
+        <th *ngFor="let range of data.th">{{range}}</th>
+      </tr>
+    </thead>
+
+    <tbody #tbody>
+      <tr *ngFor="let range of data.td; let i = index" (click)="clickRow(range.url)" [ngStyle]="{'background-color': hoverIndex === i ? color.hoverBgColor || 'rgba(23, 46, 75, 1)' : 'rgba(35, 55, 81, 1)'}" (mouseover)="hoverIndex = i" (mouseout)="hoverIndex = null">
+        <td *ngFor="let item of range.row; let i = index" [ngStyle]="{'color': i % 2 == 0 ? '' : color.intervalColor || '#52D2FF'}">{{item}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

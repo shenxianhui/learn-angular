@@ -1,0 +1,140 @@
+{
+  "name": "基本环图",
+  "id": "1",
+  "unique": "doughnut",
+  "type_cn": "饼环图",
+  "type_en": "pie",
+  "preview": "assets/doughnut/image/doughnut.png",
+  "config": {
+    "list": [
+      {
+        "attribute": "doughnutColor",
+        "declare": "环图颜色",
+        "default": "['rgb(253,97,55)', 'rgb(248,193,71)', 'rgb(53,100,255)', 'rgb(35,170,241)', 'rgb(2,207,150)', '#d284d9']",
+        "desc": "不传或者数组为空时，启用默认值"
+      },
+      {
+        "attribute": "switchColor",
+        "declare": "方块颜色",
+        "default": "['#55a722','#ff7e75', '#0099ff','#d284d9', '#ffbb29']",
+        "desc": "颜色顺序与switchInfo的顺序一一对应，当颜色个数不足时，会自动循环添加"
+      },
+      {
+        "attribute": "legendWidth",
+        "declare": "图例的宽度",
+        "default": "undefined",
+        "desc": "默认没有宽度设置，需要宽度时，传number类型的数字"
+      },
+      {
+        "attribute": "legendTop",
+        "declare": "图例组件离容器上侧的距离",
+        "default": "10%",
+        "desc": "top 的值可以是像 20 这样的具体像素值，可以是像 '20%' 这样相对于容器高宽的百分比，也可以是 'top', 'middle', 'bottom'。如果 top 的值为'top', 'middle', 'bottom'，图例会根据相应的位置自动对齐。"
+      }
+    ],
+    "comments": [
+      "示例：{doughnutColor:['#55a722','#6622ef','#0099ff','#d284d9', '#ffbb29']}",
+      "示例：{switchColor:['#55a722','#ff7e75', '#0099ff','#d284d9', '#ffbb29']}"
+    ]
+  },
+  "sampleCode":"{'doughnutColor':['rgb(253,97,55)', 'rgb(248,193,71)', 'rgb(53,100,255)', 'rgb(35,170,241)', 'rgb(2,207,150)', '#d284d9'],'switchColor':['#55a722','#ff7e75', '#0099ff','#d284d9', '#ffbb29'],'legendWidth':108}",
+  "data": {
+    "list": [
+      {
+        "attribute": "count",
+        "declare": "环图的数值",
+        "type": "Number",
+        "desc": "必传。只做展示，不做校验"
+      },
+      {
+        "attribute": "code",
+        "declare": "右侧展示的数值",
+        "type": "Number或String",
+        "desc": "必传。只做展示，不做校验"
+      },
+      {
+        "attribute": "name",
+        "declare": "右侧展示的数值",
+        "type": "String",
+        "desc": "必传。只做展示，不做校验"
+      },
+      {
+        "attribute": "switchInfo",
+        "declare": "切换区域的配置项，对象数组",
+        "type": "Array",
+        "desc": "非必传，默认不展示"
+      },
+      {
+        "attribute": "switchText",
+        "declare": "切换区域的文字",
+        "type": "String",
+        "desc": "存在切换数据的区域时，则必传"
+      },
+      {
+        "attribute": "rangeData",
+        "declare": "当前切换区域需要展示的环图数据",
+        "type": "Array",
+        "desc": "存在切换的区域时，则必传"
+      },
+      {
+        "attribute": "pageInfo",
+        "declare": "分页区域的配置项",
+        "type": "Object",
+        "desc": "非必传，默认不展示，若切换区域与分页区域配置同时存在，则默认显示切换区域"
+      },
+      {
+        "attribute": "onePageShowNum",
+        "declare": "分页时，一页展示的数据量",
+        "type": "Number",
+        "desc": "存在分页的区域时，则必传"
+      },
+      {
+        "attribute": "leftText",
+        "declare": "分页左侧按钮文字信息",
+        "type": "String",
+        "desc": "存在分页的区域时，则必传"
+      },
+      {
+        "attribute": "rightText",
+        "declare": "分页右侧按钮文字信息",
+        "type": "String",
+        "desc": "存在分页的区域时，则必传"
+      }
+    ],
+    "comments": [
+      "若上方需要显示点击切换数据的区域，则添加switchInfo",
+      "若上方需要显示分页区域，则添加pageInfo"
+    ],
+    "format": {
+      "data": {
+        "data": [
+            {
+                "count": 87,
+                "code": "87",
+                "name": "特别重大"
+            },
+            {
+                "count": 52,
+                "code": "52",
+                "name": "重大       "
+            },
+            {
+                "count": 36,
+                "code": 36,
+                "name": "较大       "
+            },
+            {
+                "count": 24,
+                "code": 24,
+                "name": "一般       "
+            },
+            {
+                "count": 24,
+                "code": 24,
+                "name": "轻微       "
+            }
+        ]
+      }
+    }
+  }
+}

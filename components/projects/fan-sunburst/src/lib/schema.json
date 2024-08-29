@@ -1,0 +1,58 @@
+{
+  "name": "扇形旭日图",
+  "id": "186",
+  "unique": "fan-sunburst",
+  "type_cn": "饼环图",
+  "type_en": "pie",
+  "preview": "assets/fan-sunburst/image/fan-sunburst.png",
+  "com_type": "angular",
+  "sampleCode": "{'title':'电信漏洞监测平台'}",
+  "config": {
+    "list": [],
+    "comments": []
+  },
+  "data": {
+    "list": [
+      {
+        "attribute": "title",
+        "declare": "当前饼环图标题",
+        "type": "String",
+        "desc": "非必传。默认不展示"
+      },
+      {
+        "attribute": "num",
+        "declare": "当前饼环图数值",
+        "type": "Number",
+        "desc": "必传。只做展示，不做校验"
+      },
+      {
+        "attribute": "totalNum",
+        "declare": "当前饼环图总数值，",
+        "type": "Number",
+        "desc": "必传。根据num/totalNum计算饼环百分比，不做校验"
+      }
+    ],
+    "comments": [],
+    "format": {
+      "data": {
+        "data": [
+          {
+            "title": "电信漏洞监测平台",
+            "num": 70,
+            "totalNum": 100
+          },
+          {
+            "title": "移动流量监测平台",
+            "num": 360,
+            "totalNum": 600
+          },
+          {
+            "title": "联通故障监测平台",
+            "num": 560,
+            "totalNum": 1000
+          }
+        ]
+      }
+    }
+  }
+}

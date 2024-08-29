@@ -1,0 +1,253 @@
+.carousel-card{
+  width:100%;
+  height:100%;
+  overflow:hidden;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.display-row-box{
+  position:relative;
+}
+
+.card-list-row{
+  display:flex;
+  overflow-x:scroll;
+  scroll-behavior: smooth; /* 添加平滑滚动效果 */
+  white-space: nowrap;
+}
+
+.card-list-row:hover::-webkit-scrollbar-thumb,.card-list:hover::-webkit-scrollbar-thumb{
+  background-color: #888; /* 设置滑块颜色 */
+}
+
+.card-list-row::-webkit-scrollbar {
+  height:5px; /* 设置滚动条高度 */
+}
+
+.card-list::-webkit-scrollbar {
+  width: 5px; /* 设置滚动条宽度 */
+}
+
+/* 设置滚动条的轨道样式（滚动条背景为透明） */
+.card-list-row::-webkit-scrollbar-track,.card-list::-webkit-scrollbar-track {
+  background-color: transparent; /* 设置轨道背景为透明色 */
+}
+
+/* 设置滚动条的滑块样式（滚动条本体） */
+.card-list-row::-webkit-scrollbar-thumb,.card-list::-webkit-scrollbar-thumb {
+  background-color: transition; /* 设置滑块颜色 */
+  border-radius: 6px; /* 设置滑块圆角 */
+}
+
+/* 设置滚动条角落的样式 */
+.card-list-row::-webkit-scrollbar-corner,.card-list::-webkit-scrollbar-corner {
+  background-color: transparent; /* 设置角落背景为透明色 */
+}
+
+.row-right-box{
+  background-image: linear-gradient(269deg,#02050f 43%,rgba(2,5,15,0) 100%);
+  position: absolute;
+  height: 100%;
+  height: 211px;
+  width: 100px;
+  z-index:11;
+  right: 0;
+  top: 0;
+  display:flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.row-left-box{
+  background-image: linear-gradient(269deg,#02050f 43%,rgba(2,5,15,0) 100%);
+  position: absolute;
+  height: 100%;
+  height: 211px;
+  width: 100px;
+  z-index:11;
+  left: 0;
+  top: 0;
+  display:flex;
+  justify-content: flex-end;
+  align-items: center;
+  transform: rotateY(180deg);
+}
+
+.row-right-box img,.row-left-box img{
+  width:32px;
+  height:32px;
+  cursor: pointer;
+}
+
+.card-list {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  row-gap: 30px;
+  column-gap: 25px;
+  box-sizing: border-box;
+  flex: 1;
+  overflow-y: auto;
+}
+
+.card {
+  height: 247px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  box-sizing: border-box;
+  color: #FFF;
+  border-radius: 6px 6px 12px 12px;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  flex-shrink: 0;
+}
+
+.card-r{
+  background-image: url(assets/carousel-card/image/card-s.png);
+  width: 244px;
+  height: 211px;
+  margin-right:12px;
+}
+
+.card-m {
+  grid-column: span 2;
+  background-image: url(assets/carousel-card/image/card-m.png);
+}
+
+.card-s {
+  grid-column: span 1;
+  background-image: url(assets/carousel-card/image/card-s.png);
+}
+
+.top-box {
+  font-size: 16px;
+  padding: 0 12px;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 30px;
+}
+
+.content-box {
+  flex: 1;
+  box-sizing: border-box;
+  padding: 12px 18px 9px 12px;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.bottom-box {
+  height: 40px;
+  padding: 0 12px;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 12px;
+}
+
+.tags {
+  display: flex;
+}
+
+.tag-item {
+  background-image: url(assets/carousel-card/image/tag-bg.png);
+  background-repeat: no-repeat;
+  margin-right: 5px;
+  background-size: 100% 100%;
+  padding: 2px 14px 2px 8px;
+  box-sizing: border-box;
+  font-weight: 400;
+}
+
+.count-text {
+  margin-left: 5px;
+}
+
+.cover-img {
+  height: 100%;
+  width: 100%;
+  border-radius: 4px;
+}
+
+.icon-like{
+  width: 14px;
+  height: 14px;
+}
+
+.icon-count{
+  opacity: 0.8;
+}
+
+.mask-box {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, .5);
+  z-index: 10;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  display: none;
+}
+
+.card:hover .mask-box {
+  display: flex;
+}
+
+.mask-box .hover-btn {
+  background-image: linear-gradient(180deg, rgba(24, 81, 124, 1) 0%, rgba(24, 81, 124, 0.50) 100%);
+  background-size: 100% 100%;
+  border-radius: 4px;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  padding: 0 10px;
+  font-size: 14px;
+  overflow: hidden;
+  cursor: pointer;
+  margin-right: 5px;
+}
+
+.mask-box .hover-btn:last-child {
+  margin-right: 0;
+}
+
+.pagination-box {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.page-btn {
+  width: 32px;
+  height: 32px;
+  background-image: linear-gradient(179deg, #070c18 0%, #102e49 100%);
+  border-radius: 4px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #FFF;
+  cursor: pointer;
+  margin-right: 5px;
+  font-size: 14px;
+  transition: all 0.3s ease;
+}
+
+.page-btn:last-child {
+  margin-right: 0px;
+}
+
+.page-btn-check{
+  background-image: linear-gradient(179deg, rgba(55,178,255,0.10) 0%, rgba(55,178,255,0.88) 100%);
+}

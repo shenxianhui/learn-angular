@@ -1,0 +1,44 @@
+{
+  "name": "高亮进度条",
+  "id": "309",
+  "unique": "highlight-progress",
+  "type_cn": "其他",
+  "type_en": "others",
+  "preview": "assets/highlight-label/image/highlight-label.png",
+  "com_type": "angular",
+  "sampleCode": "",
+  "config": {
+    "list": [],
+    "comments": []
+  },
+  "data": {
+    "list": [
+      {
+        "attribute": "label",
+        "declare": "标签",
+        "type": "String",
+        "desc": "必传。只做展示，不做校验"
+      },
+      {
+        "attribute": "duration",
+        "declare": "进度加载时长",
+        "type": "Number",
+        "desc": "必传。只做展示，不做校验"
+      },
+      {
+        "attribute": "durationUnit",
+        "declare": "进度加载时长单位",
+        "type": "String",
+        "desc": "必传。只做展示，不做校验 s/m/h"
+      }
+    ],
+    "comments": [],
+    "format": {
+      "data": {
+        "label": "替换中...",
+        "duration": 2,
+        "durationUnit": "s"
+      }
+    }
+  }
+}

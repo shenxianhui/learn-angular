@@ -1,0 +1,56 @@
+{
+  "id": 305,
+  "name": "top-rank",
+  "module_type": "rank",
+  "width": 90,
+  "height": 80,
+  "json_data": {
+    "data_json": {
+      "data": {
+        "rollingNum": 3,
+        "rollingDirection": "col",
+        "titleImg": "assets/top-rank/image/top_rank_header_bg.png",
+        "title": "TOP 01",
+        "titleLabel": "字段名称超出滚动",
+        "titleValue": 3780,
+        "title1": "TOP 02",
+        "title1Label": "字段名称超出滚动",
+        "title1Value": 800,
+        "title2": "TOP 03",
+        "title2Label": "字段名称超出滚动",
+        "title2Value": 800,
+        "list": [
+          {
+            "lable": "TOP 02",
+            "title": "字段名称2",
+            "num": 800,
+            "progress": 20
+          },
+          {
+            "lable": "TOP 03",
+            "title": "字段名称3",
+            "num": 800,
+            "progress": 50
+          },
+          {
+            "lable": "TOP 04",
+            "title": "字段名称4",
+            "num": 800,
+            "progress": 100
+          },
+          {
+            "lable": "TOP 05",
+            "title": "字段名称5",
+            "num": 800,
+            "progress": 100
+          }
+        ]
+      }
+    },
+    "color_json": {
+
+    },
+    "link_json": {},
+    "params_json": {}
+  }
+}

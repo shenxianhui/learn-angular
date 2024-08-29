@@ -1,0 +1,13 @@
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ */
+import { createPlugin } from 'plugin-manager';
+import { DoughnutComponent } from './lib/doughnut.component';
+import { DoughnutModule } from './lib/doughnut.module';
+export default createPlugin({
+    name: 'doughnut',
+    component: DoughnutComponent,
+    module: DoughnutModule,
+});
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoicHVibGljLWFwaS5qcyIsInNvdXJjZVJvb3QiOiJuZzovL2RvdWdobnV0LyIsInNvdXJjZXMiOlsicHVibGljLWFwaS50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiOzs7O0FBQUEsT0FBTyxFQUFFLFlBQVksRUFBRSxNQUFNLGdCQUFnQixDQUFDO0FBQzlDLE9BQU8sRUFBRSxpQkFBaUIsRUFBRSxNQUFNLDBCQUEwQixDQUFDO0FBQzdELE9BQU8sRUFBRSxjQUFjLEVBQUUsTUFBTSx1QkFBdUIsQ0FBQztBQUV2RCxlQUFlLFlBQVksQ0FBQztJQUN4QixJQUFJLEVBQUUsVUFBVTtJQUNoQixTQUFTLEVBQUUsaUJBQWlCO0lBQzVCLE1BQU0sRUFBRSxjQUFjO0NBRXpCLENBQUMsQ0FBQyIsInNvdXJjZXNDb250ZW50IjpbImltcG9ydCB7IGNyZWF0ZVBsdWdpbiB9IGZyb20gJ3BsdWdpbi1tYW5hZ2VyJztcbmltcG9ydCB7IERvdWdobnV0Q29tcG9uZW50IH0gZnJvbSAnLi9saWIvZG91Z2hudXQuY29tcG9uZW50JztcbmltcG9ydCB7IERvdWdobnV0TW9kdWxlIH0gZnJvbSAnLi9saWIvZG91Z2hudXQubW9kdWxlJztcblxuZXhwb3J0IGRlZmF1bHQgY3JlYXRlUGx1Z2luKHtcbiAgICBuYW1lOiAnZG91Z2hudXQnLFxuICAgIGNvbXBvbmVudDogRG91Z2hudXRDb21wb25lbnQsXG4gICAgbW9kdWxlOiBEb3VnaG51dE1vZHVsZSxcblxufSk7XG4iXX0=

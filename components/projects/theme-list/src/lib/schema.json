@@ -1,0 +1,113 @@
+{
+  "name": "主题列表",
+  "id": "188",
+  "unique": "theme-list",
+  "type_cn": "表格",
+  "type_en": "table",
+  "preview": "assets/theme-list/image/theme-list.png",
+  "com_type": "angular",
+  "sampleCode": "{'intervalColor':'#52D2FF','hoverBgColor':'rgba(23, 46, 75, 1)'}",
+  "config": {
+    "list": [
+      {
+        "attribute": "intervalColor",
+        "declare": "隔列字体颜色",
+        "default": "#52D2FF",
+        "desc": "不传或者为空时，启用默认值"
+      },
+      {
+        "attribute": "hoverBgColor",
+        "declare": "每一行选中背景色",
+        "default": "rgba(23, 46, 75, 1)",
+        "desc": "不传或者为空时，启用默认值"
+      }
+    ],
+    "comments": [
+      "示例：{'intervalColor':'#52D2FF','hoverBgColor':'rgba(23, 46, 75, 1)'}"
+    ]
+  },
+  "data": {
+    "list": [
+      {
+        "attribute": "th",
+        "declare": "表头信息字符串数组",
+        "type": "Array",
+        "desc": "必传。只做展示，不做校验"
+      },
+      {
+        "attribute": "td",
+        "declare": "表格内容，对象数组包含row和url两个属性",
+        "type": "Array",
+        "desc": "必传。只做展示，不做校验"
+      },
+      {
+        "attribute": "row",
+        "declare": "一行数据，字符串数组数量要与th数组数量一致",
+        "type": "Array",
+        "desc": "必传。只做展示，不做校验"
+      },
+      {
+        "attribute": "url",
+        "declare": "点击一行数据后以新窗口打开该url",
+        "type": "String",
+        "desc": "非必传，默认点击不跳转"
+      }
+    ],
+    "comments": [],
+    "format": {
+      "data": {
+        "data": {
+          "th": [
+            "事件名称",
+            "源IP",
+            "目标IP",
+            "数据来源",
+            "发生时间"
+          ],
+          "td": [
+            {
+              "row": [
+                "漏洞发现",
+                "106.192.01.01",
+                "106.192.01.01",
+                "内网",
+                "2023.10.1 23:12"
+              ],
+              "url": ""
+            },
+            {
+              "row": [
+                "恶意IP",
+                "106.192.01.01",
+                "106.192.01.01",
+                "外网",
+                "2023.10.1 23:12"
+              ],
+              "url": "http://www.qq.com"
+            },
+            {
+              "row": [
+                "漏洞发现",
+                "106.192.01.01",
+                "106.192.01.01",
+                "内网",
+                "2023.10.1 23:12"
+              ],
+              "url": ""
+            },
+            {
+              "row": [
+                "恶意IP",
+                "106.192.01.01",
+                "106.192.01.01",
+                "外网",
+                "2023.10.1 23:12"
+              ],
+              "url": "http://www.baidu.com"
+            }
+          ]
+        }
+      }
+    }
+  }
+}

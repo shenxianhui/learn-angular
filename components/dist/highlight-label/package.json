@@ -1,0 +1,21 @@
+{
+  "name": "highlight-label",
+  "version": "0.0.1",
+  "peerDependencies": {
+    "@angular/common": "^7.2.0",
+    "@angular/core": "^7.2.0"
+  },
+  "main": "bundles/highlight-label.umd.js",
+  "module": "fesm5/highlight-label.js",
+  "es2015": "fesm2015/highlight-label.js",
+  "esm5": "esm5/highlight-label.js",
+  "esm2015": "esm2015/highlight-label.js",
+  "fesm5": "fesm5/highlight-label.js",
+  "fesm2015": "fesm2015/highlight-label.js",
+  "typings": "highlight-label.d.ts",
+  "metadata": "highlight-label.metadata.json",
+  "sideEffects": false,
+  "dependencies": {
+    "tslib": "^1.9.0"
+  }
+}

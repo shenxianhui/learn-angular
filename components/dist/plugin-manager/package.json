@@ -1,0 +1,22 @@
+{
+  "name": "plugin-manager",
+  "version": "0.0.3",
+  "description": "覆羽F03中间件,+拓扑及http请求所需依赖",
+  "peerDependencies": {
+    "@angular/common": "^7.0.0",
+    "@angular/core": "^7.0.0"
+  },
+  "main": "bundles/plugin-manager.umd.js",
+  "module": "fesm5/plugin-manager.js",
+  "es2015": "fesm2015/plugin-manager.js",
+  "esm5": "esm5/plugin-manager.js",
+  "esm2015": "esm2015/plugin-manager.js",
+  "fesm5": "fesm5/plugin-manager.js",
+  "fesm2015": "fesm2015/plugin-manager.js",
+  "typings": "plugin-manager.d.ts",
+  "metadata": "plugin-manager.metadata.json",
+  "sideEffects": false,
+  "dependencies": {
+    "tslib": "^1.9.0"
+  }
+}

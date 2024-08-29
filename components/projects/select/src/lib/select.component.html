@@ -1,0 +1,87 @@
+<div class="filter-rules">
+  <div class="filter-rules-header">
+    <nz-radio-group [(ngModel)]="data.searchType">
+      <label nz-radio-button nzValue="AND">AND</label>
+      <label nz-radio-button nzValue="OR">OR</label>
+    </nz-radio-group>
+    <div class="buttons">
+      <!-- <button nz-button (click)="handleAdd()"><i nz-icon type="plus"></i>Rule</button> -->
+      <button
+        class="ml10"
+        *ngFor="let item of data.executeInfo || []"
+        [nzType]="item.type"
+        nz-button
+        (click)="handleHeaderBtn(item)"
+      >
+        <i *ngIf="item.icon" nz-icon [type]="item.icon"></i>
+        {{ item.label }}
+      </button>
+    </div>
+  </div>
+  <div class="filter-rules-body">
+    <div *ngFor="let item of ngModel || []; let index = index" class="row">
+      <div class="row-l">
+        <div class="row-index">{{ index + 1 }}</div>
+        <nz-select
+          class="select select1 mr5"
+          [(ngModel)]="item.select1Val"
+          nzAllowClear
+          nzPlaceHolder="请选择"
+          (ngModelChange)="ngModelChange('select1', item, index)"
+        >
+          <nz-option
+            *ngFor="let opt of data.option || []"
+            [nzValue]="opt.value"
+            [nzLabel]="opt.label"
+          ></nz-option>
+        </nz-select>
+        <nz-select
+          class="select select2 mr5"
+          [(ngModel)]="item.select2Val"
+          nzAllowClear
+          nzPlaceHolder="请选择"
+          (ngModelChange)="ngModelChange('select2', item, index)"
+        >
+          <nz-option
+            *ngFor="let opt of symbolList || []"
+            [nzValue]="opt.value"
+            [nzLabel]="opt.label"
+          ></nz-option>
+        </nz-select>
+        <div class="input">
+          <nz-input-group [nzSuffix]="suffixTemplate">
+            <input type="text" nz-input [(ngModel)]="item.inputVal" placeholder="请输入" />
+          </nz-input-group>
+          <ng-template #suffixTemplate
+            ><i
+              nz-icon
+              nz-tooltip
+              class="ant-input-clear-icon"
+              nzTheme="fill"
+              nzType="close-circle"
+              *ngIf="item.inputVal"
+              (click)="item.inputVal = ''"
+            ></i
+          ></ng-template>
+        </div>
+      </div>
+      <div class="row-r">
+        <button nz-button nzType="danger" (click)="handleDel(item, index)">
+          <i nz-icon type="close"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+  <div class="filter-rules-footer">
+    <button
+      class="ml10"
+      *ngFor="let item of data.internalApi || []"
+      [nzType]="item.type"
+      nz-button
+      nzType="primary"
+      (click)="handleBottomBtn(item)"
+    >
+      {{ item.label }}
+    </button>
+  </div>
+</div>

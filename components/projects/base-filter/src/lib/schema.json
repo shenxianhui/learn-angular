@@ -1,0 +1,76 @@
+{
+  "name": "基础筛选",
+  "id": "90",
+  "unique": "base-filter",
+  "type_cn": "筛选",
+  "type_en": "filter",
+  "preview": "assets/base-filter/image/base-filter.png",
+  "sampleCode": "{'pattern': 'true'}",
+  "config": {
+    "list": [{
+      "attribute": "pattern",
+      "declare": "背景更改为不规则图形",
+      "default": "''",
+      "desc": "'true'更改 ''不更改"
+    }],
+    "comments": [
+      "{'pattern': 'true'}"
+    ]
+  },
+  "data": {
+    "list": [
+      {
+        "attribute": "key",
+        "declare": "标识",
+        "type": "String",
+        "desc": "time"
+      },
+      {
+        "attribute": "check",
+        "declare": "默认选中",
+        "type": "Number",
+        "desc": ""
+      },
+      {
+        "attribute": "data",
+        "declare": "数据",
+        "type": "Array<object>",
+        "desc": ""
+      },
+      {
+        "attribute": "data[].value",
+        "declare": "数据key",
+        "type": "Number",
+        "desc": ""
+      },
+      {
+        "attribute": "data[].name",
+        "declare": "数据名称",
+        "type": "String",
+        "desc": ""
+      }
+    ],
+    "comments": [],
+    "format": {
+      "data": {
+        "data": [
+          {
+            "name": "近1小时",
+            "value": 1
+          },
+          {
+            "name": "1天",
+            "value": 2
+          },
+          {
+            "name": "近7天",
+            "value": 3
+          }
+        ],
+        "check": [1],
+        "key": ["time"],
+        "title": ""
+      }
+    }
+  }
+}

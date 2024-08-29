@@ -1,0 +1,21 @@
+{
+  "name": "doughnut",
+  "version": "0.0.1",
+  "peerDependencies": {
+    "@angular/common": "^7.2.0",
+    "@angular/core": "^7.2.0"
+  },
+  "main": "bundles/doughnut.umd.js",
+  "module": "fesm5/doughnut.js",
+  "es2015": "fesm2015/doughnut.js",
+  "esm5": "esm5/doughnut.js",
+  "esm2015": "esm2015/doughnut.js",
+  "fesm5": "fesm5/doughnut.js",
+  "fesm2015": "fesm2015/doughnut.js",
+  "typings": "doughnut.d.ts",
+  "metadata": "doughnut.metadata.json",
+  "sideEffects": false,
+  "dependencies": {
+    "tslib": "^1.9.0"
+  }
+}

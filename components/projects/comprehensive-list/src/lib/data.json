@@ -1,0 +1,118 @@
+{
+  "id": 307,
+  "name": "comprehensive-list",
+  "module_type": "table",
+  "width": 90,
+  "height": 30,
+  "json_data": {
+    "data_json": {
+      "data": {
+        "th": ["表头1", "表头2", "表头3", "表头4"],
+        "td": [
+          {
+            "data": [
+              {
+                "themeKey": "red",
+                "value": "129.122.1.1"
+              },
+              {
+                "iconName": "CN",
+                "value": "中国"
+              },
+              {
+                "themeKey": "red",
+                "value": "状态1"
+              },
+              {
+                "themeKey": "",
+                "value": "纯文字"
+              }
+            ]
+          },
+          {
+            "data": [
+              {
+                "themeKey": "yellow",
+                "value": "129.122.1.2"
+              },
+              {
+                "iconName": "US",
+                "value": "美国"
+              },
+              {
+                "themeKey": "yellow",
+                "value": "状态2"
+              },
+              {
+                "themeKey": "",
+                "value": "纯文字"
+              }
+            ]
+          },
+          {
+            "data": [
+              {
+                "themeKey": "blue",
+                "value": "129.122.1.3",
+                "colType": "dot"
+              },
+              {
+                "iconName": "JP",
+                "value": "日本"
+              },
+              {
+                "themeKey": "blue",
+                "value": "状态3"
+              },
+              {
+                "themeKey": "",
+                "value": "纯文字"
+              }
+            ]
+          },
+          {
+            "data": [
+              {
+                "themeKey": "blue",
+                "value": "129.122.1.3",
+                "colType": "dot"
+              },
+              {
+                "iconName": "JP",
+                "value": "日本"
+              },
+              {
+                "themeKey": "blue",
+                "value": "状态3"
+              },
+              {
+                "themeKey": "",
+                "value": "纯文字"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "color_json": {
+      "viewNum": 3,
+      "colType": ["dot", "icon", "text", "text"],
+      "themeMap": {
+        "red": {
+          "color": "#FF435B",
+          "backgroundColor": "#FF435B"
+        },
+        "yellow": {
+          "color": "#FFBF59",
+          "backgroundColor": "#FFBF59"
+        },
+        "blue": {
+          "color": "#52D2FF",
+          "backgroundColor": "#52D2FF"
+        }
+      }
+    },
+    "link_json": {},
+    "params_json": {}
+  }
+}

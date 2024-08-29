@@ -1,0 +1,21 @@
+<div class="base-filter pattern" *ngIf="data?.color?.pattern"> 
+  <ng-container *ngFor="let range of selectData.data">
+    <section (click)="getFilterInfo(range.value)" >
+      <div class="switch-btn pattern-bgc" [ngClass]="{'pattern-active': range.value === timeIndex}">{{range.name}}</div>
+    </section>
+  </ng-container>
+</div>
+
+
+<div class="base-filter" *ngIf="!data?.color?.pattern">
+  <ng-container *ngFor="let range of selectData.data">
+    <section (click)="getFilterInfo(range.value)" [ngClass]="{active: range.value === timeIndex}">
+      <span class="top-dash-l"></span>
+      <span class="top-dash-r"></span>
+      <div class="switch-btn">{{range.name}}</div>
+      <span class="bottom-dash-l"></span>
+      <span class="bottom-dash-r"></span>
+    </section>
+  </ng-container>
+</div>
+

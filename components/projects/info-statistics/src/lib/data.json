@@ -1,0 +1,48 @@
+{
+  "id": 304,
+  "name": "info-statistics",
+  "module_type": "survey",
+  "width": 90,
+  "height": 80,
+  "json_data": {
+    "data_json": {
+      "data": {
+        "rollingNum": 2,
+        "title1Label": "标题名称内容",
+        "title1Value": 999,
+        "title1Arrow": "down",
+        "title2Label": "标题名称内容",
+        "title2Value": 999,
+        "title2Arrow": "down",
+        "contentLabel": "当前工单总数",
+        "contentValue": "20/30",
+        "contentIcon": "assets/info-statistics/image/order_icon.png",
+        "list": [
+          {
+            "title": "进度名称",
+            "num": 198,
+            "progress": 20
+          },
+          {
+            "title": "进度名称",
+            "num": 198,
+            "progress": 60
+          },
+          {
+            "title": "进度名称",
+            "num": 198,
+            "progress": 100
+          }
+        ]
+      }
+    },
+    "color_json": {
+      "labelSize": "26px",
+      "labelColor": "#ffffff",
+      "labelBgImg": "assets/highlight-label/image/label_bg.png",
+      "shadowImg": "assets/highlight-label/image/card_bg.png"
+    },
+    "link_json": {},
+    "params_json": {}
+  }
+}

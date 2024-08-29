@@ -1,0 +1,50 @@
+<div
+  class="highlight-progress"
+  [style.backgroundImage]="
+    'url(' +
+    (color.shadowImg || 'assets/highlight-label/image/card_bg.png') +
+    ')'
+  "
+>
+  <div class="cot-wrap">
+    <div
+      class="cot-top"
+      [style.fontSize]="color.labelSize"
+      [style.color]="color.labelColor"
+    >
+      {{ data.label }}
+    </div>
+    <div class="cot-bot">
+      <div class="progressbar-wrap">
+        <div
+          class="progressbar-external"
+          [style.background]="
+            color.progressColor && color.progressColor.length
+              ? color.progressColor[1] || '#00000000'
+              : '#00000000'
+          "
+        >
+          <div
+            class="progressbar-internal"
+            [style.background]="
+              color.progressColor && color.progressColor.length
+                ? color.progressColor[0] || '#00FFDA'
+                : '#00FFDA'
+            "
+            [style.width]="progress + '%'"
+            [style.transition]="
+              'all ' + (data.duration || 2) + (data.durationUnit || 's')
+            "
+          ></div>
+        </div>
+      </div>
+      <div
+        class="percentage"
+        [style.fontSize]="color.progressLabelSize"
+        [style.color]="color.progressLabelColor"
+      >
+        100%
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,86 @@
+<div class="carousel-card">
+
+  <!-- 一行自动播放布局 -->
+  <div class="display-row-box" *ngIf="data.autoplay">
+    <div class="card-list-row" #scrollContainer>
+      <div class="card card-r" *ngFor="let item of data.list">
+        <div class="top-box">
+          <span>{{item.title}}</span>
+          <img class="icon-like" (click)="checkLike(item)" *ngIf="item.isLike"
+            src="assets/carousel-card/image/icon-like-1.png" alt="">
+          <img class="icon-like" (click)="checkLike(item)" *ngIf="!item.isLike"
+            src="assets/carousel-card/image/icon-like-0.png" alt="">
+        </div>
+        <div class="content-box">
+          <img class="cover-img" [src]="item.cover" alt=""
+            [ngStyle]="{'width':item.coverWidth || '100%','height': item.coverHeight || '100%'}">
+          <div class="mask-box">
+            <div class="hover-btn" *ngFor="let btn of item.hoverBtn"
+              [ngStyle]="{'fontSize': item.hoverBtnSize || '14px'}">
+              {{btn.text}}
+            </div>
+          </div>
+        </div>
+        <div class="bottom-box">
+          <div class="tags">
+            <div class="tag-item" *ngFor="let tag of item.tags"
+              [ngStyle]="{'background-image': getTagBackgroundImage(tag)}">{{tag}}</div>
+          </div>
+          <div>
+            <img class="icon-count" src="assets/carousel-card/image/icon-count.png" alt="">
+            <span class="count-text">{{item.num || 0}}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row-left-box" *ngIf="scrollLeft > 0">
+      <img (click)="clickLeft()" src="assets/carousel-card/image/icon-right.png" alt="">
+    </div>
+    <div class="row-right-box">
+      <img (click)="clickRight()" src="assets/carousel-card/image/icon-right.png" alt="">
+    </div>
+  </div>
+
+
+  <!-- grid布局 -->
+  <div class="card-list" *ngIf="!data.autoplay" [ngStyle]="{'grid-template-columns':calculateGridTemplateColumns()}">
+    <div class="card" *ngFor="let item of pageData[pageIndex]"
+      [ngClass]="{'card-m': item.size == 'medium', 'card-s': item.size == 'small'}">
+      <div class="top-box">
+        <span>{{item.title}}</span>
+        <img class="icon-like" *ngIf="item.isLike" (click)="checkLike(item)"
+          src="assets/carousel-card/image/icon-like-1.png" alt="">
+        <img class="icon-like" *ngIf="!item.isLike" (click)="checkLike(item)"
+          src="assets/carousel-card/image/icon-like-0.png" alt="">
+      </div>
+      <div class="content-box">
+        <img class="cover-img" [src]="item.cover" alt=""
+          [ngStyle]="{'width':item.coverWidth || '100%','height': item.coverHeight || '100%'}">
+        <div class="mask-box">
+          <div class="hover-btn" *ngFor="let btn of item.hoverBtn"
+            [ngStyle]="{'fontSize': item.hoverBtnSize || '14px'}">
+            {{btn.text}}
+          </div>
+        </div>
+      </div>
+      <div class="bottom-box">
+        <div class="tags">
+          <div class="tag-item" *ngFor="let tag of item.tags"
+            [ngStyle]="{'background-image': getTagBackgroundImage(tag)}">{{tag}}</div>
+        </div>
+        <div>
+          <img class="icon-count" src="assets/carousel-card/image/icon-count.png" alt="">
+          <span class="count-text">{{item.num || 0}}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 分页盒子 -->
+  <div class="pagination-box" *ngIf="!data.autoplay">
+    <div class="page-btn" (click)="pageChange(pageIndex-1)">&lt;</div>
+    <div class="page-btn" [ngClass]="{'page-btn-check': pageIndex == i}" *ngFor="let page of pageData;let i = index"
+      (click)="pageChange(i)">{{i+1}}</div>
+    <div class="page-btn" (click)="pageChange(pageIndex+1)">&gt;</div>
+  </div>
+</div>

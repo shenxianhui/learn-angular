@@ -1,0 +1,21 @@
+{
+  "name": "info-statistics",
+  "version": "0.0.1",
+  "peerDependencies": {
+    "@angular/common": "^7.2.0",
+    "@angular/core": "^7.2.0"
+  },
+  "main": "bundles/info-statistics.umd.js",
+  "module": "fesm5/info-statistics.js",
+  "es2015": "fesm2015/info-statistics.js",
+  "esm5": "esm5/info-statistics.js",
+  "esm2015": "esm2015/info-statistics.js",
+  "fesm5": "fesm5/info-statistics.js",
+  "fesm2015": "fesm2015/info-statistics.js",
+  "typings": "info-statistics.d.ts",
+  "metadata": "info-statistics.metadata.json",
+  "sideEffects": false,
+  "dependencies": {
+    "tslib": "^1.9.0"
+  }
+}

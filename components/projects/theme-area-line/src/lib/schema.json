@@ -1,0 +1,104 @@
+{
+  "name": "主题区域折线图",
+  "id": "187",
+  "unique": "theme-area-line",
+  "type_cn": "折线图",
+  "type_en": "line",
+  "preview": "assets/theme-area-line/image/theme-area-line.png",
+  "com_type": "angular",
+  "sampleCode": "{'scaleLineColor':'#52D2FF','dotColor':'#fff'}",
+  "config": {
+    "list": [
+      {
+        "attribute": "scaleLineColor",
+        "declare": "刻度线颜色",
+        "default": "#46B9E6",
+        "desc": "不传或者为空时，启用默认值"
+      },
+      {
+        "attribute": "areaColor",
+        "declare": "区域颜色",
+        "default": "linear-gradient(rgba(51,165,255,0.20), rgba(51,194,255,0.60))",
+        "desc": "不传或者为空时，启用默认值"
+      },
+      {
+        "attribute": "markLineColor",
+        "declare": "标线颜色",
+        "default": "#46B9E6",
+        "desc": "不传或者为空时，启用默认值"
+      },
+      {
+        "attribute": "markLineBgColor",
+        "declare": "标线背景色",
+        "default": "rgba(255, 255, 255, 0.3)",
+        "desc": "不传或者为空时，启用默认值"
+      },
+      {
+        "attribute": "dotColor",
+        "declare": "圆点颜色",
+        "default": "#46B9E6",
+        "desc": "不传或者为空时，启用默认值"
+      }
+    ],
+    "comments": []
+  },
+  "data": {
+    "list": [
+      {
+        "attribute": "num",
+        "declare": "折线图y轴数值",
+        "type": "Number",
+        "desc": "必传。只做展示，不做校验"
+      },
+      {
+        "attribute": "hour",
+        "declare": "x轴底部文字",
+        "type": "String",
+        "desc": "必传。只做展示，不做校验"
+      }
+    ],
+    "comments": [],
+    "format": {
+      "data": {
+        "data": [
+          {
+            "num": 140,
+            "hour": "00"
+          },
+          {
+            "num": 120,
+            "hour": "03"
+          },
+          {
+            "num": 90,
+            "hour": "06"
+          },
+          {
+            "num": 170,
+            "hour": "09"
+          },
+          {
+            "num": 190,
+            "hour": "12"
+          },
+          {
+            "num": 90,
+            "hour": "15"
+          },
+          {
+            "num": 120,
+            "hour": "18"
+          },
+          {
+            "num": 110,
+            "hour": "21"
+          },
+          {
+            "num": 40,
+            "hour": "24"
+          }
+        ]
+      }
+    }
+  }
+}

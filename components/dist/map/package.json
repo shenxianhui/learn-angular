@@ -1,0 +1,21 @@
+{
+  "name": "map",
+  "version": "0.0.1",
+  "peerDependencies": {
+    "@angular/common": "^7.2.0",
+    "@angular/core": "^7.2.0"
+  },
+  "main": "bundles/map.umd.js",
+  "module": "fesm5/map.js",
+  "es2015": "fesm2015/map.js",
+  "esm5": "esm5/map.js",
+  "esm2015": "esm2015/map.js",
+  "fesm5": "fesm5/map.js",
+  "fesm2015": "fesm2015/map.js",
+  "typings": "map.d.ts",
+  "metadata": "map.metadata.json",
+  "sideEffects": false,
+  "dependencies": {
+    "tslib": "^1.9.0"
+  }
+}

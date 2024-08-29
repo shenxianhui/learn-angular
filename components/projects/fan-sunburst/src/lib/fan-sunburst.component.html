@@ -1,0 +1,9 @@
+<div class="fan-sunburst wh-100">
+  <div class="wh-100" #fansunburst></div>
+  <div class="top-title">{{data[current]?.title || ""}}</div>
+  <div class="bottom-box">
+    <img class="boimg" (click)="previous()" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAWCAYAAADJqhx8AAAAAXNSR0IArs4c6QAAAZRJREFUOE+llDFPFFEUhb8TN0YhMZGKaEVho8xa24GGRLDCdWJj6GnUP6F/QTpiKJcBLYTGBGkMlrCuDSSa0NGpoMawc8yQN2QMs0MYpnnFvPPlnnPfvaLis90EhoCfwH7h3JeUZlL109seBm4BHyT1+t0rBdhuAFPAhqS9qir7Ae4AlrRRJS61YPsaMAYsSvp7JkAo/Unw/e008YkKbN8DLkl6VxQ/3HIbeISYWYq00PriGz5k3OLrcQa2rwOPgVeSfueA1me3nLIoWE2amoo/+vLhFeLsf+MH7SOA7QvAU+C9pE4ujrse6qV0DQMpjL6NtDvd8YTMiBqsJTe1nQMmgWFJ8/+V3vFrzIzEbBJpLt70SE9MpLD7pqnVowxC6s+Al5K+54Dpru8rZUWwnoxyd3KHiwN/iG0ag6a9cFsHRcBz4EUZwGZ9OaoAhAzqWzg1xF4IURUhBkjexjlJv060UawkkR6UtjG/fK6HFKrIprD+Uw6Q+sNUsFJ/nAtWstZ+qrVQAqT+SitYyZbq1bBQS5fqP1qQ9y0WC+oXAAAAAElFTkSuQmCC">
+    <div class="botext">{{current + 1}}</div>
+    <img class="boimg" (click)="next()" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAWCAYAAADJqhx8AAAAAXNSR0IArs4c6QAAAZxJREFUOE+tlD1PFGEUhZ8zQ4wE0Eo7EkywYV0s/WjABAo+EsRlS0Ls9C/on1Abe2JjhgUaWRLCRyU1O2hjQaWh0sTExcDqMZBl87pZFliYZDKTOzfP3HPvPa+oXrYjoLN6dwXvPySVjvPqnzrpw2HcdgwMAp8k7TbKbQqoQm4C94BlSQfnqiCQdx+QpM1WAVeAKWBD0rcQcqqEoIqeaj/eSaocxzWZeljmltpYL/Tpy5PU05hZYG6+X/nwb7bHgT1JqzVA/qPbK9c4Smz7SZI81F6u5CXDiCKmCndUCKpoB54D7yV9PYwfSch99m1XeGSxs5DVykTq7shsS5TjiEyS0fcAkgWGgDeS/tR68LjkkQi6Y7OS3NVOLvUzm7eI2fmsZuqkPAV2JRVrgOktd/wSeYlK+SpJsZf93DZrhgFHjC5ktBxUcR14CbxqCphMWZMY+GvGFvtVrAO8AF5fjoQTmwjlOD6liQ3HmPqDzeiZxnjORRoDfv+3SM3sXDe6xqt8FoDti5nJdut2tn0DeAAshS6smenSjrRWD9V/YY7xRSyxeT4AAAAASUVORK5CYII=">
+  </div>
+</div>

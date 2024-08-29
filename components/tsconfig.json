@@ -1,0 +1,188 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "baseUrl": "./",
+    "outDir": "./dist/out-tsc",
+    "sourceMap": true,
+    "declaration": false,
+    "module": "es2015",
+    "moduleResolution": "node",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "importHelpers": true,
+    "target": "es5",
+    "typeRoots": [
+      "node_modules/@types"
+    ],
+    "lib": [
+      "es2018",
+      "dom"
+    ],
+    "paths": {
+      "plugin-manager": [
+        "dist/plugin-manager"
+      ],
+      "plugin-manager/*": [
+        "dist/plugin-manager/*"
+      ],
+      "plugin-b": [
+        "dist/plugin-b",
+        "dist/plugin-b"
+      ],
+      "plugin-b/*": [
+        "dist/plugin-b/*",
+        "dist/plugin-b/*"
+      ],
+      "plugin-c": [
+        "dist/plugin-c"
+      ],
+      "plugin-c/*": [
+        "dist/plugin-c/*"
+      ],
+      "plugin-d": [
+        "dist/plugin-d"
+      ],
+      "plugin-d/*": [
+        "dist/plugin-d/*"
+      ],
+      "time-survey": [
+        "dist/time-survey"
+      ],
+      "time-survey/*": [
+        "dist/time-survey/*"
+      ],
+      "hill": [
+        "dist/hill"
+      ],
+      "hill/*": [
+        "dist/hill/*"
+      ],
+      "block": [
+        "dist/block"
+      ],
+      "block/*": [
+        "dist/block/*"
+      ],
+      "title": [
+        "dist/title"
+      ],
+      "title/*": [
+        "dist/title/*"
+      ],
+      "area-left": [
+        "dist/area-left"
+      ],
+      "area-left/*": [
+        "dist/area-left/*"
+      ],
+      "area-right": [
+        "dist/area-right"
+      ],
+      "area-right/*": [
+        "dist/area-right/*"
+      ],
+      "dimensions-radar": [
+        "dist/dimensions-radar"
+      ],
+      "dimensions-radar/*": [
+        "dist/dimensions-radar/*"
+      ],
+      "theme-list": [
+        "dist/theme-list"
+      ],
+      "theme-list/*": [
+        "dist/theme-list/*"
+      ],
+      "fan-sunburst": [
+        "dist/fan-sunburst"
+      ],
+      "fan-sunburst/*": [
+        "dist/fan-sunburst/*"
+      ],
+      "theme-area-line": [
+        "dist/theme-area-line"
+      ],
+      "theme-area-line/*": [
+        "dist/theme-area-line/*"
+      ],
+      "player": [
+        "dist/player"
+      ],
+      "player/*": [
+        "dist/player/*"
+      ],
+      "carousel-card": [
+        "dist/carousel-card"
+      ],
+      "carousel-card/*": [
+        "dist/carousel-card/*"
+      ],
+      "collapse": [
+        "dist/collapse"
+      ],
+      "collapse/*": [
+        "dist/collapse/*"
+      ],
+      "info-statistics": [
+        "dist/info-statistics"
+      ],
+      "info-statistics/*": [
+        "dist/info-statistics/*"
+      ],
+      "highlight-label": [
+        "dist/highlight-label"
+      ],
+      "highlight-label/*": [
+        "dist/highlight-label/*"
+      ],
+      "demo": [
+        "dist/demo"
+      ],
+      "demo/*": [
+        "dist/demo/*"
+      ],
+      "highlight-progress": [
+        "dist/highlight-progress"
+      ],
+      "highlight-progress/*": [
+        "dist/highlight-progress/*"
+      ],
+      "top-rank": [
+        "dist/top-rank"
+      ],
+      "top-rank/*": [
+        "dist/top-rank/*"
+      ],
+      "status-rank": [
+        "dist/status-rank"
+      ],
+      "status-rank/*": [
+        "dist/status-rank/*"
+      ],
+      "comprehensive-list": [
+        "dist/comprehensive-list"
+      ],
+      "comprehensive-list/*": [
+        "dist/comprehensive-list/*"
+      ],
+      "select": [
+        "dist/select"
+      ],
+      "select/*": [
+        "dist/select/*"
+      ],
+      "rule-expression": [
+        "dist/rule-expression"
+      ],
+      "rule-expression/*": [
+        "dist/rule-expression/*"
+      ],
+      "line-bar": [
+        "dist/line-bar"
+      ],
+      "line-bar/*": [
+        "dist/line-bar/*"
+      ]
+    }
+  }
+}

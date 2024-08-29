@@ -1,0 +1,21 @@
+{
+  "name": "theme-area-line",
+  "version": "0.0.1",
+  "peerDependencies": {
+    "@angular/common": "^7.2.0",
+    "@angular/core": "^7.2.0"
+  },
+  "main": "bundles/theme-area-line.umd.js",
+  "module": "fesm5/theme-area-line.js",
+  "es2015": "fesm2015/theme-area-line.js",
+  "esm5": "esm5/theme-area-line.js",
+  "esm2015": "esm2015/theme-area-line.js",
+  "fesm5": "fesm5/theme-area-line.js",
+  "fesm2015": "fesm2015/theme-area-line.js",
+  "typings": "theme-area-line.d.ts",
+  "metadata": "theme-area-line.metadata.json",
+  "sideEffects": false,
+  "dependencies": {
+    "tslib": "^1.9.0"
+  }
+}

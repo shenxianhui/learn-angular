@@ -1,0 +1,13 @@
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ */
+import { createPlugin } from 'plugin-manager';
+import { MapComponent } from './lib/map.component';
+import { MapModule } from './lib/map.module';
+export default createPlugin({
+    name: 'map',
+    module: MapModule,
+    component: MapComponent
+});
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoicHVibGljLWFwaS5qcyIsInNvdXJjZVJvb3QiOiJuZzovL21hcC8iLCJzb3VyY2VzIjpbInB1YmxpYy1hcGkudHMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6Ijs7OztBQUFBLE9BQU8sRUFBRSxZQUFZLEVBQUUsTUFBTSxnQkFBZ0IsQ0FBQztBQUM5QyxPQUFPLEVBQUUsWUFBWSxFQUFFLE1BQU0scUJBQXFCLENBQUM7QUFDbkQsT0FBTyxFQUFFLFNBQVMsRUFBRSxNQUFNLGtCQUFrQixDQUFDO0FBRTdDLGVBQWUsWUFBWSxDQUFDO0lBQzFCLElBQUksRUFBRSxLQUFLO0lBQ1gsTUFBTSxFQUFFLFNBQVM7SUFDakIsU0FBUyxFQUFFLFlBQVk7Q0FDeEIsQ0FBQyxDQUFDIiwic291cmNlc0NvbnRlbnQiOlsiaW1wb3J0IHsgY3JlYXRlUGx1Z2luIH0gZnJvbSAncGx1Z2luLW1hbmFnZXInO1xyXG5pbXBvcnQgeyBNYXBDb21wb25lbnQgfSBmcm9tICcuL2xpYi9tYXAuY29tcG9uZW50JztcclxuaW1wb3J0IHsgTWFwTW9kdWxlIH0gZnJvbSAnLi9saWIvbWFwLm1vZHVsZSc7XHJcblxyXG5leHBvcnQgZGVmYXVsdCBjcmVhdGVQbHVnaW4oe1xyXG4gIG5hbWU6ICdtYXAnLFxyXG4gIG1vZHVsZTogTWFwTW9kdWxlLFxyXG4gIGNvbXBvbmVudDogTWFwQ29tcG9uZW50XHJcbn0pO1xyXG4iXX0=

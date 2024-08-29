@@ -1,0 +1,13 @@
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ */
+import { createPlugin } from 'plugin-manager';
+import { ThemeListComponent } from './lib/theme-list.component';
+import { ThemeListModule } from './lib/theme-list.module';
+export default createPlugin({
+    name: 'theme-list',
+    module: ThemeListModule,
+    component: ThemeListComponent
+});
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoicHVibGljLWFwaS5qcyIsInNvdXJjZVJvb3QiOiJuZzovL3RoZW1lLWxpc3QvIiwic291cmNlcyI6WyJwdWJsaWMtYXBpLnRzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7Ozs7QUFBQSxPQUFPLEVBQUUsWUFBWSxFQUFFLE1BQU0sZ0JBQWdCLENBQUM7QUFDOUMsT0FBTyxFQUFFLGtCQUFrQixFQUFFLE1BQU0sNEJBQTRCLENBQUM7QUFDaEUsT0FBTyxFQUFFLGVBQWUsRUFBRSxNQUFNLHlCQUF5QixDQUFDO0FBRTFELGVBQWUsWUFBWSxDQUFDO0lBQzFCLElBQUksRUFBRSxZQUFZO0lBQ2xCLE1BQU0sRUFBRSxlQUFlO0lBQ3ZCLFNBQVMsRUFBRSxrQkFBa0I7Q0FDOUIsQ0FBQyxDQUFDIiwic291cmNlc0NvbnRlbnQiOlsiaW1wb3J0IHsgY3JlYXRlUGx1Z2luIH0gZnJvbSAncGx1Z2luLW1hbmFnZXInO1xuaW1wb3J0IHsgVGhlbWVMaXN0Q29tcG9uZW50IH0gZnJvbSAnLi9saWIvdGhlbWUtbGlzdC5jb21wb25lbnQnO1xuaW1wb3J0IHsgVGhlbWVMaXN0TW9kdWxlIH0gZnJvbSAnLi9saWIvdGhlbWUtbGlzdC5tb2R1bGUnO1xuXG5leHBvcnQgZGVmYXVsdCBjcmVhdGVQbHVnaW4oe1xuICBuYW1lOiAndGhlbWUtbGlzdCcsXG4gIG1vZHVsZTogVGhlbWVMaXN0TW9kdWxlLFxuICBjb21wb25lbnQ6IFRoZW1lTGlzdENvbXBvbmVudFxufSk7Il19

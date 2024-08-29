@@ -1,0 +1,13 @@
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ */
+import { createPlugin } from "plugin-manager";
+import { DemoComponent } from "./lib/demo.component";
+import { DemoModule } from "./lib/demo.module";
+export default createPlugin({
+    name: "demo",
+    module: DemoModule,
+    component: DemoComponent,
+});
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoicHVibGljLWFwaS5qcyIsInNvdXJjZVJvb3QiOiJuZzovL2RlbW8vIiwic291cmNlcyI6WyJwdWJsaWMtYXBpLnRzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7Ozs7QUFBQSxPQUFPLEVBQUUsWUFBWSxFQUFFLE1BQU0sZ0JBQWdCLENBQUM7QUFDOUMsT0FBTyxFQUFFLGFBQWEsRUFBRSxNQUFNLHNCQUFzQixDQUFDO0FBQ3JELE9BQU8sRUFBRSxVQUFVLEVBQUUsTUFBTSxtQkFBbUIsQ0FBQztBQUUvQyxlQUFlLFlBQVksQ0FBQztJQUMxQixJQUFJLEVBQUUsTUFBTTtJQUNaLE1BQU0sRUFBRSxVQUFVO0lBQ2xCLFNBQVMsRUFBRSxhQUFhO0NBQ3pCLENBQUMsQ0FBQyIsInNvdXJjZXNDb250ZW50IjpbImltcG9ydCB7IGNyZWF0ZVBsdWdpbiB9IGZyb20gXCJwbHVnaW4tbWFuYWdlclwiO1xuaW1wb3J0IHsgRGVtb0NvbXBvbmVudCB9IGZyb20gXCIuL2xpYi9kZW1vLmNvbXBvbmVudFwiO1xuaW1wb3J0IHsgRGVtb01vZHVsZSB9IGZyb20gXCIuL2xpYi9kZW1vLm1vZHVsZVwiO1xuXG5leHBvcnQgZGVmYXVsdCBjcmVhdGVQbHVnaW4oe1xuICBuYW1lOiBcImRlbW9cIixcbiAgbW9kdWxlOiBEZW1vTW9kdWxlLFxuICBjb21wb25lbnQ6IERlbW9Db21wb25lbnQsXG59KTtcbiJdfQ==

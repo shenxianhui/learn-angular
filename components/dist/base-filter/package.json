@@ -1,0 +1,21 @@
+{
+  "name": "base-filter",
+  "version": "0.0.1",
+  "peerDependencies": {
+    "@angular/common": "^7.2.0",
+    "@angular/core": "^7.2.0"
+  },
+  "main": "bundles/base-filter.umd.js",
+  "module": "fesm5/base-filter.js",
+  "es2015": "fesm2015/base-filter.js",
+  "esm5": "esm5/base-filter.js",
+  "esm2015": "esm2015/base-filter.js",
+  "fesm5": "fesm5/base-filter.js",
+  "fesm2015": "fesm2015/base-filter.js",
+  "typings": "base-filter.d.ts",
+  "metadata": "base-filter.metadata.json",
+  "sideEffects": false,
+  "dependencies": {
+    "tslib": "^1.9.0"
+  }
+}

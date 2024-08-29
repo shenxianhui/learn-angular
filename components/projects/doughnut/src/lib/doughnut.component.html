@@ -1,0 +1,23 @@
+<!-- 分页和切换配置项均存在时，默认展示切换模式 -->
+<div class="switchArea" *ngIf="!switchLoading">
+    <div class="switchBox" *ngFor="let switchData of switchInfo; let i = index" (click)="switchBtn(i)">
+        <div class="switchColor" [ngStyle]="{background: i==switchAcitveIndex ? switchData.switchColor : '#C9C9C9'}">
+        </div>
+        <p class="switchText">{{switchData.switchText}}</p>
+    </div>
+</div> 
+
+<div class="pageArea" *ngIf="switchLoading && !pageLoading">
+    <div class="pageBox" (click)="pageBtn('leftActive')">
+        <div class="pageColor" [ngStyle]="{background: leftActive ? 'cornflowerblue' : '#C9C9C9'}"></div>
+        <p class="pageText">{{leftText}}</p>  
+    </div>
+    <div class="pageBox" (click)="pageBtn('rightActive')">
+        <div class="pageColor" [ngStyle]="{background: rightActive ? 'coral' : '#C9C9C9'}"></div>
+        <p class="pageText">{{rightText }}</p>
+    </div>
+</div> 
+
+<div [appEchartsFilterpieLegend]="donutChartData" [that]="that" [backEmit]="backEmit"
+    style="height:90%">
+</div>

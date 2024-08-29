@@ -1,0 +1,21 @@
+{
+  "name": "comprehensive-list",
+  "version": "0.0.1",
+  "peerDependencies": {
+    "@angular/common": "^7.2.0",
+    "@angular/core": "^7.2.0"
+  },
+  "main": "bundles/comprehensive-list.umd.js",
+  "module": "fesm5/comprehensive-list.js",
+  "es2015": "fesm2015/comprehensive-list.js",
+  "esm5": "esm5/comprehensive-list.js",
+  "esm2015": "esm2015/comprehensive-list.js",
+  "fesm5": "fesm5/comprehensive-list.js",
+  "fesm2015": "fesm2015/comprehensive-list.js",
+  "typings": "comprehensive-list.d.ts",
+  "metadata": "comprehensive-list.metadata.json",
+  "sideEffects": false,
+  "dependencies": {
+    "tslib": "^1.9.0"
+  }
+}

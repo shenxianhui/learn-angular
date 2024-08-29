@@ -1,0 +1,30 @@
+{
+  "name": "高亮标签",
+  "id": "308",
+  "unique": "highlight-label",
+  "type_cn": "其他",
+  "type_en": "others",
+  "preview": "assets/highlight-label/image/highlight-label.png",
+  "com_type": "angular",
+  "sampleCode": "",
+  "config": {
+    "list": [],
+    "comments": []
+  },
+  "data": {
+    "list": [
+      {
+        "attribute": "label",
+        "declare": "标签",
+        "type": "String",
+        "desc": "必传。只做展示，不做校验"
+      }
+    ],
+    "comments": [],
+    "format": {
+      "data": {
+        "label": "1"
+      }
+    }
+  }
+}

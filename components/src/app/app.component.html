@@ -1,0 +1,27 @@
+<app-layout class="bg-bottom_box">
+  <!--  全局背景样式,优先加载,缩短白屏时间-->
+  <div class="bg-bottom screen-animation">
+    <!--    渲染大屏-->
+    <div class="core-layout">
+      <div nz-row class="dash-container" style="color: black;background-color: #000;">
+        <div *ngFor="let plugin of plugins">
+          <!--          loading样式-->
+          <nz-spin class="example" nzSimple *ngIf="plugin.loading"></nz-spin>
+          <!--          动态引入组件并渲染-->
+          <div class="moduleArea" *ngIf="!plugin.loading && plugin.data.json_data.data_json !== null"
+            [ngStyle]="{width: plugin.data.width + '%', height: plugin.data.height + '%', left: plugin.data.x_axis + '%', top: plugin.data.y_axis + '%', zIndex: plugin.data.tier}">
+            <ng-container *ngComponentOutlet="plugin.component;
+                                              ngModuleFactory: plugin.moduleFactory
+                                              injector: plugin.injector">
+            </ng-container>
+          </div>
+          <!--          无数据样式-->
+          <div class="moduleArea" *ngIf="!plugin.loading && plugin.data.json_data.data_json == null"
+            [ngStyle]="{width: plugin.data.width + '%', height: plugin.data.height + '%', left: plugin.data.x_axis + '%', top: plugin.data.y_axis + '%', zIndex: plugin.data.tier}">
+            无数据
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</app-layout>

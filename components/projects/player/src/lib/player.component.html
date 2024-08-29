@@ -1,0 +1,10 @@
+<div class="player-box" [ngStyle]="{'border-radius': color.borderRadius ? color.borderRadius : '0px'}">
+  <div *ngIf="data.type === 'image'" class="player-item">
+    <img [src]="data.src" alt="Image">
+  </div>
+  <div *ngIf="data.type === 'video'" class="player-item">
+    <video [src]="data.src" controls>
+      您的浏览器不支持视频标签.
+    </video>
+  </div>
+</div>

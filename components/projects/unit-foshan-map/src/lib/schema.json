@@ -1,0 +1,117 @@
+{
+  "name": "重点单位佛山地图",
+  "id": "185",
+  "unique": "unit-foshan-map",
+  "type_cn": "其他",
+  "type_en": "others",
+  "preview": "assets/unit-foshan-map/image/unit-foshan-map.png",
+  "com_type": "angular",
+  "sampleCode": "",
+  "config": {
+    "list": [],
+    "comments": []
+  },
+  "data": {
+    "list": [
+      {
+        "attribute": "tabTitle",
+        "declare": "选项卡文字",
+        "type": "String",
+        "desc": "必传。只做展示，不做校验"
+      },
+      {
+        "attribute": "url",
+        "declare": "详情页面URl",
+        "type": "String",
+        "desc": "必传。点击选项卡查看，打开新窗口"
+      },
+      {
+        "attribute": "source",
+        "declare": "攻击来源",
+        "type": "String",
+        "desc": "必传。只做展示，不做校验"
+      },
+      {
+        "attribute": "target",
+        "declare": "攻击目标",
+        "type": "String",
+        "desc": "必传。只做展示，不做校验"
+      },
+      {
+        "attribute": "organization_name",
+        "declare": "单位名称",
+        "type": "String",
+        "desc": "必传。只做展示，不做校验"
+      },
+      {
+        "attribute": "responsible_person",
+        "declare": "责任人",
+        "type": "String",
+        "desc": "必传。只做展示，不做校验"
+      }
+    ],
+    "comments": [],
+    "format": {
+      "data": {
+        "data": [
+          {
+            "tabTitle": "西青卫健委",
+            "url":"https://www.baidu.com",
+            "source": "108.198.60.10",
+            "target": "192.168.02.17",
+            "organization_name": "西青区卫生委员会",
+            "responsible_person": "李凯城",
+            "position": [
+              113.16346,
+              22.606382
+            ]
+          },
+          {
+            "tabTitle": "共青团西青",
+            "url":"https://www.qq.com",
+            "source": "108.198.60.21",
+            "target": "192.168.03.27",
+            "organization_name": "共青团西青区委员会",
+            "responsible_person": "张三",
+            "position": [
+              113.104538,23.020773
+            ]
+          },
+          {
+            "tabTitle": "中共西青",
+            "url":"https://www.baidu.com",
+            "source": "108.198.60.30",
+            "target": "192.168.04.17",
+            "organization_name": "中共西青区委员会",
+            "responsible_person": "李四",
+            "position": [
+              113.08926,23.042258
+            ]
+          },
+          {
+            "tabTitle": "西青医院",
+            "url":"https://www.qq.com",
+            "source": "108.198.60.40",
+            "target": "192.168.52.57",
+            "organization_name": "西青区第一医院",
+            "responsible_person": "王武",
+            "position": [
+              113.049962,22.967159
+            ]
+          },
+          {
+            "tabTitle": "西青法院",
+            "url":"https://www.163.com",
+            "source": "108.198.60.50",
+            "target": "192.168.12.47",
+            "organization_name": "西青区人民法院",
+            "responsible_person": "马六甲",
+            "position": [
+              113.137659,23.076734
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

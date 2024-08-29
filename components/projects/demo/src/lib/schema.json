@@ -1,0 +1,30 @@
+{
+  "name": "示例",
+  "id": "0",
+  "unique": "demo",
+  "type_cn": "数据展示",
+  "type_en": "data-display",
+  "preview": "assets/demo/image/demo.png",
+  "com_type": "angular",
+  "sampleCode": "",
+  "config": {
+    "list": [],
+    "comments": []
+  },
+  "data": {
+    "list": [
+      {
+        "attribute": "title",
+        "declare": "标题内容",
+        "type": "String",
+        "desc": "必传。只做展示，不做校验"
+      },
+    ],
+    "comments": [],
+    "format": {
+      "data": {
+        "title": "标题",
+      }
+    }
+  }
+}

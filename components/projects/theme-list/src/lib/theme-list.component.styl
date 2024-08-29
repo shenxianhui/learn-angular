@@ -1,0 +1,131 @@
+.table-box {
+  font-size: 14px;
+  padding: 10px 20px;
+  box-sizing: border-box;
+  height: 100%;
+  overflow: hidden;
+}
+
+table {
+  border-collapse: separate;
+  border-spacing: 2px 2px;
+  width: 100%;
+}
+
+th,
+td {
+  text-align: left;
+  padding: 8px;
+}
+
+th {
+  color: #fff;
+  border-bottom: 2px solid #56667D;
+}
+
+th:nth-child(odd) {
+  border-bottom: 2px solid #3E4B5C;
+}
+
+thead {
+  position: relative;
+  z-index: 10;
+}
+
+thead tr{
+  background-color: #10284A;
+}
+
+tbody {
+  position: relative;
+}
+
+tbody td {
+  padding: 10px;
+  position: relative;
+}
+
+tbody tr {
+  position: relative;
+  cursor: pointer;
+  color: #fff;
+  background-color: rgba(35, 55, 81, 1);
+}
+
+table tbody:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -10px;
+  width: 5px;
+  height: 100%;
+  border-top: 2px solid #56667D;
+  border-left: 2px solid #56667D;
+  border-bottom: 2px solid #56667D;
+}
+
+table tbody:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: -10px;
+  width: 5px;
+  height: 100%;
+  border-top: 2px solid #56667D;
+  border-right: 2px solid #56667D;
+  border-bottom: 2px solid #56667D;
+}
+
+table thead:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -10px;
+  width: 5px;
+  height: 80%;
+  border-top: 2px solid #56667D;
+  border-left: 2px solid #56667D;
+  border-bottom: 2px solid #56667D;
+}
+
+table thead:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: -10px;
+  width: 5px;
+  height: 80%;
+  border-top: 2px solid #56667D;
+  border-right: 2px solid #56667D;
+  border-bottom: 2px solid #56667D;
+}
+
+table tbody tr td:first-child:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -10px;
+  width: 5px;
+  height: 100%;
+  z-index: 2;
+}
+
+table tbody tr td:last-child:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: -10px;
+  width: 5px;
+  height: 100%;
+  z-index: 2;
+}
+
+tbody tr:hover td:first-child:before {
+  border-left: 2px solid;
+  border-color: #fff;
+}
+
+tbody tr:hover td:last-child:after {
+  border-right: 2px solid;
+  border-color: #fff;
+}
