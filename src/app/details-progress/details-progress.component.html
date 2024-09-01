@@ -3,7 +3,7 @@
     <div *ngFor="let item of data.list; let index = index" class="group">
       <div
         class="label"
-        [class.active]="index <= color.activeIndex"
+        [class.active]="index <= data.activeIndex"
         [style.fontSize]="color?.label?.fontSize + 'px'"
       >
         {{ item.label }}
@@ -17,9 +17,9 @@
           [style.lineHeight]="color?.content?.lineHeight"
         ></div>
       </div>
-      <div class="node" [class.active]="index <= color.activeIndex"></div>
+      <div class="node" [class.active]="index <= data.activeIndex"></div>
       <img
-        *ngIf="index === color.activeIndex"
+        *ngIf="index === data.activeIndex"
         src="assets/details-progress/image/light_node.png"
         alt=""
         class="light-node"
