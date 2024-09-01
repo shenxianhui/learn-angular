@@ -20,7 +20,8 @@ import { HighlightLabelComponent } from './highlight-label/highlight-label.compo
 import { ComprehensiveListComponent } from './comprehensive-list/comprehensive-list.component'
 import { RuleExpressionComponent } from './rule-expression/rule-expression.component'
 import { LineBarComponent } from './line-bar/line-bar.component';
-import { DetailsProgressComponent } from './details-progress/details-progress.component'
+import { DetailsProgressComponent } from './details-progress/details-progress.component';
+import { CarouselInfoComponent } from './carousel-info/carousel-info.component'
 
 registerLocaleData(zh)
 
@@ -39,6 +40,7 @@ registerLocaleData(zh)
     RuleExpressionComponent,
     LineBarComponent,
     DetailsProgressComponent,
+    CarouselInfoComponent,
   ],
   imports: [
     BrowserModule,
