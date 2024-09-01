@@ -1,0 +1,48 @@
+{
+  "id": 317,
+  "name": "details-progress",
+  "module_type": "others",
+  "width": 90,
+  "height": 80,
+  "json_data": {
+    "data_json": {
+      "data": {
+        "list": [
+          {
+            "label": "节点1",
+            "content": "2023/8/14-12:21:34<br>内容内容内容内容"
+          },
+          {
+            "label": "节点2",
+            "content": "2023/8/14-12:21:34<br>内容内容内容内容内容内容内容内容内容"
+          },
+          {
+            "label": "节点3",
+            "content": "2023/8/14-12:21:34<br>内容内容内容内容"
+          },
+          {
+            "label": "节点4",
+            "content": "2023/8/14-12:21:34<br>内容内容内容内容"
+          },
+          {
+            "label": "节点5",
+            "content": "2023/8/14-12:21:34<br>内容内容内容内容"
+          }
+        ]
+      }
+    },
+    "color_json": {
+      "activeIndex": 2,
+      "label": {
+        "fontSize": 18
+      },
+      "content": {
+        "fontSize": 14,
+        "color": "#fff",
+        "lineHeight": 1.4
+      }
+    },
+    "link_json": {},
+    "params_json": {}
+  }
+}

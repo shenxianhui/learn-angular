@@ -1,0 +1,57 @@
+{
+  "name": "详情进度条",
+  "id": "317",
+  "unique": "details-progress",
+  "type_cn": "其他",
+  "type_en": "others",
+  "preview": "assets/details-progress/image/details-progress.png",
+  "com_type": "angular",
+  "sampleCode": "",
+  "config": {
+    "list": [],
+    "comments": []
+  },
+  "data": {
+    "list": [
+      {
+        "attribute": "list.label",
+        "declare": "节点标签",
+        "type": "String",
+        "desc": "必传。只做展示，不做校验"
+      },
+      {
+        "attribute": "list.content",
+        "declare": "节点内容, 用 <br> 换行",
+        "type": "String",
+        "desc": "必传。只做展示，不做校验"
+      }
+    ],
+    "comments": [],
+    "format": {
+      "data": {
+        "list": [
+          {
+            "label": "节点1",
+            "content": "2023/8/14-12:21:34<br>内容内容内容内容"
+          },
+          {
+            "label": "节点2",
+            "content": "2023/8/14-12:21:34<br>内容内容内容内容"
+          },
+          {
+            "label": "节点3",
+            "content": "2023/8/14-12:21:34<br>内容内容内容内容"
+          },
+          {
+            "label": "节点4",
+            "content": "2023/8/14-12:21:34<br>内容内容内容内容"
+          },
+          {
+            "label": "节点5",
+            "content": "2023/8/14-12:21:34<br>内容内容内容内容"
+          }
+        ]
+      }
+    }
+  }
+}

@@ -19,7 +19,8 @@ import { InfoStatisticsComponent } from './info-statistics/info-statistics.compo
 import { HighlightLabelComponent } from './highlight-label/highlight-label.component'
 import { ComprehensiveListComponent } from './comprehensive-list/comprehensive-list.component'
 import { RuleExpressionComponent } from './rule-expression/rule-expression.component'
-import { LineBarComponent } from './line-bar/line-bar.component'
+import { LineBarComponent } from './line-bar/line-bar.component';
+import { DetailsProgressComponent } from './details-progress/details-progress.component'
 
 registerLocaleData(zh)
 
@@ -37,6 +38,7 @@ registerLocaleData(zh)
     ComprehensiveListComponent,
     RuleExpressionComponent,
     LineBarComponent,
+    DetailsProgressComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,35 @@
+<div class="details-progress">
+  <div class="event-list">
+    <div *ngFor="let item of data.list; let index = index" class="group">
+      <div
+        class="label"
+        [class.active]="index <= color.activeIndex"
+        [style.fontSize]="color?.label?.fontSize + 'px'"
+      >
+        {{ item.label }}
+      </div>
+      <div class="content">
+        <div
+          class="content-text"
+          [innerHTML]="item.content"
+          [style.fontSize]="color?.content?.fontSize + 'px'"
+          [style.color]="color?.content?.color"
+          [style.lineHeight]="color?.content?.lineHeight"
+        ></div>
+      </div>
+      <div class="node" [class.active]="index <= color.activeIndex"></div>
+      <img
+        *ngIf="index === color.activeIndex"
+        src="assets/details-progress/image/light_node.png"
+        alt=""
+        class="light-node"
+      />
+    </div>
+  </div>
+  <div class="line">
+    <div class="line-def">
+      <div class="line-def-inner"></div>
+    </div>
+    <div class="line-act"></div>
+  </div>
+</div>
