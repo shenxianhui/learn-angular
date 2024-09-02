@@ -115,8 +115,8 @@ export class LineBarComponent implements OnInit {
       },
       legend: {
         icon: 'rect',
-        itemWidth: 10,
-        itemHeight: 2,
+        itemWidth: 8,
+        itemHeight: 8,
         itemGap: 18,
         ...legend,
       },
