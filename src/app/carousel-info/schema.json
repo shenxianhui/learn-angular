@@ -32,13 +32,13 @@
         "desc": "必传。只做展示，不做校验"
       },
       {
-        "attribute": "list.content.row.icon",
+        "attribute": "list.content.icon",
         "declare": "卡片内容icon地址",
         "type": "String",
         "desc": "必传。只做展示，不做校验"
       },
       {
-        "attribute": "list.content.row.value",
+        "attribute": "list.content.value",
         "declare": "卡片内容数值",
         "type": "String",
         "desc": "必传。只做展示，不做校验"
@@ -50,36 +50,36 @@
         "list": [
           {
             "header": {
-              "icon": "xxx",
+              "icon": "assets/carousel-info/image/user.png",
               "data": [
                 {
-                  "label": "姓名",
-                  "value": "张三"
+                  "label": "处置人",
+                  "value": "李现"
                 },
                 {
-                  "label": "时间",
-                  "value": "1天12小时24分钟"
+                  "label": "持续时间",
+                  "value": "1天12小时32分"
                 }
               ]
             },
-            "content": {
-              "row": [
+            "content": [
+              [
                 {
-                  "icon": "xxx",
-                  "value": "内容内容内容内容内容"
+                  "icon": "assets/carousel-info/image/company.png",
+                  "value": "天恒有限责任公司"
                 },
                 {
-                  "icon": "xxx",
-                  "value": "内容内容内容内容内容"
+                  "icon": "assets/carousel-info/image/phone.png",
+                  "value": "180-9378-6690"
                 }
               ],
-              "row": [
+              [
                 {
-                  "icon": "xxx",
-                  "value": "内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容"
+                  "icon": "assets/carousel-info/image/complaint.png",
+                  "value": "这是投诉内容这是投诉内容这是投诉内容这是投诉内容"
                 }
               ]
-            }
+            ]
           }
         ]
       }

@@ -14,6 +14,12 @@
   "data": {
     "list": [
       {
+        "attribute": "activeIndex",
+        "declare": "当前节点索引",
+        "type": "Number",
+        "desc": "必传。只做展示，不做校验"
+      },
+      {
         "attribute": "list.label",
         "declare": "节点标签",
         "type": "String",
@@ -29,6 +35,7 @@
     "comments": [],
     "format": {
       "data": {
+        "activeIndex": 2,
         "list": [
           {
             "label": "节点1",
