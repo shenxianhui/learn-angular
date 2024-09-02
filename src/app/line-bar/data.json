@@ -56,13 +56,13 @@
           "borderColor": "rgba(81, 203, 216, 1)"
         },
         "bar2": {
-          "itemColor": "#5ef3ff"
+          "itemColor": "#FF435B"
         },
         "line1": {
-          "itemColor": "#b0d318"
+          "itemColor": "#50FFCC"
         },
         "line2": {
-          "itemColor": "#ffdbe4"
+          "itemColor": "#52D2FF"
         }
       }
     },

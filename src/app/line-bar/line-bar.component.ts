@@ -19,15 +19,18 @@ function getBorderHeight(list = []) {
 }
 
 series.forEach(item => {
+  const styleObj = seriesMap[item.key] || {}
+
   if (item.type === 'line') {
     seriesData.push({
       ...item,
       step: true,
+      lineStyle: {
+        color: styleObj.itemColor || '#b0d318',
+      },
     })
   }
   if (item.type === 'bar') {
-    const styleObj = seriesMap[item.key] || {}
-
     if (styleObj.borderColor) {
       seriesData.push(
         {
@@ -45,11 +48,11 @@ series.forEach(item => {
                 [
                   {
                     offset: 0,
-                    color: styleObj.itemColor[0],
+                    color: styleObj.itemColor[0] || 'rgba(81, 203, 216, 0.5)',
                   },
                   {
                     offset: 1,
-                    color: styleObj.itemColor[1],
+                    color: styleObj.itemColor[1] || 'rgba(81, 203, 216, 0)',
                   },
                 ],
                 false,
@@ -64,7 +67,7 @@ series.forEach(item => {
           barGap: '0',
           itemStyle: {
             normal: {
-              color: styleObj.borderColor,
+              color: styleObj.borderColor || 'rgba(81, 203, 216, 1)',
             },
           },
           label: {
@@ -82,6 +85,9 @@ series.forEach(item => {
       seriesData.unshift({
         ...item,
         stack: 1,
+        itemStyle: {
+          color: styleObj.itemColor || '#f00',
+        },
       })
     }
   }
