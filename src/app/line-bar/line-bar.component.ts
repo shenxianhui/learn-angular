@@ -30,6 +30,7 @@ series.forEach((item, index) => {
         color: styleObj.itemColor || (index === 2 ? '#50FFCC' : '#52D2FF'),
       },
       itemStyle: {
+        color: styleObj.itemColor || (index === 2 ? '#50FFCC' : '#52D2FF'),
         opacity: 0,
       },
     })
@@ -130,8 +131,8 @@ export class LineBarComponent implements OnInit {
       },
       legend: {
         icon: 'rect',
-        // itemWidth: 8,
-        // itemHeight: 8,
+        itemWidth: 10,
+        itemHeight: 2,
         itemGap: 18,
         textStyle: {
           color: '#fff',
