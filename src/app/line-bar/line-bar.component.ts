@@ -9,6 +9,7 @@ const { legend = {}, seriesMap = {} } = color_json
 const { xAxis = {}, series = [] } = data
 const { data: xAxisData = [] } = xAxis
 const seriesData = []
+const legendData = []
 
 function getBorderHeight(list = []) {
   const sum = list.reduce((acc, curr) => acc + curr, 0)
@@ -28,6 +29,14 @@ series.forEach(item => {
       lineStyle: {
         color: styleObj.itemColor || '#b0d318',
       },
+      itemStyle: {
+        opacity: 0,
+      },
+    })
+
+    legendData.push({
+      name: item.name,
+      icon: 'path://M 0 0 H 12 V 2 H 0 Z',
     })
   }
   if (item.type === 'bar') {
@@ -90,6 +99,11 @@ series.forEach(item => {
         },
       })
     }
+
+    legendData.push({
+      name: item.name,
+      icon: 'path://M 0 0 H 8 V 8 H 0 Z',
+    })
   }
 })
 
@@ -115,10 +129,11 @@ export class LineBarComponent implements OnInit {
       },
       legend: {
         icon: 'rect',
-        itemWidth: 8,
-        itemHeight: 8,
+        // itemWidth: 8,
+        // itemHeight: 8,
         itemGap: 18,
         ...legend,
+        data: legendData,
       },
       grid: {
         left: '3%',
