@@ -30,6 +30,9 @@
     <div class="line-def">
       <div class="line-def-inner"></div>
     </div>
-    <div class="line-act"></div>
+    <div
+      class="line-act"
+      [style.width]="data.activeIndex * (100 / (data.list.length - 1)) + '%'"
+    ></div>
   </div>
 </div>
