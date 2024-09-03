@@ -19,7 +19,7 @@ function getBorderHeight(list = []) {
   return arr
 }
 
-series.forEach(item => {
+series.forEach((item, index) => {
   const styleObj = seriesMap[item.key] || {}
 
   if (item.type === 'line') {
@@ -27,7 +27,7 @@ series.forEach(item => {
       ...item,
       step: true,
       lineStyle: {
-        color: styleObj.itemColor || '#b0d318',
+        color: styleObj.itemColor || (index === 2 ? '#50FFCC' : '#52D2FF'),
       },
       itemStyle: {
         opacity: 0,
@@ -36,11 +36,11 @@ series.forEach(item => {
 
     legendData.push({
       name: item.name,
-      icon: 'path://M 0 0 H 12 V 2 H 0 Z',
+      icon: 'path://M 0 0 H 10 V 2 H 0 Z',
     })
   }
   if (item.type === 'bar') {
-    if (styleObj.borderColor) {
+    if (styleObj.borderColor || (index === 0 && !styleObj.itemColor)) {
       seriesData.push(
         {
           ...item,
@@ -57,11 +57,12 @@ series.forEach(item => {
                 [
                   {
                     offset: 0,
-                    color: styleObj.itemColor[0] || 'rgba(81, 203, 216, 0.5)',
+                    color:
+                      (styleObj.itemColor && styleObj.itemColor[0]) || 'rgba(81, 203, 216, 0.5)',
                   },
                   {
                     offset: 1,
-                    color: styleObj.itemColor[1] || 'rgba(81, 203, 216, 0)',
+                    color: (styleObj.itemColor && styleObj.itemColor[1]) || 'rgba(81, 203, 216, 0)',
                   },
                 ],
                 false,
@@ -95,7 +96,7 @@ series.forEach(item => {
         ...item,
         stack: 1,
         itemStyle: {
-          color: styleObj.itemColor || '#f00',
+          color: styleObj.itemColor || '#FF435B',
         },
       })
     }
@@ -132,6 +133,9 @@ export class LineBarComponent implements OnInit {
         // itemWidth: 8,
         // itemHeight: 8,
         itemGap: 18,
+        textStyle: {
+          color: '#fff',
+        },
         ...legend,
         data: legendData,
       },
