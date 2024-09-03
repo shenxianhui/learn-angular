@@ -6,7 +6,7 @@
   "type_en": "survey",
   "preview": "assets/carousel-info/image/carousel-info.png",
   "com_type": "angular",
-  "sampleCode": "",
+  "sampleCode": "{'interval':10000,'header':{'data':[{'label':{'fontSize':14,'color':'#ffffffcc'},'value':{'fontSize':14,'color':'#fff0000'}},{'label':{'fontSize':14,'color':'#ffffffcc'},'value':{'fontSize':14,'color':'#fff'}}]},'content':[[{'value':{'fontSize':14,'color':'#fff'}},{'value':{'fontSize':14,'color':'#fff'}}],[{'value':{'fontSize':14,'color':'#fff'}}]]}",
   "config": {
     "list": [],
     "comments": []
@@ -81,57 +81,6 @@
               ]
             ]
           }
-        ]
-      },
-      "color": {
-        "interval": 10000,
-        "header": {
-          "data": [
-            {
-              "label": {
-                "fontSize": 14,
-                "color": "#ffffffcc"
-              },
-              "value": {
-                "fontSize": 14,
-                "color": "#fff0000"
-              }
-            },
-            {
-              "label": {
-                "fontSize": 14,
-                "color": "#ffffffcc"
-              },
-              "value": {
-                "fontSize": 14,
-                "color": "#fff"
-              }
-            }
-          ]
-        },
-        "content": [
-          [
-            {
-              "value": {
-                "fontSize": 14,
-                "color": "#fff"
-              }
-            },
-            {
-              "value": {
-                "fontSize": 14,
-                "color": "#fff"
-              }
-            }
-          ],
-          [
-            {
-              "value": {
-                "fontSize": 14,
-                "color": "#fff"
-              }
-            }
-          ]
         ]
       }
     }

@@ -6,7 +6,7 @@
   "type_en": "others",
   "preview": "assets/details-progress/image/details-progress.png",
   "com_type": "angular",
-  "sampleCode": "",
+  "sampleCode": "{'label':{'fontSize':18},'content':{'fontSize':14,'color':'#fff','lineHeight':1.4}}",
   "config": {
     "list": [],
     "comments": []
@@ -58,16 +58,6 @@
             "content": "2023/8/14-12:21:34<br>内容内容内容内容"
           }
         ]
-      },
-      "color": {
-        "label": {
-          "fontSize": 18
-        },
-        "content": {
-          "fontSize": 14,
-          "color": "#fff",
-          "lineHeight": 1.4
-        }
       }
     }
   }
