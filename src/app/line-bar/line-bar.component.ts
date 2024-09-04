@@ -13,7 +13,7 @@ const legendData = []
 
 function getBorderHeight(list = []) {
   const sum = list.reduce((acc, curr) => acc + curr, 0)
-  const average = sum / list.length / 40
+  const average = (sum / list.length / 40) * 1.5
   const arr = Array(list.length).fill(average)
 
   return arr
@@ -49,6 +49,7 @@ series.forEach((item, index) => {
       seriesData.push(
         {
           ...item,
+          name: '',
           stack: 1,
           barGap: '0',
           borderWidth: 0,
@@ -63,11 +64,11 @@ series.forEach((item, index) => {
                   {
                     offset: 0,
                     color:
-                      (styleObj.itemColor && styleObj.itemColor[0]) || 'rgba(81, 203, 216, 0.5)',
+                      (styleObj.itemColor && styleObj.itemColor[0]) || 'rgba(82, 210, 255, 0.3)',
                   },
                   {
-                    offset: 1,
-                    color: (styleObj.itemColor && styleObj.itemColor[1]) || 'rgba(81, 203, 216, 0)',
+                    offset: 0.3,
+                    color: (styleObj.itemColor && styleObj.itemColor[1]) || 'rgba(82, 210, 255, 0)',
                   },
                 ],
                 false,
@@ -81,12 +82,12 @@ series.forEach((item, index) => {
         },
         {
           type: 'bar',
-          name: '',
+          name: item.name,
           stack: 1,
           barGap: '0',
           itemStyle: {
             normal: {
-              color: styleObj.borderColor || 'rgba(81, 203, 216, 1)',
+              color: styleObj.borderColor || 'rgba(82, 210, 255, 1)',
             },
           },
           label: {

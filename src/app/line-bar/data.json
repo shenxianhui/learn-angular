@@ -52,8 +52,8 @@
       },
       "seriesMap": {
         "bar1": {
-          "itemColor": ["rgba(81, 203, 216, 0.5)", "rgba(81, 203, 216, 0)"],
-          "borderColor": "rgba(81, 203, 216, 1)"
+          "itemColor": ["rgba(82, 210, 255, 0.3)", "rgba(82, 210, 255, 0)"],
+          "borderColor": "rgba(82, 210, 255, 1)"
         },
         "bar2": {
           "itemColor": "#FF435B"
