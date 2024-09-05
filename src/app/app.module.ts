@@ -21,7 +21,12 @@ import { ComprehensiveListComponent } from './comprehensive-list/comprehensive-l
 import { RuleExpressionComponent } from './rule-expression/rule-expression.component'
 import { LineBarComponent } from './line-bar/line-bar.component';
 import { DetailsProgressComponent } from './details-progress/details-progress.component';
-import { CarouselInfoComponent } from './carousel-info/carousel-info.component'
+import { CarouselInfoComponent } from './carousel-info/carousel-info.component';
+import { SlideListComponent } from './slide-list/slide-list.component';
+import { MonthlyCalendarComponent } from './monthly-calendar/monthly-calendar.component';
+import { ColorfulRankComponent } from './colorful-rank/colorful-rank.component';
+import { StageNodeComponent } from './stage-node/stage-node.component';
+import { DoubleBarComponent } from './double-bar/double-bar.component'
 
 registerLocaleData(zh)
 
@@ -41,6 +46,11 @@ registerLocaleData(zh)
     LineBarComponent,
     DetailsProgressComponent,
     CarouselInfoComponent,
+    SlideListComponent,
+    MonthlyCalendarComponent,
+    ColorfulRankComponent,
+    StageNodeComponent,
+    DoubleBarComponent,
   ],
   imports: [
     BrowserModule,
