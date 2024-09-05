@@ -1,0 +1,87 @@
+{
+  "name": "阶段节点图",
+  "id": "325",
+  "unique": "stage-node",
+  "type_cn": "其他",
+  "type_en": "others",
+  "preview": "assets/stage-node/image/stage-node.png",
+  "com_type": "angular",
+  "sampleCode": "{'activeIndex':{'0':7,'1':0},'labelStyle':{'name':{'fontSize':14,'color':'#ffffff'},'cpu':{'fontSize':14,'color':'#ffffff'},'station':{'fontSize':14,'color':'#ffffff'},'step':{'fontSize':14,'color':'#ffffff'}},'activeLabelStyle':{'name':{'fontSize':16,'color':'#ffffff'},'cpu':{'fontSize':16,'color':'#ffffff'},'station':{'fontSize':16,'color':'#ffffff'},'step':{'fontSize':16,'color':'#ffffff'}},'infoStyle':{'label':{'fontSize':14,'color':'#ffffff'},'value':{'fontSize':14,'color':'#ffffff'},'total':{'fontSize':14,'color':'#cccccc'}}}",
+  "config": {
+    "list": [],
+    "comments": []
+  },
+  "data": {
+    "list": [
+      {
+        "attribute": "list.id",
+        "declare": "id",
+        "type": "Number",
+        "desc": "必传。只做展示，不做校验"
+      },
+      {
+        "attribute": "list.name",
+        "declare": "名称",
+        "type": "String",
+        "desc": "必传。只做展示，不做校验"
+      },
+      {
+        "attribute": "list.cpu",
+        "declare": "cpu名称",
+        "type": "String",
+        "desc": "必传。只做展示，不做校验"
+      },
+      {
+        "attribute": "list.station",
+        "declare": "station名称",
+        "type": "String",
+        "desc": "必传。只做展示，不做校验"
+      },
+      {
+        "attribute": "list.steps",
+        "declare": "步骤",
+        "type": "String[]",
+        "desc": "必传。只做展示，不做校验"
+      },
+      {
+        "attribute": "list.info.label",
+        "declare": "右侧信息标签",
+        "type": "String",
+        "desc": "必传。只做展示，不做校验"
+      },
+      {
+        "attribute": "list.info.value",
+        "declare": "右侧信息数值",
+        "type": "Number[]",
+        "desc": "必传。只做展示，不做校验"
+      }
+    ],
+    "comments": [],
+    "format": {
+      "data": {
+        "list": [
+          {
+            "id": 0,
+            "name": "情报预警",
+            "cpu": "自动响应",
+            "station": "完成",
+            "steps": ["情报验证", "影响范围确认", "情报定级", "预警审核", "预警发送", "完成"],
+            "info": [
+              {
+                "label": "已通知",
+                "value": [260, 420]
+              },
+              {
+                "label": "受影响",
+                "value": [260]
+              }
+            ]
+          },
+          {
+            "id": 1
+          }
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,90 @@
+{
+  "name": "月历表",
+  "id": "323",
+  "unique": "monthly-calendar",
+  "type_cn": "其他",
+  "type_en": "others",
+  "preview": "assets/monthly-calendar/image/monthly-calendar.png",
+  "com_type": "angular",
+  "sampleCode": "{'sunriseTime':'06:00','sunsetTime':'18:00','colors':['#76bd85','#7ba0ff','#f7b52c'],'style1':{'fontSize':14,'color':'#ffffff'},'style2':{'fontSize':14,'color':'#ffffff'},'style3':{'fontSize':14,'color':'#ffffff','alarmColor':'ff0000'}}",
+  "config": {
+    "list": [],
+    "comments": []
+  },
+  "data": {
+    "list": [
+      {
+        "attribute": "selectedDate",
+        "declare": "已选日期",
+        "type": "String",
+        "desc": "必传。只做展示，不做校验"
+      },
+      {
+        "attribute": "selectedTime",
+        "declare": "已选时间",
+        "type": "String",
+        "desc": "必传。只做展示，不做校验"
+      },
+      {
+        "attribute": "list.name",
+        "declare": "一级名称",
+        "type": "String",
+        "desc": "必传。只做展示，不做校验"
+      },
+      {
+        "attribute": "list.children.icon",
+        "declare": "二级icon",
+        "type": "String",
+        "desc": "必传。只做展示，不做校验"
+      },
+      {
+        "attribute": "list.children.name",
+        "declare": "二级名称",
+        "type": "String",
+        "desc": "必传。只做展示，不做校验"
+      },
+      {
+        "attribute": "list.children.children.content",
+        "declare": "人员列表",
+        "type": "String[]",
+        "desc": "必传。只做展示，不做校验"
+      },
+      {
+        "attribute": "list.children.children.alarm",
+        "declare": "风险预警",
+        "type": "Boolean",
+        "desc": "必传。只做展示，不做校验"
+      }
+    ],
+    "comments": [],
+    "format": {
+      "data": {
+        "selectedDate": "2024-09-05",
+        "selectedTime": "12:00",
+        "list": [
+          {
+            "name": "情报预警",
+            "children": [
+              {
+                "icon": "",
+                "name": "情报分析",
+                "children": [
+                  {
+                    "content": ["张三", "李四"]
+                  },
+                  {
+                    "alarm": true,
+                    "content": ["王五"]
+                  },
+                  {
+                    "content": ["赵六"]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

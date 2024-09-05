@@ -1,0 +1,58 @@
+{
+  "name": "滑动列表",
+  "id": "322",
+  "unique": "slide-list",
+  "type_cn": "表格",
+  "type_en": "table",
+  "preview": "assets/slide-list/image/slide-list.png",
+  "com_type": "angular",
+  "sampleCode": "{'verticalInterval':10000,'horizontalInterval':50000,'showIndex':false,'index':{'fontSize':14,'color':'#ffffff'},'title':{'fontSize':14,'color':'#ffffff'},'content':{'fontSize':14,'color':'#ffffff'}}",
+  "config": {
+    "list": [],
+    "comments": []
+  },
+  "data": {
+    "list": [
+      {
+        "attribute": "list.title",
+        "declare": "标题",
+        "type": "String",
+        "desc": "必传。只做展示，不做校验"
+      },
+      {
+        "attribute": "list.content.icon",
+        "declare": "内容icon",
+        "type": "String",
+        "desc": "必传。只做展示，不做校验"
+      },
+      {
+        "attribute": "list.content.text",
+        "declare": "内容文本",
+        "type": "String",
+        "desc": "必传。只做展示，不做校验"
+      }
+    ],
+    "comments": [],
+    "format": {
+      "data": {
+        "list": [
+          [
+            {
+              "title": "标题",
+              "content": [
+                {
+                  "icon": "assets/slide-list/image/xxx.png",
+                  "text": "内容"
+                },
+                {
+                  "icon": "assets/slide-list/image/xxx.png",
+                  "text": "内容"
+                }
+              ]
+            }
+          ]
+        ]
+      }
+    }
+  }
+}

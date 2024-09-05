@@ -1,0 +1,83 @@
+{
+  "name": "双行柱图",
+  "id": "326",
+  "unique": "double-bar",
+  "type_cn": "柱状图",
+  "type_en": "bar",
+  "preview": "assets/double-bar/image/double-bar.png",
+  "com_type": "angular",
+  "sampleCode": "{'legend':{'show':true,'left':'center','top':10,'right':'center','bottom':'auto','textStyle':{'color':'#fff','fontSize':12}},'seriesMap':{'up':{'borderColor':'#FF435B'},'down':{'borderColor':'#FF435B'}}}",
+  "config": {
+    "list": [],
+    "comments": []
+  },
+  "data": {
+    "list": [
+      {
+        "attribute": "xAxis.name",
+        "declare": "X轴名称",
+        "type": "String",
+        "desc": "必传。只做展示，不做校验"
+      },
+      {
+        "attribute": "xAxis.data",
+        "declare": "X轴数据",
+        "type": "String",
+        "desc": "必传。只做展示，不做校验"
+      },
+      {
+        "attribute": "yAxis.name",
+        "declare": "Y轴名称",
+        "type": "String",
+        "desc": "必传。只做展示，不做校验"
+      },
+      {
+        "attribute": "series.key",
+        "declare": "系列 key 值, 用于匹配对应样式",
+        "type": "String",
+        "desc": "必传。只做展示，不做校验"
+      },
+      {
+        "attribute": "series.name",
+        "declare": "系列名称，用于tooltip的显示，legend 的图例筛选",
+        "type": "String",
+        "desc": "必传。只做展示，不做校验"
+      },
+      {
+        "attribute": "series.data",
+        "declare": "系列中的数据内容数组",
+        "type": "Array",
+        "desc": "必传。只做展示，不做校验"
+      }
+    ],
+    "comments": [],
+    "format": {
+      "data": {
+        "xAxis": {
+          "name": "日期",
+          "data": ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"]
+        },
+        "yAxis": [
+          {
+            "name": "个"
+          },
+          {
+            "name": "次"
+          }
+        ],
+        "series": [
+          {
+            "key": "up",
+            "name": "柱1",
+            "data": [320, 332, 301, 334, 390, 330, 320]
+          },
+          {
+            "key": "down",
+            "name": "柱2",
+            "data": [150, 232, 201, 154, 190, 330, 410]
+          }
+        ]
+      }
+    }
+  }
+}

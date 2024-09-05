@@ -1,0 +1,49 @@
+{
+  "name": "色值排行图",
+  "id": "324",
+  "unique": "colorful-rank",
+  "type_cn": "排行图",
+  "type_en": "rank",
+  "preview": "assets/colorful-rank/image/colorful-rank.png",
+  "com_type": "angular",
+  "sampleCode": "{'colors':['#76bd85','#7ba0ff','#f7b52c'],'label':{'fontSize':14,'color':'#ffffff'},'value':{'fontSize':14,'color':'#ffffff'}}",
+  "config": {
+    "list": [],
+    "comments": []
+  },
+  "data": {
+    "list": [
+      {
+        "attribute": "list.label",
+        "declare": "标签",
+        "type": "String",
+        "desc": "必传。只做展示，不做校验"
+      },
+      {
+        "attribute": "list.value",
+        "declare": "数值",
+        "type": "Number",
+        "desc": "必传。只做展示，不做校验"
+      }
+    ],
+    "comments": [],
+    "format": {
+      "data": {
+        "list": [
+          {
+            "label": "xxx",
+            "value": 123
+          },
+          {
+            "label": "xxx",
+            "value": 123
+          },
+          {
+            "label": "xxx",
+            "value": 123
+          }
+        ]
+      }
+    }
+  }
+}
