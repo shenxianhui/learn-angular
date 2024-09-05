@@ -1,0 +1,43 @@
+{
+  "id": 325,
+  "name": "stage-node",
+  "module_type": "other",
+  "width": 90,
+  "height": 80,
+  "json_data": {
+    "data_json": {
+      "data": {
+        "list": [
+          {
+            "id": 0
+          },
+          {
+            "id": 1
+          },
+          {
+            "id": 2
+          },
+          {
+            "id": 3
+          }
+        ]
+      }
+    },
+    "color_json": {
+      "stageMap": {
+        "0": {
+          "activeIndex": 0
+        }
+      },
+      "style": {
+        "label": {
+          "fontSize": 14,
+          "color": "#ffffff",
+          "activeColor": "#ffffff"
+        }
+      }
+    },
+    "link_json": {},
+    "params_json": {}
+  }
+}

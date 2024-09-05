@@ -1,0 +1,40 @@
+{
+  "id": 324,
+  "name": "colorful-rank",
+  "module_type": "rank",
+  "width": 90,
+  "height": 80,
+  "json_data": {
+    "data_json": {
+      "data": {
+        "list": [
+          {
+            "label": "xxx",
+            "value": 123
+          },
+          {
+            "label": "xxx",
+            "value": 123
+          },
+          {
+            "label": "xxx",
+            "value": 123
+          }
+        ]
+      }
+    },
+    "color_json": {
+      "colors": ["#76bd85", "#7ba0ff", "#f7b52c"],
+      "label": {
+        "fontSize": 14,
+        "color": "#ffffff"
+      },
+      "value": {
+        "fontSize": 14,
+        "color": "#ffffff"
+      }
+    },
+    "link_json": {},
+    "params_json": {}
+  }
+}

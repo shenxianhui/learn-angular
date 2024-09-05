@@ -1,0 +1,44 @@
+{
+  "id": 322,
+  "name": "slide-list",
+  "module_type": "table",
+  "width": 90,
+  "height": 80,
+  "json_data": {
+    "data_json": {
+      "data": {
+        "list": [
+          [
+            {
+              "title": "标题",
+              "content": [
+                {
+                  "icon": "assets/slide-list/image/xxx.png",
+                  "text": "内容"
+                },
+                {
+                  "icon": "assets/slide-list/image/xxx.png",
+                  "text": "内容"
+                }
+              ]
+            }
+          ]
+        ]
+      }
+    },
+    "color_json": {
+      "verticalInterval": 10000,
+      "horizontalInterval": 50000,
+      "title": {
+        "fontSize": 14,
+        "color": "#ffffff"
+      },
+      "content": {
+        "fontSize": 14,
+        "color": "#ffffff"
+      }
+    },
+    "link_json": {},
+    "params_json": {}
+  }
+}

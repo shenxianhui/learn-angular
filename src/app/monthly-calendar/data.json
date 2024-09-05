@@ -1,0 +1,61 @@
+{
+  "id": 323,
+  "name": "monthly-calendar",
+  "module_type": "others",
+  "width": 90,
+  "height": 80,
+  "json_data": {
+    "data_json": {
+      "data": {
+        "selectedDate": "2024-09-05",
+        "selectedTime": "12:00",
+        "list": [
+          {
+            "name": "",
+            "children": [
+              {
+                "icon": "",
+                "name": "",
+                "children": [
+                  {
+                    "icon": "",
+                    "content": ["张三", "李四"]
+                  },
+                  {
+                    "alarm": true,
+                    "icon": "",
+                    "alarmIcon": "",
+                    "content": ["王五"]
+                  },
+                  {
+                    "icon": "",
+                    "content": ["赵六"]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "color_json": {
+      "sunriseTime": "06:00",
+      "sunsetTime": "18:00",
+      "style1": {
+        "fontSize": 14,
+        "color": "#ffffff"
+      },
+      "style2": {
+        "fontSize": 14,
+        "color": "#ffffff"
+      },
+      "style3": {
+        "fontSize": 14,
+        "color": "#ffffff",
+        "alarmColor": "ff0000"
+      }
+    },
+    "link_json": {},
+    "params_json": {}
+  }
+}
