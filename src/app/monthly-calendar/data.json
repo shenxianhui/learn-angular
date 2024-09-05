@@ -18,17 +18,13 @@
                 "name": "",
                 "children": [
                   {
-                    "icon": "",
                     "content": ["张三", "李四"]
                   },
                   {
                     "alarm": true,
-                    "icon": "",
-                    "alarmIcon": "",
                     "content": ["王五"]
                   },
                   {
-                    "icon": "",
                     "content": ["赵六"]
                   }
                 ]
@@ -41,6 +37,7 @@
     "color_json": {
       "sunriseTime": "06:00",
       "sunsetTime": "18:00",
+      "colors": ["#76bd85", "#7ba0ff", "#f7b52c"],
       "style1": {
         "fontSize": 14,
         "color": "#ffffff"

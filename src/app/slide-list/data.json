@@ -29,6 +29,11 @@
     "color_json": {
       "verticalInterval": 10000,
       "horizontalInterval": 50000,
+      "showIndex": false,
+      "index": {
+        "fontSize": 14,
+        "color": "#ffffff"
+      },
       "title": {
         "fontSize": 14,
         "color": "#ffffff"

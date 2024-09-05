@@ -9,31 +9,81 @@
       "data": {
         "list": [
           {
-            "id": 0
+            "id": 0,
+            "name": "情报预警",
+            "cpu": "自动响应",
+            "station": "完成",
+            "steps": ["情报验证", "影响范围确认", "情报定级", "预警审核", "预警发送", "完成"],
+            "info": [
+              {
+                "label": "已通知",
+                "value": [260, 420]
+              },
+              {
+                "label": "受影响",
+                "value": [260]
+              }
+            ]
           },
           {
             "id": 1
-          },
-          {
-            "id": 2
-          },
-          {
-            "id": 3
           }
         ]
       }
     },
     "color_json": {
-      "stageMap": {
-        "0": {
-          "activeIndex": 0
+      "activeIndex": {
+        "0": 7,
+        "1": 0
+      },
+      "labelStyle": {
+        "name": {
+          "fontSize": 14,
+          "color": "#ffffff"
+        },
+        "cpu": {
+          "fontSize": 14,
+          "color": "#ffffff"
+        },
+        "station": {
+          "fontSize": 14,
+          "color": "#ffffff"
+        },
+        "step": {
+          "fontSize": 14,
+          "color": "#ffffff"
         }
       },
-      "style": {
+      "activeLabelStyle": {
+        "name": {
+          "fontSize": 16,
+          "color": "#ffffff"
+        },
+        "cpu": {
+          "fontSize": 16,
+          "color": "#ffffff"
+        },
+        "station": {
+          "fontSize": 16,
+          "color": "#ffffff"
+        },
+        "step": {
+          "fontSize": 16,
+          "color": "#ffffff"
+        }
+      },
+      "infoStyle": {
         "label": {
           "fontSize": 14,
-          "color": "#ffffff",
-          "activeColor": "#ffffff"
+          "color": "#ffffff"
+        },
+        "value": {
+          "fontSize": 14,
+          "color": "#ffffff"
+        },
+        "total": {
+          "fontSize": 14,
+          "color": "#cccccc"
         }
       }
     },
