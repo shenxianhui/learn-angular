@@ -1,3 +1,34 @@
-<p>
-  monthly-calendar works!
-</p>
+<div class="calendar">
+  <!-- 第一排：当前月的日子按钮 -->
+  <div class="days-row">
+    <!-- 正常日期按钮 -->
+    <div class="btn-wrap">
+      <button
+        *ngFor="let day of daysInRange(1, endDay)"
+        [ngClass]="getDayClass(day)"
+        class="day-btn"
+      >
+        {{ day }}
+      </button>
+    </div>
+
+    <!-- 虚线框包裹 endDay 之后的按钮 -->
+    <div class="dashed-border">
+      <button
+        *ngFor="let day of daysInRange(endDay + 1, daysInMonth)"
+        [ngClass]="getDayClass(day)"
+        class="day-btn"
+      >
+        {{ day }}
+      </button>
+    </div>
+  </div>
+
+  <!-- 第二排：时间刻度 -->
+  <div class="time-row">
+    <div *ngFor="let hour of timeScale" class="time-scale">
+      <div class="tick-mark"></div>
+      <span>{{ hour }}:00</span>
+    </div>
+  </div>
+</div>
