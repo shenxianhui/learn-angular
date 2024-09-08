@@ -1,3 +1,15 @@
-<p>
-  slide-list works!
-</p>
+<div class="swiper">
+  <div *ngFor="let item of data.list || []" class="swiper-item">
+    <div *ngFor="let item1 of item || []" class="slide-list">
+      <div class="date-text text-ellipsis">{{ item1.title }}</div>
+      <div class="content">
+        <div *ngFor="let item2 of item1.content || []" class="item1">
+          <img class="item-pic" src="assets/slide-list/image/tag.png" alt="" />
+          <div class="item1-info">
+            {{ item2.text }}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
