@@ -35,40 +35,83 @@
       <div class="time-row">
         <div *ngFor="let hour of timeScale; let index = index" class="time-scale">
           <div class="tick-mark"></div>
-          <span *ngIf="index % 2 === 0">{{ hour }}:00</span>
+          <div class="time">
+            <span *ngIf="index % 2 === 0">{{ hour }}</span>
+          </div>
+          <div class="weather">
+            <img
+              *ngIf="color.sunriseTime === hour"
+              src="assets/monthly-calendar/image/day.png"
+              alt=""
+            />
+            <img
+              *ngIf="color.sunsetTime === hour"
+              src="assets/monthly-calendar/image/night.png"
+              alt=""
+            />
+          </div>
         </div>
       </div>
     </div>
   </div>
 
   <div class="body">
-    <div class="item">
-      <div class="col1">
-        <span>情报预警</span>
+    <div *ngFor="let item of getList(data.list); let index = index" class="item">
+      <div class="col1" [style.backgroundColor]="getTheme(index) + '19'">
+        <span>{{ item.name }}</span>
       </div>
-      <div class="row">
-        <div class="col2">
-          <div class="group">
-            <img class="icon-before" src="assets/monthly-calendar/image/doc.png" alt="" />
-            <span>情报分析</span>
-          </div>
-          <img class="icon-after" src="assets/monthly-calendar/image/danger.png" alt="" />
-        </div>
-        <div class="col3">
-          <div class="wrap">
+      <div class="content">
+        <div *ngFor="let item1 of item.children || []; let index1 = index" class="row">
+          <div class="col2">
             <div class="group">
-              <div class="tag"></div>
-              <div class="icon">
-                <img class="icon-user" src="assets/monthly-calendar/image/user.png" alt="" />
-                <!-- <img class="icon-alarm" src="assets/monthly-calendar/image/alarm.png" alt="" /> -->
-              </div>
-              <div class="user">
-                <span>张三</span>
-              </div>
+              <img class="icon-before" [src]="item1.icon" alt="" />
+              <span>{{ item1.name }}</span>
             </div>
-            <div class="weather">
-              <img src="assets/monthly-calendar/image/day.png" alt="" />
-              <!-- <img src="assets/monthly-calendar/image/night.png" alt="" /> -->
+            <img
+              *ngIf="item1.alarm"
+              class="icon-after"
+              src="assets/monthly-calendar/image/danger.png"
+              alt=""
+            />
+          </div>
+          <div class="col3">
+            <div
+              class="wrap"
+              *ngFor="let item2 of item1.children || []; let index2 = index"
+              [ngClass]="item2.alarm ? 'alarm' : ''"
+              [style.width]="getPer(color.sunriseTime, color.sunsetTime)[index2] + '%'"
+              [style.backgroundColor]="getTheme(index) + '25'"
+            >
+              <div class="group">
+                <div class="tag" [style.backgroundColor]="getTheme(index)"></div>
+                <div class="icon">
+                  <img
+                    *ngIf="!item2.alarm"
+                    class="icon-user"
+                    src="assets/monthly-calendar/image/user.png"
+                    alt=""
+                  />
+                  <img
+                    *ngIf="item2.alarm"
+                    class="icon-alarm"
+                    src="assets/monthly-calendar/image/alarm.png"
+                    alt=""
+                  />
+                </div>
+                <div *ngIf="!item2.alarm" class="user">
+                  <span *ngFor="let user of item2.content || []; let userIdx = index">
+                    {{ user }}
+                  </span>
+                </div>
+                <div *ngIf="item2.alarm" class="alarm-con">
+                  <div class="text">资源风险预警备份</div>
+                  <div class="tip">此工作项无资源安排</div>
+                </div>
+              </div>
+              <div *ngIf="item1.children && item1.children.length > 1" class="weather">
+                <img *ngIf="index2 === 1" src="assets/monthly-calendar/image/day.png" alt="" />
+                <img *ngIf="index2 !== 1" src="assets/monthly-calendar/image/night.png" alt="" />
+              </div>
             </div>
           </div>
         </div>

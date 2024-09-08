@@ -14,18 +14,150 @@
             "name": "情报预警",
             "children": [
               {
-                "icon": "",
+                "icon": "assets/monthly-calendar/image/doc.png",
                 "name": "情报分析",
                 "children": [
                   {
                     "content": ["张三", "李四"]
                   },
                   {
-                    "alarm": true,
-                    "content": ["王五"]
+                    "content": []
                   },
                   {
                     "content": ["赵六"]
+                  }
+                ]
+              },
+              {
+                "icon": "assets/monthly-calendar/image/doc.png",
+                "name": "情报预警闭环跟踪",
+                "children": [
+                  {
+                    "content": ["张三", "李四"]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "评估与防护",
+            "children": [
+              {
+                "icon": "assets/monthly-calendar/image/doc.png",
+                "name": "MSS/inSAAS",
+                "children": [
+                  {
+                    "content": ["张三", "李四"]
+                  }
+                ]
+              },
+              {
+                "icon": "assets/monthly-calendar/image/doc.png",
+                "name": "Websafe/云防护",
+                "children": [
+                  {
+                    "content": ["张三", "李四"]
+                  }
+                ]
+              },
+              {
+                "icon": "assets/monthly-calendar/image/doc.png",
+                "name": "SASE",
+                "children": [
+                  {
+                    "content": ["张三", "李四"]
+                  }
+                ]
+              },
+              {
+                "icon": "assets/monthly-calendar/image/doc.png",
+                "name": "PTaaS/漏洞验证",
+                "children": [
+                  {
+                    "content": ["张三", "李四"]
+                  }
+                ]
+              },
+              {
+                "icon": "assets/monthly-calendar/image/doc.png",
+                "name": "EISA/EASM",
+                "children": [
+                  {
+                    "content": ["张三", "李四"]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "监测",
+            "children": [
+              {
+                "icon": "assets/monthly-calendar/image/doc.png",
+                "name": "一线7*24",
+                "children": [
+                  {
+                    "content": ["张三", "李四"]
+                  }
+                ]
+              },
+              {
+                "icon": "assets/monthly-calendar/image/doc.png",
+                "name": "二线反馈支持",
+                "children": [
+                  {
+                    "content": ["张三", "李四"]
+                  }
+                ]
+              },
+              {
+                "icon": "assets/monthly-calendar/image/doc.png",
+                "name": "MDR事件监测",
+                "children": [
+                  {
+                    "content": ["张三", "李四"]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "分析",
+            "children": [
+              {
+                "icon": "assets/monthly-calendar/image/doc.png",
+                "name": "MDR分析调查",
+                "children": [
+                  {
+                    "content": ["张三", "李四"]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "响应",
+            "children": [
+              {
+                "icon": "assets/monthly-calendar/image/doc.png",
+                "name": "响应处置",
+                "children": [
+                  {
+                    "content": ["张三", "李四"]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "运营管理",
+            "children": [
+              {
+                "icon": "assets/monthly-calendar/image/doc.png",
+                "name": "CASE&平台轮询",
+                "children": [
+                  {
+                    "content": ["张三", "李四"]
                   }
                 ]
               }
@@ -37,7 +169,7 @@
     "color_json": {
       "sunriseTime": "06:00",
       "sunsetTime": "18:00",
-      "colors": ["#76bd85", "#7ba0ff", "#f7b52c"],
+      "colors": ["#24FFBF", "#29C7FF", "#5277FF", "#FFCB77", "#FFFFFF", "#C68EFF"],
       "style1": {
         "fontSize": 14,
         "color": "#ffffff"
