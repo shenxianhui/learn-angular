@@ -1,0 +1,88 @@
+{
+  "name": "轮播信息",
+  "id": "318",
+  "unique": "carousel-info",
+  "type_cn": "概览图",
+  "type_en": "survey",
+  "preview": "assets/carousel-info/image/carousel-info.png",
+  "com_type": "angular",
+  "sampleCode": "{'interval':10000,'header':{'data':[{'label':{'fontSize':14,'color':'#ffffffcc'},'value':{'fontSize':14,'color':'#fff0000'}},{'label':{'fontSize':14,'color':'#ffffffcc'},'value':{'fontSize':14,'color':'#fff'}}]},'content':[[{'value':{'fontSize':14,'color':'#fff'}},{'value':{'fontSize':14,'color':'#fff'}}],[{'value':{'fontSize':14,'color':'#fff'}}]]}",
+  "config": {
+    "list": [],
+    "comments": []
+  },
+  "data": {
+    "list": [
+      {
+        "attribute": "list.header.icon",
+        "declare": "卡片头部icon地址",
+        "type": "String",
+        "desc": "必传。只做展示，不做校验"
+      },
+      {
+        "attribute": "list.header.data.label",
+        "declare": "卡片头部标签",
+        "type": "String",
+        "desc": "必传。只做展示，不做校验"
+      },
+      {
+        "attribute": "list.header.data.value",
+        "declare": "卡片头部数值",
+        "type": "String",
+        "desc": "必传。只做展示，不做校验"
+      },
+      {
+        "attribute": "list.content.icon",
+        "declare": "卡片内容icon地址",
+        "type": "String",
+        "desc": "必传。只做展示，不做校验"
+      },
+      {
+        "attribute": "list.content.value",
+        "declare": "卡片内容数值",
+        "type": "String",
+        "desc": "必传。只做展示，不做校验"
+      }
+    ],
+    "comments": [],
+    "format": {
+      "data": {
+        "list": [
+          {
+            "header": {
+              "icon": "assets/carousel-info/image/user.png",
+              "data": [
+                {
+                  "label": "处置人",
+                  "value": "李现"
+                },
+                {
+                  "label": "持续时间",
+                  "value": "1天12小时32分"
+                }
+              ]
+            },
+            "content": [
+              [
+                {
+                  "icon": "assets/carousel-info/image/company.png",
+                  "value": "天恒有限责任公司"
+                },
+                {
+                  "icon": "assets/carousel-info/image/phone.png",
+                  "value": "180-9378-6690"
+                }
+              ],
+              [
+                {
+                  "icon": "assets/carousel-info/image/complaint.png",
+                  "value": "这是投诉内容这是投诉内容这是投诉内容这是投诉内容"
+                }
+              ]
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

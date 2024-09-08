@@ -1,0 +1,13 @@
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ */
+import { createPlugin } from "plugin-manager";
+import { LineBarComponent } from "./lib/line-bar.component";
+import { LineBarModule } from "./lib/line-bar.module";
+export default createPlugin({
+    name: "line-bar",
+    module: LineBarModule,
+    component: LineBarComponent,
+});
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoicHVibGljLWFwaS5qcyIsInNvdXJjZVJvb3QiOiJuZzovL2xpbmUtYmFyLyIsInNvdXJjZXMiOlsicHVibGljLWFwaS50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiOzs7O0FBQUEsT0FBTyxFQUFFLFlBQVksRUFBRSxNQUFNLGdCQUFnQixDQUFDO0FBQzlDLE9BQU8sRUFBRSxnQkFBZ0IsRUFBRSxNQUFNLDBCQUEwQixDQUFDO0FBQzVELE9BQU8sRUFBRSxhQUFhLEVBQUUsTUFBTSx1QkFBdUIsQ0FBQztBQUV0RCxlQUFlLFlBQVksQ0FBQztJQUMxQixJQUFJLEVBQUUsVUFBVTtJQUNoQixNQUFNLEVBQUUsYUFBYTtJQUNyQixTQUFTLEVBQUUsZ0JBQWdCO0NBQzVCLENBQUMsQ0FBQyIsInNvdXJjZXNDb250ZW50IjpbImltcG9ydCB7IGNyZWF0ZVBsdWdpbiB9IGZyb20gXCJwbHVnaW4tbWFuYWdlclwiO1xuaW1wb3J0IHsgTGluZUJhckNvbXBvbmVudCB9IGZyb20gXCIuL2xpYi9saW5lLWJhci5jb21wb25lbnRcIjtcbmltcG9ydCB7IExpbmVCYXJNb2R1bGUgfSBmcm9tIFwiLi9saWIvbGluZS1iYXIubW9kdWxlXCI7XG5cbmV4cG9ydCBkZWZhdWx0IGNyZWF0ZVBsdWdpbih7XG4gIG5hbWU6IFwibGluZS1iYXJcIixcbiAgbW9kdWxlOiBMaW5lQmFyTW9kdWxlLFxuICBjb21wb25lbnQ6IExpbmVCYXJDb21wb25lbnQsXG59KTtcbiJdfQ==

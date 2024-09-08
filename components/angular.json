@@ -831,6 +831,76 @@
           }
         }
       }
+    },
+    "details-progress": {
+      "root": "projects/details-progress",
+      "sourceRoot": "projects/details-progress/src",
+      "projectType": "library",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/details-progress/tsconfig.lib.json",
+            "project": "projects/details-progress/ng-package.json"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/details-progress/src/test.ts",
+            "tsConfig": "projects/details-progress/tsconfig.spec.json",
+            "karmaConfig": "projects/details-progress/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/details-progress/tsconfig.lib.json",
+              "projects/details-progress/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    },
+    "carousel-info": {
+      "root": "projects/carousel-info",
+      "sourceRoot": "projects/carousel-info/src",
+      "projectType": "library",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/carousel-info/tsconfig.lib.json",
+            "project": "projects/carousel-info/ng-package.json"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/carousel-info/src/test.ts",
+            "tsConfig": "projects/carousel-info/tsconfig.spec.json",
+            "karmaConfig": "projects/carousel-info/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/carousel-info/tsconfig.lib.json",
+              "projects/carousel-info/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
     }
   },
   "defaultProject": "components"

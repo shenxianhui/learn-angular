@@ -1,0 +1,86 @@
+<div class="carousel-info">
+  <nz-carousel
+    class="carousel-info-carousel"
+    [nzAutoPlay]="true"
+    [nzAutoPlaySpeed]="color.interval"
+  >
+    <div
+      class="carousel-con"
+      *ngFor="let item of data.list || []; let index = index"
+      nz-carousel-content
+    >
+      <!-- 上面部分 -->
+      <div class="head">
+        <img class="head-pic" [src]="item?.header?.icon" alt="" />
+        <div class="head-cot">
+          <div
+            *ngFor="let item1 of item?.header.data || []; let index1 = index"
+            class="group"
+          >
+            <div
+              class="label"
+              [style.fontSize]="
+                color &&
+                color.header &&
+                color.header.data &&
+                color.header.data[index1]?.label?.fontSize + 'px'
+              "
+              [style.color]="
+                color &&
+                color.header &&
+                color.header.data &&
+                color.header?.data[index1]?.label?.color
+              "
+            >
+              {{ item1?.label }}
+            </div>
+            <div
+              class="value"
+              [style.fontSize]="
+                color &&
+                color.header &&
+                color.header.data &&
+                color.header.data[index1]?.value?.fontSize + 'px'
+              "
+              [style.color]="
+                color &&
+                color.header &&
+                color.header.data &&
+                color.header.data[index1]?.value?.color
+              "
+            >
+              {{ item1?.value }}
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="content">
+        <div
+          *ngFor="let row of item?.content || []; let rowIdx = index"
+          class="row"
+        >
+          <div *ngFor="let col of row || []; let colIdx = index" class="col">
+            <img class="icon" [src]="col?.icon" alt="" />
+            <div
+              class="value"
+              [style.fontSize]="
+                color &&
+                color.content &&
+                color.content[rowIdx] &&
+                color.content[rowIdx][colIdx]?.value?.fontSize + 'px'
+              "
+              [style.color]="
+                color &&
+                color.content &&
+                color.content[rowIdx] &&
+                color.content[rowIdx][colIdx]?.value?.color
+              "
+            >
+              {{ col?.value }}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nz-carousel>
+</div>

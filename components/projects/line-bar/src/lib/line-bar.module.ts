@@ -1,13 +1,13 @@
 import { NgModule } from '@angular/core';
-import { DemoComponent } from './line-bar.component';
+import { LineBarComponent } from './line-bar.component';
 import { NgZorroAntdModule } from 'ng-zorro-antd';
 import { CommonModule } from '@angular/common'
 
 @NgModule({
-  declarations: [DemoComponent],
-  entryComponents: [DemoComponent],
+  declarations: [LineBarComponent],
+  entryComponents: [LineBarComponent],
   imports: [CommonModule, NgZorroAntdModule],
-  exports: [DemoComponent]
+  exports: [LineBarComponent]
 })
 
-export class DemoModule { }
+export class LineBarModule { }

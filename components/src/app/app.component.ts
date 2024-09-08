@@ -127,34 +127,7 @@ export class AppComponent implements OnInit {
               ],
             },
           },
-          color_json: {
-            legend: {
-              show: true,
-              left: "center",
-              top: 10,
-              right: "center",
-              bottom: "auto",
-              textStyle: {
-                color: "#fff",
-                fontSize: 12,
-              },
-            },
-            seriesMap: {
-              bar1: {
-                itemColor: ["rgba(81, 203, 216, 0.5)", "rgba(81, 203, 216, 0)"],
-                borderColor: "rgba(81, 203, 216, 1)",
-              },
-              bar2: {
-                itemColor: "#5ef3ff",
-              },
-              line1: {
-                itemColor: "#b0d318",
-              },
-              line2: {
-                itemColor: "#ffdbe4",
-              },
-            },
-          },
+          color_json: {},
           link_json: {},
           params_json: {},
         },

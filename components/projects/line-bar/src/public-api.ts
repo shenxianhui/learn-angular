@@ -1,9 +1,9 @@
 import { createPlugin } from "plugin-manager";
-import { DemoComponent } from "./lib/line-bar.component";
-import { DemoModule } from "./lib/line-bar.module";
+import { LineBarComponent } from "./lib/line-bar.component";
+import { LineBarModule } from "./lib/line-bar.module";
 
 export default createPlugin({
   name: "line-bar",
-  module: DemoModule,
-  component: DemoComponent,
+  module: LineBarModule,
+  component: LineBarComponent,
 });

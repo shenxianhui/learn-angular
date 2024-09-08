@@ -1,0 +1,21 @@
+{
+  "name": "details-progress",
+  "version": "0.0.1",
+  "peerDependencies": {
+    "@angular/common": "^7.2.0",
+    "@angular/core": "^7.2.0"
+  },
+  "main": "bundles/details-progress.umd.js",
+  "module": "fesm5/details-progress.js",
+  "es2015": "fesm2015/details-progress.js",
+  "esm5": "esm5/details-progress.js",
+  "esm2015": "esm2015/details-progress.js",
+  "fesm5": "fesm5/details-progress.js",
+  "fesm2015": "fesm2015/details-progress.js",
+  "typings": "details-progress.d.ts",
+  "metadata": "details-progress.metadata.json",
+  "sideEffects": false,
+  "dependencies": {
+    "tslib": "^1.9.0"
+  }
+}

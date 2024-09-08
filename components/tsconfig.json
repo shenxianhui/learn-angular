@@ -182,6 +182,18 @@
       ],
       "line-bar/*": [
         "dist/line-bar/*"
+      ],
+      "details-progress": [
+        "dist/details-progress"
+      ],
+      "details-progress/*": [
+        "dist/details-progress/*"
+      ],
+      "carousel-info": [
+        "dist/carousel-info"
+      ],
+      "carousel-info/*": [
+        "dist/carousel-info/*"
       ]
     }
   }

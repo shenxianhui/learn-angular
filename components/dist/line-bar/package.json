@@ -1,0 +1,21 @@
+{
+  "name": "line-bar",
+  "version": "0.0.1",
+  "peerDependencies": {
+    "@angular/common": "^7.2.0",
+    "@angular/core": "^7.2.0"
+  },
+  "main": "bundles/line-bar.umd.js",
+  "module": "fesm5/line-bar.js",
+  "es2015": "fesm2015/line-bar.js",
+  "esm5": "esm5/line-bar.js",
+  "esm2015": "esm2015/line-bar.js",
+  "fesm5": "fesm5/line-bar.js",
+  "fesm2015": "fesm2015/line-bar.js",
+  "typings": "line-bar.d.ts",
+  "metadata": "line-bar.metadata.json",
+  "sideEffects": false,
+  "dependencies": {
+    "tslib": "^1.9.0"
+  }
+}

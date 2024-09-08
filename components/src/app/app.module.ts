@@ -10,7 +10,6 @@ import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 import { registerLocaleData } from '@angular/common';
 import zh from '@angular/common/locales/zh';
-import { NgxEchartsModule } from 'ngx-echarts'
 registerLocaleData(zh);
 export function createCompiler(compilerFactory: CompilerFactory) {
   return compilerFactory.createCompiler();
@@ -28,7 +27,6 @@ export function createCompiler(compilerFactory: CompilerFactory) {
     BrowserAnimationsModule,
     HttpClientModule,
     RouterModule,
-    NgxEchartsModule,
   ],
   providers: [
     {provide: COMPILER_OPTIONS, useValue: {}, multi: true},

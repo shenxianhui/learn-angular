@@ -6,7 +6,7 @@
   "type_en": "bar",
   "preview": "assets/line-bar/image/line-bar.png",
   "com_type": "angular",
-  "sampleCode": "",
+  "sampleCode": "{'legend':{'show':true,'left':'center','top':10,'right':'center','bottom':'auto','textStyle':{'color':'#fff','fontSize':12}},'seriesMap':{'bar1':{'itemColor':['rgba(82, 210, 255, 0.3)','rgba(82, 210, 255, 0)'],'borderColor':'rgba(82, 210, 255, 1)'},'bar2':{'itemColor':'#FF435B'},'line1':{'itemColor':'#50FFCC'},'line2':{'itemColor':'#52D2FF'}}}",
   "config": {
     "list": [],
     "comments": []

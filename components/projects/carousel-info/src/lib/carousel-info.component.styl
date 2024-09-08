@@ -1,0 +1,103 @@
+.carousel-info {
+  // width: 360px;
+  // background: #000;
+  .carousel-con {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 30px;
+    .head {
+      display: flex;
+      align-items: center;
+      width: 100%;
+      flex-shrink: 0;
+      height: 68px;
+      background: url('assets/carousel-info/image/header_bg.png') no-repeat center center;
+      background-size: 100% 100%;
+      display: flex;
+      align-items: center;
+      padding-left: 16px;
+      .head-pic {
+        flex-shrink: 0;
+        width: 41px;
+        height: 41px;
+        margin-right: 12px;
+      }
+      .head-cot {
+        display: flex;
+        flex-grow: 1;
+        .group {
+          min-width: 30%;
+          // flex-grow: 1;
+          .label {
+            // opacity: 0.8;
+            font-size: 14px;
+            text-align: left;
+            color: #ffffff;
+            margin-bottom: 4px;
+          }
+          .value {
+            font-size: 14px;
+            text-align: left;
+            color: #52d2ff;
+          }
+        }
+      }
+    }
+    .content {
+      width: 100%;
+      padding: 20px;
+      background: rgba(255, 255, 255, 0.08);
+      border-radius: 0px 4px 4px 0px;
+      .row {
+        display: flex;
+        &:not(:last-child) {
+          margin-bottom: 14px;
+        }
+        .col {
+          display: flex;
+          flex-grow: 1;
+          .icon {
+            width: 16px;
+            height: 16px;
+            margin-right: 6px;
+            margin-top: 3px;
+          }
+          .value {
+            font-size: 14px;
+            text-align: left;
+            color: #ffffff;
+            line-height: 1.5;
+          }
+        }
+      }
+    }
+  }
+}
+
+::ng-deep .carousel-info-carousel .slick-dots li {
+  margin: 0 5px;
+}
+::ng-deep .carousel-info-carousel .slick-dots li button {
+  width: 8px;
+  height: 8px;
+  background: rgba(255, 255, 255, 0.4);
+  border-radius: 50% !important;
+}
+::ng-deep .carousel-info-carousel .slick-dots li.slick-active button {
+  position: relative;
+  width: 8px;
+  height: 8px;
+  background: rgba(255, 255, 255, 1);
+  border-radius: 50% !important;
+  &:before {
+    position: absolute;
+    content: '';
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 16px;
+    height: 16px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50% !important;
+  }
+}

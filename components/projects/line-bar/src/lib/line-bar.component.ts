@@ -1,16 +1,19 @@
 import { Component, OnInit } from "@angular/core";
 import { PluginManagerService, componentData } from "plugin-manager";
-import * as echarts from 'echarts'
+
+const echarts: any = (window as any).echarts;
 
 @Component({
   selector: "lib-line-bar",
   templateUrl: "./line-bar.component.html",
   styleUrls: ["./line-bar.component.styl"],
 })
-export class DemoComponent implements OnInit {
+export class LineBarComponent implements OnInit {
   data: any;
   color: any;
   chartOptions: any = {};
+  chart: any; // 图表本身
+  resizeTimer: any;
 
   constructor(
     private pluginManagerService: PluginManagerService,
@@ -20,34 +23,78 @@ export class DemoComponent implements OnInit {
     console.log("comData", comData);
     this.data = comData.configData.data;
     this.color = comData.configData.color;
+  }
 
+  ngOnInit() {
+    this.initChart();
+    this.renderChart();
+
+    window.addEventListener("resize", () => {
+      clearTimeout(this.resizeTimer);
+      this.resizeTimer = setTimeout(() => {
+        this.initChart();
+        this.renderChart();
+      }, 250);
+    });
+  }
+
+  ngAfterViewInit(): void {
+    // Initialize the chart after the view is initialized
+  }
+
+  initChart() {
+    console.log("init");
+    const chartDom = document.getElementById("chartContainer")!;
+
+    this.chart = echarts.init(chartDom);
+  }
+
+  renderChart() {
     const { legend = {}, seriesMap = {} } = this.color;
     const { xAxis = {}, series = [] } = this.data;
     const { data: xAxisData = [] } = xAxis;
     const seriesData = [];
+    const legendData = [];
 
     function getBorderHeight(list = []) {
       const sum = list.reduce((acc, curr) => acc + curr, 0);
-      const average = sum / list.length / 40;
+      const average = sum / list.length / 40 * 1.5;
       const arr = Array(list.length).fill(average);
 
       return arr;
     }
 
-    series.forEach((item) => {
+    series.forEach((item, index) => {
+      const styleObj = seriesMap[item.key] || {};
+
       if (item.type === "line") {
         seriesData.push({
           ...item,
           step: true,
+          lineStyle: {
+            color: styleObj.itemColor || (index === 2 ? "#50FFCC" : "#52D2FF"),
+          },
+          itemStyle: {
+            color: styleObj.itemColor || (index === 2 ? "#50FFCC" : "#52D2FF"),
+            opacity: 0,
+          },
+          showBackground: index === 0,
+          backgroundStyle: {
+            color: "rgba(255, 255, 255, 0.05)",
+          },
+        });
+
+        legendData.push({
+          name: item.name,
+          icon: "path://M 0 0 H 10 V 2 H 0 Z",
         });
       }
       if (item.type === "bar") {
-        const styleObj = seriesMap[item.key] || {};
-
-        if (styleObj.borderColor) {
+        if (styleObj.borderColor || (index === 0 && !styleObj.itemColor)) {
           seriesData.push(
             {
               ...item,
+              name: '',
               stack: 1,
               barGap: "0",
               borderWidth: 0,
@@ -61,26 +108,34 @@ export class DemoComponent implements OnInit {
                     [
                       {
                         offset: 0,
-                        color: styleObj.itemColor[0],
+                        color:
+                          (styleObj.itemColor && styleObj.itemColor[0]) ||
+                          "rgba(82, 210, 255, 0.3)",
                       },
                       {
-                        offset: 1,
-                        color: styleObj.itemColor[1],
+                        offset: 0.3,
+                        color:
+                          (styleObj.itemColor && styleObj.itemColor[1]) ||
+                          "rgba(82, 210, 255, 0)",
                       },
                     ],
                     false
                   ),
                 },
               },
+              showBackground: index === 0,
+              backgroundStyle: {
+                color: "rgba(255, 255, 255, 0.05)",
+              },
             },
             {
               type: "bar",
-              name: "",
+              name: item.name,
               stack: 1,
               barGap: "0",
               itemStyle: {
                 normal: {
-                  color: styleObj.borderColor,
+                  color: styleObj.borderColor || "rgba(82, 210, 255, 1)",
                 },
               },
               label: {
@@ -98,12 +153,24 @@ export class DemoComponent implements OnInit {
           seriesData.unshift({
             ...item,
             stack: 1,
+            itemStyle: {
+              color: styleObj.itemColor || "#FF435B",
+            },
+            showBackground: index === 0,
+            backgroundStyle: {
+              color: "rgba(255, 255, 255, 0.05)",
+            },
           });
         }
+
+        legendData.push({
+          name: item.name,
+          icon: "path://M 0 0 H 8 V 8 H 0 Z",
+        });
       }
     });
 
-    this.chartOptions = {
+    const option = {
       tooltip: {
         trigger: "axis",
         axisPointer: {
@@ -113,9 +180,15 @@ export class DemoComponent implements OnInit {
       legend: {
         icon: "rect",
         itemWidth: 10,
-        itemHeight: 2,
+        // itemHeight: 2,
         itemGap: 18,
+        textStyle: {
+          color: "#fff",
+        },
+        top: 20,
+        right: 20,
         ...legend,
+        data: legendData,
       },
       grid: {
         left: "3%",
@@ -167,7 +240,8 @@ export class DemoComponent implements OnInit {
       },
       series: seriesData,
     };
-  }
 
-  ngOnInit() {}
+    this.chart.clear();
+    this.chart.setOption(option, false);
+  }
 }
