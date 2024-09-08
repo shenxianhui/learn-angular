@@ -2,8 +2,8 @@
   <div class="header">
     <div class="date">
       <div class="tag"></div>
-      <div class="date-cn">5月5日-星期一</div>
-      <div class="date-en">May 5 - Monday</div>
+      <div class="date-cn">{{ getCurrentDate().cn }}</div>
+      <div class="date-en">{{ getCurrentDate().en }}</div>
     </div>
     <div class="calendar">
       <!-- 第一排：当前月的日子按钮 -->
@@ -11,9 +11,10 @@
         <!-- 正常日期按钮 -->
         <div class="btn-wrap">
           <div
-            *ngFor="let day of daysInRange(1, endDay)"
+            *ngFor="let day of daysInRange(1, endDay); let dayIdx = index"
             [ngClass]="getDayClass(day)"
             class="day-btn"
+            (click)="handleBtn(day, dayIdx)"
           >
             {{ day }}
           </div>

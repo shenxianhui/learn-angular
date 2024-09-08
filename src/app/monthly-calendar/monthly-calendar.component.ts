@@ -3,6 +3,7 @@ import { json_data } from './data.json'
 
 const { data_json = {}, color_json = {} } = json_data
 const { data = {} } = data_json
+const { endDay: _endDay = {} } = color_json
 
 @Component({
   selector: 'app-monthly-calendar',
@@ -13,14 +14,20 @@ export class MonthlyCalendarComponent implements OnInit {
   currentYear: number = new Date().getFullYear()
   currentMonth: number = new Date().getMonth() + 1 // 月份从0开始，需要+1
   timeScale: string[] = Array.from({ length: 25 }, (_, i) => `${String(i).padStart(2, '0')}:00`) // 00:00 到 24:00
-  startDay: number = 5 // 开始变灰的起始日期
-  endDay: number = 10 // 结束变灰的终止日期
+  startDay: number = new Date().getDate() // 开始变灰的起始日期
+  endDay: number = _endDay // 结束变灰的终止日期
   data: any = data
   color: any = color_json
 
   constructor() {}
 
   ngOnInit() {}
+
+  handleBtn(day, idx) {
+    if (day < this.startDay) return
+
+    alert(day)
+  }
 
   // 获取当月的天数
   get daysInMonth(): number {
@@ -40,6 +47,36 @@ export class MonthlyCalendarComponent implements OnInit {
       return 'disabled-day-after' // endDay之后的日期按钮置灰
     }
     return 'active-day' // startDay到endDay之间的日期正常显示
+  }
+
+  getCurrentDate() {
+    // 创建一个包含星期几的英文和中文名称的数组
+    const daysOfWeekEN = [
+      'Sunday',
+      'Monday',
+      'Tuesday',
+      'Wednesday',
+      'Thursday',
+      'Friday',
+      'Saturday',
+    ]
+    const daysOfWeekCN = ['星期日', '星期一', '星期二', '星期三', '星期四', '星期五', '星期六']
+
+    // 获取当前日期
+    const today = new Date()
+
+    // 获取年、月、日
+    const year = today.getFullYear()
+    const month = today.getMonth() + 1 // 月份从0开始，所以加1
+    const day = today.getDate()
+
+    // 获取星期几
+    const dayOfWeek = today.getDay()
+
+    return {
+      cn: `${month}月${day}日 - ${daysOfWeekCN[dayOfWeek]}`,
+      en: `May ${day} - ${daysOfWeekEN[dayOfWeek]}`,
+    }
   }
 
   getList(list) {

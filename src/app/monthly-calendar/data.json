@@ -169,6 +169,7 @@
     "color_json": {
       "sunriseTime": "06:00",
       "sunsetTime": "18:00",
+      "endDay": 18,
       "colors": ["#24FFBF", "#29C7FF", "#5277FF", "#FFCB77", "#FFFFFF", "#C68EFF"],
       "style1": {
         "fontSize": 14,
