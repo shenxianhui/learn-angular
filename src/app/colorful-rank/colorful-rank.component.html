@@ -1,3 +1,16 @@
-<p>
-  colorful-rank works!
-</p>
+<div class="colorful-rank">
+  <div *ngFor="let item of data.list || []; let index = index" class="row">
+    <div class="left-line"></div>
+    <div class="tittle">MRD</div>
+    <div class="schedule-wrap">
+      <div class="schedule"></div>
+      <div class="schedule-line"></div>
+    </div>
+    <div class="right-wrap">
+      <div class="nub-wrap">
+        <div class="nub-text">2,680</div>
+        <div class="nub-line"></div>
+      </div>
+    </div>
+  </div>
+</div>
