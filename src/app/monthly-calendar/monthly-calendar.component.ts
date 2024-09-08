@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core'
+import { json_data } from './data.json'
+
+const { data_json = {}, color_json = {} } = json_data
+const { data = {} } = data_json
 
 @Component({
   selector: 'app-monthly-calendar',
@@ -11,6 +15,8 @@ export class MonthlyCalendarComponent implements OnInit {
   timeScale: number[] = Array.from({ length: 25 }, (_, i) => i) // 00:00 到 24:00
   startDay: number = 5 // 开始变灰的起始日期
   endDay: number = 10 // 结束变灰的终止日期
+  data: any = data
+  color: any = color_json
 
   constructor() {}
 
