@@ -1,0 +1,21 @@
+.s-swiper-container {
+  height: 300px; /* 设置容器的高度 */
+  overflow: hidden; /* 隐藏超出容器的部分 */
+  position: relative;
+  border: 1px solid #000;
+}
+
+.s-swiper-wrapper {
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.5s ease; /* 动画效果 */
+  height: 100%; /* 确保 wrapper 高度为 100% */
+}
+
+.s-swiper-slide {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100px; /* 设置一个最小高度，根据需要调整 */
+  box-sizing: border-box;
+}
