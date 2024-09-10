@@ -64,6 +64,13 @@
             &.active-day {
               color: #fff; /* 正常日期 */
               &:hover {
+                background: linear-gradient(
+                  to bottom,
+                  rgba(82, 210, 255, 0.4),
+                  rgba(82, 210, 255, 0)
+                );
+              }
+              &.active {
                 background: url('/assets/monthly-calendar/image/btn_bg.png') no-repeat center center;
                 background-size: 100% 100%;
               }

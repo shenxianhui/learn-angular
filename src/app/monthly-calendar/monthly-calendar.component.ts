@@ -3,7 +3,7 @@ import { json_data } from './data.json'
 
 const { data_json = {}, color_json = {} } = json_data
 const { data = {} } = data_json
-const { endDay: _endDay = {} } = color_json
+const { selectedDate: _selectedDate = '', startDay: _startDay = 0, endDay: _endDay = 0 } = data
 
 @Component({
   selector: 'app-monthly-calendar',
@@ -11,13 +11,17 @@ const { endDay: _endDay = {} } = color_json
   styleUrls: ['./monthly-calendar.component.less'],
 })
 export class MonthlyCalendarComponent implements OnInit {
+  data: any = data
+  color: any = color_json
+
   currentYear: number = new Date().getFullYear()
   currentMonth: number = new Date().getMonth() + 1 // 月份从0开始，需要+1
   timeScale: string[] = Array.from({ length: 25 }, (_, i) => `${String(i).padStart(2, '0')}:00`) // 00:00 到 24:00
-  startDay: number = new Date().getDate() // 开始变灰的起始日期
+  startDay: number = _startDay // 开始变灰的起始日期
   endDay: number = _endDay // 结束变灰的终止日期
-  data: any = data
-  color: any = color_json
+  selectedDate: string = _selectedDate
+  selectedDate_cn: string = this.getCurrentDate().cn
+  selectedDate_en: string = this.getCurrentDate().en
 
   constructor() {}
 
@@ -26,7 +30,15 @@ export class MonthlyCalendarComponent implements OnInit {
   handleBtn(day, idx) {
     if (day < this.startDay) return
 
-    alert(day)
+    const _day = String(day).padStart(2, '0')
+    const [year, month] = this.selectedDate.split('-')
+    const date = `${year}-${month}-${_day}`
+
+    this.selectedDate = date
+    this.selectedDate_cn = this.getCurrentDate(date).cn
+    this.selectedDate_en = this.getCurrentDate(date).en
+
+    console.log(date)
   }
 
   // 获取当月的天数
@@ -49,7 +61,7 @@ export class MonthlyCalendarComponent implements OnInit {
     return 'active-day' // startDay到endDay之间的日期正常显示
   }
 
-  getCurrentDate() {
+  getCurrentDate(date: string = this.selectedDate) {
     // 创建一个包含星期几的英文和中文名称的数组
     const daysOfWeekEN = [
       'Sunday',
@@ -62,20 +74,16 @@ export class MonthlyCalendarComponent implements OnInit {
     ]
     const daysOfWeekCN = ['星期日', '星期一', '星期二', '星期三', '星期四', '星期五', '星期六']
 
-    // 获取当前日期
-    const today = new Date()
-
-    // 获取年、月、日
-    const year = today.getFullYear()
-    const month = today.getMonth() + 1 // 月份从0开始，所以加1
-    const day = today.getDate()
+    // 将传入的 date 字符串转为 Date 对象
+    const [year, month, day] = date.split('-').map(Number)
+    const _date = new Date(year, month - 1, day) // 月份从0开始，所以需要减1
 
     // 获取星期几
-    const dayOfWeek = today.getDay()
+    const dayOfWeek = _date.getDay()
 
     return {
       cn: `${month}月${day}日 - ${daysOfWeekCN[dayOfWeek]}`,
-      en: `May ${day} - ${daysOfWeekEN[dayOfWeek]}`,
+      en: `${_date.toLocaleString('en', { month: 'long' })} ${day} - ${daysOfWeekEN[dayOfWeek]}`,
     }
   }
 

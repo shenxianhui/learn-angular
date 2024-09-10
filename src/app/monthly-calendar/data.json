@@ -8,7 +8,10 @@
     "data_json": {
       "data": {
         "selectedDate": "2024-09-05",
-        "selectedTime": "12:00",
+        "startDay": 5,
+        "endDay": 18,
+        "sunriseTime": "06:00",
+        "sunsetTime": "18:00",
         "list": [
           {
             "name": "情报预警",
@@ -167,9 +170,6 @@
       }
     },
     "color_json": {
-      "sunriseTime": "06:00",
-      "sunsetTime": "18:00",
-      "endDay": 18,
       "colors": ["#24FFBF", "#29C7FF", "#5277FF", "#FFCB77", "#FFFFFF", "#C68EFF"],
       "style1": {
         "fontSize": 14,

@@ -7,6 +7,10 @@
   "json_data": {
     "data_json": {
       "data": {
+        "activeIndex": {
+          "0": 7,
+          "1": 0
+        },
         "list": [
           {
             "id": 0,
@@ -32,10 +36,6 @@
       }
     },
     "color_json": {
-      "activeIndex": {
-        "0": 7,
-        "1": 0
-      },
       "labelStyle": {
         "name": {
           "fontSize": 14,

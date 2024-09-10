@@ -2,8 +2,8 @@
   <div class="header">
     <div class="date">
       <div class="tag"></div>
-      <div class="date-cn">{{ getCurrentDate().cn }}</div>
-      <div class="date-en">{{ getCurrentDate().en }}</div>
+      <div class="date-cn">{{ selectedDate_cn }}</div>
+      <div class="date-en">{{ selectedDate_en }}</div>
     </div>
     <div class="calendar">
       <!-- 第一排：当前月的日子按钮 -->
@@ -14,6 +14,7 @@
             *ngFor="let day of daysInRange(1, endDay); let dayIdx = index"
             [ngClass]="getDayClass(day)"
             class="day-btn"
+            [class.active]="day === +selectedDate.substr(-2)"
             (click)="handleBtn(day, dayIdx)"
           >
             {{ day }}
@@ -41,12 +42,12 @@
           </div>
           <div class="weather">
             <img
-              *ngIf="color.sunriseTime === hour"
+              *ngIf="data.sunriseTime === hour"
               src="assets/monthly-calendar/image/day.png"
               alt=""
             />
             <img
-              *ngIf="color.sunsetTime === hour"
+              *ngIf="data.sunsetTime === hour"
               src="assets/monthly-calendar/image/night.png"
               alt=""
             />
@@ -80,7 +81,7 @@
               class="wrap"
               *ngFor="let item2 of item1.children || []; let index2 = index"
               [ngClass]="item2.alarm ? 'alarm' : ''"
-              [style.width]="getPer(color.sunriseTime, color.sunsetTime)[index2] + '%'"
+              [style.width]="getPer(data.sunriseTime, data.sunsetTime)[index2] + '%'"
               [style.backgroundColor]="getTheme(index) + '25'"
             >
               <div class="group">
