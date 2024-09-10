@@ -1,32 +1,49 @@
-import { Component, ElementRef, HostListener, OnDestroy, Renderer2, ViewChild } from '@angular/core'
+import {
+  Component,
+  ElementRef,
+  HostListener,
+  OnDestroy,
+  Renderer2,
+  ViewChild,
+  AfterViewInit,
+} from '@angular/core'
 
 @Component({
   selector: 'app-s-swiper',
   templateUrl: './s-swiper.component.html',
   styleUrls: ['./s-swiper.component.less'],
 })
-export class SSwiperComponent implements OnDestroy {
+export class SSwiperComponent implements OnDestroy, AfterViewInit {
+  @ViewChild('swiperContainer') swiperContainer: ElementRef
   @ViewChild('swiperWrapper') swiperWrapper: ElementRef
-  private slideIndex = 1 // 从第二个幻灯片开始，确保第一个被预留为“缓冲”
+
+  private slideIndex = 0 // 从第0个幻灯片开始
+  private containerHeight = 500
   private intervalId: any
   private readonly intervalTime = 3000 // 每隔 3 秒滚动一次
-  private readonly transitionTime = 500 // 动画过渡时间，确保与 CSS 动画时间匹配
-  private slideHeight: number
+  private readonly transitionTime = 500 // 动画过渡时间
+  private isTransitioning = false
 
   constructor(private renderer: Renderer2) {}
 
-  ngOnInit() {
-    // 获取第一个幻灯片的高度
-    this.slideHeight = this.swiperWrapper.nativeElement.children[0].clientHeight
-    // 初始化滚动到第一个幻灯片的位置
+  ngAfterViewInit() {
+    // 使用全局变量设置 swiper 容器高度
+    this.setSwiperContainerHeight()
+
+    // 初始化滚动到第0个幻灯片的位置
     setTimeout(() => {
-      this.renderer.setStyle(
-        this.swiperWrapper.nativeElement,
-        'transform',
-        `translateY(-${this.slideHeight}px)`,
-      )
+      this.scrollToSlide(this.slideIndex, false)
+      this.startAutoScroll()
     }, 0)
-    this.startAutoScroll()
+  }
+
+  private setSwiperContainerHeight() {
+    // 使用全局变量设置 .s-swiper-container 的高度
+    this.renderer.setStyle(
+      this.swiperContainer.nativeElement,
+      'height',
+      `${this.containerHeight}px`,
+    )
   }
 
   private startAutoScroll() {
@@ -42,18 +59,9 @@ export class SSwiperComponent implements OnDestroy {
   }
 
   private scrollUp() {
-    if (this.slideIndex > 1) {
+    if (this.slideIndex > 0) {
       this.slideIndex--
-      this.renderer.setStyle(
-        this.swiperWrapper.nativeElement,
-        'transition',
-        `transform ${this.transitionTime}ms ease`,
-      )
-      this.renderer.setStyle(
-        this.swiperWrapper.nativeElement,
-        'transform',
-        `translateY(-${(this.slideIndex - 1) * this.slideHeight}px)`,
-      )
+      this.scrollToSlide(this.slideIndex, true)
     }
   }
 
@@ -63,37 +71,43 @@ export class SSwiperComponent implements OnDestroy {
 
     if (this.slideIndex < totalSlides - 1) {
       this.slideIndex++
+      this.scrollToSlide(this.slideIndex, true)
+    } else {
+      // 到达最后一个幻灯片时重置为第一个幻灯片
+      this.isTransitioning = true
+      this.scrollToSlide(this.slideIndex, true)
+      setTimeout(() => {
+        this.slideIndex = 0
+        this.scrollToSlide(this.slideIndex, false) // 无动画过渡
+      }, this.transitionTime)
+    }
+  }
+
+  private scrollToSlide(index: number, withTransition: boolean) {
+    const currentSlide = this.swiperWrapper.nativeElement.children[index]
+    const currentSlideHeight = currentSlide.clientHeight
+
+    if (withTransition) {
       this.renderer.setStyle(
         this.swiperWrapper.nativeElement,
         'transition',
         `transform ${this.transitionTime}ms ease`,
       )
-      this.renderer.setStyle(
-        this.swiperWrapper.nativeElement,
-        'transform',
-        `translateY(-${(this.slideIndex - 1) * this.slideHeight}px)`,
-      )
     } else {
-      // 当到达最后一个幻灯片时，将 wrapper 重置到第一个幻灯片位置
-      setTimeout(() => {
-        this.slideIndex = 1
-        this.renderer.setStyle(this.swiperWrapper.nativeElement, 'transition', 'none')
-        this.renderer.setStyle(
-          this.swiperWrapper.nativeElement,
-          'transform',
-          `translateY(-${this.slideHeight}px)`,
-        )
-        // 再次启动过渡动画
-        setTimeout(() => {
-          this.renderer.setStyle(
-            this.swiperWrapper.nativeElement,
-            'transition',
-            `transform ${this.transitionTime}ms ease`,
-          )
-          this.scrollDown()
-        }, 0)
-      }, this.transitionTime)
+      this.renderer.setStyle(this.swiperWrapper.nativeElement, 'transition', 'none')
     }
+
+    // 计算偏移量
+    let offset = 0
+    for (let i = 0; i < index; i++) {
+      offset += this.swiperWrapper.nativeElement.children[i].clientHeight
+    }
+
+    this.renderer.setStyle(
+      this.swiperWrapper.nativeElement,
+      'transform',
+      `translateY(-${offset}px)`,
+    )
   }
 
   @HostListener('mouseenter') onMouseEnter() {

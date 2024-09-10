@@ -1,6 +1,6 @@
 .s-swiper-container {
-  height: 300px; /* 设置容器的高度 */
-  overflow: hidden; /* 隐藏超出容器的部分 */
+  height: 600px;
+  overflow: hidden;
   position: relative;
   border: 1px solid #000;
 }
@@ -8,14 +8,31 @@
 .s-swiper-wrapper {
   display: flex;
   flex-direction: column;
-  transition: transform 0.5s ease; /* 动画效果 */
-  height: 100%; /* 确保 wrapper 高度为 100% */
+  transition: transform 0.5s ease;
 }
 
 .s-swiper-slide {
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: 100px; /* 设置一个最小高度，根据需要调整 */
+  min-height: 100px;
   box-sizing: border-box;
+  &:nth-child(even) {
+    background-color: lightblue;
+  }
+  &:nth-child(odd) {
+    background-color: lightyellow;
+  }
+  &.slide1 {
+    height: 100px;
+  }
+  &.slide2 {
+    height: 200px;
+  }
+  &.slide3 {
+    height: 300px;
+  }
+  &.slide4 {
+    height: 400px;
+  }
 }
