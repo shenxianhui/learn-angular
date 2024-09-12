@@ -1,11 +1,14 @@
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core'
 import * as echarts from 'echarts'
-import { json_data } from './data.json'
-import { fn } from '@angular/compiler/src/output/output_ast'
+import schema from './schema.json'
 
-const { data_json = {}, color_json = {} } = json_data
-const { data = {} } = data_json
-const { legend = {}, seriesMap = {} } = color_json
+const { sampleCode, data: data_json } = schema
+const { format = {} } = data_json || {}
+const { data = {} } = format
+const color_json = sampleCode.replace(/'/g, '"') || '{}'
+const color = JSON.parse(color_json)
+
+const { legend = {}, seriesMap = {} } = color
 const { xAxis = {}, series = [] } = data
 const { data: xAxisData = [] } = xAxis
 const seriesData = []
@@ -68,20 +71,16 @@ series.forEach((item, index) => {
 export class DoubleBarComponent implements OnInit {
   @ViewChild('chart')
   chartDom: ElementRef
-  data: any = {}
-  color: any = {}
+  data: any = data
+  color: any = color
   chartOptions: any = {}
 
-  constructor() {
-    this.data = data
-    this.color = color_json
-  }
+  constructor() {}
 
   ngOnInit() {}
 
   ngAfterViewInit() {
     setTimeout(() => {
-      console.log(seriesData)
       const containerHeight = this.chartDom.nativeElement.offsetHeight
       const gridHeight = (containerHeight - 108) / 2
 

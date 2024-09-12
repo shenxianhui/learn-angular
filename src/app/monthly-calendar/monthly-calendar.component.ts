@@ -1,8 +1,12 @@
 import { Component, OnInit } from '@angular/core'
-import { json_data } from './data.json'
+import schema from './schema.json'
 
-const { data_json = {}, color_json = {} } = json_data
-const { data = {} } = data_json
+const { sampleCode, data: data_json } = schema
+const { format = {} } = data_json || {}
+const { data = {} } = format
+const color_json = sampleCode.replace(/'/g, '"') || '{}'
+const color = JSON.parse(color_json)
+
 const { selectedDate: _selectedDate = '', startDay: _startDay = 0, endDay: _endDay = 0 } = data
 
 @Component({
@@ -12,7 +16,7 @@ const { selectedDate: _selectedDate = '', startDay: _startDay = 0, endDay: _endD
 })
 export class MonthlyCalendarComponent implements OnInit {
   data: any = data
-  color: any = color_json
+  color: any = color
 
   currentYear: number = new Date().getFullYear()
   currentMonth: number = new Date().getMonth() + 1 // 月份从0开始，需要+1

@@ -11,6 +11,12 @@
     "list": [],
     "comments": []
   },
+  "initSize": {
+    "width": 360,
+    "widthUnit": "px",
+    "height": 200,
+    "heightUnit": "px"
+  },
   "data": {
     "list": [
       {

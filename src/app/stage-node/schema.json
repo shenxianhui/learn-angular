@@ -6,10 +6,16 @@
   "type_en": "others",
   "preview": "assets/stage-node/image/stage-node.png",
   "com_type": "angular",
-  "sampleCode": "{'activeIndex':{'0':7,'1':0},'labelStyle':{'name':{'fontSize':14,'color':'#ffffff'},'cpu':{'fontSize':14,'color':'#ffffff'},'station':{'fontSize':14,'color':'#ffffff'},'step':{'fontSize':14,'color':'#ffffff'}},'activeLabelStyle':{'name':{'fontSize':16,'color':'#ffffff'},'cpu':{'fontSize':16,'color':'#ffffff'},'station':{'fontSize':16,'color':'#ffffff'},'step':{'fontSize':16,'color':'#ffffff'}},'infoStyle':{'label':{'fontSize':14,'color':'#ffffff'},'value':{'fontSize':14,'color':'#ffffff'},'total':{'fontSize':14,'color':'#cccccc'}}}",
+  "sampleCode": "{'labelStyle':{'name':{'fontSize':14,'color':'#ffffff'},'cpu':{'fontSize':14,'color':'#ffffff'},'station':{'fontSize':14,'color':'#ffffff'},'step':{'fontSize':14,'color':'#ffffff'}},'activeLabelStyle':{'name':{'fontSize':16,'color':'#ffffff'},'cpu':{'fontSize':16,'color':'#ffffff'},'station':{'fontSize':16,'color':'#ffffff'},'step':{'fontSize':16,'color':'#ffffff'}},'infoStyle':{'label':{'fontSize':14,'color':'#ffffff'},'value':{'fontSize':14,'color':'#ffffff'},'total':{'fontSize':14,'color':'#cccccc'}}}",
   "config": {
     "list": [],
     "comments": []
+  },
+  "initSize": {
+    "width": 1920,
+    "widthUnit": "px",
+    "height": 1080,
+    "heightUnit": "px"
   },
   "data": {
     "list": [
@@ -59,6 +65,10 @@
     "comments": [],
     "format": {
       "data": {
+        "activeIndex": {
+          "0": 7,
+          "1": 0
+        },
         "list": [
           {
             "id": 0,
