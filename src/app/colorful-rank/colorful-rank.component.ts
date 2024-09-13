@@ -19,4 +19,18 @@ export class ColorfulRankComponent implements OnInit {
   constructor() {}
 
   ngOnInit() {}
+
+  getWidth(val) {
+    const max = Math.max(...this.data.list.map(item => item.value))
+    const per = (val / max) * 100
+
+    return per
+  }
+
+  getColor(idx: number, a = 'FF') {
+    const { colors = ['#75B2FF', '#52D2FF', '#33FEFF', '#50FFCC', '#FFFFFF'] } = this.color || {}
+
+    const index = idx % colors.length
+    return colors[index] + a
+  }
 }

@@ -1,15 +1,27 @@
 <div class="colorful-rank">
   <div *ngFor="let item of data.list || []; let index = index" class="row">
-    <div class="left-line"></div>
-    <div class="tittle">MRD</div>
-    <div class="schedule-wrap">
-      <div class="schedule"></div>
-      <div class="schedule-line"></div>
+    <div class="left-line" [style.backgroundColor]="getColor(index)"></div>
+    <div
+      class="tittle"
+      [style.color]="color?.label?.color"
+      [style.fontSize]="color?.label?.fontSize + 'px'"
+    >
+      {{ item.label }}
+    </div>
+    <div class="schedule-wrap" [style.width]="getWidth(item.value) / 2 + '%'">
+      <div class="schedule" [style.backgroundColor]="getColor(index, '33')"></div>
+      <div class="schedule-line" [style.backgroundColor]="getColor(index)"></div>
     </div>
     <div class="right-wrap">
       <div class="nub-wrap">
-        <div class="nub-text">2,680</div>
-        <div class="nub-line"></div>
+        <div
+          class="nub-text"
+          [style.color]="color?.value?.color"
+          [style.fontSize]="color?.value?.fontSize + 'px'"
+        >
+          {{ item.value.toLocaleString() }}
+        </div>
+        <div class="nub-line" [style.backgroundColor]="getColor(index)"></div>
       </div>
     </div>
   </div>

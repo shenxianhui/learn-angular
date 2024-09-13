@@ -6,7 +6,7 @@
   "type_en": "rank",
   "preview": "assets/colorful-rank/image/colorful-rank.png",
   "com_type": "angular",
-  "sampleCode": "{'colors':['#76bd85','#7ba0ff','#f7b52c'],'label':{'fontSize':14,'color':'#ffffff'},'value':{'fontSize':14,'color':'#ffffff'}}",
+  "sampleCode": "{'colors':['#75B2FF','#52D2FF','#33FEFF','#50FFCC','#FFFFFF'],'label':{'fontSize':14,'color':'#ffffff'},'value':{'fontSize':14,'color':'#ffffff'}}",
   "config": {
     "list": [],
     "comments": []
@@ -37,16 +37,24 @@
       "data": {
         "list": [
           {
-            "label": "xxx",
-            "value": 123
+            "label": "MDR",
+            "value": 2680
           },
           {
-            "label": "xxx",
-            "value": 123
+            "label": "Websafe",
+            "value": 1880
           },
           {
-            "label": "xxx",
-            "value": 123
+            "label": "EASM",
+            "value": 920
+          },
+          {
+            "label": "PTaaS",
+            "value": 232
+          },
+          {
+            "label": "InaaS",
+            "value": 16
           }
         ]
       }
