@@ -30,7 +30,7 @@ export class SlideListComponent implements OnDestroy, AfterViewInit {
   private slideIndex = 0 // 从第0个幻灯片开始
   private containerHeight = 500
   private intervalId: any
-  private readonly intervalTime = 3000 // 每隔 3 秒滚动一次
+  private readonly intervalTime = color.interval || 3000
   private readonly transitionTime = 500 // 动画过渡时间
   private isTransitioning = false
 

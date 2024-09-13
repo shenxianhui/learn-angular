@@ -1,3 +1,4 @@
+<!-- horizontal -->
 <div *ngIf="color.direction === 'horizontal'" class="slide-list">
   <nz-carousel
     class="carousel-info-carousel"
@@ -40,7 +41,8 @@
   </nz-carousel>
 </div>
 
-<div *ngIf="color.direction === 'vertical'" class="slide-list" #swiperContainer>
+<!-- vertical -->
+<div *ngIf="color.direction !== 'horizontal'" class="slide-list" #swiperContainer>
   <div class="slide-list-wrapper" #swiperWrapper>
     <div *ngFor="let item of data.list || []; let index = index" class="slide-list-item">
       <div
