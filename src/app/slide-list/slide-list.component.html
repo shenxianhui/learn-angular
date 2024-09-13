@@ -1,12 +1,72 @@
-<div class="swiper">
-  <div *ngFor="let item of data.list || []" class="swiper-item">
-    <div *ngFor="let item1 of item || []" class="slide-list">
-      <div class="date-text text-ellipsis">{{ item1.title }}</div>
+<div *ngIf="color.direction === 'horizontal'" class="slide-list">
+  <nz-carousel
+    class="carousel-info-carousel"
+    [nzAutoPlay]="true"
+    [nzAutoPlaySpeed]="color.interval"
+  >
+    <div
+      *ngFor="let item of data.list || []; let index = index"
+      nz-carousel-content
+      class="slide-list-item"
+    >
+      <div
+        *ngIf="color.showIndex"
+        class="index"
+        [style.fontSize]="color?.index?.fontSize + 'px'"
+        [style.color]="color?.index?.color"
+      >
+        {{ index + 1 }}
+      </div>
+      <div
+        class="date-text text-ellipsis"
+        [style.fontSize]="color?.title?.fontSize + 'px'"
+        [style.color]="color?.title?.color"
+      >
+        {{ item.title }}
+      </div>
       <div class="content">
-        <div *ngFor="let item2 of item1.content || []" class="item1">
-          <img class="item-pic" src="assets/slide-list/image/tag.png" alt="" />
-          <div class="item1-info">
-            {{ item2.text }}
+        <div *ngFor="let item1 of item.content || []" class="row">
+          <img class="row-pic" [src]="item1.icon || 'assets/slide-list/image/tag.png'" alt="" />
+          <div
+            class="row-info"
+            [style.fontSize]="color?.content?.fontSize + 'px'"
+            [style.color]="color?.content?.color"
+          >
+            {{ item1.text }}
+          </div>
+        </div>
+      </div>
+    </div>
+  </nz-carousel>
+</div>
+
+<div *ngIf="color.direction === 'vertical'" class="slide-list" #swiperContainer>
+  <div class="slide-list-wrapper" #swiperWrapper>
+    <div *ngFor="let item of data.list || []; let index = index" class="slide-list-item">
+      <div
+        *ngIf="color.showIndex"
+        class="index"
+        [style.fontSize]="color?.index?.fontSize + 'px'"
+        [style.color]="color?.index?.color"
+      >
+        {{ index + 1 }}
+      </div>
+      <div
+        class="date-text text-ellipsis"
+        [style.fontSize]="color?.title?.fontSize + 'px'"
+        [style.color]="color?.title?.color"
+      >
+        {{ item.title }}
+      </div>
+      <div class="content">
+        <div *ngFor="let item1 of item.content || []" class="row">
+          <img class="row-pic" [src]="item1.icon || 'assets/slide-list/image/tag.png'" alt="" />
+          <div
+            class="row-info"
+            [style.fontSize]="color?.content?.fontSize + 'px'"
+            [style.color]="color?.content?.color"
+          >
+            {{ item1.text }}
           </div>
         </div>
       </div>
