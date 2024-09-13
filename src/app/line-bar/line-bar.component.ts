@@ -3,7 +3,21 @@ import * as echarts from 'echarts'
 import { json_data } from './data.json'
 import { fn } from '@angular/compiler/src/output/output_ast'
 
-const { data_json = {}, color_json = {} } = json_data
+interface DataJson {
+  data?: {
+    xAxis?: {
+      data?: any[]
+    }
+    series?: any[]
+  }
+}
+
+interface ColorJson {
+  legend?: object
+  seriesMap?: object
+}
+
+const { data_json = {} as DataJson, color_json = {} as ColorJson } = json_data
 const { data = {} } = data_json
 const { legend = {}, seriesMap = {} } = color_json
 const { xAxis = {}, series = [] } = data

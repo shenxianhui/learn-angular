@@ -9,8 +9,12 @@ import {
 } from '@angular/core'
 import schema from './schema.json'
 
+interface Format {
+  data: any
+}
+
 const { sampleCode, data: data_json } = schema
-const { format = {} } = data_json || {}
+const { format = {} as Format } = data_json || {}
 const { data = {} } = format
 const color_json = sampleCode.replace(/'/g, '"') || '{}'
 const color = JSON.parse(color_json)
