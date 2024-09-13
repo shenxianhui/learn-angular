@@ -6,6 +6,9 @@
 }
 
 .slide-list {
+  overflow: hidden;
+}
+.slide-list-item {
   .date-text {
     font-size: 16px;
     color: #52d2ff;
@@ -20,18 +23,18 @@
   }
   .content {
     padding: 24px 0 32px 45px;
-    .item1 {
+    .row {
       display: flex;
       &:not(:last-child) {
         margin-bottom: 16px;
       }
-      .item-pic {
+      .row-pic {
         width: 18px;
         height: 18px;
         margin-right: 10px;
         margin-top: 3px;
       }
-      .item1-info {
+      .row-info {
         color: #ffffff;
         line-height: 1.3;
         font-size: 16px;
