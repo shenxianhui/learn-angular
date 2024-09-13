@@ -10,20 +10,22 @@
       nz-carousel-content
       class="slide-list-item"
     >
-      <div
-        *ngIf="color.showIndex"
-        class="index"
-        [style.fontSize]="color?.index?.fontSize + 'px'"
-        [style.color]="color?.index?.color"
-      >
-        {{ index + 1 }}
-      </div>
-      <div
-        class="date-text text-ellipsis"
-        [style.fontSize]="color?.title?.fontSize + 'px'"
-        [style.color]="color?.title?.color"
-      >
-        {{ item.title }}
+      <div class="date-header">
+        <div
+          *ngIf="color.showIndex"
+          class="index"
+          [style.fontSize]="color?.index?.fontSize + 'px'"
+          [style.color]="color?.index?.color"
+        >
+          {{ index + 1 < 10 ? '0' + (index + 1) : index + 1 }}
+        </div>
+        <div
+          class="date-text text-ellipsis"
+          [style.fontSize]="color?.title?.fontSize + 'px'"
+          [style.color]="color?.title?.color"
+        >
+          {{ item.title }}
+        </div>
       </div>
       <div class="content">
         <div *ngFor="let item1 of item.content || []" class="row">
@@ -45,20 +47,22 @@
 <div *ngIf="color.direction !== 'horizontal'" class="slide-list" #swiperContainer>
   <div class="slide-list-wrapper" #swiperWrapper>
     <div *ngFor="let item of data.list || []; let index = index" class="slide-list-item">
-      <div
-        *ngIf="color.showIndex"
-        class="index"
-        [style.fontSize]="color?.index?.fontSize + 'px'"
-        [style.color]="color?.index?.color"
-      >
-        {{ index + 1 }}
-      </div>
-      <div
-        class="date-text text-ellipsis"
-        [style.fontSize]="color?.title?.fontSize + 'px'"
-        [style.color]="color?.title?.color"
-      >
-        {{ item.title }}
+      <div class="date-header">
+        <div
+          *ngIf="color.showIndex"
+          class="index"
+          [style.fontSize]="color?.index?.fontSize + 'px'"
+          [style.color]="color?.index?.color"
+        >
+          {{ index + 1 < 10 ? '0' + (index + 1) : index + 1 }}
+        </div>
+        <div
+          class="date-text text-ellipsis"
+          [style.fontSize]="color?.title?.fontSize + 'px'"
+          [style.color]="color?.title?.color"
+        >
+          {{ item.title }}
+        </div>
       </div>
       <div class="content">
         <div *ngFor="let item1 of item.content || []" class="row">
