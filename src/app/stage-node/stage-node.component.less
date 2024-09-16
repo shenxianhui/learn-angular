@@ -1,8 +1,3 @@
-.rotate {
-  transform: rotateX(55deg) rotateZ(-30deg);
-  transform-style: preserve-3d;
-}
-
 .step-label {
   color: rgba(255, 255, 255, 0.6);
   font-size: 14px;
@@ -11,6 +6,7 @@
     color: #ffffff;
   }
 }
+
 .stage-node {
   display: flex;
   align-items: center;
@@ -102,39 +98,76 @@
         }
       }
       .point-wrap {
+        position: absolute;
         display: flex;
         align-items: center;
         justify-content: space-between;
+        flex-shrink: 0;
         width: 100%;
+        min-width: 1220px;
         height: 100%;
-        padding: 0 50px 0 430px;
-        .point {
+        padding: 0 0 0 320px;
+        // margin-left: 320px;
+        transform: translate(-33px, -15.5px) rotateX(55deg) rotateZ(-30deg);
+        transform-style: preserve-3d;
+
+        .group {
           position: relative;
           display: flex;
-          flex-direction: column;
-          align-items: center;
-          transform: translate3d(25px, -60px, 0) rotateX(0deg) rotateZ(30deg);
-          .label {
-            position: absolute;
-            left: 50%;
-            top: 30px;
-            white-space: nowrap;
-            transform: translate(-50%, 0) scaleY(1.8);
-            &.finish {
-              top: -40px;
-              padding: 0 8px;
-              height: 22px;
-              line-height: 21px;
-              font-size: 16px;
-              color: #fff;
-              border-left: 4px solid #50ffcc;
-              background: linear-gradient(to right, #50ffcd65, #50ffcd00);
+          justify-content: space-between;
+          align-items: flex-end;
+          flex-grow: 1;
+          .ray {
+            flex-grow: 1;
+            transform-style: preserve-3d;
+            transform: translate3d(25px, -87px, 0);
+            .ray-item {
+              height: 3px;
+              background: linear-gradient(to right, #50ffcc00, #50ffcd25, #50ffcd6e, #50ffcc);
+              border-radius: 99px;
+              width: 0; /* 初始宽度为0 */
+              animation: ray-animation 2s ease-out infinite; /* 动画持续时间和效果 */
+              &:not(:last-child) {
+                margin-bottom: 2.8px;
+              }
+              /* 定义 ray-item 的动画 */
+              @keyframes ray-animation {
+                0% {
+                  width: 0;
+                }
+                100% {
+                  width: 100%;
+                }
+              }
             }
           }
-          .img {
-            img {
-              width: 83px;
-              height: 190px;
+          .point {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            transform: translate3d(25px, -60px, 0) rotateX(0deg) rotateZ(30deg);
+            .label {
+              position: absolute;
+              left: 50%;
+              top: 30px;
+              white-space: nowrap;
+              transform: translate(-50%, 0) scaleY(1.8);
+              &.finish {
+                top: -40px;
+                padding: 0 8px;
+                height: 22px;
+                line-height: 21px;
+                font-size: 16px;
+                color: #fff;
+                border-left: 4px solid #50ffcc;
+                background: linear-gradient(to right, #50ffcd65, #50ffcd00);
+              }
+            }
+            .img {
+              img {
+                width: 83px;
+                height: 190px;
+              }
             }
           }
         }

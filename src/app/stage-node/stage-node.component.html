@@ -15,13 +15,21 @@
           <!-- <img src="assets/stage-node/image/cpu.png" alt="" /> -->
         </div>
       </div>
-      <div class="point-wrap rotate">
-        <div class="point" *ngFor="let col of row.steps || []; let colIdx = index">
-          <div class="label step-label finish">{{ row.cpu }}</div>
-          <div class="img">
-            <img src="assets/stage-node/image/point_finish.png" alt="" />
-            <!-- <img src="assets/stage-node/image/point_active.png" alt="" /> -->
-            <!-- <img src="assets/stage-node/image/point.png" alt="" /> -->
+      <div class="point-wrap">
+        <div class="group" *ngFor="let col of getSteps(row); let colIdx = index">
+          <div class="ray">
+            <div class="ray-item"></div>
+            <div class="ray-item"></div>
+            <div class="ray-item"></div>
+            <div class="ray-item"></div>
+          </div>
+          <div class="point">
+            <div class="label step-label">{{ col }}</div>
+            <div class="img">
+              <!-- <img src="assets/stage-node/image/point_finish.png" alt="" /> -->
+              <img src="assets/stage-node/image/point_active.png" alt="" />
+              <!-- <img src="assets/stage-node/image/point.png" alt="" /> -->
+            </div>
           </div>
         </div>
       </div>

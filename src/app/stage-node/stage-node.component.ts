@@ -21,6 +21,7 @@ const { list = [] } = data
 export class StageNodeComponent implements OnInit {
   data: any = data
   color: any = color
+  list: any = list
 
   constructor() {}
 
@@ -28,7 +29,7 @@ export class StageNodeComponent implements OnInit {
 
   getRowTransform(rowIdx: number): string {
     const spacing = 140 // 偏移距离
-    const rowsCount = list.length // 动态获取行数
+    const rowsCount = this.list.length // 动态获取行数
     const middleRowIdx = Math.floor((rowsCount - 1) / 2) // 中间行的索引
 
     // 偶数行：需要调整逻辑，确保两侧的行对称居中
@@ -58,5 +59,12 @@ export class StageNodeComponent implements OnInit {
     }
 
     return 'translateX(0px)' // 中间行不偏移
+  }
+
+  getSteps(row = {}) {
+    const { steps = [] } = row
+    const arr = steps.concat([''])
+
+    return arr
   }
 }
