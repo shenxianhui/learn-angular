@@ -1,7 +1,41 @@
 <div class="stage-node">
   <div class="step">
-    <div class="row" *ngFor="let row of [0, 0, 0, 0]; let rowIdx = index">
-      <div class="col" *ngFor="let col of [0, 0, 0, 0, 0, 0, 0]; let colIdx = index">{{ col }}</div>
+    <div
+      class="row"
+      *ngFor="let row of data.list || []; let rowIdx = index"
+      [ngStyle]="{ transform: getRowTransform(rowIdx) }"
+    >
+      <div class="col header">
+        <img [src]="row.icon" alt="" />
+      </div>
+      <div class="col cpu">
+        <div class="label step-label">{{ row.cpu }}</div>
+        <div class="img">
+          <img src="assets/stage-node/image/cpu_active.png" alt="" />
+          <!-- <img src="assets/stage-node/image/cpu.png" alt="" /> -->
+        </div>
+      </div>
+      <div class="col point" *ngFor="let col of row.steps || []; let colIdx = index">
+        <div class="label step-label finish">{{ row.cpu }}</div>
+        <div class="img">
+          <!-- <img src="assets/stage-node/image/point_finish.png" alt="" /> -->
+          <img src="assets/stage-node/image/point_active.png" alt="" />
+          <!-- <img src="assets/stage-node/image/point.png" alt="" /> -->
+        </div>
+      </div>
+      <div class="col station">
+        <div class="wrap">
+          <div class="label">{{ row.station }}</div>
+          <div class="img">
+            <img src="assets/stage-node/image/station_active.png" alt="" />
+            <!-- <img src="assets/stage-node/image/station.png" alt="" /> -->
+          </div>
+        </div>
+        <div class="info">
+          <div class="label">已通知</div>
+          <div class="value"><span>260</span><span>/420</span></div>
+        </div>
+      </div>
     </div>
   </div>
 </div>

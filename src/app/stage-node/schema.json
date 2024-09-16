@@ -32,6 +32,12 @@
         "desc": "必传。只做展示，不做校验"
       },
       {
+        "attribute": "list.icon",
+        "declare": "头部icon地址",
+        "type": "String",
+        "desc": "必传。只做展示，不做校验"
+      },
+      {
         "attribute": "list.cpu",
         "declare": "cpu名称",
         "type": "String",
@@ -73,9 +79,10 @@
           {
             "id": 0,
             "name": "情报预警",
+            "icon": "assets/stage-node/image/header_qbyj.png",
             "cpu": "自动响应",
             "station": "完成",
-            "steps": ["情报验证", "影响范围确认", "情报定级", "预警审核", "预警发送", "完成"],
+            "steps": ["情报验证", "影响范围确认", "情报定级", "预警审核", "预警发送"],
             "info": [
               {
                 "label": "已通知",
@@ -88,7 +95,64 @@
             ]
           },
           {
-            "id": 1
+            "id": 1,
+            "name": "资产匹配",
+            "icon": "assets/stage-node/image/header_zcpp.png",
+            "cpu": "自动响应",
+            "station": "完成",
+            "steps": ["资产指纹", "资产库匹配", "发送通知", "客户反馈"],
+            "info": [
+              {
+                "label": "已通知",
+                "value": [260, 420]
+              },
+              {
+                "label": "受影响",
+                "value": [260]
+              }
+            ]
+          },
+          {
+            "id": 2,
+            "name": "漏洞防护",
+            "icon": "assets/stage-node/image/header_ldfh.png",
+            "cpu": "自动响应",
+            "station": "完成",
+            "steps": [
+              "获取利用特征",
+              "自定义规则发布",
+              "自定义规则配置",
+              "正式规则发布",
+              "正式规则升级"
+            ],
+            "info": [
+              {
+                "label": "已通知",
+                "value": [260, 420]
+              },
+              {
+                "label": "受影响",
+                "value": [260]
+              }
+            ]
+          },
+          {
+            "id": 3,
+            "name": "威胁狩猎",
+            "icon": "assets/stage-node/image/header_wxsl.png",
+            "cpu": "自动响应",
+            "station": "完成",
+            "steps": ["获取利用特征", "编写回溯语句", "日志回溯", "事件通知"],
+            "info": [
+              {
+                "label": "已通知",
+                "value": [260, 420]
+              },
+              {
+                "label": "受影响",
+                "value": [260]
+              }
+            ]
           }
         ]
       }
