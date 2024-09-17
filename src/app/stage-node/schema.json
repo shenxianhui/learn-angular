@@ -6,7 +6,7 @@
   "type_en": "others",
   "preview": "assets/stage-node/image/stage-node.png",
   "com_type": "angular",
-  "sampleCode": "{'labelStyle':{'name':{'fontSize':14,'color':'#ffffff'},'cpu':{'fontSize':14,'color':'#ffffff'},'station':{'fontSize':14,'color':'#ffffff'},'step':{'fontSize':14,'color':'#ffffff'}},'activeLabelStyle':{'name':{'fontSize':16,'color':'#ffffff'},'cpu':{'fontSize':16,'color':'#ffffff'},'station':{'fontSize':16,'color':'#ffffff'},'step':{'fontSize':16,'color':'#ffffff'}},'infoStyle':{'label':{'fontSize':14,'color':'#ffffff'},'value':{'fontSize':14,'color':'#ffffff'},'total':{'fontSize':14,'color':'#cccccc'}}}",
+  "sampleCode": "{'header':{'label':{'fontSize':14,'color':'#ffffff'}},'cpu':{'label':{'fontSize':14,'color':'#ffffff'},'activeLabel':{'fontSize':14,'color':'#ffffff'}},'step':{'label':{'fontSize':14,'color':'#ffffff'},'activeLabel':{'fontSize':14,'color':'#ffffff'}},'station':{'label':{'fontSize':14,'color':'#ffffff'},'activeLabel':{'fontSize':14,'color':'#ffffff'}},'info':{'label':{'fontSize':14,'color':'#ffffff'},'value':{'fontSize':14,'color':'#ffffff'},'total':{'fontSize':14,'color':'#ffffff'}}}",
   "config": {
     "list": [],
     "comments": []

@@ -6,11 +6,30 @@
       [ngStyle]="{ transform: getRowTransform(rowIdx) }"
     >
       <div class="col header">
-        <div class="label">{{ row.name }}</div>
+        <div
+          class="label"
+          [style.fontSize]="color?.header?.label?.fontSize + 'px'"
+          [style.color]="color?.header?.label?.color"
+        >
+          {{ row.name }}
+        </div>
         <img [src]="row.icon" alt="" />
       </div>
       <div class="col cpu">
-        <div class="label step-label" [class.active]="activeIndex[rowIdx] >= 1">{{ row.cpu }}</div>
+        <div
+          class="label step-label"
+          [class.active]="activeIndex[rowIdx] >= 1"
+          [style.fontSize]="
+            activeIndex[rowIdx] >= 1
+              ? color?.cpu?.activeLabel?.fontSize + 'px'
+              : color?.cpu?.label?.fontSize + 'px'
+          "
+          [style.color]="
+            activeIndex[rowIdx] >= 1 ? color?.cpu?.activeLabel?.color : color?.cpu?.label?.color
+          "
+        >
+          {{ row.cpu }}
+        </div>
         <div class="img">
           <img
             *ngIf="activeIndex[rowIdx] >= 1"
@@ -33,6 +52,20 @@
               class="label step-label"
               [class.active]="activeIndex[rowIdx] > colIdx + 2"
               [class.finish]="activeIndex[rowIdx] === colIdx + 2"
+              [style.fontSize]="
+                activeIndex[rowIdx] === colIdx + 2
+                  ? ''
+                  : activeIndex[rowIdx] > colIdx + 2
+                  ? color?.step?.activeLabel?.fontSize + 'px'
+                  : color?.step?.label?.fontSize + 'px'
+              "
+              [style.color]="
+                activeIndex[rowIdx] === colIdx + 2
+                  ? ''
+                  : activeIndex[rowIdx] > colIdx + 2
+                  ? color?.step?.activeLabel?.color
+                  : color?.step?.label?.color
+              "
             >
               {{ col }}
             </div>
@@ -58,7 +91,19 @@
       </div>
       <div class="col station">
         <div class="wrap">
-          <div class="label">
+          <div
+            class="label"
+            [style.fontSize]="
+              activeIndex[rowIdx] >= row.steps.length + 2
+                ? color?.station?.activeLabel?.fontSize + 'px'
+                : color?.station?.label?.fontSize + 'px'
+            "
+            [style.color]="
+              activeIndex[rowIdx] >= row.steps.length + 2
+                ? color?.station?.activeLabel?.color
+                : color?.station?.label?.color
+            "
+          >
             {{ activeIndex[rowIdx] >= row.steps.length + 2 ? row.station : '' }}
           </div>
           <div class="img">
@@ -78,12 +123,33 @@
           <div *ngFor="let info of row.info || []" class="group">
             <div class="label">
               <img src="assets/stage-node/image/tag.png" alt="" />
-              <span>{{ info?.label }}</span>
+              <span
+                [style.fontSize]="color?.info?.label?.fontSize + 'px'"
+                [style.color]="color?.info?.label?.color"
+                >{{ info?.label }}</span
+              >
             </div>
             <div class="value">
-              <span class="current">{{ info?.value[0] }}</span>
-              <span *ngIf="info?.value.length > 1" class="mark">/</span>
-              <span *ngIf="info?.value.length > 1" class="total">{{ info?.value[1] }}</span>
+              <span
+                class="current"
+                [style.fontSize]="color?.info?.value?.fontSize + 'px'"
+                [style.color]="color?.info?.value?.color"
+                >{{ info?.value[0] }}</span
+              >
+              <span
+                *ngIf="info?.value.length > 1"
+                class="mark"
+                [style.fontSize]="color?.info?.total?.fontSize + 'px'"
+                [style.color]="color?.info?.total?.color"
+                >/</span
+              >
+              <span
+                *ngIf="info?.value.length > 1"
+                class="total"
+                [style.fontSize]="color?.info?.total?.fontSize + 'px'"
+                [style.color]="color?.info?.total?.color"
+                >{{ info?.value[1] }}</span
+              >
             </div>
           </div>
         </div>
