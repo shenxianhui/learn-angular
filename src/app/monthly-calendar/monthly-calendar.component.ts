@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core'
+import { Component, HostListener, OnInit, Renderer2 } from '@angular/core'
 import schema from './schema.json'
 
 interface Format {
@@ -31,9 +31,32 @@ export class MonthlyCalendarComponent implements OnInit {
   selectedDate_cn: string = this.getCurrentDate().cn
   selectedDate_en: string = this.getCurrentDate().en
 
-  constructor() {}
+  constructor(private renderer: Renderer2) {}
 
-  ngOnInit() {}
+  // 监听窗口大小变化事件
+  @HostListener('window:resize', ['$event'])
+  onResize(event: Event): void {
+    this.setScale()
+  }
+
+  ngOnInit() {
+    this.setScale()
+  }
+
+  // 设置缩放比例
+  private setScale(): void {
+    const stageNode = document.querySelector('.monthly-calendar') as HTMLElement
+    const designWidth = 1835
+    const designHeight = 775
+
+    const scaleX = window.innerWidth / designWidth
+    const scaleY = window.innerHeight / designHeight
+
+    const scale = Math.min(scaleX, scaleY) // 等比缩放
+
+    // 设置缩放
+    this.renderer.setStyle(stageNode, 'transform', `translate(-50%, -50%) scale(${scale})`)
+  }
 
   handleBtn(day, idx) {
     if (day < this.startDay) return
