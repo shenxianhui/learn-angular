@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core'
+import { Component, HostListener, OnInit, Renderer2 } from '@angular/core'
 import schema from './schema.json'
 
 interface Format {
@@ -23,10 +23,34 @@ export class StageNodeComponent implements OnInit {
   color: any = color
   list: any = list
   activeIndex: any = activeIndex
+  scale: number = 1
 
-  constructor() {}
+  constructor(private renderer: Renderer2) {}
 
-  ngOnInit() {}
+  // 监听窗口大小变化事件
+  @HostListener('window:resize', ['$event'])
+  onResize(event: Event): void {
+    this.setScale()
+  }
+
+  ngOnInit() {
+    this.setScale()
+  }
+
+  // 设置缩放比例
+  private setScale(): void {
+    const stageNode = document.querySelector('.stage-node') as HTMLElement
+    const designWidth = 1920
+    const designHeight = 1080
+
+    const scaleX = window.innerWidth / designWidth
+    const scaleY = window.innerHeight / designHeight
+
+    const scale = Math.min(scaleX, scaleY) // 等比缩放
+
+    // 设置缩放
+    this.renderer.setStyle(stageNode, 'transform', `translate(-50%, -50%) scale(${scale})`)
+  }
 
   getRowTransform(rowIdx: number): string {
     const spacing = 140 // 偏移距离
