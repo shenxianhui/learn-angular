@@ -2,66 +2,88 @@
   <div class="step">
     <div
       class="row"
-      *ngFor="let row of data.list || []; let rowIdx = index"
+      *ngFor="let row of list || []; let rowIdx = index"
       [ngStyle]="{ transform: getRowTransform(rowIdx) }"
     >
       <div class="col header">
+        <div class="label">{{ row.name }}</div>
         <img [src]="row.icon" alt="" />
       </div>
       <div class="col cpu">
-        <div class="label step-label">{{ row.cpu }}</div>
+        <div class="label step-label" [class.active]="activeIndex[rowIdx] >= 1">{{ row.cpu }}</div>
         <div class="img">
-          <img src="assets/stage-node/image/cpu_active.png" alt="" />
-          <!-- <img src="assets/stage-node/image/cpu.png" alt="" /> -->
+          <img
+            *ngIf="activeIndex[rowIdx] >= 1"
+            src="assets/stage-node/image/cpu_active.png"
+            alt=""
+          />
+          <img *ngIf="activeIndex[rowIdx] < 1" src="assets/stage-node/image/cpu.png" alt="" />
         </div>
       </div>
       <div class="point-wrap">
         <div class="group" *ngFor="let col of getSteps(row); let colIdx = index">
-          <div class="ray">
+          <div [class.hide]="colIdx >= activeIndex[rowIdx] - 1" class="ray">
             <div class="ray-item"></div>
             <div class="ray-item"></div>
             <div class="ray-item"></div>
             <div class="ray-item"></div>
           </div>
           <div class="point">
-            <div class="label step-label">{{ col }}</div>
-            <div class="img">
-              <!-- <img src="assets/stage-node/image/point_finish.png" alt="" /> -->
-              <img src="assets/stage-node/image/point_active.png" alt="" />
-              <!-- <img src="assets/stage-node/image/point.png" alt="" /> -->
+            <div
+              class="label step-label"
+              [class.active]="activeIndex[rowIdx] > colIdx + 2"
+              [class.finish]="activeIndex[rowIdx] === colIdx + 2"
+            >
+              {{ col }}
+            </div>
+            <div [class.hide]="colIdx === getSteps(row).length - 1" class="img">
+              <img
+                *ngIf="activeIndex[rowIdx] === colIdx + 2"
+                src="assets/stage-node/image/point_finish.png"
+                alt=""
+              />
+              <img
+                *ngIf="activeIndex[rowIdx] > colIdx + 2"
+                src="assets/stage-node/image/point_active.png"
+                alt=""
+              />
+              <img
+                *ngIf="activeIndex[rowIdx] < colIdx + 2"
+                src="assets/stage-node/image/point.png"
+                alt=""
+              />
             </div>
           </div>
         </div>
       </div>
       <div class="col station">
         <div class="wrap">
-          <div class="label">{{ row.station }}</div>
+          <div class="label">
+            {{ activeIndex[rowIdx] >= row.steps.length + 2 ? row.station : '' }}
+          </div>
           <div class="img">
-            <img src="assets/stage-node/image/station_active.png" alt="" />
-            <!-- <img src="assets/stage-node/image/station.png" alt="" /> -->
+            <img
+              *ngIf="activeIndex[rowIdx] >= row.steps.length + 2"
+              src="assets/stage-node/image/station_active.png"
+              alt=""
+            />
+            <img
+              *ngIf="activeIndex[rowIdx] < row.steps.length + 2"
+              src="assets/stage-node/image/station.png"
+              alt=""
+            />
           </div>
         </div>
         <div class="info">
-          <div class="group">
+          <div *ngFor="let info of row.info || []" class="group">
             <div class="label">
               <img src="assets/stage-node/image/tag.png" alt="" />
-              <span>已通知</span>
+              <span>{{ info?.label }}</span>
             </div>
             <div class="value">
-              <span class="current">260</span>
-              <span class="mark">/</span>
-              <span class="total">420</span>
-            </div>
-          </div>
-          <div class="group">
-            <div class="label">
-              <img src="assets/stage-node/image/tag.png" alt="" />
-              <span>已通知</span>
-            </div>
-            <div class="value">
-              <span class="current">260</span>
-              <span class="mark">/</span>
-              <span class="total">420</span>
+              <span class="current">{{ info?.value[0] }}</span>
+              <span *ngIf="info?.value.length > 1" class="mark">/</span>
+              <span *ngIf="info?.value.length > 1" class="total">{{ info?.value[1] }}</span>
             </div>
           </div>
         </div>

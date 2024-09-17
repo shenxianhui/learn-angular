@@ -11,7 +11,7 @@ const { data = {} } = format
 const color_json = sampleCode.replace(/'/g, '"') || '{}'
 const color = JSON.parse(color_json)
 
-const { list = [] } = data
+const { activeIndex = {}, list = [] } = data
 
 @Component({
   selector: 'app-stage-node',
@@ -22,6 +22,7 @@ export class StageNodeComponent implements OnInit {
   data: any = data
   color: any = color
   list: any = list
+  activeIndex: any = activeIndex
 
   constructor() {}
 
