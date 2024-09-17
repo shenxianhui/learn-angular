@@ -61,6 +61,7 @@
           align-items: center;
           top: 55px;
           left: 246px;
+          z-index: 9;
           .label {
             margin-bottom: 14px;
           }
@@ -76,6 +77,7 @@
           right: -48px;
           display: flex;
           color: #fff;
+          z-index: 9;
           .wrap {
             .label {
               height: 40px;
@@ -92,8 +94,47 @@
           }
           .info {
             position: absolute;
+            display: flex;
             top: 0;
-            left: 70px;
+            left: 90px;
+            color: rgba(255, 255, 255, 0.6);
+            .group {
+              flex-shrink: 0;
+              &:not(:last-child) {
+                margin-right: 24px;
+              }
+              .label {
+                display: flex;
+                align-items: center;
+                margin-bottom: 10px;
+                img {
+                  flex-shrink: 0;
+                  width: 14px;
+                  height: 14px;
+                  margin-right: 10px;
+                }
+                span {
+                  font-size: 16px;
+                  color: #ffffff;
+                }
+              }
+              .mark {
+                margin: 0 3px 4px;
+              }
+              .value {
+                display: flex;
+                align-items: flex-end;
+                padding-left: 26px;
+                .current {
+                  font-size: 24px;
+                  color: #ffffff;
+                }
+                .total {
+                  font-size: 16px;
+                  margin-bottom: 2px;
+                }
+              }
+            }
           }
         }
       }
@@ -120,7 +161,7 @@
           .ray {
             flex-grow: 1;
             transform-style: preserve-3d;
-            transform: translate3d(25px, -87px, 0);
+            transform: translate3d(0, -87px, 0) scaleX(1.5);
             .ray-item {
               height: 3px;
               background: linear-gradient(to right, #50ffcc00, #50ffcd25, #50ffcd6e, #50ffcc);
@@ -142,14 +183,16 @@
             }
           }
           .point {
+            position: relative;
             display: flex;
             flex-direction: column;
             align-items: center;
             transform: translate3d(25px, -60px, 0) rotateX(0deg) rotateZ(30deg);
+            z-index: 9;
             .label {
               position: absolute;
               left: 50%;
-              top: 30px;
+              top: 66px;
               white-space: nowrap;
               transform: translate(-50%, 0) scaleY(1.8);
               &.finish {
