@@ -51,3 +51,31 @@
     }
   }
 }
+
+::ng-deep .carousel-info-carousel .slick-dots li {
+  margin: 0 5px;
+}
+::ng-deep .carousel-info-carousel .slick-dots li button {
+  width: 8px;
+  height: 8px;
+  background: rgba(255, 255, 255, 0.4);
+  border-radius: 50% !important;
+}
+::ng-deep .carousel-info-carousel .slick-dots li.slick-active button {
+  position: relative;
+  width: 8px;
+  height: 8px;
+  background: rgba(255, 255, 255, 1);
+  border-radius: 50% !important;
+  &:before {
+    position: absolute;
+    content: '';
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 16px;
+    height: 16px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50% !important;
+  }
+}
