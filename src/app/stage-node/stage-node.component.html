@@ -51,7 +51,9 @@
             <div
               class="label step-label"
               [class.active]="activeIndex[rowIdx] > colIdx + 2"
-              [class.finish]="activeIndex[rowIdx] === colIdx + 2"
+              [class.finish]="
+                activeIndex[rowIdx] === colIdx + 2 && colIdx !== getSteps(row).length - 1
+              "
               [style.fontSize]="
                 activeIndex[rowIdx] === colIdx + 2
                   ? ''
