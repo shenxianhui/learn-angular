@@ -177,22 +177,24 @@
             flex-grow: 1;
             transform-style: preserve-3d;
             transform: translate3d(0, -87px, 0) scaleX(1.5);
+            overflow: hidden;
             .ray-item {
               height: 3px;
               background: linear-gradient(to right, #50ffcc00, #50ffcd25, #50ffcd6e, #50ffcc);
               border-radius: 99px;
-              width: 0; /* 初始宽度为0 */
+              width: 100%;
+              transform: translate(-100%, 0);
               animation: ray-animation 5s ease-out infinite; /* 动画持续时间和效果 */
               &:not(:last-child) {
                 margin-bottom: 2.8px;
               }
               /* 定义 ray-item 的动画 */
               @keyframes ray-animation {
-                90% {
-                  width: 0;
+                80% {
+                  transform: translate(-120%, 0);
                 }
                 100% {
-                  width: 100%;
+                  transform: translate(120%, 0);
                 }
               }
             }
