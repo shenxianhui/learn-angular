@@ -36,11 +36,11 @@ export class MonthlyCalendarComponent implements OnInit {
   // 监听窗口大小变化事件
   @HostListener('window:resize', ['$event'])
   onResize(event: Event): void {
-    this.setScale()
+    // this.setScale()
   }
 
   ngOnInit() {
-    this.setScale()
+    // this.setScale()
   }
 
   // 设置缩放比例
