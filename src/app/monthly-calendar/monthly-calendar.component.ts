@@ -11,7 +11,12 @@ const { data = {} } = format
 const color_json = sampleCode.replace(/'/g, '"') || '{}'
 const color = JSON.parse(color_json)
 
-const { selectedDate: _selectedDate = '', startDay: _startDay = 0, endDay: _endDay = 0 } = data
+const {
+  selectedDate: _selectedDate = '',
+  startDay: _startDay = 0,
+  endDay: _endDay = 0,
+  timeScale: _timeScale = [],
+} = data
 
 @Component({
   selector: 'app-monthly-calendar',
@@ -24,7 +29,8 @@ export class MonthlyCalendarComponent implements OnInit {
 
   currentYear: number = new Date().getFullYear()
   currentMonth: number = new Date().getMonth() + 1 // 月份从0开始，需要+1
-  timeScale: string[] = Array.from({ length: 25 }, (_, i) => `${String(i).padStart(2, '0')}:00`) // 00:00 到 24:00
+  // timeScale: string[] = Array.from({ length: 25 }, (_, i) => `${String(i).padStart(2, '0')}:00`) // 00:00 到 24:00
+  timeScale: string[] = _timeScale
   startDay: number = _startDay // 开始变灰的起始日期
   endDay: number = _endDay // 结束变灰的终止日期
   selectedDate: string = _selectedDate
@@ -155,7 +161,7 @@ export class MonthlyCalendarComponent implements OnInit {
   }
 
   getPer(sunriseTime = '', sunsetTime = '') {
-    const totalMinutes = 24 * 60
+    const totalMinutes = (this.timeScale.length - 1) * 60
 
     function timeToMinutes(time) {
       const [hours, minutes] = time.split(':').map(Number)
