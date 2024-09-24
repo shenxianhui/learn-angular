@@ -4,6 +4,9 @@ import schema from './schema.json'
 interface Format {
   data: any
 }
+interface RowType {
+  steps?: string[]
+}
 
 const { sampleCode, data: data_json } = schema
 const { format = {} as Format } = data_json || {}
@@ -86,7 +89,7 @@ export class StageNodeComponent implements OnInit {
     return 'translateX(0px)' // 中间行不偏移
   }
 
-  getSteps(row = {}) {
+  getSteps(row: RowType = {}): string[] {
     const { steps = [] } = row
     const arr = steps.concat([''])
 
