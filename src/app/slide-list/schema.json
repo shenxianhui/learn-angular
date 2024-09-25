@@ -6,7 +6,7 @@
   "type_en": "table",
   "preview": "assets/slide-list/image/slide-list.png",
   "com_type": "angular",
-  "sampleCode": "{'direction':'horizontal','interval':3000,'showIndex':true,'index':{'fontSize':14,'color':'#ffffff'},'title':{'fontSize':14,'color':'#ffffff'},'content':{'fontSize':14,'color':'#ffffff'}}",
+  "sampleCode": "{'horizontal':false,'interval':3000,'showIndex':true,'index':{'fontSize':14,'color':'#ffffff'},'title':{'fontSize':14,'color':'#ffffff'},'content':{'fontSize':14,'color':'#ffffff'}}",
   "config": {
     "list": [],
     "comments": []
@@ -42,58 +42,75 @@
     "format": {
       "data": {
         "list": [
-          {
-            "title": "标题",
-            "content": [
-              {
-                "icon": "assets/slide-list/image/tag.png",
-                "text": "内容"
-              },
-              {
-                "icon": "assets/slide-list/image/tag.png",
-                "text": "内容"
-              }
-            ]
-          },
-          {
-            "title": "标题",
-            "content": [
-              {
-                "icon": "assets/slide-list/image/tag.png",
-                "text": "内容"
-              },
-              {
-                "icon": "assets/slide-list/image/tag.png",
-                "text": "内容"
-              }
-            ]
-          },
-          {
-            "title": "标题",
-            "content": [
-              {
-                "icon": "assets/slide-list/image/tag.png",
-                "text": "内容"
-              },
-              {
-                "icon": "assets/slide-list/image/tag.png",
-                "text": "内容"
-              }
-            ]
-          },
-          {
-            "title": "标题",
-            "content": [
-              {
-                "icon": "assets/slide-list/image/tag.png",
-                "text": "内容"
-              },
-              {
-                "icon": "assets/slide-list/image/tag.png",
-                "text": "内容"
-              }
-            ]
-          }
+          [
+            {
+              "title": "超长标题超长标题超长标题超长标题超长标题超长标题超长标题超长标题超长标题超长标题超长标题超长标题超长标题超长标题超长标题超长标题超长标题超长标题超长标题超长标题超长标题超长标题超长标题超长标题超长标题超长标题超长标题超长标题超长标题超长标题超长标题超长标题超长标题超长标题超长标题",
+              "content": [
+                {
+                  "icon": "assets/slide-list/image/tag.png",
+                  "text": "内容"
+                },
+                {
+                  "icon": "assets/slide-list/image/tag.png",
+                  "text": "内容"
+                }
+              ]
+            },
+            {
+              "title": "标题",
+              "content": [
+                {
+                  "icon": "assets/slide-list/image/tag.png",
+                  "text": "内容"
+                },
+                {
+                  "icon": "assets/slide-list/image/tag.png",
+                  "text": "内容"
+                },
+                {
+                  "icon": "assets/slide-list/image/tag.png",
+                  "text": "内容"
+                },
+                {
+                  "icon": "assets/slide-list/image/tag.png",
+                  "text": "内容"
+                },
+                {
+                  "icon": "assets/slide-list/image/tag.png",
+                  "text": "内容"
+                },
+                {
+                  "icon": "assets/slide-list/image/tag.png",
+                  "text": "内容"
+                },
+                {
+                  "icon": "assets/slide-list/image/tag.png",
+                  "text": "内容"
+                },
+                {
+                  "icon": "assets/slide-list/image/tag.png",
+                  "text": "内容"
+                },
+                {
+                  "icon": "assets/slide-list/image/tag.png",
+                  "text": "内容"
+                }
+              ]
+            },
+            {
+              "title": "标题",
+              "content": [
+                {
+                  "icon": "assets/slide-list/image/tag.png",
+                  "text": "内容"
+                },
+                {
+                  "icon": "assets/slide-list/image/tag.png",
+                  "text": "内容"
+                }
+              ]
+            }
+          ]
         ]
       }
     }

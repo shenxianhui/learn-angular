@@ -1,5 +1,5 @@
 <!-- horizontal -->
-<div *ngIf="color.direction === 'horizontal'" class="slide-list">
+<div *ngIf="color.horizontal" class="slide-list">
   <nz-carousel
     class="carousel-info-carousel"
     [nzAutoPlay]="true"
@@ -10,32 +10,34 @@
       nz-carousel-content
       class="slide-list-item"
     >
-      <div class="date-header">
-        <div
-          *ngIf="color.showIndex"
-          class="index"
-          [style.fontSize]="color?.index?.fontSize + 'px'"
-          [style.color]="color?.index?.color"
-        >
-          {{ index + 1 < 10 ? '0' + (index + 1) : index + 1 }}
-        </div>
-        <div
-          class="date-text text-ellipsis"
-          [style.fontSize]="color?.title?.fontSize + 'px'"
-          [style.color]="color?.title?.color"
-        >
-          {{ item.title }}
-        </div>
-      </div>
-      <div class="content">
-        <div *ngFor="let item1 of item.content || []" class="row">
-          <img class="row-pic" [src]="item1.icon || 'assets/slide-list/image/tag.png'" alt="" />
+      <div *ngFor="let item1 of item || []; let index1 = index" class="slide-list-item-wrap">
+        <div class="date-header">
           <div
-            class="row-info"
-            [style.fontSize]="color?.content?.fontSize + 'px'"
-            [style.color]="color?.content?.color"
+            *ngIf="color.showIndex"
+            class="index"
+            [style.fontSize]="color?.index?.fontSize + 'px'"
+            [style.color]="color?.index?.color"
           >
-            {{ item1.text }}
+            {{ index + 1 < 10 ? '0' + (index + 1) : index + 1 }}
+          </div>
+          <div
+            class="date-text text-ellipsis"
+            [style.fontSize]="color?.title?.fontSize + 'px'"
+            [style.color]="color?.title?.color"
+          >
+            {{ item1.title }}
+          </div>
+        </div>
+        <div class="content">
+          <div *ngFor="let item2 of item1.content || []" class="row">
+            <img class="row-pic" [src]="item2.icon || 'assets/slide-list/image/tag.png'" alt="" />
+            <div
+              class="row-info"
+              [style.fontSize]="color?.content?.fontSize + 'px'"
+              [style.color]="color?.content?.color"
+            >
+              {{ item2.text }}
+            </div>
           </div>
         </div>
       </div>
@@ -44,9 +46,9 @@
 </div>
 
 <!-- vertical -->
-<div *ngIf="color.direction !== 'horizontal'" class="slide-list" #swiperContainer>
+<div *ngIf="!color.horizontal" class="slide-list" #swiperContainer>
   <div class="slide-list-wrapper" #swiperWrapper>
-    <div *ngFor="let item of data.list || []; let index = index" class="slide-list-item">
+    <div *ngFor="let item of data.list[0] || []; let index = index" class="slide-list-item">
       <div class="date-header">
         <div
           *ngIf="color.showIndex"
