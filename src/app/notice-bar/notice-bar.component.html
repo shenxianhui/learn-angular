@@ -1,9 +1,5 @@
 <div class="notice-bar-wrap">
-  <div
-    class="notice-bar"
-    *ngFor="let item of noticeList"
-    [ngClass]="{ scrollable: isContentOverflow }"
-  >
+  <div class="notice-bar" *ngFor="let item of noticeList">
     <div class="notice-bar-content" #noticeBarContent>
       {{ item }}
     </div>

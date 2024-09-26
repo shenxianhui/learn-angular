@@ -27,6 +27,12 @@ export class NoticeBarComponent implements OnInit, AfterViewInit {
 
   ngOnInit(): void {}
 
+  // 监听窗口大小变化事件
+  @HostListener('window:resize', ['$event'])
+  onResize(event: Event): void {
+    this.checkContentOverflow()
+  }
+
   ngAfterViewInit(): void {
     this.checkContentOverflow()
   }
@@ -49,10 +55,5 @@ export class NoticeBarComponent implements OnInit, AfterViewInit {
     const contentWidth = contentElement.nativeElement.offsetWidth
     const animationDuration = contentWidth / this.speed
     contentElement.nativeElement.style.animationDuration = `${animationDuration}s`
-  }
-
-  @HostListener('window:resize', ['$event'])
-  onResize(): void {
-    this.checkContentOverflow()
   }
 }
