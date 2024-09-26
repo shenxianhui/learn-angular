@@ -13,16 +13,36 @@ const color_json = sampleCode.replace(/'/g, '"') || '{}'
 const color = JSON.parse(color_json)
 
 const { legend = {}, seriesMap = {} } = color
-const { xAxis = {}, series = [] } = data
+const { xAxis = {}, series = [], yAxis = [] } = data
 const { data: xAxisData = [] } = xAxis
 const seriesData = []
 
-function getBorderHeight(list = []) {
-  const sum = list.reduce((acc, curr) => acc + curr, 0)
-  const average = (sum / list.length / 40) * 1.5
-  const arr = Array(list.length).fill(average)
+function getBorderHeight(list1 = [], list2 = []) {
+  const max = Math.max(Math.max.apply(null, list1), Math.max.apply(null, list2))
+  let min = Math.min(Math.min.apply(null, list1), Math.min.apply(null, list2))
+  const cmax = Math.max.apply(null, list1)
+  let scale = 1
 
-  return arr
+  if (cmax < max) {
+    scale = max / cmax
+  }
+
+  // 防止除零错误
+  if (min === 0) {
+    min = 1
+  }
+
+  // 计算高度比例的系数
+  const heightRatio = 0.08
+
+  // 计算边框高度
+  let borderHeight = (max - min) * heightRatio
+
+  if (cmax < max) {
+    borderHeight = ((max - min) * heightRatio) / scale
+  }
+
+  return Array(list1.length).fill(borderHeight)
 }
 
 series.forEach((item, index) => {
@@ -37,7 +57,7 @@ series.forEach((item, index) => {
       itemStyle: {
         normal: {
           color: styleObj.borderColor || 'rgba(82, 210, 255, 1)',
-          opacity: 0.5,
+          opacity: 0.2,
         },
       },
       showBackground: true,
@@ -59,7 +79,10 @@ series.forEach((item, index) => {
           show: false,
         },
       },
-      data: getBorderHeight(item.data),
+      data:
+        index === 0
+          ? getBorderHeight(series[0].data, series[1].data)
+          : getBorderHeight(series[1].data, series[0].data),
       tooltip: {
         show: false,
       },
@@ -127,10 +150,16 @@ export class DoubleBarComponent implements OnInit {
         ],
         xAxis: [
           {
-            name: '',
+            name: '日期',
             type: 'category',
+            nameLocation: 'start',
+            nameTextStyle: {
+              fontSize: 14,
+              color: '#fff',
+              padding: [30, 0, 0, 0],
+            },
             axisLabel: {
-              color: '#BABBCA',
+              color: '#fff',
               fontSize: 14,
             },
             axisLine: {
@@ -168,16 +197,20 @@ export class DoubleBarComponent implements OnInit {
         ],
         yAxis: [
           {
-            name: series[0] && series[0].name,
+            name: (yAxis[0] && yAxis[0].name) || (series[0] && series[0].name),
             type: 'value',
             nameTextStyle: {
               fontSize: 14,
-              color: '#BABBCA',
+              color: '#fff',
+              padding: [0, 20, 2, 0],
             },
             axisLabel: {
               width: 20,
               fontSize: 14,
-              color: '#BABBCA',
+              color: '#fff',
+              formatter: function (value) {
+                return value === 0 ? '' : value
+              },
             },
             axisLine: {
               show: false,
@@ -194,16 +227,20 @@ export class DoubleBarComponent implements OnInit {
             gridIndex: 0,
           },
           {
-            name: series[1] && series[1].name,
+            name: (yAxis[1] && yAxis[1].name) || (series[1] && series[1].name),
             type: 'value',
             nameTextStyle: {
               fontSize: 14,
-              color: '#BABBCA',
+              color: '#fff',
+              padding: [2, 20, 0, 0],
             },
             axisLabel: {
               width: 20,
               fontSize: 14,
-              color: '#BABBCA',
+              color: '#fff',
+              formatter: function (value) {
+                return value === 0 ? '' : value
+              },
             },
             axisLine: {
               show: false,
