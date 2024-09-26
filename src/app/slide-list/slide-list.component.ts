@@ -32,7 +32,6 @@ export class SlideListComponent implements OnDestroy, AfterViewInit {
   color: any = color
 
   private slideIndex = 0 // 从第0个幻灯片开始
-  private containerHeight = 500
   private intervalId: any
   private readonly intervalTime = color.interval || 3000
   private readonly transitionTime = 500 // 动画过渡时间
@@ -57,7 +56,7 @@ export class SlideListComponent implements OnDestroy, AfterViewInit {
       this.renderer.setStyle(
         this.swiperContainer.nativeElement,
         'height',
-        `${this.containerHeight}px`,
+        `100%`,
       )
     }
   }
@@ -133,11 +132,12 @@ export class SlideListComponent implements OnDestroy, AfterViewInit {
   }
 
   private shouldScroll(): boolean {
-    if (!this.swiperWrapper || !this.swiperContainer) return
+    if (!this.swiperWrapper || !this.swiperContainer) return false
 
-    const wrapperHeight = this.swiperWrapper.nativeElement.scrollHeight
-    const containerHeight = this.swiperContainer.nativeElement.clientHeight
-    return wrapperHeight > containerHeight
+    const wrapperHeight = this.swiperWrapper.nativeElement.scrollHeight // 获取内容总高度
+    const containerHeight = this.swiperContainer.nativeElement.clientHeight // 获取容器实际高度
+
+    return wrapperHeight > containerHeight // 判断内容高度是否超过容器高度
   }
 
   @HostListener('mouseenter') onMouseEnter() {

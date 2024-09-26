@@ -7,11 +7,16 @@
 
 .slide-list {
   overflow: hidden;
+  height: 100%;
 }
 .slide-list-item {
+  display: flex !important;
+  flex-direction: column;
+  height: 100%;
   .date-header {
     display: flex;
     align-items: center;
+    flex-shrink: 0;
     height: 40px;
     background: url('/assets/slide-list/image/header_bg.png') no-repeat center center;
     background-size: 100% 100%;
@@ -31,7 +36,9 @@
     }
   }
   .content {
-    padding: 24px 0 32px 45px;
+    flex-grow: 1;
+    // padding: 24px 0 32px 45px;
+    padding: 17px;
     .row {
       display: flex;
       &:not(:last-child) {
@@ -79,3 +86,25 @@
     border-radius: 50% !important;
   }
 }
+
+::ng-deep .carousel-info-carousel {
+  height: 100%;
+  .slick-initialized {
+    height: 100%;
+    .slick-list {
+      height: 100%;
+      .slick-track {
+        height: 100%;
+      }
+    }
+  }
+}
+// ::ng-deep .carousel-info-carousel .slick-initialized {
+//   height: 100%;
+// }
+// ::ng-deep .carousel-info-carousel .slick-initialized .slick-list {
+//   height: 100%;
+// }
+// ::ng-deep .carousel-info-carousel .slick-initialized .slick-list .slick-track {
+//   height: 100%;
+// }
