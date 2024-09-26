@@ -15,13 +15,10 @@ import {
   styleUrls: ['./notice-bar.component.less'],
 })
 export class NoticeBarComponent implements OnInit, AfterViewInit {
-  @Input() contentText: string = '默认滚动内容'
   @Input() speed: number = 20 // 滚动速率 (px/s)
   @Input() scrollable: boolean = true // 开启自动滚动
 
   @ViewChildren('noticeBarContent') contentElements!: QueryList<ElementRef>
-
-  noticeList = ['内容1内容1内容1内容1内容1内容1', '内容2内容2内容2', '内容3']
 
   constructor() {}
 

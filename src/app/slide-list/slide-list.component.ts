@@ -6,6 +6,9 @@ import {
   Renderer2,
   ViewChild,
   AfterViewInit,
+  Input,
+  ViewChildren,
+  QueryList,
 } from '@angular/core'
 import schema from './schema.json'
 
@@ -27,6 +30,12 @@ const color = JSON.parse(color_json)
 export class SlideListComponent implements OnDestroy, AfterViewInit {
   @ViewChild('swiperContainer') swiperContainer: ElementRef
   @ViewChild('swiperWrapper') swiperWrapper: ElementRef
+  @ViewChild('noticeBar') noticeBar: ElementRef
+
+  @Input() speed: number = 20 // 滚动速率 (px/s)
+  @Input() scrollable: boolean = true // 开启自动滚动
+
+  @ViewChildren('noticeBarContent') contentElements!: QueryList<ElementRef>
 
   data: any = data
   color: any = color
@@ -42,6 +51,7 @@ export class SlideListComponent implements OnDestroy, AfterViewInit {
   ngAfterViewInit() {
     // 使用全局变量设置 swiper 容器高度
     this.setSwiperContainerHeight()
+    this.checkContentOverflow()
 
     // 初始化滚动到第0个幻灯片的位置
     setTimeout(() => {
@@ -53,11 +63,7 @@ export class SlideListComponent implements OnDestroy, AfterViewInit {
   private setSwiperContainerHeight() {
     // 使用全局变量设置 .s-swiper-container 的高度
     if (this.swiperContainer) {
-      this.renderer.setStyle(
-        this.swiperContainer.nativeElement,
-        'height',
-        `100%`,
-      )
+      this.renderer.setStyle(this.swiperContainer.nativeElement, 'height', `100%`)
     }
   }
 
@@ -138,6 +144,26 @@ export class SlideListComponent implements OnDestroy, AfterViewInit {
     const containerHeight = this.swiperContainer.nativeElement.clientHeight // 获取容器实际高度
 
     return wrapperHeight > containerHeight // 判断内容高度是否超过容器高度
+  }
+
+  private checkContentOverflow(): void {
+    this.contentElements.forEach(contentElement => {
+      const containerWidth = contentElement.nativeElement.parentElement.offsetWidth
+      const contentWidth = contentElement.nativeElement.offsetWidth
+      if (contentWidth > containerWidth) {
+        contentElement.nativeElement.parentElement.classList.add('scrollable')
+        this.updateAnimationDuration(contentElement)
+      } else {
+        contentElement.nativeElement.parentElement.classList.remove('scrollable')
+        contentElement.nativeElement.style.transform = 'translateX(0%)'
+      }
+    })
+  }
+
+  private updateAnimationDuration(contentElement: ElementRef): void {
+    const contentWidth = contentElement.nativeElement.offsetWidth
+    const animationDuration = contentWidth / this.speed
+    contentElement.nativeElement.style.animationDuration = `${animationDuration}s`
   }
 
   @HostListener('mouseenter') onMouseEnter() {

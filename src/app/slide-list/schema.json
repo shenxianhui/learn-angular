@@ -6,7 +6,7 @@
   "type_en": "table",
   "preview": "assets/slide-list/image/slide-list.png",
   "com_type": "angular",
-  "sampleCode": "{'horizontal':false,'interval':3000,'showIndex':true,'index':{'fontSize':14,'color':'#ffffff'},'title':{'fontSize':14,'color':'#ffffff'},'content':{'fontSize':14,'color':'#ffffff'}}",
+  "sampleCode": "{'horizontal':true,'interval':3000,'showIndex':true,'index':{'fontSize':14,'color':'#ffffff'},'title':{'fontSize':14,'color':'#ffffff'},'content':{'fontSize':14,'color':'#ffffff'}}",
   "config": {
     "list": [],
     "comments": []

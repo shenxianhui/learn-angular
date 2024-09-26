@@ -25,7 +25,11 @@
             [style.fontSize]="color?.title?.fontSize + 'px'"
             [style.color]="color?.title?.color"
           >
-            {{ item1.title }}
+            <div class="notice-bar">
+              <div class="notice-bar-content" #noticeBarContent>
+                {{ item1.title }}
+              </div>
+            </div>
           </div>
         </div>
         <div class="content">
@@ -63,7 +67,9 @@
           [style.fontSize]="color?.title?.fontSize + 'px'"
           [style.color]="color?.title?.color"
         >
-          {{ item.title }}
+          <div class="notice-bar-content" #noticeBarContent>
+            {{ item.title }}
+          </div>
         </div>
       </div>
       <div class="content">

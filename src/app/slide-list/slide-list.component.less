@@ -20,7 +20,7 @@
     height: 40px;
     background: url('/assets/slide-list/image/header_bg.png') no-repeat center center;
     background-size: 100% 100%;
-    padding-left: 18px;
+    padding: 0 18px;
     .index {
       font-size: 16px;
       color: #52d2ff;
@@ -56,6 +56,29 @@
         font-size: 16px;
       }
     }
+  }
+}
+
+.notice-bar {
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+.notice-bar-content {
+  white-space: nowrap;
+}
+
+.scrollable .notice-bar-content {
+  animation: scroll linear infinite;
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-100%);
   }
 }
 

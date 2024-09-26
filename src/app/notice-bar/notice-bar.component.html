@@ -1,7 +1,5 @@
-<div class="notice-bar-wrap">
-  <div class="notice-bar" *ngFor="let item of noticeList">
-    <div class="notice-bar-content" #noticeBarContent>
-      {{ item }}
-    </div>
+<div class="notice-bar" [style.width]="width">
+  <div class="notice-bar-content" #noticeBarContent>
+    {{ content }}
   </div>
 </div>
