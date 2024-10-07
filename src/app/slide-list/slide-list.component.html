@@ -32,7 +32,7 @@
             </div>
           </div>
         </div>
-        <div class="content">
+        <div *ngIf="item1.content && item1.content.length" class="content">
           <div *ngFor="let item2 of item1.content || []" class="row">
             <img class="row-pic" [src]="item2.icon || 'assets/slide-list/image/tag.png'" alt="" />
             <div
@@ -72,7 +72,7 @@
           </div>
         </div>
       </div>
-      <div class="content">
+      <div *ngIf="item.content && item.content.length" class="content">
         <div *ngFor="let item1 of item.content || []" class="row">
           <img class="row-pic" [src]="item1.icon || 'assets/slide-list/image/tag.png'" alt="" />
           <div
