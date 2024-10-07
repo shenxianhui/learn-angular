@@ -32,6 +32,8 @@ const { data: xAxisData = [] } = xAxis
 const seriesData = []
 const legendData = []
 
+const _xAxisData = ['Start', ...xAxisData, 'End']
+
 function getBorderHeight(list = []) {
   const sum = list.reduce((acc, curr) => acc + curr, 0)
   const average = (sum / list.length / 40) * 1.5
@@ -43,10 +45,11 @@ function getBorderHeight(list = []) {
 series.forEach((item, index) => {
   const styleObj = seriesMap[item.key] || {}
 
+  item.data = [item.data[0], ...item.data, item.data[item.data.length - 1]]
   if (item.type === 'line') {
     seriesData.push({
       ...item,
-      step: true,
+      step: 'middle',
       lineStyle: {
         color: styleObj.itemColor || (index === 2 ? '#50FFCC' : '#52D2FF'),
       },
@@ -191,7 +194,8 @@ export class LineBarComponent implements OnInit {
           fontSize: 14,
         },
         axisLine: {
-          show: false,
+          // show: false,
+          color: 'rgba(255,255,255,0.5)',
         },
         splitLine: {
           show: false,
@@ -199,8 +203,10 @@ export class LineBarComponent implements OnInit {
         axisTick: {
           show: false,
         },
-        // boundaryGap: false
-        data: xAxisData,
+        // boundaryGap: false,
+        data: _xAxisData,
+        min: xAxisData[0],
+        max: xAxisData[xAxisData.length - 1],
       },
       yAxis: {
         type: 'value',
