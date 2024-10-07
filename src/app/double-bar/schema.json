@@ -6,7 +6,7 @@
   "type_en": "bar",
   "preview": "assets/double-bar/image/double-bar.png",
   "com_type": "angular",
-  "sampleCode": "{'legend':{'show':true,'left':'center','top':10,'right':'center','bottom':'auto','textStyle':{'color':'#fff','fontSize':12}},'seriesMap':{'up':{'borderColor':'#FF435B'},'down':{'borderColor':'#FF435B'}}}",
+  "sampleCode": "{'legend':{'show':true,'left':'center','top':10,'right':'center','bottom':'auto','textStyle':{'color':'#fff','fontSize':12}},'seriesMap':{'up':{'borderColor':'#52D2FF'},'down':{'borderColor':'#50FFCC'}}}",
   "config": {
     "list": [],
     "comments": []
