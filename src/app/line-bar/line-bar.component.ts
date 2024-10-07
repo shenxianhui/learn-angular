@@ -1,7 +1,10 @@
 import { Component, OnInit } from '@angular/core'
 import * as echarts from 'echarts'
-import { json_data } from './data.json'
-import { fn } from '@angular/compiler/src/output/output_ast'
+import schema from './schema.json'
+
+interface Format {
+  data: any
+}
 
 interface DataJson {
   data?: {
@@ -14,12 +17,16 @@ interface DataJson {
 
 interface ColorJson {
   legend?: object
+  grid?: object
   seriesMap?: object
 }
 
-const { data_json = {} as DataJson, color_json = {} as ColorJson } = json_data
-const { data = {} } = data_json
-const { legend = {}, seriesMap = {} } = color_json
+const { sampleCode, data: data_json } = schema
+const { format = {} as Format } = data_json || {}
+const { data = {} } = format
+const color_json = sampleCode.replace(/'/g, '"') || '{}'
+const color = JSON.parse(color_json)
+const { legend = {}, grid = {}, seriesMap = {} } = color
 const { xAxis = {}, series = [] } = data
 const { data: xAxisData = [] } = xAxis
 const seriesData = []
@@ -142,8 +149,8 @@ series.forEach((item, index) => {
   styleUrls: ['./line-bar.component.less'],
 })
 export class LineBarComponent implements OnInit {
-  data: any = {}
-  color: any = {}
+  data: any = data
+  color: any = color
   chartOptions: any = {}
 
   constructor() {
@@ -174,6 +181,7 @@ export class LineBarComponent implements OnInit {
         right: '4%',
         bottom: '3%',
         containLabel: true,
+        ...grid,
       },
       xAxis: {
         type: 'category',
