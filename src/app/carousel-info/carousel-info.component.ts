@@ -1,8 +1,15 @@
 import { Component, OnInit } from '@angular/core'
-import { json_data } from './data.json'
+import schema from './schema.json'
 
-const { data_json = {}, color_json = {} } = json_data
-const { data = {} } = data_json
+interface Format {
+  data: any
+}
+
+const { sampleCode, data: data_json } = schema
+const { format = {} as Format } = data_json || {}
+const { data = {} } = format
+const color_json = sampleCode.replace(/'/g, '"') || '{}'
+const color = JSON.parse(color_json)
 
 @Component({
   selector: 'app-carousel-info',
@@ -11,7 +18,7 @@ const { data = {} } = data_json
 })
 export class CarouselInfoComponent implements OnInit {
   data: any = data
-  color: any = color_json
+  color: any = color
 
   constructor() {}
 

@@ -6,10 +6,16 @@
   "type_en": "survey",
   "preview": "assets/carousel-info/image/carousel-info.png",
   "com_type": "angular",
-  "sampleCode": "{'interval':10000,'header':{'data':[{'label':{'fontSize':14,'color':'#ffffffcc'},'value':{'fontSize':14,'color':'#fff0000'}},{'label':{'fontSize':14,'color':'#ffffffcc'},'value':{'fontSize':14,'color':'#fff'}}]},'content':[[{'value':{'fontSize':14,'color':'#fff'}},{'value':{'fontSize':14,'color':'#fff'}}],[{'value':{'fontSize':14,'color':'#fff'}}]]}",
+  "sampleCode": "{'interval':10000,'header':{'data':[{'label':{'fontSize':14,'color':'#ffffffcc'},'value':{'fontSize':14,'color':'#fff0000'}},{'label':{'fontSize':14,'color':'#ffffffcc'},'value':{'fontSize':14,'color':'#fff'}}]},'content':[[{'value':{'fontSize':14,'color':'#fff'}},{'value':{'fontSize':14,'color':'#fff'}}],[{'value':{'fontSize':14,'color':'rgba(255,255,255,0.8)'}}]]}",
   "config": {
     "list": [],
     "comments": []
+  },
+  "initSize": {
+    "width": 360,
+    "widthUnit": "px",
+    "height": 180,
+    "heightUnit": "px"
   },
   "data": {
     "list": [
@@ -48,6 +54,39 @@
     "format": {
       "data": {
         "list": [
+          {
+            "header": {
+              "icon": "assets/carousel-info/image/user.png",
+              "data": [
+                {
+                  "label": "处置人",
+                  "value": "李现"
+                },
+                {
+                  "label": "持续时间",
+                  "value": "1天12小时32分"
+                }
+              ]
+            },
+            "content": [
+              [
+                {
+                  "icon": "assets/carousel-info/image/company.png",
+                  "value": "天恒有限责任公司"
+                },
+                {
+                  "icon": "assets/carousel-info/image/phone.png",
+                  "value": "180-9378-6690"
+                }
+              ],
+              [
+                {
+                  "icon": "assets/carousel-info/image/complaint.png",
+                  "value": "这是投诉内容这是投诉内容这是投诉内容这是投诉内容"
+                }
+              ]
+            ]
+          },
           {
             "header": {
               "icon": "assets/carousel-info/image/user.png",
