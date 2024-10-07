@@ -6,7 +6,7 @@
   "type_en": "bar",
   "preview": "assets/line-bar/image/line-bar.png",
   "com_type": "angular",
-  "sampleCode": "{'legend':{'show':true,'left':'center','top':10,'right':'center','bottom':'auto','textStyle':{'color':'#fff','fontSize':12}},'grid':{'top':60},'seriesMap':{'bar1':{'itemColor':['rgba(82, 210, 255, 0.3)','rgba(82, 210, 255, 0)'],'borderColor':'rgba(82, 210, 255, 1)'},'bar2':{'itemColor':'#FF435B'},'line1':{'itemColor':'#50FFCC'},'line2':{'itemColor':'#52D2FF'}}}",
+  "sampleCode": "{'legend':{'show':true,'left':'center','top':10,'right':'center','bottom':'auto','textStyle':{'color':'#fff','fontSize':12}},'grid':{'top':60},'seriesMap':{'bar1':{'itemColor':['rgba(82, 210, 255, 0.3)','rgba(82, 210, 255, 0)'],'borderColor':'rgba(82, 210, 255, 1)'},'bar2':{'itemColor':'#FF435B'},'line1':{'itemColor':'#50FFCC'},'line2':{'itemColor':'#52D2FF'},'line3':{'itemColor':'rgba(255,255,255,0.8)'}}}",
   "config": {
     "list": [],
     "comments": []
@@ -54,32 +54,38 @@
     "format": {
       "data": {
         "xAxis": {
-          "data": ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"]
+          "data": ["11-22", "11-23", "11-24", "11-25", "11-26", "11-27", "11-28"]
         },
         "series": [
           {
             "type": "bar",
             "key": "bar1",
-            "name": "柱1",
+            "name": "工单总数",
             "data": [320, 332, 301, 334, 390, 330, 320]
           },
           {
             "type": "bar",
-            "name": "柱2",
+            "name": "超时工单",
             "key": "bar2",
             "data": [150, 232, 201, 154, 190, 330, 410]
           },
           {
             "type": "line",
-            "name": "线1",
+            "name": "已处理",
             "key": "line1",
             "data": [220, 182, 191, 234, 290, 330, 310]
           },
           {
             "type": "line",
-            "name": "线2",
+            "name": "处置中",
             "key": "line2",
             "data": [120, 132, 101, 134, 90, 230, 210]
+          },
+          {
+            "type": "line",
+            "name": "待处置",
+            "key": "line3",
+            "data": [80, 90, 70, 50, 60, 120, 150]
           }
         ]
       }

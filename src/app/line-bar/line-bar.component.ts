@@ -73,6 +73,7 @@ series.forEach((item, index) => {
           name: '',
           stack: 1,
           barGap: '0',
+          barCategoryGap: 5,
           borderWidth: 0,
           itemStyle: {
             normal: {
@@ -203,6 +204,10 @@ export class LineBarComponent implements OnInit {
       },
       yAxis: {
         type: 'value',
+        splitNumber: 5,
+        max: value => {
+          return Math.ceil(value.max / 100) * 100
+        },
         nameTextStyle: {
           fontSize: 14,
           color: '#BABBCA',
@@ -221,7 +226,7 @@ export class LineBarComponent implements OnInit {
         splitLine: {
           lineStyle: {
             type: 'dashed',
-            color: 'rgba(198, 198, 198, 0.40)',
+            color: 'rgba(198, 198, 198, 0.2)',
           },
         },
       },
