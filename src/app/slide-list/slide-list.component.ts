@@ -45,6 +45,7 @@ export class SlideListComponent implements OnDestroy, AfterViewInit {
   private readonly intervalTime = color.interval || 3000
   private readonly transitionTime = 500 // 动画过渡时间
   private isTransitioning = false
+  private originalSlidesCount = 0 // 原始幻灯片的数量
 
   constructor(private renderer: Renderer2) {}
 
@@ -52,6 +53,11 @@ export class SlideListComponent implements OnDestroy, AfterViewInit {
     // 使用全局变量设置 swiper 容器高度
     this.setSwiperContainerHeight()
     this.checkContentOverflow()
+
+    // 如果内容高度超出容器，复制数据进行拼接
+    if (this.shouldScroll()) {
+      this.duplicateSlides()
+    }
 
     // 初始化滚动到第0个幻灯片的位置
     setTimeout(() => {
@@ -61,7 +67,6 @@ export class SlideListComponent implements OnDestroy, AfterViewInit {
   }
 
   private setSwiperContainerHeight() {
-    // 使用全局变量设置 .s-swiper-container 的高度
     if (this.swiperContainer) {
       this.renderer.setStyle(this.swiperContainer.nativeElement, 'height', `100%`)
     }
@@ -94,11 +99,12 @@ export class SlideListComponent implements OnDestroy, AfterViewInit {
     const slides = this.swiperWrapper.nativeElement.children
     const totalSlides = slides.length
 
-    if (this.slideIndex < totalSlides - 1) {
+    if (this.slideIndex < this.originalSlidesCount - 1) {
+      // 滚动到原始的最后一个幻灯片之前
       this.slideIndex++
       this.scrollToSlide(this.slideIndex, true)
-    } else {
-      // 到达最后一个幻灯片时重置为第一个幻灯片
+    } else if (this.slideIndex === this.originalSlidesCount - 1) {
+      // 滚动到原始的最后一个幻灯片时重置
       this.isTransitioning = true
       this.scrollToSlide(this.slideIndex, true)
       setTimeout(() => {
@@ -124,7 +130,6 @@ export class SlideListComponent implements OnDestroy, AfterViewInit {
       this.renderer.setStyle(this.swiperWrapper.nativeElement, 'transition', 'none')
     }
 
-    // 计算偏移量
     let offset = 0
     for (let i = 0; i < index; i++) {
       offset += this.swiperWrapper.nativeElement.children[i].clientHeight
@@ -140,10 +145,10 @@ export class SlideListComponent implements OnDestroy, AfterViewInit {
   private shouldScroll(): boolean {
     if (!this.swiperWrapper || !this.swiperContainer) return false
 
-    const wrapperHeight = this.swiperWrapper.nativeElement.scrollHeight // 获取内容总高度
-    const containerHeight = this.swiperContainer.nativeElement.clientHeight // 获取容器实际高度
+    const wrapperHeight = this.swiperWrapper.nativeElement.scrollHeight
+    const containerHeight = this.swiperContainer.nativeElement.clientHeight
 
-    return wrapperHeight > containerHeight // 判断内容高度是否超过容器高度
+    return wrapperHeight > containerHeight
   }
 
   private checkContentOverflow(): void {
@@ -164,6 +169,16 @@ export class SlideListComponent implements OnDestroy, AfterViewInit {
     const contentWidth = contentElement.nativeElement.offsetWidth
     const animationDuration = contentWidth / this.speed
     contentElement.nativeElement.style.animationDuration = `${animationDuration}s`
+  }
+
+  private duplicateSlides() {
+    if (this.swiperWrapper) {
+      const slides = this.swiperWrapper.nativeElement.children
+      this.originalSlidesCount = slides.length // 记录原始幻灯片的数量
+
+      // 将所有内容复制一份拼接到后面
+      this.swiperWrapper.nativeElement.innerHTML += this.swiperWrapper.nativeElement.innerHTML
+    }
   }
 
   @HostListener('mouseenter') onMouseEnter() {
