@@ -147,6 +147,34 @@ series.forEach((item, index) => {
   }
 })
 
+seriesData.unshift({
+  stack: 1,
+  type: 'bar',
+  name: '',
+  // key: 'bar',
+  data: [10, 10, 10, 10, 10, 10, 10, 10],
+  // itemStyle: { normal: { color: '#0f0' } },
+  itemStyle: {
+    normal: {
+      color: {
+        x: 0,
+        y: 0,
+        x2: 0,
+        y2: 1,
+        type: 'linear',
+        global: false,
+        colorStops: [
+          { offset: 1, color: 'rgba(255,255,255, 0.5)' },
+          { offset: 0.61, color: 'rgba(255,255,255, 0.5)' },
+          { offset: 0.6, color: 'rgba(255,255,255, 0)' },
+          { offset: 0, color: 'rgba(255,255,255, 0)' },
+        ],
+      },
+    },
+  },
+  tooltip: { show: false },
+})
+
 @Component({
   selector: 'app-line-bar',
   templateUrl: './line-bar.component.html',
@@ -194,8 +222,8 @@ export class LineBarComponent implements OnInit {
           fontSize: 14,
         },
         axisLine: {
-          // show: false,
-          color: 'rgba(255,255,255,0.5)',
+          show: false,
+          // color: 'rgba(255,255,255,0.5)',
         },
         splitLine: {
           show: false,
