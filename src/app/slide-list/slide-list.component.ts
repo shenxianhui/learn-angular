@@ -99,18 +99,19 @@ export class SlideListComponent implements OnDestroy, AfterViewInit {
     const slides = this.swiperWrapper.nativeElement.children
     const totalSlides = slides.length
 
-    if (this.slideIndex < this.originalSlidesCount - 1) {
+    if (this.slideIndex < this.originalSlidesCount) {
       // 滚动到原始的最后一个幻灯片之前
       this.slideIndex++
       this.scrollToSlide(this.slideIndex, true)
-    } else if (this.slideIndex === this.originalSlidesCount - 1) {
+    } else {
       // 滚动到原始的最后一个幻灯片时重置
-      this.isTransitioning = true
+      this.slideIndex = 0
+      this.scrollToSlide(this.slideIndex, false) // 无动画过渡
+
+      // setTimeout(() => {
+      this.slideIndex++
       this.scrollToSlide(this.slideIndex, true)
-      setTimeout(() => {
-        this.slideIndex = 0
-        this.scrollToSlide(this.slideIndex, false) // 无动画过渡
-      }, this.transitionTime)
+      // }, this.transitionTime)
     }
   }
 
