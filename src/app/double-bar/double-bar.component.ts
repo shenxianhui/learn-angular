@@ -86,6 +86,10 @@ series.forEach((item, index) => {
       tooltip: {
         show: false,
       },
+      showBackground: true,
+      backgroundStyle: {
+        color: 'rgba(255, 255, 255, 0.03)',
+      },
     },
   )
 })
@@ -109,7 +113,7 @@ export class DoubleBarComponent implements OnInit {
   ngAfterViewInit() {
     setTimeout(() => {
       const containerHeight = this.chartDom.nativeElement.offsetHeight
-      const gridHeight = (containerHeight - 108) / 2
+      const gridHeight = (containerHeight - 127) / 2
 
       this.chartOptions = {
         legend: {
@@ -132,15 +136,15 @@ export class DoubleBarComponent implements OnInit {
         },
         grid: [
           {
-            left: 50,
-            top: 40,
+            left: 60,
+            top: 60,
             right: 20,
             bottom: null,
             containLabel: false,
             height: gridHeight,
           },
           {
-            left: 50,
+            left: 60,
             top: null,
             right: 20,
             bottom: 40,
@@ -202,7 +206,7 @@ export class DoubleBarComponent implements OnInit {
             nameTextStyle: {
               fontSize: 14,
               color: '#fff',
-              padding: [0, 20, 2, 0],
+              padding: [0, 60, 2, 0],
             },
             axisLabel: {
               width: 20,
@@ -221,7 +225,7 @@ export class DoubleBarComponent implements OnInit {
             splitLine: {
               lineStyle: {
                 type: 'dashed',
-                color: 'rgba(198, 198, 198, 0.40)',
+                color: 'rgba(255,255,255,0.2)',
               },
             },
             gridIndex: 0,
@@ -232,7 +236,7 @@ export class DoubleBarComponent implements OnInit {
             nameTextStyle: {
               fontSize: 14,
               color: '#fff',
-              padding: [2, 20, 0, 0],
+              padding: [2, 60, 0, 0],
             },
             axisLabel: {
               width: 20,
@@ -251,7 +255,7 @@ export class DoubleBarComponent implements OnInit {
             splitLine: {
               lineStyle: {
                 type: 'dashed',
-                color: 'rgba(198, 198, 198, 0.40)',
+                color: 'rgba(255,255,255,0.2)',
               },
             },
             gridIndex: 1,
@@ -265,6 +269,7 @@ export class DoubleBarComponent implements OnInit {
             xAxisIndex: 0,
             yAxisIndex: 0,
             stack: 'up',
+            barCategoryGap: 4,
             ...(seriesData[0] || {}),
           },
           {
@@ -281,6 +286,7 @@ export class DoubleBarComponent implements OnInit {
             xAxisIndex: 1,
             yAxisIndex: 1,
             stack: 'down',
+            barCategoryGap: 4,
             ...(seriesData[2] || {}),
           },
           {
