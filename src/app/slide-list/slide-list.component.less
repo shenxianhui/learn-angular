@@ -13,11 +13,6 @@
   display: flex !important;
   flex-direction: column;
   height: 100%;
-  .slide-list-item-wrap {
-    &:not(:last-child) {
-      margin-bottom: 12px;
-    }
-  }
   .date-header {
     display: flex;
     align-items: center;
@@ -26,6 +21,7 @@
     background: url('/assets/slide-list/image/header_bg.png') no-repeat center center;
     background-size: 100% 100%;
     padding: 0 18px;
+    margin-bottom: 12px;
     .index {
       font-size: 16px;
       color: #52d2ff;
@@ -44,7 +40,7 @@
     flex-grow: 1;
     // padding: 24px 0 32px 45px;
     padding: 17px;
-    padding-bottom: 5px;
+    padding-top: 5px;
     .row {
       display: flex;
       &:not(:last-child) {
