@@ -126,7 +126,7 @@
             "name": "情报预警",
             "children": [
               {
-                "icon": "assets/monthly-calendar/image/doc.png",
+                "icon": "assets/monthly-calendar/image/qbfx.png",
                 "name": "情报分析",
                 "children": [
                   {
@@ -141,7 +141,7 @@
                 ]
               },
               {
-                "icon": "assets/monthly-calendar/image/doc.png",
+                "icon": "assets/monthly-calendar/image/qbyj.png",
                 "name": "情报预警闭环跟踪",
                 "children": [
                   {
@@ -155,7 +155,7 @@
             "name": "评估与防护",
             "children": [
               {
-                "icon": "assets/monthly-calendar/image/doc.png",
+                "icon": "assets/monthly-calendar/image/mss.png",
                 "name": "MSS/inSAAS",
                 "children": [
                   {
@@ -164,7 +164,7 @@
                 ]
               },
               {
-                "icon": "assets/monthly-calendar/image/doc.png",
+                "icon": "assets/monthly-calendar/image/websafe.png",
                 "name": "Websafe/云防护",
                 "children": [
                   {
@@ -173,7 +173,7 @@
                 ]
               },
               {
-                "icon": "assets/monthly-calendar/image/doc.png",
+                "icon": "assets/monthly-calendar/image/sase.png",
                 "name": "SASE",
                 "children": [
                   {
@@ -182,7 +182,7 @@
                 ]
               },
               {
-                "icon": "assets/monthly-calendar/image/doc.png",
+                "icon": "assets/monthly-calendar/image/ptaas.png",
                 "name": "PTaaS/漏洞验证",
                 "children": [
                   {
@@ -191,7 +191,7 @@
                 ]
               },
               {
-                "icon": "assets/monthly-calendar/image/doc.png",
+                "icon": "assets/monthly-calendar/image/eisa.png",
                 "name": "EISA/EASM",
                 "children": [
                   {
@@ -205,7 +205,7 @@
             "name": "监测",
             "children": [
               {
-                "icon": "assets/monthly-calendar/image/doc.png",
+                "icon": "assets/monthly-calendar/image/yx.png",
                 "name": "一线7*24",
                 "children": [
                   {
@@ -214,7 +214,7 @@
                 ]
               },
               {
-                "icon": "assets/monthly-calendar/image/doc.png",
+                "icon": "assets/monthly-calendar/image/exfk.png",
                 "name": "二线反馈支持",
                 "children": [
                   {
@@ -223,7 +223,7 @@
                 ]
               },
               {
-                "icon": "assets/monthly-calendar/image/doc.png",
+                "icon": "assets/monthly-calendar/image/sjjc.png",
                 "name": "MDR事件监测",
                 "children": [
                   {
@@ -237,7 +237,7 @@
             "name": "分析",
             "children": [
               {
-                "icon": "assets/monthly-calendar/image/doc.png",
+                "icon": "assets/monthly-calendar/image/fxdc.png",
                 "name": "MDR分析调查",
                 "children": [
                   {
@@ -251,7 +251,7 @@
             "name": "响应",
             "children": [
               {
-                "icon": "assets/monthly-calendar/image/doc.png",
+                "icon": "assets/monthly-calendar/image/xycz.png",
                 "name": "响应处置",
                 "children": [
                   {
@@ -265,7 +265,7 @@
             "name": "运营管理",
             "children": [
               {
-                "icon": "assets/monthly-calendar/image/doc.png",
+                "icon": "assets/monthly-calendar/image/case.png",
                 "name": "CASE&平台轮询",
                 "children": [
                   {
