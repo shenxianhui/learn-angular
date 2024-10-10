@@ -33,6 +33,8 @@ const seriesData = []
 const legendData = []
 
 const _xAxisData = ['Start', ...xAxisData, 'End']
+const lineColors = ['#50FFCC', '#52D2FF', '#FFFFFFCC']
+let lineNum = 0
 
 function getBorderHeight(list = []) {
   const sum = list.reduce((acc, curr) => acc + curr, 0)
@@ -51,10 +53,10 @@ series.forEach((item, index) => {
       ...item,
       step: 'middle',
       lineStyle: {
-        color: styleObj.itemColor || (index === 2 ? '#50FFCC' : '#52D2FF'),
+        color: styleObj.itemColor || lineColors[lineNum % lineColors.length],
       },
       itemStyle: {
-        color: styleObj.itemColor || (index === 2 ? '#50FFCC' : '#52D2FF'),
+        color: styleObj.itemColor || lineColors[lineNum % lineColors.length],
         opacity: 0,
       },
       showBackground: index === 0,
@@ -67,6 +69,8 @@ series.forEach((item, index) => {
       name: item.name,
       icon: 'path://M 0 0 H 10 V 2 H 0 Z',
     })
+
+    lineNum++
   }
   if (item.type === 'bar') {
     if (styleObj.borderColor || (index === 0 && !styleObj.itemColor)) {
@@ -92,7 +96,7 @@ series.forEach((item, index) => {
                       (styleObj.itemColor && styleObj.itemColor[0]) || 'rgba(82, 210, 255, 0.3)',
                   },
                   {
-                    offset: 0.3,
+                    offset: 0.5,
                     color: (styleObj.itemColor && styleObj.itemColor[1]) || 'rgba(82, 210, 255, 0)',
                   },
                 ],
