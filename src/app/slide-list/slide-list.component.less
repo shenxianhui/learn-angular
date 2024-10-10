@@ -13,6 +13,11 @@
   display: flex !important;
   flex-direction: column;
   height: 100%;
+  .slide-list-item-wrap {
+    &:not(:last-child) {
+      margin-bottom: 12px;
+    }
+  }
   .date-header {
     display: flex;
     align-items: center;
@@ -39,6 +44,7 @@
     flex-grow: 1;
     // padding: 24px 0 32px 45px;
     padding: 17px;
+    padding-bottom: 5px;
     .row {
       display: flex;
       &:not(:last-child) {
@@ -49,6 +55,15 @@
         height: 18px;
         margin-right: 10px;
         margin-top: 3px;
+        animation: rotateElement 6s infinite linear;
+        @keyframes rotateElement {
+          from {
+            transform: rotate(0deg);
+          }
+          to {
+            transform: rotate(360deg);
+          }
+        }
       }
       .row-info {
         color: #ffffff;
