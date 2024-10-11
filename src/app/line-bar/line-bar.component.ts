@@ -59,10 +59,10 @@ series.forEach((item, index) => {
         color: styleObj.itemColor || lineColors[lineNum % lineColors.length],
         opacity: 0,
       },
-      showBackground: index === 0,
-      backgroundStyle: {
-        color: 'rgba(255, 255, 255, 0.05)',
-      },
+      // showBackground: index === 0,
+      // backgroundStyle: {
+      //   color: 'rgba(255, 255, 255, 0.05)',
+      // },
     })
 
     legendData.push({
@@ -104,10 +104,10 @@ series.forEach((item, index) => {
               ),
             },
           },
-          showBackground: index === 0,
-          backgroundStyle: {
-            color: 'rgba(255, 255, 255, 0.05)',
-          },
+          // showBackground: index === 0,
+          // backgroundStyle: {
+          //   color: 'rgba(255, 255, 255, 0.05)',
+          // },
         },
         {
           type: 'bar',
@@ -137,10 +137,10 @@ series.forEach((item, index) => {
         itemStyle: {
           color: styleObj.itemColor || '#FF435B',
         },
-        showBackground: index === 0,
-        backgroundStyle: {
-          color: 'rgba(255, 255, 255, 0.05)',
-        },
+        // showBackground: index === 0,
+        // backgroundStyle: {
+        //   color: 'rgba(255, 255, 255, 0.05)',
+        // },
       })
     }
 
@@ -213,10 +213,11 @@ export class LineBarComponent implements OnInit {
         data: legendData,
       },
       grid: {
-        left: '3%',
-        right: '4%',
-        bottom: '3%',
-        containLabel: true,
+        top: 60,
+        left: 60,
+        right: 60,
+        bottom: 40,
+        // containLabel: true,
         ...grid,
       },
       xAxis: {
