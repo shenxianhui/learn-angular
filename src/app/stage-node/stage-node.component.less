@@ -193,10 +193,82 @@
           justify-content: space-between;
           align-items: flex-end;
           flex-grow: 1;
+
+          // 控制每个 group 中的 ray 运动延迟
+          &:nth-child(1) {
+            .ray {
+              .ray-item {
+                animation: ray-animation 5s ease-out infinite 0s;
+              }
+            }
+          }
+          &:nth-child(2) {
+            .ray {
+              .ray-item {
+                animation: ray-animation 5s ease-out infinite 0.25s;
+              }
+            }
+          }
+          &:nth-child(3) {
+            .ray {
+              .ray-item {
+                animation: ray-animation 5s ease-out infinite 0.5s;
+              }
+            }
+          }
+          &:nth-child(4) {
+            .ray {
+              .ray-item {
+                animation: ray-animation 5s ease-out infinite 0.75s;
+              }
+            }
+          }
+          &:nth-child(5) {
+            .ray {
+              .ray-item {
+                animation: ray-animation 5s ease-out infinite 1s;
+              }
+            }
+          }
+          &:nth-child(6) {
+            .ray {
+              .ray-item {
+                animation: ray-animation 5s ease-out infinite 1.25s;
+              }
+            }
+          }
+          &:nth-child(7) {
+            .ray {
+              .ray-item {
+                animation: ray-animation 5s ease-out infinite 1.5s;
+              }
+            }
+          }
+          &:nth-child(8) {
+            .ray {
+              .ray-item {
+                animation: ray-animation 5s ease-out infinite 1.75s;
+              }
+            }
+          }
+          &:nth-child(9) {
+            .ray {
+              .ray-item {
+                animation: ray-animation 5s ease-out infinite 2s;
+              }
+            }
+          }
+          &:nth-child(10) {
+            .ray {
+              .ray-item {
+                animation: ray-animation 5s ease-out infinite 2.25s;
+              }
+            }
+          }
           .ray {
             flex-grow: 1;
             transform-style: preserve-3d;
-            transform: translate3d(0, -87px, 0) scaleX(1.5);
+            transform: translate3d(0, -87px, 0) scaleX(1.8);
             overflow: hidden;
             .ray-item {
               height: 3px;
@@ -204,7 +276,7 @@
               border-radius: 99px;
               width: 100%;
               transform: translate(-100%, 0);
-              animation: ray-animation 5s ease-out infinite; /* 动画持续时间和效果 */
+              // animation: ray-animation 5s ease-out infinite; /* 动画持续时间和效果 */
               &:not(:last-child) {
                 margin-bottom: 2.8px;
               }
