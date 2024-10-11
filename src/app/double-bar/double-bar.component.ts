@@ -45,6 +45,7 @@ function getBorderHeight(list1 = [], list2 = []) {
   return Array(list1.length).fill(borderHeight)
 }
 
+const colors = ['#52D2FF', '#50FFCC']
 series.forEach((item, index) => {
   const styleObj = seriesMap[item.key] || {}
 
@@ -56,7 +57,7 @@ series.forEach((item, index) => {
       borderWidth: 0,
       itemStyle: {
         normal: {
-          color: styleObj.borderColor || 'rgba(82, 210, 255, 1)',
+          color: styleObj.borderColor || colors[index % colors.length],
           opacity: 0.2,
         },
       },
@@ -71,7 +72,7 @@ series.forEach((item, index) => {
       barGap: '0',
       itemStyle: {
         normal: {
-          color: styleObj.borderColor || 'rgba(82, 210, 255, 1)',
+          color: styleObj.borderColor || colors[index % colors.length],
         },
       },
       label: {
