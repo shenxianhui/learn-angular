@@ -265,6 +265,20 @@ export class DoubleBarComponent implements OnInit {
         ],
         series: [
           {
+            type: 'bar',
+            stack: 'up',
+            name: '',
+            data: [10, 10, 10, 10, 10, 10, 10, 10],
+            itemStyle: {
+              color: function (params) {
+                return params.dataIndex % 2 === 0
+                  ? 'rgba(255,255,255,0.6)'
+                  : 'rgba(255,255,255,0.4)'
+              },
+            },
+            tooltip: { show: false },
+          },
+          {
             smooth: true,
             type: 'bar',
             xAxisIndex: 0,
@@ -280,6 +294,22 @@ export class DoubleBarComponent implements OnInit {
             yAxisIndex: 0,
             stack: 'up',
             ...(seriesData[1] || {}),
+          },
+          {
+            type: 'bar',
+            stack: 'down',
+            name: '',
+            xAxisIndex: 1,
+            yAxisIndex: 1,
+            data: [10, 10, 10, 10, 10, 10, 10, 10],
+            itemStyle: {
+              color: function (params) {
+                return params.dataIndex % 2 === 0
+                  ? 'rgba(255,255,255,0.6)'
+                  : 'rgba(255,255,255,0.4)'
+              },
+            },
+            tooltip: { show: false },
           },
           {
             smooth: true,
