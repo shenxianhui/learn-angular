@@ -213,8 +213,8 @@ export class DoubleBarComponent implements OnInit {
               width: 20,
               fontSize: 14,
               color: '#fff',
-              formatter: function (value) {
-                return value === 0 ? '' : value
+              formatter: function (value, index) {
+                return index % 2 === 0 ? '' : value
               },
             },
             axisLine: {
@@ -243,8 +243,8 @@ export class DoubleBarComponent implements OnInit {
               width: 20,
               fontSize: 14,
               color: '#fff',
-              formatter: function (value) {
-                return value === 0 ? '' : value
+              formatter: function (value, index) {
+                return index % 2 === 0 ? '' : value
               },
             },
             axisLine: {
