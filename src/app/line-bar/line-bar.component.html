@@ -1,6 +1,6 @@
 <div class="chart-wrap">
   <echarts class="chart" [options]="chartOptions"></echarts>
-  <div class="bg">
+  <div class="bg" [style.padding]="getPadding()">
     <div *ngFor="let item of data.xAxis.data || []; let index = index" class="line"></div>
   </div>
 </div>

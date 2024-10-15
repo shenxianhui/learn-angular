@@ -190,8 +190,6 @@ export class LineBarComponent implements OnInit {
   chartOptions: any = {}
 
   constructor() {
-    this.data = data
-    this.color = color_json
     this.chartOptions = {
       tooltip: {
         trigger: 'axis',
@@ -274,4 +272,11 @@ export class LineBarComponent implements OnInit {
   }
 
   ngOnInit() {}
+
+  getPadding() {
+    const { top = 60, right = 60, bottom = 40, left = 60 } = grid || {}
+    const padding = [top + 'px', right + 'px', bottom + 'px', left + 'px'].join(' ')
+
+    return padding
+  }
 }
