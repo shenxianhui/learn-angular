@@ -102,14 +102,16 @@
                     alt=""
                   />
                 </div>
-                <div *ngIf="!item2.alarm" class="user">
-                  <span *ngFor="let user of item2.content || []; let userIdx = index">
-                    {{ user }}
-                  </span>
-                </div>
-                <div *ngIf="item2.alarm" class="alarm-con">
-                  <div class="text">资源风险预警备份</div>
-                  <div class="tip">此工作项无资源安排</div>
+                <div class="notice-bar">
+                  <div *ngIf="!item2.alarm" class="user notice-bar-content" #noticeBarContent>
+                    <span *ngFor="let user of item2.content || []; let userIdx = index">
+                      {{ user }}
+                    </span>
+                  </div>
+                  <div *ngIf="item2.alarm" class="alarm-con notice-bar-content" #noticeBarContent>
+                    <div class="text">资源风险预警</div>
+                    <div class="tip">此工作项无资源安排</div>
+                  </div>
                 </div>
               </div>
               <div *ngIf="item1.children && item1.children.length > 1" class="weather">

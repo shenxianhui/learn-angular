@@ -1,4 +1,14 @@
-import { Component, HostListener, OnInit, Renderer2 } from '@angular/core'
+import {
+  Component,
+  HostListener,
+  OnInit,
+  Renderer2,
+  Input,
+  ElementRef,
+  ViewChildren,
+  AfterViewInit,
+  QueryList,
+} from '@angular/core'
 import schema from './schema.json'
 
 interface Format {
@@ -23,7 +33,12 @@ const {
   templateUrl: './monthly-calendar.component.html',
   styleUrls: ['./monthly-calendar.component.less'],
 })
-export class MonthlyCalendarComponent implements OnInit {
+export class MonthlyCalendarComponent implements OnInit, AfterViewInit {
+  @Input() speed: number = 20 // 滚动速率 (px/s)
+  @Input() scrollable: boolean = true // 开启自动滚动
+
+  @ViewChildren('noticeBarContent') contentElements!: QueryList<ElementRef>
+
   data: any = data
   color: any = color
 
@@ -47,6 +62,30 @@ export class MonthlyCalendarComponent implements OnInit {
 
   ngOnInit() {
     // this.setScale()
+  }
+
+  ngAfterViewInit(): void {
+    this.checkContentOverflow()
+  }
+
+  checkContentOverflow(): void {
+    this.contentElements.forEach(contentElement => {
+      const containerWidth = contentElement.nativeElement.parentElement.offsetWidth
+      const contentWidth = contentElement.nativeElement.offsetWidth
+      if (contentWidth > containerWidth) {
+        contentElement.nativeElement.parentElement.classList.add('scrollable')
+        this.updateAnimationDuration(contentElement)
+      } else {
+        contentElement.nativeElement.parentElement.classList.remove('scrollable')
+        contentElement.nativeElement.style.transform = 'translateX(0%)'
+      }
+    })
+  }
+
+  updateAnimationDuration(contentElement: ElementRef): void {
+    const contentWidth = contentElement.nativeElement.offsetWidth
+    const animationDuration = contentWidth / this.speed
+    contentElement.nativeElement.style.animationDuration = `${animationDuration}s`
   }
 
   // 设置缩放比例

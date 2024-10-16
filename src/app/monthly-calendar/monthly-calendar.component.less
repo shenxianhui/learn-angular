@@ -1,3 +1,27 @@
+.notice-bar {
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  flex-grow: 1;
+}
+
+.notice-bar-content {
+  white-space: nowrap;
+}
+
+.scrollable .notice-bar-content {
+  animation: scroll linear infinite;
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
 .monthly-calendar {
   // position: absolute;
   // width: 1835px;
@@ -273,6 +297,7 @@
               .group {
                 display: flex;
                 align-items: center;
+                width: calc(100% - 25px);
                 height: 100%;
                 .tag {
                   width: 4px;
