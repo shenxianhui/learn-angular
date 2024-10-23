@@ -1,12 +1,17 @@
 .carousel-info {
-  // width: 360px;
-  // background: #000;
+  position: relative;
+  width: 100%;
   .carousel-con {
+    position: absolute;
     display: flex;
     flex-direction: column;
-    padding-bottom: 30px;
     border-radius: 10px 10px 0px 0px;
-    overflow: hidden;
+    width: 100%;
+    opacity: 0;
+    transition: opacity 0.4s ease-in-out;
+    &.active {
+      opacity: 1;
+    }
     .head {
       display: flex;
       align-items: center;
@@ -75,32 +80,26 @@
       }
     }
   }
-}
-
-::ng-deep .carousel-info-carousel .slick-dots li {
-  margin: 0 5px;
-}
-::ng-deep .carousel-info-carousel .slick-dots li button {
-  width: 8px;
-  height: 8px;
-  background: rgba(255, 255, 255, 0.4);
-  border-radius: 50% !important;
-}
-::ng-deep .carousel-info-carousel .slick-dots li.slick-active button {
-  position: relative;
-  width: 8px;
-  height: 8px;
-  background: rgba(255, 255, 255, 1);
-  border-radius: 50% !important;
-  &:before {
+  .dots {
+    display: flex;
     position: absolute;
-    content: '';
-    top: 50%;
+    bottom: -20px;
+    height: auto;
     left: 50%;
-    transform: translate(-50%, -50%);
-    width: 16px;
-    height: 16px;
-    border: 2px solid rgba(255, 255, 255, 0.3);
-    border-radius: 50% !important;
+    transform: translate(-50%, 0);
+    span {
+      width: 8px;
+      height: 8px;
+      background: rgba(255, 255, 255, 0.4);
+      margin: 0 5px;
+      border-radius: 50%;
+      cursor: pointer;
+      transition: background-color 0.3s;
+      border: 2px solid rgba(255, 255, 255, 0);
+      &.active {
+        background: rgba(255, 255, 255, 1);
+        border: 2px solid rgba(255, 255, 255, 0.3);
+      }
+    }
   }
 }

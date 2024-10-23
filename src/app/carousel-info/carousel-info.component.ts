@@ -20,7 +20,32 @@ export class CarouselInfoComponent implements OnInit {
   data: any = data
   color: any = color
 
-  constructor() {}
+  currentIndex = 0
+  intervalId: any // 定时器ID，用于清除
+
+  constructor() {
+    this.startCarousel()
+  }
 
   ngOnInit() {}
+
+  startCarousel() {
+    this.intervalId = setInterval(() => {
+      this.currentIndex = (this.currentIndex + 1) % this.data.list.length
+    }, this.color.interval || 3000)
+  }
+
+  stopCarousel() {
+    if (this.intervalId) {
+      clearInterval(this.intervalId)
+    }
+  }
+
+  resumeCarousel() {
+    this.startCarousel()
+  }
+
+  setCurrentIndex(index: number) {
+    this.currentIndex = index
+  }
 }
