@@ -1,3 +1,17 @@
-<p>
-  swiper-fade works!
-</p>
+<div class="carousel" (mouseenter)="stopCarousel()" (mouseleave)="resumeCarousel()">
+  <div
+    class="fade-box"
+    *ngFor="let item of items; let i = index"
+    [class.active]="i === currentIndex"
+  >
+    {{ item }}
+    <div class="dots">
+      <span
+        *ngFor="let item of items; let i = index"
+        (click)="setCurrentIndex(i)"
+        [class.active]="i === currentIndex"
+      >
+      </span>
+    </div>
+  </div>
+</div>
