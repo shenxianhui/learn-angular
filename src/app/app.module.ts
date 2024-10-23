@@ -27,7 +27,8 @@ import { MonthlyCalendarComponent } from './monthly-calendar/monthly-calendar.co
 import { ColorfulRankComponent } from './colorful-rank/colorful-rank.component';
 import { StageNodeComponent } from './stage-node/stage-node.component';
 import { DoubleBarComponent } from './double-bar/double-bar.component';
-import { SSwiperComponent } from './s-swiper/s-swiper.component'
+import { SSwiperComponent } from './s-swiper/s-swiper.component';
+import { SwiperFadeComponent } from './swiper-fade/swiper-fade.component'
 
 registerLocaleData(zh)
 
@@ -53,6 +54,7 @@ registerLocaleData(zh)
     StageNodeComponent,
     DoubleBarComponent,
     SSwiperComponent,
+    SwiperFadeComponent,
   ],
   imports: [
     BrowserModule,
