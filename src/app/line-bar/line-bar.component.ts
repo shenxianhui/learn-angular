@@ -29,6 +29,7 @@ const color = JSON.parse(color_json)
 const { legend = {}, grid = {}, seriesMap = {} } = color
 const { xAxis = {}, series = [] } = data
 const { data: xAxisData = [] } = xAxis
+const _series = JSON.parse(JSON.stringify(series))
 const seriesData = []
 const legendData = []
 
@@ -44,7 +45,7 @@ function getBorderHeight(list = []) {
   return arr
 }
 
-series.forEach((item, index) => {
+_series.forEach((item, index) => {
   const styleObj = seriesMap[item.key] || {}
 
   item.data = [item.data[0], ...item.data, item.data[item.data.length - 1]]
