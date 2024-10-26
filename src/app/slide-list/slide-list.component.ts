@@ -36,6 +36,7 @@ export class SlideListComponent implements OnDestroy, AfterViewInit {
   @Input() scrollable: boolean = true // 开启自动滚动
 
   @ViewChildren('noticeBarContent') contentElements!: QueryList<ElementRef>
+  @ViewChildren('noticeBarContentY') contentElementsY!: QueryList<ElementRef>
 
   data: any = data
   color: any = color
@@ -53,6 +54,7 @@ export class SlideListComponent implements OnDestroy, AfterViewInit {
     // 使用全局变量设置 swiper 容器高度
     this.setSwiperContainerHeight()
     this.checkContentOverflow()
+    this.checkContentOverflowY()
 
     // 如果内容高度超出容器，复制数据进行拼接
     if (this.shouldScroll()) {
@@ -166,9 +168,29 @@ export class SlideListComponent implements OnDestroy, AfterViewInit {
     })
   }
 
+  private checkContentOverflowY(): void {
+    this.contentElementsY.forEach(contentElement => {
+      const containerHeight = contentElement.nativeElement.parentElement.offsetHeight
+      const contentHeight = contentElement.nativeElement.offsetHeight
+      if (contentHeight > containerHeight) {
+        contentElement.nativeElement.parentElement.classList.add('scrollableY')
+        this.updateAnimationDurationY(contentElement)
+      } else {
+        contentElement.nativeElement.parentElement.classList.remove('scrollableY')
+        contentElement.nativeElement.style.transform = 'translateY(0%)'
+      }
+    })
+  }
+
   private updateAnimationDuration(contentElement: ElementRef): void {
     const contentWidth = contentElement.nativeElement.offsetWidth
     const animationDuration = contentWidth / this.speed
+    contentElement.nativeElement.style.animationDuration = `${animationDuration}s`
+  }
+
+  private updateAnimationDurationY(contentElement: ElementRef): void {
+    const contentHeight = contentElement.nativeElement.offsetHeight
+    const animationDuration = contentHeight / this.speed
     contentElement.nativeElement.style.animationDuration = `${animationDuration}s`
   }
 

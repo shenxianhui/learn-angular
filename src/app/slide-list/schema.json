@@ -41,6 +41,7 @@
     "comments": [],
     "format": {
       "data": {
+        "contentHeight": 100,
         "list": [
           [
             {
@@ -95,7 +96,8 @@
                   "icon": "assets/slide-list/image/tag.png",
                   "text": "内容"
                 }
-              ]
+              ],
+              "contentHeight": 150
             },
             {
               "title": "标题",

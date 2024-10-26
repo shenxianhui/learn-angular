@@ -39,8 +39,8 @@
   .content {
     flex-grow: 1;
     // padding: 24px 0 32px 45px;
-    padding: 17px;
-    padding-top: 5px;
+    margin: 10px 17px;
+    overflow: hidden;
     .row {
       display: flex;
       &:not(:last-child) {
@@ -50,7 +50,7 @@
         width: 18px;
         height: 18px;
         margin-right: 10px;
-        margin-top: 3px;
+        margin-top: 2px;
         animation: rotateElement 6s infinite linear;
         @keyframes rotateElement {
           from {
@@ -84,12 +84,24 @@
   animation: scroll linear infinite;
 }
 
+.scrollableY .notice-bar-content {
+  animation: scrollY linear infinite;
+}
+
 @keyframes scroll {
   0% {
     transform: translateX(0%);
   }
   100% {
     transform: translateX(-100%);
+  }
+}
+@keyframes scrollY {
+  0% {
+    transform: translateY(0%);
+  }
+  100% {
+    transform: translateY(-100%);
   }
 }
 
