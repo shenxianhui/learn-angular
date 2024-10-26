@@ -7,7 +7,7 @@
     </div>
     <div class="calendar">
       <!-- 第一排：当前月的日子按钮 -->
-      <div class="days-row">
+      <div class="days-row" #daysRow>
         <!-- 正常日期按钮 -->
         <div class="btn-wrap">
           <div
@@ -16,6 +16,7 @@
             class="day-btn"
             [class.active]="day === +selectedDate.substr(-2)"
             (click)="handleBtn(day, dayIdx)"
+            [style.width]="getBtnWidth()"
           >
             {{ day }}
           </div>
@@ -27,6 +28,7 @@
             *ngFor="let day of daysInRange(endDay + 1, daysInMonth)"
             [ngClass]="getDayClass(day)"
             class="day-btn"
+            [style.width]="getBtnWidth()"
           >
             {{ day }}
           </div>

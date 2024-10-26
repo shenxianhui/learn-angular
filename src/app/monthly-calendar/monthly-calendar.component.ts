@@ -8,6 +8,7 @@ import {
   ViewChildren,
   AfterViewInit,
   QueryList,
+  ViewChild,
 } from '@angular/core'
 import schema from './schema.json'
 
@@ -37,6 +38,7 @@ export class MonthlyCalendarComponent implements OnInit, AfterViewInit {
   @Input() speed: number = 20 // 滚动速率 (px/s)
   @Input() scrollable: boolean = true // 开启自动滚动
 
+  @ViewChild('daysRow') daysRow!: ElementRef
   @ViewChildren('noticeBarContent') contentElements!: QueryList<ElementRef>
 
   data: any = data
@@ -51,6 +53,7 @@ export class MonthlyCalendarComponent implements OnInit, AfterViewInit {
   selectedDate: string = _selectedDate
   selectedDate_cn: string = this.getCurrentDate().cn
   selectedDate_en: string = this.getCurrentDate().en
+  daysRowWidth: number = 0
 
   constructor(private renderer: Renderer2) {}
 
@@ -65,6 +68,11 @@ export class MonthlyCalendarComponent implements OnInit, AfterViewInit {
   }
 
   ngAfterViewInit(): void {
+    // 延迟执行，确保 this.daysRowWidth 和 this.daysInMonth 的值已正确加载
+    setTimeout(() => {
+      this.daysRowWidth = this.daysRow.nativeElement.offsetWidth
+    }, 0)
+
     this.checkContentOverflow()
   }
 
@@ -125,6 +133,12 @@ export class MonthlyCalendarComponent implements OnInit, AfterViewInit {
   // 根据日期范围返回数组
   daysInRange(start: number, end: number): number[] {
     return Array.from({ length: end - start + 1 }, (_, i) => start + i)
+  }
+
+  getBtnWidth(): string {
+    const width = (this.daysRowWidth / this.daysInMonth).toFixed(2)
+
+    return `${width}px`
   }
 
   // 根据日期返回样式类
