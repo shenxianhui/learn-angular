@@ -119,8 +119,8 @@ export class DoubleBarComponent implements OnInit {
       this.chartOptions = {
         legend: {
           icon: 'rect',
-          itemWidth: 10,
-          itemHeight: 2,
+          itemWidth: 9,
+          itemHeight: 9,
           itemGap: 18,
           textStyle: {
             color: '#fff',
@@ -268,7 +268,7 @@ export class DoubleBarComponent implements OnInit {
             type: 'bar',
             stack: 'up',
             name: '',
-            data: [10, 10, 10, 10, 10, 10, 10, 10],
+            data: getBorderHeight(series[0].data, series[1].data).map(item => item / 2),
             itemStyle: {
               color: function (params) {
                 return params.dataIndex % 2 === 0
@@ -301,7 +301,7 @@ export class DoubleBarComponent implements OnInit {
             name: '',
             xAxisIndex: 1,
             yAxisIndex: 1,
-            data: [10, 10, 10, 10, 10, 10, 10, 10],
+            data: getBorderHeight(series[1].data, series[0].data).map(item => item / 2),
             itemStyle: {
               color: function (params) {
                 return params.dataIndex % 2 === 0
