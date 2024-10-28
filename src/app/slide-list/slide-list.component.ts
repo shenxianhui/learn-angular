@@ -47,25 +47,33 @@ export class SlideListComponent implements OnDestroy, AfterViewInit {
   private readonly transitionTime = 500 // 动画过渡时间
   private isTransitioning = false
   private originalSlidesCount = 0 // 原始幻灯片的数量
+  slidesGroup = color.slidesGroup || 1
+  splitList: any[] = []
 
   constructor(private renderer: Renderer2) {}
 
   ngAfterViewInit() {
-    // 使用全局变量设置 swiper 容器高度
-    this.setSwiperContainerHeight()
-    this.checkContentOverflow()
-    this.checkContentOverflowY()
+    setTimeout(() => {
+      this.updateSplitList()
+    })
 
-    // 如果内容高度超出容器，复制数据进行拼接
-    if (this.shouldScroll()) {
-      this.duplicateSlides()
-    }
+    setTimeout(() => {
+      // 使用全局变量设置 swiper 容器高度
+      this.setSwiperContainerHeight()
+      this.checkContentOverflow()
+      this.checkContentOverflowY()
+
+      // 如果内容高度超出容器，复制数据进行拼接
+      if (this.shouldScroll()) {
+        this.duplicateSlides()
+      }
+    }, 0)
 
     // 初始化滚动到第0个幻灯片的位置
     setTimeout(() => {
       this.scrollToSlide(this.slideIndex, false)
       this.startAutoScroll()
-    }, 0)
+    }, 30)
   }
 
   private setSwiperContainerHeight() {
@@ -202,6 +210,17 @@ export class SlideListComponent implements OnDestroy, AfterViewInit {
       // 将所有内容复制一份拼接到后面
       this.swiperWrapper.nativeElement.innerHTML += this.swiperWrapper.nativeElement.innerHTML
     }
+  }
+
+  updateSplitList() {
+    const list = JSON.parse(JSON.stringify(this.data.list || []))
+    const arr = []
+
+    for (let i = 0; i < list.length; i += this.slidesGroup) {
+      arr.push(list.slice(i, i + this.slidesGroup))
+    }
+
+    this.splitList = arr
   }
 
   @HostListener('mouseenter') onMouseEnter() {

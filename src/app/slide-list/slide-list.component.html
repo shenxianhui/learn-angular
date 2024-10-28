@@ -6,7 +6,7 @@
     [nzAutoPlaySpeed]="color.interval"
   >
     <div
-      *ngFor="let item of data.list || []; let index = index"
+      *ngFor="let item of splitList || []; let index = index"
       nz-carousel-content
       class="slide-list-item"
     >
@@ -35,7 +35,7 @@
         <div
           *ngIf="item1.content && item1.content.length"
           class="content"
-          [style.height]="(item1.contentHeight || data.contentHeight) + 'px'"
+          [style.height]="color?.contentHeight + 'px'"
         >
           <div class="content-wrap notice-bar-content" #noticeBarContentY>
             <div *ngFor="let item2 of item1.content || []" class="row">
@@ -58,7 +58,7 @@
 <!-- vertical -->
 <div *ngIf="!color.horizontal" class="slide-list" #swiperContainer>
   <div class="slide-list-wrapper" #swiperWrapper>
-    <div *ngFor="let item of data.list[0] || []; let index = index" class="slide-list-item">
+    <div *ngFor="let item of data.list || []; let index = index" class="slide-list-item">
       <div class="date-header">
         <div
           *ngIf="color.showIndex"
