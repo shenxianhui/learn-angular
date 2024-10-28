@@ -6,7 +6,7 @@
   "type_en": "others",
   "preview": "assets/monthly-calendar/image/monthly-calendar.png",
   "com_type": "angular",
-  "sampleCode": "{'colors':['#24FFBF','#29C7FF','#5277FF','#FFCB77','#FFFFFF','#C68EFF'],'style1':{'fontSize':14,'color':'#ffffff'},'style2':{'fontSize':14,'color':'#ffffff'},'style3':{'fontSize':14,'color':'#ffffff','alarmColor':'ff0000'}}",
+  "sampleCode": "{'upDateKey':'data','colors':['#24FFBF','#29C7FF','#5277FF','#FFCB77','#FFFFFF','#C68EFF'],'style1':{'fontSize':14,'color':'#ffffff'},'style2':{'fontSize':14,'color':'#ffffff'},'style3':{'fontSize':14,'color':'#ffffff','alarmColor':'ff0000'}}",
   "executeInfo": [
     {
       "label": "日期更新",
