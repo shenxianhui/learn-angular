@@ -1,14 +1,10 @@
 <!-- horizontal -->
 <div *ngIf="color.horizontal" class="slide-list">
-  <nz-carousel
-    class="carousel-info-carousel"
-    [nzAutoPlay]="true"
-    [nzAutoPlaySpeed]="color.interval"
-  >
+  <div class="carousel" (mouseenter)="stopCarousel()" (mouseleave)="resumeCarousel()">
     <div
       *ngFor="let item of splitList || []; let index = index"
-      nz-carousel-content
-      class="slide-list-item"
+      class="slide-list-item fade-box"
+      [class.active]="index === currentIndex"
     >
       <div *ngFor="let item1 of item || []; let index1 = index" class="slide-list-item-wrap">
         <div class="date-header">
@@ -51,8 +47,17 @@
           </div>
         </div>
       </div>
+
+      <div class="dots">
+        <span
+          *ngFor="let item of splitList || []; let i = index"
+          (click)="setCurrentIndex(i)"
+          [class.active]="i === currentIndex"
+        >
+        </span>
+      </div>
     </div>
-  </nz-carousel>
+  </div>
 </div>
 
 <!-- vertical -->

@@ -50,7 +50,12 @@ export class SlideListComponent implements OnDestroy, AfterViewInit {
   slidesGroup = color.slidesGroup || 1
   splitList: any[] = []
 
-  constructor(private renderer: Renderer2) {}
+  currentIndex = 0
+  intervalIdX: any // 定时器ID，用于清除
+
+  constructor(private renderer: Renderer2) {
+    this.startCarousel()
+  }
 
   ngAfterViewInit() {
     setTimeout(() => {
@@ -74,6 +79,26 @@ export class SlideListComponent implements OnDestroy, AfterViewInit {
       this.scrollToSlide(this.slideIndex, false)
       this.startAutoScroll()
     }, 30)
+  }
+
+  startCarousel() {
+    this.intervalIdX = setInterval(() => {
+      this.currentIndex = (this.currentIndex + 1) % this.splitList.length
+    }, color.interval || 3000)
+  }
+
+  stopCarousel() {
+    if (this.intervalIdX) {
+      clearInterval(this.intervalIdX)
+    }
+  }
+
+  resumeCarousel() {
+    this.startCarousel()
+  }
+
+  setCurrentIndex(index: number) {
+    this.currentIndex = index
   }
 
   private setSwiperContainerHeight() {

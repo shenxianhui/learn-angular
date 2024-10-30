@@ -9,6 +9,16 @@
   overflow: hidden;
   height: 100%;
 }
+.fade-box {
+  position: absolute;
+  width: 100%;
+  opacity: 0;
+  transition: opacity 0.4s ease-in-out;
+  height: auto !important;
+  &.active {
+    opacity: 1;
+  }
+}
 .slide-list-item {
   display: flex !important;
   flex-direction: column;
@@ -105,52 +115,30 @@
   }
 }
 
-::ng-deep .carousel-info-carousel .slick-dots li {
-  margin: 0 5px;
-}
-::ng-deep .carousel-info-carousel .slick-dots li button {
-  width: 8px;
-  height: 8px;
-  background: rgba(255, 255, 255, 0.4);
-  border-radius: 50% !important;
-}
-::ng-deep .carousel-info-carousel .slick-dots li.slick-active button {
+.carousel {
   position: relative;
-  width: 8px;
-  height: 8px;
-  background: rgba(255, 255, 255, 1);
-  border-radius: 50% !important;
-  &:before {
-    position: absolute;
-    content: '';
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 16px;
-    height: 16px;
-    border: 2px solid rgba(255, 255, 255, 0.3);
-    border-radius: 50% !important;
-  }
+  width: 100%;
 }
 
-::ng-deep .carousel-info-carousel {
-  height: 100%;
-  .slick-initialized {
-    height: 100%;
-    .slick-list {
-      height: 100%;
-      .slick-track {
-        height: 100%;
-      }
+.dots {
+  display: flex;
+  position: absolute;
+  bottom: -20px;
+  height: auto;
+  left: 50%;
+  transform: translate(-50%, 0);
+  span {
+    width: 8px;
+    height: 8px;
+    background: rgba(255, 255, 255, 0.4);
+    margin: 0 5px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    border: 2px solid rgba(255, 255, 255, 0);
+    &.active {
+      background: rgba(255, 255, 255, 1);
+      border: 2px solid rgba(255, 255, 255, 0.3);
     }
   }
 }
-// ::ng-deep .carousel-info-carousel .slick-initialized {
-//   height: 100%;
-// }
-// ::ng-deep .carousel-info-carousel .slick-initialized .slick-list {
-//   height: 100%;
-// }
-// ::ng-deep .carousel-info-carousel .slick-initialized .slick-list .slick-track {
-//   height: 100%;
-// }
