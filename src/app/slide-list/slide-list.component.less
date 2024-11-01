@@ -93,27 +93,26 @@
 }
 
 .scrollable .notice-bar-content {
-  animation: scroll linear infinite;
+  animation: slideList linear infinite;
+  @keyframes slideList {
+    0% {
+      transform: translateX(0%);
+    }
+    100% {
+      transform: translateX(-100%);
+    }
+  }
 }
 
 .scrollableY .notice-bar-content {
-  animation: scrollY linear infinite;
-}
-
-@keyframes scroll {
-  0% {
-    transform: translateX(0%);
-  }
-  100% {
-    transform: translateX(-100%);
-  }
-}
-@keyframes scrollY {
-  0% {
-    transform: translateY(0%);
-  }
-  100% {
-    transform: translateY(-100%);
+  animation: slideListY linear infinite;
+  @keyframes slideListY {
+    0% {
+      transform: translateY(0%);
+    }
+    100% {
+      transform: translateY(-100%);
+    }
   }
 }
 
