@@ -207,7 +207,7 @@ export class LineBarComponent implements OnInit {
           color: '#fff',
         },
         top: 20,
-        right: 20,
+        right: 60,
         ...legend,
         data: legendData,
       },
