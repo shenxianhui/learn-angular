@@ -6,6 +6,7 @@
   .event-list {
     display: flex;
     width: 100%;
+    overflow: hidden;
     .group {
       position: relative;
       display: flex;
@@ -151,13 +152,20 @@
       background: linear-gradient(270deg, #2db841, rgba(46, 165, 63, 0));
       filter: blur(1px);
       animation: scroll 5s infinite linear;
-      left: -500%;
+      transform: translateX(-500%);
+      opacity: 1;
       @keyframes scroll {
         0% {
-          left: -500%;
+          transform: translateX(-500%);
+          opacity: 1;
+        }
+        95% {
+          transform: translateX(3%); // 用户电脑显示走不到 0% 位置
+          opacity: 1;
         }
         100% {
-          left: 8px;
+          transform: translateX(3%); // 用户电脑显示走不到 0% 位置
+          opacity: 0;
         }
       }
     }
