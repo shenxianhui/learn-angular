@@ -197,6 +197,16 @@ export class LineBarComponent implements OnInit {
         axisPointer: {
           type: 'shadow',
         },
+        padding: 10,
+        formatter: function (params) {
+          let str = `${params[0].name}<br />`
+
+          params.forEach(item => {
+            str += `${item.seriesName || '工单总数'}：${item.value}<br />`
+          })
+
+          return str
+        },
       },
       legend: {
         icon: 'rect',
