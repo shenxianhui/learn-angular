@@ -37,7 +37,8 @@ const _xAxisData = ['Start', ...xAxisData, 'End']
 const lineColors = ['#50FFCC', '#52D2FF', '#FFFFFFCC']
 let lineNum = 0
 
-function getBorderHeight(list = []) {
+function getBorderHeight(_list = []) {
+  const list = _list.map(item => item.value)
   const sum = list.reduce((acc, curr) => acc + curr, 0)
   const average = (sum / list.length / 40) * 1.5
   const arr = Array(list.length).fill(average)
@@ -213,7 +214,7 @@ export class LineBarComponent implements OnInit {
           const list = []
 
           params.forEach(item => {
-            const { seriesName, value, data = {} } = item || {}
+            const { value = null, data = {} } = item || {}
             const { customData = '{}' } = data
             const _customData = JSON.parse(customData)
             const { name, index, bgColor } = _customData
