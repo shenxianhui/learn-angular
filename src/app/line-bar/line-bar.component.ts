@@ -169,7 +169,8 @@ seriesData.unshift({
   type: 'bar',
   name: '',
   // key: 'bar',
-  data: [10, 10, 10, 10, 10, 10, 10, 10],
+  // data: [10, 10, 10, 10, 10, 10, 10, 10],
+  data: getBorderHeight(seriesData[0].data).map(item => item * 1.5),
   // itemStyle: { normal: { color: '#0f0' } },
   itemStyle: {
     normal: {
