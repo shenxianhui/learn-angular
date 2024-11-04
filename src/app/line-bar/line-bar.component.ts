@@ -54,9 +54,7 @@ _series.forEach((item, index) => {
       customData: JSON.stringify({
         ...item,
         index,
-        bgColor: styleObj.borderColor
-          ? styleObj.borderColor || styleObj.itemColor || 'rgba(82, 210, 255, 1)'
-          : null,
+        bgColor: styleObj.borderColor || styleObj.itemColor || 'rgba(82, 210, 255, 1)',
       }),
     }
   })
@@ -236,7 +234,7 @@ export class LineBarComponent implements OnInit {
           list.forEach(item => {
             const _marker = `<span style=\"display:inline-block;margin-right:5px;border-radius:10px;width:10px;height:10px;background-color:${item.bgColor};\"></span>`
 
-            str += `${item.bgColor ? _marker : item.marker}${item.name}：${item.value}<br />`
+            str += `${item.seriesName ? item.marker : _marker}${item.name}：${item.value}<br />`
           })
 
           return str
