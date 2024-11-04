@@ -48,7 +48,20 @@ function getBorderHeight(list = []) {
 _series.forEach((item, index) => {
   const styleObj = seriesMap[item.key] || {}
 
+  item.data = [...item.data].map((item1, index1) => {
+    return {
+      value: item1,
+      customData: JSON.stringify({
+        ...item,
+        index,
+        bgColor: styleObj.borderColor
+          ? styleObj.borderColor || styleObj.itemColor || 'rgba(82, 210, 255, 1)'
+          : null,
+      }),
+    }
+  })
   item.data = [item.data[0], ...item.data, item.data[item.data.length - 1]]
+
   if (item.type === 'line') {
     seriesData.push({
       ...item,
@@ -199,10 +212,31 @@ export class LineBarComponent implements OnInit {
         },
         padding: 10,
         formatter: function (params) {
-          let str = `${params[0].name}<br />`
+          const list = []
 
           params.forEach(item => {
-            str += `${item.seriesName || '工单总数'}：${item.value}<br />`
+            const { seriesName, value, data = {} } = item || {}
+            const { customData = '{}' } = data
+            const _customData = JSON.parse(customData)
+            const { name, index, bgColor } = _customData
+
+            list.push({
+              ...item,
+              name,
+              value,
+              bgColor,
+              index,
+            })
+          })
+
+          list.sort((a, b) => a.index - b.index)
+
+          let str = `${params[0].name}<br />`
+
+          list.forEach(item => {
+            const _marker = `<span style=\"display:inline-block;margin-right:5px;border-radius:10px;width:10px;height:10px;background-color:${item.bgColor};\"></span>`
+
+            str += `${item.bgColor ? _marker : item.marker}${item.name}：${item.value}<br />`
           })
 
           return str
