@@ -21,6 +21,12 @@
       "dom"
     ],
     "paths": {
+      "plugin-manager": [
+        "dist/plugin-manager"
+      ],
+      "plugin-manager/*": [
+        "dist/plugin-manager/*"
+      ],
       "demo": [
         "dist/demo"
       ],

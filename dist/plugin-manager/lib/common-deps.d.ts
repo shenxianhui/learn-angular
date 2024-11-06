@@ -1,0 +1,25 @@
+import * as core from '@angular/core';
+import * as common from '@angular/common';
+import * as forms from '@angular/forms';
+import * as router from '@angular/router';
+import * as rxjs from 'rxjs';
+import * as tslib from 'tslib';
+import * as NgZorro from 'ng-zorro-antd';
+import * as manager from '../public_api';
+import * as operators from 'rxjs/operators';
+import * as le5leStore from 'le5le-store';
+import * as http from '@angular/common/http';
+export declare const COMMON_DEPS: {
+    '@angular/core': typeof core;
+    '@angular/common': typeof common;
+    '@angular/forms': typeof forms;
+    '@angular/router': typeof router;
+    'ng-zorro-antd': typeof NgZorro;
+    'plugin-manager': typeof manager;
+    'rxjs/operators': typeof operators;
+    'le5le-store': typeof le5leStore;
+    'file-saver': any;
+    '@angular/common/http': typeof http;
+    rxjs: typeof rxjs;
+    tslib: typeof tslib;
+};
