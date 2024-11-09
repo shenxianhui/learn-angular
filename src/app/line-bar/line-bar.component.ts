@@ -26,172 +26,6 @@ const { format = {} as Format } = data_json || {}
 const { data = {} } = format
 const color_json = sampleCode.replace(/'/g, '"') || '{}'
 const color = JSON.parse(color_json)
-const { legend = {}, grid = {}, seriesMap = {} } = color
-const { xAxis = {}, series = [] } = data
-const { data: xAxisData = [] } = xAxis
-const _series = JSON.parse(JSON.stringify(series))
-const seriesData = []
-const legendData = []
-
-const _xAxisData = ['Start', ...xAxisData, 'End']
-const lineColors = ['#50FFCC', '#52D2FF', '#FFFFFFCC']
-let lineNum = 0
-
-function getBorderHeight(_list = []) {
-  const list = _list.map(item => item.value)
-  const sum = list.reduce((acc, curr) => acc + curr, 0)
-  const average = (sum / list.length / 40) * 1.5
-  const arr = Array(list.length).fill(average)
-
-  return arr
-}
-
-_series.forEach((item, index) => {
-  const styleObj = seriesMap[item.key] || {}
-
-  item.data = [...item.data].map((item1, index1) => {
-    return {
-      value: item1,
-      customData: JSON.stringify({
-        ...item,
-        index,
-        bgColor: styleObj.borderColor || styleObj.itemColor || 'rgba(82, 210, 255, 1)',
-      }),
-    }
-  })
-  item.data = [item.data[0], ...item.data, item.data[item.data.length - 1]]
-
-  if (item.type === 'line') {
-    seriesData.push({
-      ...item,
-      step: 'middle',
-      lineStyle: {
-        color: styleObj.itemColor || lineColors[lineNum % lineColors.length],
-      },
-      itemStyle: {
-        color: styleObj.itemColor || lineColors[lineNum % lineColors.length],
-        opacity: 0,
-      },
-      // showBackground: index === 0,
-      // backgroundStyle: {
-      //   color: 'rgba(255, 255, 255, 0.05)',
-      // },
-    })
-
-    legendData.push({
-      name: item.name,
-      icon: 'path://M 0 0 H 10 V 2 H 0 Z',
-    })
-
-    lineNum++
-  }
-  if (item.type === 'bar') {
-    if (styleObj.borderColor || (index === 0 && !styleObj.itemColor)) {
-      seriesData.push(
-        {
-          ...item,
-          name: '',
-          stack: 1,
-          barGap: '0',
-          barCategoryGap: 5,
-          borderWidth: 0,
-          itemStyle: {
-            normal: {
-              color: new echarts.graphic.LinearGradient(
-                0,
-                0,
-                0,
-                1,
-                [
-                  {
-                    offset: 0,
-                    color:
-                      (styleObj.itemColor && styleObj.itemColor[0]) || 'rgba(82, 210, 255, 0.3)',
-                  },
-                  {
-                    offset: 0.5,
-                    color: (styleObj.itemColor && styleObj.itemColor[1]) || 'rgba(82, 210, 255, 0)',
-                  },
-                ],
-                false,
-              ),
-            },
-          },
-          // showBackground: index === 0,
-          // backgroundStyle: {
-          //   color: 'rgba(255, 255, 255, 0.05)',
-          // },
-        },
-        {
-          type: 'bar',
-          name: item.name,
-          stack: 1,
-          barGap: '0',
-          itemStyle: {
-            normal: {
-              color: styleObj.borderColor || 'rgba(82, 210, 255, 1)',
-            },
-          },
-          label: {
-            normal: {
-              show: false,
-            },
-          },
-          data: getBorderHeight(item.data),
-          tooltip: {
-            show: false,
-          },
-        },
-      )
-    } else {
-      seriesData.unshift({
-        ...item,
-        stack: 1,
-        itemStyle: {
-          color: styleObj.itemColor || '#FF435B',
-        },
-        // showBackground: index === 0,
-        // backgroundStyle: {
-        //   color: 'rgba(255, 255, 255, 0.05)',
-        // },
-      })
-    }
-
-    legendData.push({
-      name: item.name,
-      icon: 'path://M 0 0 H 8 V 8 H 0 Z',
-    })
-  }
-})
-
-seriesData.unshift({
-  stack: 1,
-  type: 'bar',
-  name: '',
-  // key: 'bar',
-  // data: [10, 10, 10, 10, 10, 10, 10, 10],
-  data: getBorderHeight(seriesData[0].data).map(item => item * 1.5),
-  // itemStyle: { normal: { color: '#0f0' } },
-  itemStyle: {
-    normal: {
-      color: {
-        x: 0,
-        y: 0,
-        x2: 0,
-        y2: 1,
-        type: 'linear',
-        global: false,
-        colorStops: [
-          { offset: 1, color: 'rgba(255,255,255, 0.5)' },
-          { offset: 0.61, color: 'rgba(255,255,255, 0.5)' },
-          { offset: 0.6, color: 'rgba(255,255,255, 0)' },
-          { offset: 0, color: 'rgba(255,255,255, 0)' },
-        ],
-      },
-    },
-  },
-  tooltip: { show: false },
-})
 
 @Component({
   selector: 'app-line-bar',
@@ -203,7 +37,186 @@ export class LineBarComponent implements OnInit {
   color: any = color
   chartOptions: any = {}
 
-  constructor() {
+  constructor() {}
+
+  ngOnInit() {
+    this.renderChart()
+  }
+
+  renderChart() {
+    const { legend = {}, seriesMap = {}, grid = {} } = this.color
+    const { xAxis = {}, series = [] } = this.data
+    const { data: xAxisData = [] } = xAxis
+    const _series = JSON.parse(JSON.stringify(series))
+    const seriesData = []
+    const legendData = []
+
+    const _xAxisData = ['Start', ...xAxisData, 'End']
+    const lineColors = ['#50FFCC', '#52D2FF', '#FFFFFFCC']
+    let lineNum = 0
+
+    function getBorderHeight(_list = []) {
+      const list = _list.map(item => item.value)
+      const sum = list.reduce((acc, curr) => acc + curr, 0)
+      const average = (sum / list.length / 40) * 1.5
+
+      return Array(list.length).fill(average)
+    }
+
+    _series.forEach((item, index) => {
+      const styleObj = seriesMap[item.key] || {}
+
+      item.data = [...item.data].map((item1, index1) => {
+        return {
+          value: item1,
+          customData: JSON.stringify({
+            ...item,
+            index,
+            bgColor: styleObj.borderColor || styleObj.itemColor || 'rgba(82, 210, 255, 1)',
+          }),
+        }
+      })
+      item.data = [item.data[0], ...item.data, item.data[item.data.length - 1]]
+
+      if (item.type === 'line') {
+        seriesData.push({
+          ...item,
+          step: 'middle',
+          lineStyle: {
+            color: styleObj.itemColor || lineColors[lineNum % lineColors.length],
+          },
+          itemStyle: {
+            color: styleObj.itemColor || lineColors[lineNum % lineColors.length],
+            opacity: 0,
+          },
+          // showBackground: index === 0,
+          // backgroundStyle: {
+          //   color: "rgba(255, 255, 255, 0.05)",
+          // },
+        })
+
+        legendData.push({
+          name: item.name,
+          icon: 'path://M 0 0 H 10 V 2 H 0 Z',
+        })
+
+        lineNum++
+      }
+      if (item.type === 'bar') {
+        if (styleObj.borderColor || (index === 0 && !styleObj.itemColor)) {
+          seriesData.push(
+            {
+              ...item,
+              name: '',
+              stack: 1,
+              barGap: '-100%',
+              barCategoryGap: 5,
+              borderWidth: 0,
+              z: 1,
+              itemStyle: {
+                normal: {
+                  color: new echarts.graphic.LinearGradient(
+                    0,
+                    0,
+                    0,
+                    1,
+                    [
+                      {
+                        offset: 0,
+                        color:
+                          (styleObj.itemColor && styleObj.itemColor[0]) ||
+                          'rgba(82, 210, 255, 0.3)',
+                      },
+                      {
+                        offset: 0.5,
+                        color:
+                          (styleObj.itemColor && styleObj.itemColor[1]) || 'rgba(82, 210, 255, 0)',
+                      },
+                    ],
+                    false,
+                  ),
+                },
+              },
+              // showBackground: index === 0,
+              // backgroundStyle: {
+              //   color: "rgba(255, 255, 255, 0.05)",
+              // },
+            },
+            {
+              type: 'bar',
+              name: item.name,
+              stack: 1,
+              z: 1,
+              barGap: '-100%',
+              barCategoryGap: 5,
+              itemStyle: {
+                normal: {
+                  color: styleObj.borderColor || 'rgba(82, 210, 255, 1)',
+                },
+              },
+              label: {
+                normal: {
+                  show: false,
+                },
+              },
+              data: getBorderHeight(item.data),
+              tooltip: {
+                show: false,
+              },
+            },
+          )
+        } else {
+          seriesData.unshift({
+            ...item,
+            // stack: 1,
+            z: 2,
+            itemStyle: {
+              color: styleObj.itemColor || '#FF435B',
+            },
+            // showBackground: index === 0,
+            // backgroundStyle: {
+            //   color: "rgba(255, 255, 255, 0.05)",
+            // },
+          })
+        }
+
+        legendData.push({
+          name: item.name,
+          icon: 'path://M 0 0 H 8 V 8 H 0 Z',
+        })
+      }
+    })
+
+    seriesData.unshift({
+      stack: 1,
+      type: 'bar',
+      name: '',
+      // key: 'bar',
+      z: 10,
+      // data: [10, 10, 10, 10, 10, 10, 10, 10],
+      data: getBorderHeight(seriesData[0].data).map(item => item * 1.5),
+      // itemStyle: { normal: { color: '#0f0' } },
+      itemStyle: {
+        normal: {
+          color: {
+            x: 0,
+            y: 0,
+            x2: 0,
+            y2: 1,
+            type: 'linear',
+            global: false,
+            colorStops: [
+              { offset: 1, color: 'rgba(255,255,255, 0.5)' },
+              { offset: 0.61, color: 'rgba(255,255,255, 0.5)' },
+              { offset: 0.6, color: 'rgba(255,255,255, 0)' },
+              { offset: 0, color: 'rgba(255,255,255, 0)' },
+            ],
+          },
+        },
+      },
+      tooltip: { show: false },
+    })
+
     this.chartOptions = {
       tooltip: {
         trigger: 'axis',
@@ -271,7 +284,7 @@ export class LineBarComponent implements OnInit {
         },
         axisLine: {
           show: false,
-          // color: 'rgba(255,255,255,0.5)',
+          // color: "rgba(255,255,255,0.5)",
         },
         splitLine: {
           show: false,
@@ -279,7 +292,7 @@ export class LineBarComponent implements OnInit {
         axisTick: {
           show: false,
         },
-        // boundaryGap: false,
+        // boundaryGap: false
         data: _xAxisData,
         min: xAxisData[0],
         max: xAxisData[xAxisData.length - 1],
@@ -316,9 +329,8 @@ export class LineBarComponent implements OnInit {
     }
   }
 
-  ngOnInit() {}
-
   getPadding() {
+    const { grid = {} } = this.color || {}
     const { top = 60, right = 60, bottom = 40, left = 60 } = grid || {}
     const padding = [top + 'px', right + 'px', bottom + 'px', left + 'px'].join(' ')
 
